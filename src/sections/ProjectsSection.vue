@@ -55,7 +55,7 @@
 
 <script setup>
 import { projects } from '@/data/projects.js'
-import Icon from '@/components/Icon.vue'
+import { Icon } from '@/components'
 </script>
 
 <style scoped>

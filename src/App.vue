@@ -27,8 +27,8 @@
 </template>
 
 <script setup>
-import NavBar from './layout/NavBar.vue'
-import FooterSection from './sections/FooterSection.vue'
+import { NavBar } from './layout'
+import { FooterSection } from './sections'
 import LoadingSpinner from './components/ui/LoadingSpinner.vue'
 import ErrorBoundary from './components/ui/ErrorBoundary.vue'
 import ScrollToTop from './components/ui/ScrollToTop.vue'
