@@ -9,7 +9,7 @@ export const skillCategories = [
     name: 'AI Coding Agents',
     icon: 'bot',
     color: '#a855f7',
-    skills: ['Kilocode CLI', 'KiroCode CLI', 'Adal CLI', 'Opencode', 'Kimicode', 'Copilot', 'Codex']
+    skills: ['Kilo CLI', 'Kiro CLI', 'Adal CLI', 'Opencode', 'Kimicode', 'Copilot', 'Codex']
   },
   {
     name: 'Frontend',
