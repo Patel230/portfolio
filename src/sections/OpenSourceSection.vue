@@ -56,7 +56,7 @@ const contributions = [
   {
     title: 'Kilo',
     description: 'All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.',
-    tech: ['TypeScript', 'React', 'VS Code API', 'AI/LLM'],
+    tech: ['TypeScript', 'Kotlin', 'CSS', 'JavaScript', 'Shell'],
     link: 'https://github.com/Patel230/kilocode',
     icon: 'kilocode',
     color: '#E5C84B'
@@ -64,7 +64,7 @@ const contributions = [
   {
     title: 'Sim Studio',
     description: 'Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.',
-    tech: ['Next.js', 'TypeScript', 'Bun', 'PostgreSQL', 'Drizzle', 'Tailwind', 'Socket.io'],
+    tech: ['TypeScript', 'MDX', 'Python', 'CSS', 'JavaScript', 'Shell'],
     link: 'https://github.com/Patel230/sim',
     icon: 'sim',
     color: '#6F3DFA'

@@ -79,7 +79,7 @@ Contributing to innovative open-source projects in the AI and developer tools sp
 ### [Kilo](https://github.com/Patel230/kilocode)
 All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.
 
-**Tech Stack:** TypeScript · React · VS Code API · AI/LLM APIs
+**Tech Stack:** TypeScript · Kotlin · CSS · JavaScript · Shell · VS Code API
 
 **Contributions:**
 - Bug fixes and issue resolution
@@ -91,7 +91,7 @@ All-in-one agentic engineering platform — VS Code extension for AI-driven deve
 ### [Sim Studio](https://github.com/Patel230/sim)  
 Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.
 
-**Tech Stack:** Next.js · TypeScript · Bun · PostgreSQL · Drizzle ORM · Tailwind CSS · Socket.io
+**Tech Stack:** TypeScript · MDX · Python · CSS · JavaScript · Shell · Next.js · PostgreSQL · Drizzle ORM
 
 **Contributions:**
 - Bug fixes and troubleshooting
