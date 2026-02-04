@@ -9,6 +9,10 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lakshman-patel)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lakshmanp230@gmail.com)
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?style=flat-square)](CHANGELOG.md)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Visitors](https://visitor-badge.laobi.icu/badge?page_id=Patel230.portfolio)](https://github.com/Patel230/portfolio)
+
 **`#VueJS`** **`#TypeScript`** **`#Python`** **`#AI`** **`#FullStack`** **`#OpenSource`** **`#GraphDone`** **`#WebDeveloper`**
 
 </div>
