@@ -18,7 +18,7 @@
 Building intelligent full-stack applications using AI. 3+ years experience in **Python, TypeScript, Flask, FastAPI, MySQL, AWS**, and creating production-ready systems.
 
 - 🔭 Currently working on **GraphDone** & **TaskDone**
-- 🤖 Contributing to **Kilo CLI** & **SIM** (Open Source)
+- 🤖 Contributing to **Kilocode** & **SIM** (Open Source)
 - 🌱 Exploring **AI Agents**, **LLMs**, and **Cloud Architecture**
 - 💬 Ask me about **Vue.js**, **FastAPI**, **Neo4j**, **AI Integration**
 
@@ -62,13 +62,11 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub Activity
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Patel230&show_icons=true&theme=radical&hide_border=true)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Patel230&layout=compact&theme=radical&hide_border=true)
+[![GitHub Streak](https://streak-stats.demolab.com?user=Patel230&theme=radical&hide_border=true)](https://git.io/streak-stats)
 
 </div>
 
@@ -80,7 +78,7 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 <tr>
 <td width="50%">
 
-### [Kilo CLI](https://github.com/Patel230/kilocode)
+### [Kilocode](https://github.com/Patel230/kilocode)
 AI-powered code editor with intelligent assistance
 - **Stack:** TypeScript, Kotlin, CSS, JavaScript, Shell
 - **Role:** Core features & AI integrations
