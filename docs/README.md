@@ -2,16 +2,22 @@
 
 Welcome to the portfolio documentation!
 
-## Quick Links
+## Root Level Files
+
+| File | Description |
+|------|-------------|
+| [../CONTRIBUTING.md](../CONTRIBUTING.md) | How to contribute to this project |
+| [../CHANGELOG.md](../CHANGELOG.md) | Version history and changes |
+| [../README.md](../README.md) | Main project README |
+
+## Docs Folder
 
 | Document | Description |
 |----------|-------------|
 | [SETUP.md](./SETUP.md) | Development environment setup |
 | [DEPLOYMENT.md](./DEPLOYMENT.md) | Deploy to Vercel, Netlify, etc. |
 | [ARCHITECTURE.md](./ARCHITECTURE.md) | Project structure and design decisions |
-| [CONTRIBUTING.md](./CONTRIBUTING.md) | How to contribute to this project |
 | [FAQ.md](./FAQ.md) | Frequently asked questions |
-| [CHANGELOG.md](./CHANGELOG.md) | Version history and changes |
 
 ## Getting Started
 
@@ -29,7 +35,7 @@ New to this project? Start here:
 | Add a project | [FAQ.md](./FAQ.md) |
 | Change colors | [FAQ.md](./FAQ.md) |
 | Deploy to Vercel | [DEPLOYMENT.md](./DEPLOYMENT.md) |
-| Report a bug | [CONTRIBUTING.md](./CONTRIBUTING.md) |
+| Report a bug | [../CONTRIBUTING.md](../CONTRIBUTING.md) |
 
 ## Project Info
 

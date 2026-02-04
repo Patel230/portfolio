@@ -6,7 +6,7 @@ Thank you for your interest in contributing to this portfolio project!
 
 1. Fork the repository
 2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/portfolio.git`
-3. Follow the [Setup Guide](./SETUP.md)
+3. Follow the [Setup Guide](./docs/SETUP.md)
 4. Create a new branch: `git checkout -b feature/your-feature-name`
 
 ## Development Workflow

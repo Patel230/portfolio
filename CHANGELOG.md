@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Documentation folder with setup, deployment, and contribution guides
 - Portfolio Stack section showing tech stack used to build the portfolio
 
+### Changed
+- Moved CONTRIBUTING.md and CHANGELOG.md to root for better visibility
+
 ### Fixed
 - Cursor position in typing animation (now stays inline)
 - Mobile menu positioning (now properly below navbar)
