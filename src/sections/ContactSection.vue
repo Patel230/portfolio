@@ -195,6 +195,79 @@ const handleContactClick = (item) => {
   word-break: break-all;
 }
 
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-item {
+    padding: 14px 16px;
+  }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .contact-item {
+    padding: 12px 14px;
+  }
+  
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .contact-value {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .contact-item {
+    padding: 10px 12px;
+  }
+  
+  .contact-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .contact-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .contact-label {
+    font-size: 0.65rem;
+  }
+  
+  .contact-value {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small (< 320px) */
+@media (max-width: 319px) {
+  .contact-item {
+    padding: 8px 10px;
+  }
+  
+  .contact-value {
+    font-size: 0.75rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .contact-item {
     transition: none;

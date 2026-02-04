@@ -295,8 +295,19 @@ const handleMenuClick = (event) => {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-link {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Styles (< 768px) */
+@media (max-width: 767px) {
   .mobile-menu-btn {
     display: block;
   }
@@ -310,7 +321,7 @@ const handleMenuClick = (event) => {
     background-color: var(--bg-primary);
     flex-direction: column;
     justify-content: flex-start;
-    gap: 24px;
+    gap: 20px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
@@ -324,9 +335,39 @@ const handleMenuClick = (event) => {
   }
 
   .nav-link {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
   }
+}
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .navbar {
+    padding: 12px 0;
+  }
+  
+  .logo-brackets {
+    font-size: 1.25rem;
+  }
+  
+  .nav-links {
+    gap: 16px;
+    padding-top: 30px;
+  }
+  
+  .nav-link {
+    font-size: 1.1rem;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    gap: 4px;
+  }
+  
+  .menu-icon span {
+    height: 1.5px;
+  }
+}
 
   .nav-link::after {
     bottom: -8px;

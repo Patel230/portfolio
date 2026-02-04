@@ -116,21 +116,65 @@ const currentYear = new Date().getFullYear()
   border-radius: 2px;
 }
 
-@media (max-width: 768px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .footer {
+    padding: 35px 0;
+  }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
   .footer {
     padding: 30px 0;
   }
-
+  
   .footer-logo {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
-
+  
   .footer-copyright {
     font-size: 0.85rem;
   }
-
+  
   .footer-built {
     font-size: 0.8rem;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .footer {
+    padding: 24px 0;
+  }
+  
+  .footer-brand {
+    gap: 12px;
+  }
+  
+  .footer-logo {
+    font-size: 1.25rem;
+  }
+  
+  .footer-legal {
+    gap: 6px;
+  }
+  
+  .footer-copyright {
+    font-size: 0.8rem;
+  }
+  
+  .footer-built {
+    font-size: 0.75rem;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .heart-icon svg {
+    width: 12px;
+    height: 12px;
   }
 }
 

@@ -265,13 +265,101 @@ import Icon from '@/components/Icon.vue'
   width: 100%;
 }
 
-@media (max-width: 768px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .pocs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .poc-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .pocs-hero {
+    padding: 40px 0 50px;
+  }
+  
   .pocs-title {
     font-size: 1.5rem;
   }
-
+  
+  .pocs-subtitle {
+    font-size: 0.9rem;
+  }
+  
   .pocs-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .poc-card {
+    padding: 18px;
+  }
+  
+  .poc-name {
+    font-size: 1rem;
+  }
+  
+  .poc-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .pocs-hero {
+    padding: 30px 0 40px;
+  }
+  
+  .back-link {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+  
+  .pocs-title {
+    font-size: 1.25rem;
+  }
+  
+  .pocs-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .pocs-grid-section {
+    padding: 50px 0;
+  }
+  
+  .pocs-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .poc-card {
+    padding: 14px;
+  }
+  
+  .poc-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .poc-name {
+    font-size: 0.95rem;
+  }
+  
+  .poc-description {
+    font-size: 0.75rem;
+  }
+  
+  .poc-tags .tag {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .poc-status {
+    font-size: 0.6rem;
+    padding: 3px 8px;
   }
 }
 

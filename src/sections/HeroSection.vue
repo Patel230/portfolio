@@ -198,29 +198,125 @@ onUnmounted(() => {
   flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
   .hero {
     min-height: auto;
-    padding-top: 60px;
+    padding: 80px 0 60px;
   }
-
+  
+  .hero-image {
+    width: 120px;
+    height: 120px;
+  }
+  
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
-
+  
   .hero-subtitle {
-    font-size: 1rem;
-    min-height: 3em;
-    padding: 0 20px;
+    font-size: 1.1rem;
   }
+}
 
+/* Mobile Large (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .hero {
+    min-height: auto;
+    padding: 60px 0 40px;
+  }
+  
+  .hero-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+    min-height: 2.5em;
+    padding: 0 16px;
+  }
+  
+  .hero-description {
+    font-size: 0.85rem;
+    padding: 0 8px;
+  }
+  
   .hero-links {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
+}
 
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
+  .hero {
+    min-height: auto;
+    padding: 50px 0 30px;
+  }
+  
+  .hero-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 16px;
+    border-width: 2px;
+  }
+  
+  .initials {
+    font-size: 2rem;
+  }
+  
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.85rem;
+    min-height: 2.5em;
+    padding: 0 12px;
+  }
+  
+  .hero-description {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    padding: 0 4px;
+  }
+  
+  .hero-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
   .btn {
-    text-align: center;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small (< 320px) */
+@media (max-width: 319px) {
+  .hero-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hero-title {
+    font-size: 1.25rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .hero-description {
+    font-size: 0.75rem;
   }
 }
 

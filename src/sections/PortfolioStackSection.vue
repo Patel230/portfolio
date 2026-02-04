@@ -134,15 +134,98 @@
   line-height: 1.5;
 }
 
-@media (max-width: 900px) {
+/* Tablet (768px - 1023px) */
+@media (max-width: 1023px) and (min-width: 768px) {
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .stack-card {
+    padding: 20px;
+  }
+  
+  .stack-icon {
+    width: 48px;
+    height: 48px;
   }
 }
 
-@media (max-width: 600px) {
+/* Mobile Large (480px - 767px) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .stack-card {
+    padding: 16px;
+  }
+  
+  .stack-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+  }
+  
+  .stack-name {
+    font-size: 1rem;
+  }
+  
+  .stack-description {
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile Small (< 480px) */
+@media (max-width: 479px) {
   .stack-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .stack-card {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+  }
+  
+  .stack-icon {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  
+  .stack-name {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+  
+  .stack-description {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra Small (< 320px) */
+@media (max-width: 319px) {
+  .stack-card {
+    padding: 10px;
+  }
+  
+  .stack-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .stack-name {
+    font-size: 0.85rem;
+  }
+  
+  .stack-description {
+    font-size: 0.7rem;
   }
 }
 
