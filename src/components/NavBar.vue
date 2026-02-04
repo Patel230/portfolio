@@ -2,17 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container navbar-content">
       <router-link to="/" class="logo" aria-label="Go to homepage">
-        <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
-          <defs>
-            <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:var(--accent)"/>
-              <stop offset="100%" style="stop-color:var(--accent-hover)"/>
-            </linearGradient>
-          </defs>
-          <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="url(#navLogoGradient)" stroke-width="4"/>
-          <polygon points="50,12 88,31.5 88,68.5 50,88 12,68.5 12,31.5" fill="rgba(251,191,36,0.1)" stroke="none"/>
-          <text x="50" y="62" font-family="'SF Mono', 'Fira Code', monospace" font-size="32" font-weight="700" fill="var(--accent)" text-anchor="middle">LP</text>
-        </svg>
+        <span class="logo-brackets" aria-hidden="true">{LP}</span>
       </router-link>
       
       <!-- Mobile Menu Button -->
@@ -48,12 +38,19 @@
           Home
         </router-link>
         <router-link 
-          to="/pocs" 
+          to="/creations" 
           class="nav-link"
           @click="closeMenu"
         >
           Creations
         </router-link>
+        <a 
+          :href="opensourceLink" 
+          class="nav-link"
+          @click.prevent="handleNavClick('opensource')"
+        >
+          Open Source
+        </a>
         <a 
           :href="aboutLink" 
           class="nav-link"
@@ -84,6 +81,7 @@ const menuRef = ref(null)
 const menuButtonRef = ref(null)
 
 const isHomePage = computed(() => route.path === '/')
+const opensourceLink = computed(() => isHomePage.value ? '#opensource' : '/#opensource')
 const aboutLink = computed(() => isHomePage.value ? '#about' : '/#about')
 const contactLink = computed(() => isHomePage.value ? '#contact' : '/#contact')
 
@@ -190,9 +188,17 @@ const handleMenuClick = (event) => {
   transform: scale(1.05);
 }
 
-.logo-svg {
-  width: 36px;
-  height: 36px;
+.logo-brackets {
+  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  transition: text-shadow 0.2s ease;
+}
+
+.logo:hover .logo-brackets {
+  text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
 }
 
 .nav-links {

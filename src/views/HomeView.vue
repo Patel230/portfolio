@@ -4,6 +4,7 @@
     <AboutSection />
     <SkillsSection />
     <ProjectsSection />
+    <OpenSourceSection />
     <ContactSection />
   </div>
 </template>
@@ -13,6 +14,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
 import ProjectsSection from '@/components/ProjectsSection.vue'
+import OpenSourceSection from '@/components/OpenSourceSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 </script>
 

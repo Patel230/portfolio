@@ -12,13 +12,17 @@ const routes = [
     }
   },
   {
-    path: '/pocs',
+    path: '/creations',
     name: 'Creations',
     component: () => import('@/views/PocsView.vue'),
     meta: {
       title: 'Projects & Creations | Lakshman Patel',
       description: 'Explore 30+ open source projects and proof-of-concept implementations by Lakshman Patel.'
     }
+  },
+  {
+    path: '/pocs',
+    redirect: '/creations'
   },
   {
     path: '/:pathMatch(.*)*',

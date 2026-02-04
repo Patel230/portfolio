@@ -19,7 +19,7 @@
         <p class="hero-subtitle">Full Stack Developer | Building with AI</p>
         <p class="hero-description">
           Building intelligent full-stack applications using AI. 3+ years experience in Python, 
-          TypeScript, cloud infrastructure, and creating production-ready systems.
+          TypeScript, Flask, FastAPI, MySQL, AWS, and creating production-ready systems.
         </p>
         <div class="hero-links">
           <a href="#projects" class="btn btn-primary">

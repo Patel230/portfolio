@@ -28,6 +28,12 @@
                 <Icon :name="poc.icon" :size="20" />
               </div>
             </div>
+            <span 
+              class="poc-status"
+              :class="poc.status === 'Live' ? 'status-live' : 'status-dev'"
+            >
+              {{ poc.status }}
+            </span>
             <h3 class="poc-name">{{ poc.name }}</h3>
             <p class="poc-description">{{ poc.description }}</p>
             <div class="poc-tags">
@@ -155,11 +161,37 @@ import Icon from '@/components/Icon.vue'
   transform: scale(1.1);
 }
 
+.poc-card {
+  position: relative;
+}
+
 .poc-name {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 8px;
+}
+
+.poc-status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.status-live {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.status-dev {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
 }
 
 .poc-description {

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <span class="footer-logo" aria-hidden="true">LP</span>
+          <span class="footer-logo" aria-hidden="true">{LP}</span>
           <div class="footer-legal">
             <p class="footer-copyright">© 2026 Lakshman Patel. All rights reserved.</p>
             <p class="footer-built">
@@ -50,10 +50,11 @@ const currentYear = new Date().getFullYear()
 }
 
 .footer-logo {
+  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
   font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
 }
 
 .footer-legal {

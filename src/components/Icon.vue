@@ -434,6 +434,47 @@ const icons = {
       'M1 20v-6h6',
       'M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15'
     ]
+  },
+  code: {
+    viewBox: '0 0 24 24',
+    paths: [
+      'M16 18l6-6-6-6',
+      'M8 6l-6 6 6 6'
+    ]
+  },
+  cpu: {
+    viewBox: '0 0 24 24',
+    paths: [
+      'M4 4h16v16H4z',
+      'M9 9h6v6H9z',
+      'M9 1v3',
+      'M15 1v3',
+      'M9 20v3',
+      'M15 20v3',
+      'M20 9h3',
+      'M20 15h3',
+      'M1 9h3',
+      'M1 15h3'
+    ]
+  },
+  kilocode: {
+    viewBox: '0 0 32 32',
+    fill: 'currentColor',
+    paths: [
+      'M23,26v-2h3v-5l-2-2h-4v2h-3v5l2,2h4ZM20,20h3v3h-3v-3Z',
+      'M12,17h3v3h-3v-3Z',
+      'M26,12h-3v-3h-3l-3,3v3h3v3h9v-3Z',
+      'M15,26v-3h-6v-6h-3v6.188l2.812,2.812h6.188Z',
+      'M12,6h3v3h-3v-3Z',
+      'M9,12h3v3h3v-3h-3v-3h-3v3Z'
+    ]
+  },
+  sim: {
+    viewBox: '0 0 24 24',
+    fill: 'currentColor',
+    paths: [
+      'M4,4h16v16H4V4zM6,6v12h12V6H6z'
+    ]
   }
 }
 

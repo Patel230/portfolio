@@ -47,7 +47,7 @@
         </article>
       </div>
       <div class="pocs-link">
-        <router-link to="/pocs">View all 30+ Creations →</router-link>
+        <router-link to="/creations">View all 30+ Creations →</router-link>
       </div>
     </div>
   </section>
