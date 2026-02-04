@@ -1,7 +1,19 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container navbar-content">
-      <router-link to="/" class="logo" aria-label="Go to homepage">LP</router-link>
+      <router-link to="/" class="logo" aria-label="Go to homepage">
+        <svg class="logo-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <defs>
+            <linearGradient id="navLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:var(--accent)"/>
+              <stop offset="100%" style="stop-color:var(--accent-hover)"/>
+            </linearGradient>
+          </defs>
+          <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="none" stroke="url(#navLogoGradient)" stroke-width="4"/>
+          <polygon points="50,12 88,31.5 88,68.5 50,88 12,68.5 12,31.5" fill="rgba(251,191,36,0.1)" stroke="none"/>
+          <text x="50" y="62" font-family="'SF Mono', 'Fira Code', monospace" font-size="32" font-weight="700" fill="var(--accent)" text-anchor="middle">LP</text>
+        </svg>
+      </router-link>
       
       <!-- Mobile Menu Button -->
       <button 
@@ -169,14 +181,18 @@ const handleMenuClick = (event) => {
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--accent);
+  display: flex;
+  align-items: center;
   transition: transform 0.2s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
+}
+
+.logo-svg {
+  width: 36px;
+  height: 36px;
 }
 
 .nav-links {
