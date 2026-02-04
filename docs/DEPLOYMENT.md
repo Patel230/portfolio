@@ -46,7 +46,7 @@ This project is optimized for Vercel deployment.
 ### Custom Domain
 
 1. Go to Project Settings → Domains
-2. Add your domain (e.g., `lakshmanpatel.dev`)
+2. Add your domain (e.g., `lakshman-portfolio-beta.vercel.app`)
 3. Follow DNS configuration instructions
 4. Enable HTTPS (auto-enabled on Vercel)
 

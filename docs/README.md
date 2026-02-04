@@ -40,7 +40,7 @@ New to this project? Start here:
 ## Project Info
 
 - **Author:** Lakshman Patel
-- **Website:** [lakshmanpatel.dev](https://lakshmanpatel.dev)
+- **Website:** [lakshman-portfolio-beta.vercel.app](https://lakshman-portfolio-beta.vercel.app/)
 - **Repository:** [github.com/Patel230/portfolio](https://github.com/Patel230/portfolio)
 - **License:** MIT
 
