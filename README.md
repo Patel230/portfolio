@@ -76,27 +76,27 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 
 Contributing to innovative open-source projects in the AI and developer tools space.
 
-### [Kilocode](https://github.com/Patel230/kilocode)
-AI-powered code editor with intelligent assistance — VS Code extension for AI-driven development.
+### [Kilo](https://github.com/Patel230/kilocode)
+All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.
 
-**Tech Stack:** TypeScript · Kotlin · CSS · JavaScript · Shell
+**Tech Stack:** TypeScript · React · VS Code API · AI/LLM APIs
 
 **Contributions:**
-- Core features & AI integrations
 - Bug fixes and issue resolution
 - Feature enhancements
+- Code reviews and testing
 
 ---
 
-### [SIM](https://github.com/Patel230/sim)  
-Systems Intelligence Management platform — Build and deploy AI agent workflows visually.
+### [Sim Studio](https://github.com/Patel230/sim)  
+Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.
 
-**Tech Stack:** TypeScript · MDX · Python · CSS · JavaScript
+**Tech Stack:** Next.js · TypeScript · Bun · PostgreSQL · Drizzle ORM · Tailwind CSS · Socket.io
 
 **Contributions:**
-- System monitoring modules
-- Issue troubleshooting & fixes
-- Platform improvements
+- Bug fixes and troubleshooting
+- Documentation improvements
+- Platform testing and feedback
 
 ---
 
