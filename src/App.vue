@@ -27,12 +27,12 @@
 </template>
 
 <script setup>
-import NavBar from './components/NavBar.vue'
-import FooterSection from './components/FooterSection.vue'
-import LoadingSpinner from './components/LoadingSpinner.vue'
-import ErrorBoundary from './components/ErrorBoundary.vue'
-import ScrollToTop from './components/ScrollToTop.vue'
-import UpdatePrompt from './components/UpdatePrompt.vue'
+import NavBar from './layout/NavBar.vue'
+import FooterSection from './sections/FooterSection.vue'
+import LoadingSpinner from './components/ui/LoadingSpinner.vue'
+import ErrorBoundary from './components/ui/ErrorBoundary.vue'
+import ScrollToTop from './components/ui/ScrollToTop.vue'
+import UpdatePrompt from './components/ui/UpdatePrompt.vue'
 </script>
 
 <style scoped>

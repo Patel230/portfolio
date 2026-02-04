@@ -50,7 +50,7 @@
 </template>
 
 <script setup>
-import Icon from './Icon.vue'
+import Icon from '@/components/Icon.vue'
 
 const contributions = [
   {

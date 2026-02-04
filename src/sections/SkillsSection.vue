@@ -41,7 +41,7 @@
 
 <script setup>
 import { skillCategories } from '@/data/skills.js'
-import Icon from './Icon.vue'
+import Icon from '@/components/Icon.vue'
 </script>
 
 <style scoped>
