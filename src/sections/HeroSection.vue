@@ -22,7 +22,7 @@
         </p>
         <p class="hero-description">
           Building intelligent full-stack applications using AI. 3+ years experience in Python, 
-          TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Linux, Git/GitHub, and creating production-ready systems.
+          TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script, Git/GitHub, and creating production-ready systems.
         </p>
         <div class="hero-links">
           <a href="#projects" class="btn btn-primary">
