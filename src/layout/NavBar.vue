@@ -303,18 +303,20 @@ const handleMenuClick = (event) => {
 
   .nav-links {
     position: fixed;
-    top: 0;
+    top: 70px;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: var(--bg-primary);
     flex-direction: column;
-    justify-content: center;
-    gap: 32px;
+    justify-content: flex-start;
+    gap: 24px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
-    padding-top: 70px;
+    padding-top: 40px;
+    overflow-y: auto;
+    height: calc(100vh - 70px);
   }
 
   .nav-links.is-open {

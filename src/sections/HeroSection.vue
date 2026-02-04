@@ -136,6 +136,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .hero-image.fallback {
@@ -160,21 +161,17 @@ onUnmounted(() => {
   color: var(--text-secondary);
   margin-bottom: 20px;
   min-height: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
 }
 
 .typing-text {
-  display: inline-block;
+  display: inline;
 }
 
 .cursor {
   color: var(--accent);
   font-weight: 300;
-  display: inline-block;
-  width: 2px;
+  display: inline;
+  margin-left: 2px;
 }
 
 .cursor.blink {
@@ -214,8 +211,7 @@ onUnmounted(() => {
   .hero-subtitle {
     font-size: 1rem;
     min-height: 3em;
-    flex-direction: column;
-    gap: 0;
+    padding: 0 20px;
   }
 
   .hero-links {
