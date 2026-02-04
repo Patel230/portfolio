@@ -16,7 +16,10 @@
           <span v-else class="initials" aria-hidden="true">LP</span>
         </div>
         <h1 id="hero-title" class="hero-title">Lakshman Patel</h1>
-        <p class="hero-subtitle">Full Stack Developer | Building with AI</p>
+        <p class="hero-subtitle">
+          <span class="typing-text">{{ displayText }}</span>
+          <span class="cursor" :class="{ 'blink': showCursor }">|</span>
+        </p>
         <p class="hero-description">
           Building intelligent full-stack applications using AI. 3+ years experience in Python, 
           TypeScript, Flask, FastAPI, MySQL, AWS, and creating production-ready systems.
@@ -35,13 +38,66 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const imageError = ref(false)
+const displayText = ref('')
+const showCursor = ref(true)
+
+const roles = [
+  'Full Stack Developer',
+  'AI Engineer',
+  'Open Source Contributor',
+  'Vue.js & TypeScript Expert'
+]
+
+let roleIndex = 0
+let charIndex = 0
+let isDeleting = false
+let typeTimeout = null
 
 const handleImageError = () => {
   imageError.value = true
 }
+
+const typeEffect = () => {
+  const currentRole = roles[roleIndex]
+  
+  if (isDeleting) {
+    displayText.value = currentRole.substring(0, charIndex - 1)
+    charIndex--
+  } else {
+    displayText.value = currentRole.substring(0, charIndex + 1)
+    charIndex++
+  }
+
+  let typeSpeed = isDeleting ? 50 : 100
+
+  if (!isDeleting && charIndex === currentRole.length) {
+    typeSpeed = 2000
+    isDeleting = true
+    showCursor.value = false
+    setTimeout(() => {
+      showCursor.value = true
+    }, 100)
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false
+    roleIndex = (roleIndex + 1) % roles.length
+    typeSpeed = 500
+  }
+
+  typeTimeout = setTimeout(typeEffect, typeSpeed)
+}
+
+onMounted(() => {
+  typeTimeout = setTimeout(typeEffect, 500)
+})
+
+onUnmounted(() => {
+  if (typeTimeout) {
+    clearTimeout(typeTimeout)
+  }
+})
 </script>
 
 <style scoped>
@@ -104,6 +160,32 @@ const handleImageError = () => {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 20px;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.typing-text {
+  display: inline-block;
+}
+
+.cursor {
+  color: var(--accent);
+  font-weight: 300;
+  display: inline-block;
+  width: 2px;
+}
+
+.cursor.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-description {
@@ -130,6 +212,13 @@ const handleImageError = () => {
     font-size: 2rem;
   }
 
+  .hero-subtitle {
+    font-size: 1rem;
+    min-height: 3em;
+    flex-direction: column;
+    gap: 0;
+  }
+
   .hero-links {
     flex-direction: column;
     align-items: stretch;
@@ -147,6 +236,10 @@ const handleImageError = () => {
 
   .hero-image:hover {
     transform: none;
+  }
+
+  .cursor.blink {
+    animation: none;
   }
 }
 </style>
