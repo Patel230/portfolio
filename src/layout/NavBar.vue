@@ -59,6 +59,13 @@
           GitHub
         </a>
         <a 
+          :href="portfolioStackLink" 
+          class="nav-link"
+          @click.prevent="handleNavClick('portfolio-stack')"
+        >
+          Stack
+        </a>
+        <a 
           :href="aboutLink" 
           class="nav-link"
           @click.prevent="handleNavClick('about')"
@@ -90,6 +97,7 @@ const menuButtonRef = ref(null)
 const isHomePage = computed(() => route.path === '/')
 const opensourceLink = computed(() => isHomePage.value ? '#opensource' : '/#opensource')
 const githubLink = computed(() => isHomePage.value ? '#github' : '/#github')
+const portfolioStackLink = computed(() => isHomePage.value ? '#portfolio-stack' : '/#portfolio-stack')
 const aboutLink = computed(() => isHomePage.value ? '#about' : '/#about')
 const contactLink = computed(() => isHomePage.value ? '#contact' : '/#contact')
 

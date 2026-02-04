@@ -35,11 +35,6 @@
               Available for work
             </span>
           </div>
-          <div class="info-item">
-            <span class="info-label">Portfolio Stack</span>
-            <span class="info-value">Vue 3 · Vite · TypeScript</span>
-            <span class="info-sub">Vue Router · Vitest · ESLint</span>
-          </div>
         </aside>
       </div>
     </div>

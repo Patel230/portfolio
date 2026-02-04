@@ -6,6 +6,7 @@
     <ProjectsSection />
     <OpenSourceSection />
     <GitHubSection />
+    <PortfolioStackSection />
     <ContactSection />
   </div>
 </template>
@@ -18,6 +19,7 @@ import {
   ProjectsSection,
   OpenSourceSection,
   GitHubSection,
+  PortfolioStackSection,
   ContactSection
 } from '@/sections'
 </script>
