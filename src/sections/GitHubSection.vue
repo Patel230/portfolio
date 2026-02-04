@@ -14,7 +14,7 @@
             class="stats-link"
           >
             <img 
-              src="https://github-readme-stats.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=fbbf24&text_color=ffffff&icon_color=fbbf24&count_private=true"
+              src="https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=fbbf24&text_color=ffffff&icon_color=fbbf24"
               alt="GitHub Stats"
               class="stats-image"
               loading="lazy"
