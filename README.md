@@ -108,6 +108,7 @@ Build and deploy AI agent workflows visually. Self-hosted platform with vector d
 |----------|-------------|
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | How to contribute to this project |
 | [CHANGELOG.md](./CHANGELOG.md) | Version history and changes |
+| [SECURITY.md](./SECURITY.md) | Security policy and vulnerability reporting |
 | [docs/SETUP.md](./docs/SETUP.md) | Development environment setup |
 | [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | Deploy to Vercel, Netlify, etc. |
 | [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) | Project structure and design decisions |

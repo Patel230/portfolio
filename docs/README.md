@@ -44,6 +44,16 @@ New to this project? Start here:
 - **Repository:** [github.com/Patel230/portfolio](https://github.com/Patel230/portfolio)
 - **License:** MIT
 
+## GitHub Templates
+
+This project includes GitHub templates to standardize contributions:
+
+- **Bug Report** - Report bugs and issues
+- **Feature Request** - Suggest new features
+- **Pull Request Template** - Standardize PR submissions
+
+See `.github/` folder for templates.
+
 ## Questions?
 
 Check the [FAQ](./FAQ.md) or open an issue on GitHub.
