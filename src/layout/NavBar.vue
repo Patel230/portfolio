@@ -367,8 +367,7 @@ const handleMenuClick = (event) => {
   .menu-icon span {
     height: 1.5px;
   }
-}
-
+  
   .nav-link::after {
     bottom: -8px;
   }
