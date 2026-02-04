@@ -62,11 +62,11 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 
 ---
 
-## 📊 GitHub Activity
+## 📊 GitHub Stats
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=Patel230&theme=radical&hide_border=true)](https://git.io/streak-stats)
+[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Patel230&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)](https://github.com/Patel230)
 
 </div>
 
@@ -74,26 +74,29 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 
 ## 🎯 Open Source Contributions
 
-<table>
-<tr>
-<td width="50%">
+Contributing to innovative open-source projects in the AI and developer tools space.
 
 ### [Kilocode](https://github.com/Patel230/kilocode)
-AI-powered code editor with intelligent assistance
-- **Stack:** TypeScript, Kotlin, CSS, JavaScript, Shell
-- **Role:** Core features & AI integrations
+AI-powered code editor with intelligent assistance — VS Code extension for AI-driven development.
 
-</td>
-<td width="50%">
+**Tech Stack:** TypeScript · Kotlin · CSS · JavaScript · Shell
 
-### [SIM](https://github.com/Patel230/sim)
-Systems Intelligence Management platform
-- **Stack:** TypeScript, MDX, Python, CSS, JavaScript
-- **Role:** System monitoring modules
+**Contributions:**
+- Core features & AI integrations
+- Bug fixes and issue resolution
+- Feature enhancements
 
-</td>
-</tr>
-</table>
+---
+
+### [SIM](https://github.com/Patel230/sim)  
+Systems Intelligence Management platform — Build and deploy AI agent workflows visually.
+
+**Tech Stack:** TypeScript · MDX · Python · CSS · JavaScript
+
+**Contributions:**
+- System monitoring modules
+- Issue troubleshooting & fixes
+- Platform improvements
 
 ---
 
