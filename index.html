@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Lakshman Patel | Portfolio</title>
+    <meta name="title" content="Lakshman Patel | Portfolio" />
+    <meta name="description" content="Full Stack Developer building intelligent applications with AI. 3+ years experience in Python, TypeScript, cloud infrastructure, and creating production-ready systems." />
+    <meta name="keywords" content="Lakshman Patel, Software Developer, Full Stack Developer, Python, TypeScript, AI, Machine Learning, Vue.js, React, Node.js, Neo4j, GraphQL" />
+    <meta name="author" content="Lakshman Patel" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://lakshmanpatel.dev" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lakshmanpatel.dev" />
+    <meta property="og:title" content="Lakshman Patel | Full Stack Developer" />
+    <meta property="og:description" content="Full Stack Developer building intelligent applications with AI. Co-founder of GraphDone and 30+ AI-powered applications." />
+    <meta property="og:image" content="https://lakshmanpatel.dev/lakshman.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Lakshman Patel Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://lakshmanpatel.dev" />
+    <meta name="twitter:title" content="Lakshman Patel | Full Stack Developer" />
+    <meta name="twitter:description" content="Full Stack Developer building intelligent applications with AI. Co-founder of GraphDone and 30+ AI-powered applications." />
+    <meta name="twitter:image" content="https://lakshmanpatel.dev/lakshman.jpg" />
+    <meta name="twitter:creator" content="@Lakshman2302" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="msapplication-TileColor" content="#0d0d0d" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Lakshman Patel" />
+    
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lakshman Patel",
+      "jobTitle": "Full Stack Developer",
+      "description": "Full Stack Developer building intelligent applications with AI",
+      "url": "https://lakshmanpatel.dev",
+      "image": "https://lakshmanpatel.dev/lakshman.jpg",
+      "sameAs": [
+        "https://github.com/Patel230",
+        "https://linkedin.com/in/lakshman-patel",
+        "https://x.com/Lakshman2302"
+      ],
+      "knowsAbout": ["Python", "TypeScript", "AI/ML", "Vue.js", "React", "Node.js", "GraphQL", "Neo4j"],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "ABV-IIITM Gwalior"
+      }
+    }
+    </script>
+    
+    <!-- Critical CSS Inline -->
+    <style>
+      /* Critical styles for above-the-fold content */
+      html { background-color: #0d0d0d; }
+      body { 
+        margin: 0; 
+        font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+        background-color: #0d0d0d;
+        color: #ffffff;
+      }
+      #app { min-height: 100vh; }
+      .loading-screen {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #0d0d0d;
+        z-index: 9999;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .loading-screen.hidden { 
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      @keyframes spin { 
+        to { transform: rotate(360deg); } 
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        .loading-screen { display: none !important; }
+        .noscript-message {
+          padding: 40px 20px;
+          text-align: center;
+          background: #0d0d0d;
+          color: #ffffff;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .noscript-message h1 { color: #fbbf24; margin-bottom: 16px; }
+        .noscript-message p { color: #a3a3a3; max-width: 500px; }
+      </style>
+      <div class="noscript-message">
+        <h1>JavaScript Required</h1>
+        <p>This portfolio website requires JavaScript to function properly. Please enable JavaScript in your browser settings to view the full experience.</p>
+      </div>
+    </noscript>
+    
+    <!-- Loading screen that hides when app mounts -->
+    <div id="loading-screen" class="loading-screen">
+      <div style="width: 48px; height: 48px; border: 3px solid #262626; border-top-color: #fbbf24; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+    </div>
+    
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
