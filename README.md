@@ -1,169 +1,167 @@
-# Lakshman Patel Portfolio
+<div align="center">
 
-A modern, responsive portfolio website built with Vue 3 and Vite.
+# {LP} Lakshman Patel
 
-![Vue.js](https://img.shields.io/badge/Vue.js-3.4-4FC08D?logo=vue.js)
-![Vite](https://img.shields.io/badge/Vite-5.0-646CFF?logo=vite)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+### Full Stack Developer | Building with AI
 
-## Features
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF6B6B?style=for-the-badge&logo=vercel&logoColor=white)](https://lakshmanpatel.dev)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Patel230)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lakshman-patel)
+[![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lakshmanp230@gmail.com)
 
-- ⚡ **Lightning Fast** - Built with Vite for optimal performance
-- 🎨 **Modern Dark Theme** - Inspired by kilo.ai design
-- 📱 **Responsive Design** - Works perfectly on all devices
-- ♿ **Accessible** - ARIA labels, keyboard navigation, reduced motion support
-- 🔍 **SEO Optimized** - Meta tags, Open Graph, structured data
-- 🚀 **Production Ready** - Docker support, optimized builds
-- 🌙 **Smooth Animations** - CSS transitions with reduced motion support
-- 🧩 **Component Based** - Clean, modular Vue 3 composition API
-
-## Tech Stack
-
-- **Vue 3** (Composition API + `<script setup>`)
-- **Vue Router 4** (Lazy-loaded routes)
-- **Vite 5** (Build tool)
-- **CSS3** (Custom properties, Grid, Flexbox)
-- **ESLint + Prettier** (Code quality)
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Development
-
-```bash
-npm run dev
-```
-
-Server runs at `http://localhost:3681`
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-### Lint and Format
-
-```bash
-npm run lint      # Run ESLint
-npm run format    # Run Prettier
-```
-
-## Docker
-
-```bash
-# Build image
-docker build -t portfolio .
-
-# Run container
-docker run -p 4173:4173 portfolio
-```
-
-## Project Structure
-
-```
-portfolio/
-├── public/                  # Static assets
-│   ├── lakshman.jpg
-│   ├── favicon.ico
-│   └── robots.txt
-├── src/
-│   ├── assets/             # Images and fonts
-│   ├── components/         # Vue components
-│   │   ├── HeroSection.vue
-│   │   ├── AboutSection.vue
-│   │   ├── SkillsSection.vue
-│   │   ├── ProjectsSection.vue
-│   │   ├── ContactSection.vue
-│   │   ├── FooterSection.vue
-│   │   ├── NavBar.vue
-│   │   └── Icon.vue
-│   ├── data/               # Static data
-│   │   ├── projects.js
-│   │   ├── skills.js
-│   │   └── pocs.js
-│   ├── router/             # Vue Router
-│   │   └── index.js
-│   ├── views/              # Page views
-│   │   ├── HomeView.vue
-│   │   ├── PocsView.vue
-│   │   └── NotFoundView.vue
-│   ├── App.vue
-│   ├── main.js
-│   └── style.css           # Global styles + CSS variables
-├── index.html
-├── vite.config.js
-├── package.json
-├── Dockerfile
-├── .eslintrc.cjs
-├── .prettierrc
-└── .gitignore
-```
-
-## Customization
-
-Edit the data files to customize:
-
-- `src/data/skills.js` - Update skills categories
-- `src/data/projects.js` - Update featured projects
-- `src/data/pocs.js` - Update POC websites list
-- `src/components/ContactSection.vue` - Update contact information
-- `index.html` - Update SEO meta tags
-
-## Accessibility Features
-
-- ✅ Skip-to-content link
-- ✅ ARIA labels and roles
-- ✅ Keyboard navigation support
-- ✅ Focus visible indicators
-- ✅ Reduced motion support (`prefers-reduced-motion`)
-- ✅ Semantic HTML structure
-- ✅ Screen reader friendly
-
-## Performance Optimizations
-
-- Lazy-loaded routes
-- Image optimization with lazy loading
-- CSS custom properties for theming
-- Manual chunk splitting
-- Backdrop filter for smooth navbar
-- Optimized scrollbar styling
-
-## Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Opera 76+
-
-## License
-
-MIT License - feel free to use this template for your own portfolio!
-
-## Author
-
-**Lakshman Patel**
-
-- GitHub: [@Patel230](https://github.com/Patel230)
-- LinkedIn: [lakshman-patel](https://linkedin.com/in/lakshman-patel)
-- X (Twitter): [@Lakshman2302](https://x.com/Lakshman2302)
+</div>
 
 ---
 
-Built with ❤️ and ☕ using Vue 3 + Vite
+## ✨ About
+
+Building intelligent full-stack applications using AI. 3+ years experience in **Python, TypeScript, Flask, FastAPI, MySQL, AWS**, and creating production-ready systems.
+
+- 🔭 Currently working on **GraphDone** & **TaskDone**
+- 🤖 Contributing to **Kilo CLI** & **SIM** (Open Source)
+- 🌱 Exploring **AI Agents**, **LLMs**, and **Cloud Architecture**
+- 💬 Ask me about **Vue.js**, **FastAPI**, **Neo4j**, **AI Integration**
+
+---
+
+## 🚀 Featured Projects
+
+| Project | Tech Stack | Live |
+|---------|-----------|------|
+| **GraphDone** | TypeScript, Neo4j, React, GraphQL | [View](https://graphdone.com/) |
+| **TaskDone** | TypeScript, Next.js, Neo4j, Prisma | [View](https://taskdone.gateandtech.in/) |
+| **Awesome Horizon** | Vue.js, Vercel, Open Source | [View](https://awesome-horizon.vercel.app/) |
+| **Awesome Skills** | TypeScript, Next.js, Vercel | [View](https://awesome-skills-eight.vercel.app/) |
+
+---
+
+## 🛠️ Tech Stack
+
+### Languages & Frameworks
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
+
+### Databases & Cloud
+![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+
+### AI & Tools
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Patel230&show_icons=true&theme=radical&hide_border=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Patel230&layout=compact&theme=radical&hide_border=true)
+
+</div>
+
+---
+
+## 🎯 Open Source Contributions
+
+<table>
+<tr>
+<td width="50%">
+
+### [Kilo CLI](https://github.com/Patel230/kilocode)
+AI-powered code editor with intelligent assistance
+- **Stack:** TypeScript, Kotlin, CSS, JavaScript, Shell
+- **Role:** Core features & AI integrations
+
+</td>
+<td width="50%">
+
+### [SIM](https://github.com/Patel230/sim)
+Systems Intelligence Management platform
+- **Stack:** TypeScript, MDX, Python, CSS, JavaScript
+- **Role:** System monitoring modules
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📁 Portfolio Structure
+
+```
+src/
+├── 📂 components/          # Reusable UI components
+│   ├── Icon.vue
+│   └── ui/                 # Utilities
+├── 📂 sections/            # Page sections
+│   ├── HeroSection.vue
+│   ├── AboutSection.vue
+│   ├── SkillsSection.vue
+│   ├── ProjectsSection.vue
+│   ├── OpenSourceSection.vue
+│   ├── ContactSection.vue
+│   └── FooterSection.vue
+├── 📂 layout/              # Layout components
+│   └── NavBar.vue
+├── 📂 views/               # Page views
+├── 📂 data/                # Static data
+├── 📂 router/              # Vue router
+└── 📂 composables/         # Vue composables
+```
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/Patel230/portfolio.git
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+---
+
+## 📬 Get in Touch
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/lakshmanp230@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:lakshmanp230@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/lakshman--patel-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/lakshman-patel)
+[![GitHub](https://img.shields.io/badge/@Patel230-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Patel230)
+[![X](https://img.shields.io/badge/@Lakshman2302-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/Lakshman2302)
+
+</div>
+
+---
+
+<div align="center">
+
+### Built with 💛 using [Kilocode](https://kilo.ai/) & [Opencode](https://opencode.ai/)
+
+**© 2026 Lakshman Patel. All rights reserved.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
+</div>
