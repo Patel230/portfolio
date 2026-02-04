@@ -47,8 +47,7 @@ const showCursor = ref(true)
 const roles = [
   'Full Stack Developer',
   'AI Engineer',
-  'Open Source Contributor',
-  'Vue.js & TypeScript Expert'
+  'Open Source Contributor'
 ]
 
 let roleIndex = 0
