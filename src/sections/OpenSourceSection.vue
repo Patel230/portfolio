@@ -54,17 +54,17 @@ import { Icon } from '@/components'
 
 const contributions = [
   {
-    title: 'Kilo CLI',
-    description: 'AI-powered code editor with intelligent assistance. Contributing to core features and AI integrations.',
-    tech: ['TypeScript', 'Kotlin', 'CSS', 'JavaScript', 'Shell'],
+    title: 'Kilo',
+    description: 'All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.',
+    tech: ['TypeScript', 'React', 'VS Code API', 'AI/LLM'],
     link: 'https://github.com/Patel230/kilocode',
     icon: 'kilocode',
     color: '#E5C84B'
   },
   {
-    title: 'SIM',
-    description: 'Systems Intelligence Management platform. Building modules for system monitoring and intelligence.',
-    tech: ['TypeScript', 'MDX', 'Python', 'CSS', 'JavaScript'],
+    title: 'Sim Studio',
+    description: 'Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.',
+    tech: ['Next.js', 'TypeScript', 'Bun', 'PostgreSQL', 'Drizzle', 'Tailwind', 'Socket.io'],
     link: 'https://github.com/Patel230/sim',
     icon: 'sim',
     color: '#6F3DFA'
