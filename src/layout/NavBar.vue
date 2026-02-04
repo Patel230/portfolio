@@ -314,20 +314,21 @@ const handleMenuClick = (event) => {
 
   .nav-links {
     position: fixed;
-    top: 70px;
+    top: 57px;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: var(--bg-primary);
     flex-direction: column;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 16px;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 1000;
-    padding-top: 40px;
+    z-index: 999;
+    padding-top: 30px;
     overflow-y: auto;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 57px);
+    padding-bottom: 30px;
   }
 
   .nav-links.is-open {
@@ -344,6 +345,7 @@ const handleMenuClick = (event) => {
 @media (max-width: 479px) {
   .navbar {
     padding: 12px 0;
+    height: 49px;
   }
   
   .logo-brackets {
@@ -351,12 +353,15 @@ const handleMenuClick = (event) => {
   }
   
   .nav-links {
-    gap: 16px;
-    padding-top: 30px;
+    top: 49px;
+    height: calc(100vh - 49px);
+    gap: 12px;
+    padding-top: 20px;
   }
   
   .nav-link {
     font-size: 1.1rem;
+    padding: 8px 0;
   }
   
   .menu-icon {
@@ -369,7 +374,7 @@ const handleMenuClick = (event) => {
   }
   
   .nav-link::after {
-    bottom: -8px;
+    bottom: -4px;
   }
 }
 

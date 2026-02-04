@@ -17,8 +17,10 @@
         </div>
         <h1 id="hero-title" class="hero-title">Lakshman Patel</h1>
         <p class="hero-subtitle">
-          <span class="typing-text">{{ displayText }}</span>
-          <span class="cursor" :class="{ 'blink': showCursor }">|</span>
+          <span class="typing-wrapper">
+            <span class="typing-text">{{ displayText }}</span>
+            <span class="cursor" :class="{ 'blink': showCursor }">|</span>
+          </span>
         </p>
         <p class="hero-description">
           Building intelligent full-stack applications using AI. 3+ years experience in Python, 
@@ -136,7 +138,7 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 .hero-image.fallback {
@@ -161,6 +163,14 @@ onUnmounted(() => {
   color: var(--text-secondary);
   margin-bottom: 20px;
   min-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.typing-wrapper {
+  display: inline;
+  white-space: nowrap;
 }
 
 .typing-text {
@@ -172,6 +182,7 @@ onUnmounted(() => {
   font-weight: 300;
   display: inline;
   margin-left: 2px;
+  vertical-align: baseline;
 }
 
 .cursor.blink {
@@ -237,9 +248,9 @@ onUnmounted(() => {
   }
   
   .hero-subtitle {
-    font-size: 0.95rem;
-    min-height: 2.5em;
-    padding: 0 16px;
+    font-size: 0.9rem;
+    min-height: 1.5em;
+    padding: 0 10px;
   }
   
   .hero-description {
@@ -262,8 +273,8 @@ onUnmounted(() => {
   }
   
   .hero-image {
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 16px;
     border-width: 2px;
   }
@@ -277,9 +288,9 @@ onUnmounted(() => {
   }
   
   .hero-subtitle {
-    font-size: 0.85rem;
-    min-height: 2.5em;
-    padding: 0 12px;
+    font-size: 0.8rem;
+    min-height: 1.5em;
+    padding: 0 8px;
   }
   
   .hero-description {
@@ -303,8 +314,8 @@ onUnmounted(() => {
 /* Extra Small (< 320px) */
 @media (max-width: 319px) {
   .hero-image {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
   }
   
   .hero-title {
@@ -312,7 +323,8 @@ onUnmounted(() => {
   }
   
   .hero-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    min-height: 1.5em;
   }
   
   .hero-description {
