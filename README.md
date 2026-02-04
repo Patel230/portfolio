@@ -66,7 +66,7 @@ Building intelligent full-stack applications using AI. 3+ years experience in **
 
 <div align="center">
 
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Patel230&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)](https://github.com/Patel230)
+[![GitHub Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=tokyonight&hide_border=true)](https://github.com/Patel230)
 
 </div>
 
