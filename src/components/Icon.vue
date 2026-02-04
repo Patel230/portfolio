@@ -482,10 +482,14 @@ const viewBox = computed(() => icons[props.name]?.viewBox || '0 0 24 24')
 
 const iconComponent = computed(() => {
   const icon = icons[props.name]
-  if (!icon) return null
-
+  
   return {
     render() {
+      // If icon not found, render a default circle
+      if (!icon) {
+        return h('circle', { cx: '12', cy: '12', r: '6', fill: 'currentColor' })
+      }
+      
       return icon.paths.map(path => {
         const hasFill = icon.fill || props.fill !== 'none'
         return h('path', { 

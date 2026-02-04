@@ -52,6 +52,13 @@
           Open Source
         </a>
         <a 
+          :href="githubLink" 
+          class="nav-link"
+          @click.prevent="handleNavClick('github')"
+        >
+          GitHub
+        </a>
+        <a 
           :href="aboutLink" 
           class="nav-link"
           @click.prevent="handleNavClick('about')"
@@ -82,6 +89,7 @@ const menuButtonRef = ref(null)
 
 const isHomePage = computed(() => route.path === '/')
 const opensourceLink = computed(() => isHomePage.value ? '#opensource' : '/#opensource')
+const githubLink = computed(() => isHomePage.value ? '#github' : '/#github')
 const aboutLink = computed(() => isHomePage.value ? '#about' : '/#about')
 const contactLink = computed(() => isHomePage.value ? '#contact' : '/#contact')
 
