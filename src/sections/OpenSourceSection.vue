@@ -54,7 +54,7 @@ import Icon from '@/components/Icon.vue'
 
 const contributions = [
   {
-    title: 'Kilocode',
+    title: 'Kilo CLI',
     description: 'AI-powered code editor with intelligent assistance. Contributing to core features and AI integrations.',
     tech: ['TypeScript', 'Kotlin', 'CSS', 'JavaScript', 'Shell'],
     link: 'https://github.com/Patel230/kilocode',
