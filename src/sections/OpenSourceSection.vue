@@ -1,8 +1,18 @@
 <template>
-  <section id="opensource" class="section opensource" aria-labelledby="opensource-heading">
+  <section
+    id="opensource"
+    class="section opensource"
+    aria-labelledby="opensource-heading"
+  >
     <div class="container">
       <span class="section-label">Open Source</span>
-      <h2 id="opensource-heading" class="section-title">Contributions</h2>
+      <h2
+        id="opensource-heading"
+        class="section-title"
+      >
+        <LucideHeart class="title-icon" />
+        Contributions
+      </h2>
       <div 
         class="opensource-grid" 
         role="list"
@@ -16,12 +26,23 @@
           role="listitem"
           :style="{ '--item-color': item.color }"
         >
-          <div class="opensource-icon" aria-hidden="true" :style="{ backgroundColor: `${item.color}20`, color: item.color }">
-            <Icon :name="item.icon" :size="24" />
+          <div
+            class="opensource-icon"
+            aria-hidden="true"
+            :style="{ backgroundColor: `${item.color}20`, color: item.color }"
+          >
+            <Icon
+              :name="item.icon"
+              :size="24"
+            />
           </div>
           <div class="opensource-content">
-            <h3 class="opensource-title">{{ item.title }}</h3>
-            <p class="opensource-description">{{ item.description }}</p>
+            <h3 class="opensource-title">
+              {{ item.title }}
+            </h3>
+            <p class="opensource-description">
+              {{ item.description }}
+            </p>
             <div class="opensource-tags">
               <span 
                 v-for="tech in item.tech" 
@@ -41,7 +62,10 @@
             :style="{ color: item.color }"
             aria-label="View on GitHub"
           >
-            <Icon name="github" :size="20" />
+            <Icon
+              name="github"
+              :size="20"
+            />
           </a>
         </article>
       </div>
@@ -51,6 +75,7 @@
 
 <script setup>
 import { Icon } from '@/components'
+import { Heart as LucideHeart } from 'lucide-vue-next'
 
 const contributions = [
   {
@@ -75,6 +100,12 @@ const contributions = [
 <style scoped>
 .opensource {
   background-color: var(--bg-secondary);
+}
+
+.title-icon {
+  color: #ef4444;
+  width: 28px;
+  height: 28px;
 }
 
 .opensource-grid {

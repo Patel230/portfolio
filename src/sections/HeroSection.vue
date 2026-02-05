@@ -1,8 +1,14 @@
 <template>
-  <section class="hero" aria-labelledby="hero-title">
+  <section
+    class="hero"
+    aria-labelledby="hero-title"
+  >
     <div class="container">
       <div class="hero-content">
-        <div class="hero-image" :class="{ 'fallback': imageError }">
+        <div
+          class="hero-image"
+          :class="{ 'fallback': imageError }"
+        >
           <img 
             v-if="!imageError"
             src="/lakshman.jpg" 
@@ -12,14 +18,26 @@
             height="140"
             decoding="async"
             @error="handleImageError"
-          />
-          <span v-else class="initials" aria-hidden="true">LP</span>
+          >
+          <span
+            v-else
+            class="initials"
+            aria-hidden="true"
+          >LP</span>
         </div>
-        <h1 id="hero-title" class="hero-title">Lakshman Patel</h1>
+        <h1
+          id="hero-title"
+          class="hero-title"
+        >
+          Lakshman Patel
+        </h1>
         <p class="hero-subtitle">
           <span class="typing-wrapper">
             <span class="typing-text">{{ displayText }}</span>
-            <span class="cursor" :class="{ 'blink': showCursor }">|</span>
+            <span
+              class="cursor"
+              :class="{ 'blink': showCursor }"
+            >|</span>
           </span>
         </p>
         <p class="hero-description">
@@ -27,10 +45,16 @@
           TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script, Git/GitHub, and creating production-ready systems.
         </p>
         <div class="hero-links">
-          <a href="#projects" class="btn btn-primary">
+          <a
+            href="#projects"
+            class="btn btn-primary"
+          >
             <span>View Projects</span>
           </a>
-          <a href="#contact" class="btn btn-outline">
+          <a
+            href="#contact"
+            class="btn btn-outline"
+          >
             <span>Contact</span>
           </a>
         </div>

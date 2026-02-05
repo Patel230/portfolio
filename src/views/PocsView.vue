@@ -2,9 +2,18 @@
   <div class="pocs">
     <section class="pocs-hero">
       <div class="container">
-        <router-link to="/" class="back-link">← Back</router-link>
-        <h1 class="pocs-title">Projects & Creations</h1>
-        <p class="pocs-subtitle">Open source projects and proof-of-concept implementations.</p>
+        <router-link
+          to="/"
+          class="back-link"
+        >
+          ← Back
+        </router-link>
+        <h1 class="pocs-title">
+          Projects & Creations
+        </h1>
+        <p class="pocs-subtitle">
+          Open source projects and proof-of-concept implementations.
+        </p>
       </div>
     </section>
     <section class="section pocs-grid-section">
@@ -24,8 +33,15 @@
             :style="{ '--poc-color': poc.color }"
           >
             <div class="poc-header">
-              <div class="poc-icon" aria-hidden="true" :style="{ backgroundColor: `${poc.color}20`, color: poc.color }">
-                <Icon :name="poc.icon" :size="20" />
+              <div
+                class="poc-icon"
+                aria-hidden="true"
+                :style="{ backgroundColor: `${poc.color}20`, color: poc.color }"
+              >
+                <Icon
+                  :name="poc.icon"
+                  :size="20"
+                />
               </div>
             </div>
             <span 
@@ -34,8 +50,12 @@
             >
               {{ poc.status }}
             </span>
-            <h3 class="poc-name">{{ poc.name }}</h3>
-            <p class="poc-description">{{ poc.description }}</p>
+            <h3 class="poc-name">
+              {{ poc.name }}
+            </h3>
+            <p class="poc-description">
+              {{ poc.description }}
+            </p>
             <div class="poc-tags">
               <span 
                 v-for="tech in poc.tech" 
@@ -55,8 +75,16 @@
               :style="{ color: poc.color }"
             >
               View Project
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M7 17L17 7M17 7H7M17 7V17"/>
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                aria-hidden="true"
+              >
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </a>
           </article>

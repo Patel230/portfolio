@@ -1,22 +1,49 @@
 <template>
-  <footer class="footer" role="contentinfo">
+  <footer
+    class="footer"
+    role="contentinfo"
+  >
     <div class="container">
       <div class="footer-content">
         <div class="footer-brand">
-          <span class="footer-logo" aria-hidden="true">{LP}</span>
+          <span
+            class="footer-logo"
+            aria-hidden="true"
+          >{LP}</span>
           <div class="footer-legal">
-            <p class="footer-copyright">© 2026 Lakshman Patel. All rights reserved.</p>
+            <p class="footer-copyright">
+              © 2026 Lakshman Patel. All rights reserved.
+            </p>
             <p class="footer-built">
               Built with 
-              <span class="heart-icon" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              <span
+                class="heart-icon"
+                aria-hidden="true"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="none"
+                >
+                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
                 </svg>
               </span>
               using 
-              <a href="https://kilo.ai/" target="_blank" rel="noopener noreferrer" class="footer-link">Kilocode</a>
+              <a
+                href="https://kilo.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-link"
+              >Kilocode</a>
               &
-              <a href="https://opencode.ai/" target="_blank" rel="noopener noreferrer" class="footer-link">Opencode</a>
+              <a
+                href="https://opencode.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="footer-link"
+              >Opencode</a>
             </p>
           </div>
         </div>

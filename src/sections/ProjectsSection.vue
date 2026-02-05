@@ -1,8 +1,18 @@
 <template>
-  <section id="projects" class="section projects" aria-labelledby="projects-heading">
+  <section
+    id="projects"
+    class="section projects"
+    aria-labelledby="projects-heading"
+  >
     <div class="container">
       <span class="section-label">Projects</span>
-      <h2 id="projects-heading" class="section-title">Featured Work</h2>
+      <h2
+        id="projects-heading"
+        class="section-title"
+      >
+        <LucideBriefcase class="title-icon" />
+        Featured Work
+      </h2>
       <div 
         class="projects-grid" 
         role="list"
@@ -16,11 +26,22 @@
           role="listitem"
           :style="{ '--project-color': project.color }"
         >
-          <div class="project-icon" aria-hidden="true" :style="{ backgroundColor: `${project.color}20`, color: project.color }">
-            <Icon :name="project.icon" :size="24" />
+          <div
+            class="project-icon"
+            aria-hidden="true"
+            :style="{ backgroundColor: `${project.color}20`, color: project.color }"
+          >
+            <Icon
+              :name="project.icon"
+              :size="24"
+            />
           </div>
-          <h3 class="project-title">{{ project.title }}</h3>
-          <p class="project-description">{{ project.description }}</p>
+          <h3 class="project-title">
+            {{ project.title }}
+          </h3>
+          <p class="project-description">
+            {{ project.description }}
+          </p>
           <div class="project-tags">
             <span 
               v-for="tech in project.tech" 
@@ -40,14 +61,25 @@
             :style="{ color: project.color }"
           >
             View
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
           </a>
         </article>
       </div>
-      <div class="pocs-link">
-        <router-link to="/creations">View all 30+ Creations →</router-link>
+      <div class="view-all-link">
+        <router-link to="/creations" class="view-all-btn">
+          <LucideArrowRight class="view-all-icon" />
+          View All 30+ Creations
+        </router-link>
       </div>
     </div>
   </section>
@@ -56,11 +88,18 @@
 <script setup>
 import { projects } from '@/data/projects.js'
 import { Icon } from '@/components'
+import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
 </script>
 
 <style scoped>
 .projects {
   background-color: var(--bg-secondary);
+}
+
+.title-icon {
+  color: #f59e0b;
+  width: 28px;
+  height: 28px;
 }
 
 .projects-grid {
@@ -165,25 +204,37 @@ import { Icon } from '@/components'
   border-radius: 4px;
 }
 
-.pocs-link {
+.view-all-link {
+  display: flex;
+  justify-content: center;
   margin-top: 40px;
-  text-align: center;
 }
 
-.pocs-link a {
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--text-secondary);
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
-.pocs-link a:hover {
+.view-all-btn:hover {
   color: var(--accent);
+  border-color: var(--accent);
+  transform: translateX(4px);
 }
 
-.pocs-link a:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 4px;
+.view-all-icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* Tablet (768px - 1023px) */
@@ -267,7 +318,7 @@ import { Icon } from '@/components'
     font-size: 0.85rem;
   }
   
-  .pocs-link {
+  .view-all-link {
     margin-top: 24px;
   }
 }

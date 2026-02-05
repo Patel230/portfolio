@@ -1,11 +1,27 @@
 <template>
   <transition name="slide-up">
-    <div v-if="showPrompt" class="update-prompt" role="alert" aria-live="polite">
+    <div
+      v-if="showPrompt"
+      class="update-prompt"
+      role="alert"
+      aria-live="polite"
+    >
       <div class="update-content">
         <span class="update-message">🚀 A new version is available!</span>
         <div class="update-actions">
-          <button class="btn-update" @click="updateApp">Update Now</button>
-          <button class="btn-dismiss" @click="dismissPrompt" aria-label="Dismiss update">×</button>
+          <button
+            class="btn-update"
+            @click="updateApp"
+          >
+            Update Now
+          </button>
+          <button
+            class="btn-dismiss"
+            aria-label="Dismiss update"
+            @click="dismissPrompt"
+          >
+            ×
+          </button>
         </div>
       </div>
     </div>

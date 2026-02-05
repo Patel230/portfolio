@@ -1,11 +1,28 @@
 <template>
   <slot v-if="!hasError" />
-  <div v-else class="error-boundary" role="alert" aria-live="assertive">
+  <div
+    v-else
+    class="error-boundary"
+    role="alert"
+    aria-live="assertive"
+  >
     <div class="error-content">
-      <div class="error-icon" aria-hidden="true">⚠️</div>
-      <h2 class="error-title">Something went wrong</h2>
-      <p class="error-message">We're sorry, but something unexpected happened.</p>
-      <div v-if="isDevelopment && error" class="error-details">
+      <div
+        class="error-icon"
+        aria-hidden="true"
+      >
+        ⚠️
+      </div>
+      <h2 class="error-title">
+        Something went wrong
+      </h2>
+      <p class="error-message">
+        We're sorry, but something unexpected happened.
+      </p>
+      <div
+        v-if="isDevelopment && error"
+        class="error-details"
+      >
         <details>
           <summary>Error details</summary>
           <pre>{{ error.message }}</pre>
@@ -13,10 +30,17 @@
         </details>
       </div>
       <div class="error-actions">
-        <button class="btn btn-primary" @click="resetError">
+        <button
+          class="btn btn-primary"
+          @click="resetError"
+        >
           Try Again
         </button>
-        <router-link to="/" class="btn btn-outline" @click="clearError">
+        <router-link
+          to="/"
+          class="btn btn-outline"
+          @click="clearError"
+        >
           Go Home
         </router-link>
       </div>

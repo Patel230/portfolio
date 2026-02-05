@@ -4,79 +4,56 @@
       <router-link to="/" class="logo" aria-label="Go to homepage">
         <span class="logo-brackets" aria-hidden="true">{LP}</span>
       </router-link>
-      
+
       <!-- Mobile Menu Button -->
-      <button 
+      <button
         ref="menuButtonRef"
-        class="mobile-menu-btn" 
-        @click="toggleMenu"
+        class="mobile-menu-btn"
         :aria-expanded="isMenuOpen"
         aria-controls="nav-menu"
         aria-label="Toggle navigation menu"
+        @click="toggleMenu"
       >
         <span class="menu-icon" :class="{ 'is-open': isMenuOpen }">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </span>
       </button>
-      
+
       <!-- Navigation Links -->
-      <div 
+      <div
         id="nav-menu"
         ref="menuRef"
-        class="nav-links" 
+        class="nav-links"
         :class="{ 'is-open': isMenuOpen }"
         @click="handleMenuClick"
       >
-        <router-link 
-          to="/" 
+        <router-link
+          to="/"
           class="nav-link"
           :class="{ 'router-link-active': $route.path === '/' }"
           @click="closeMenu"
         >
           Home
         </router-link>
-        <router-link 
-          to="/creations" 
-          class="nav-link"
-          @click="closeMenu"
-        >
-          Creations
-        </router-link>
-        <a 
-          :href="opensourceLink" 
-          class="nav-link"
-          @click.prevent="handleNavClick('opensource')"
-        >
+        <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
+        <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
+        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">
           Open Source
         </a>
-        <a 
-          :href="githubLink" 
-          class="nav-link"
-          @click.prevent="handleNavClick('github')"
-        >
+        <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">
           GitHub
         </a>
-        <a 
-          :href="portfolioStackLink" 
+        <a
+          :href="portfolioStackLink"
           class="nav-link"
           @click.prevent="handleNavClick('portfolio-stack')"
         >
           Stack
         </a>
-        <a 
-          :href="aboutLink" 
-          class="nav-link"
-          @click.prevent="handleNavClick('about')"
-        >
-          About
-        </a>
-        <a 
-          :href="contactLink" 
-          class="nav-link"
-          @click.prevent="handleNavClick('contact')"
-        >
+        <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')"> About </a>
+        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')">
           Contact
         </a>
       </div>
@@ -95,11 +72,14 @@ const menuRef = ref(null)
 const menuButtonRef = ref(null)
 
 const isHomePage = computed(() => route.path === '/')
-const opensourceLink = computed(() => isHomePage.value ? '#opensource' : '/#opensource')
-const githubLink = computed(() => isHomePage.value ? '#github' : '/#github')
-const portfolioStackLink = computed(() => isHomePage.value ? '#portfolio-stack' : '/#portfolio-stack')
-const aboutLink = computed(() => isHomePage.value ? '#about' : '/#about')
-const contactLink = computed(() => isHomePage.value ? '#contact' : '/#contact')
+const opensourceLink = computed(() => (isHomePage.value ? '#opensource' : '/#opensource'))
+const githubLink = computed(() => (isHomePage.value ? '#github' : '/#github'))
+const portfolioStackLink = computed(() =>
+  isHomePage.value ? '#portfolio-stack' : '/#portfolio-stack'
+)
+const aboutLink = computed(() => (isHomePage.value ? '#about' : '/#about'))
+const contactLink = computed(() => (isHomePage.value ? '#contact' : '/#contact'))
+
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -109,9 +89,9 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const handleNavClick = (section) => {
+const handleNavClick = section => {
   closeMenu()
-  
+
   if (isHomePage.value) {
     const element = document.getElementById(section)
     if (element) {
@@ -123,7 +103,7 @@ const handleNavClick = (section) => {
 }
 
 // Close menu when clicking outside
-const handleClickOutside = (event) => {
+const handleClickOutside = event => {
   if (
     isMenuOpen.value &&
     menuRef.value &&
@@ -136,7 +116,7 @@ const handleClickOutside = (event) => {
 }
 
 // Close menu on escape key
-const handleEscape = (event) => {
+const handleEscape = event => {
   if (event.key === 'Escape' && isMenuOpen.value) {
     closeMenu()
     menuButtonRef.value?.focus()
@@ -144,7 +124,7 @@ const handleEscape = (event) => {
 }
 
 // Prevent body scroll when menu is open
-const preventBodyScroll = (prevent) => {
+const preventBodyScroll = prevent => {
   if (typeof document !== 'undefined') {
     document.body.style.overflow = prevent ? 'hidden' : ''
   }
@@ -162,11 +142,11 @@ onUnmounted(() => {
 })
 
 // Watch menu state to toggle body scroll
-watch(isMenuOpen, (newValue) => {
+watch(isMenuOpen, newValue => {
   preventBodyScroll(newValue)
 })
 
-const handleMenuClick = (event) => {
+const handleMenuClick = event => {
   // Close menu when clicking on a link
   if (event.target.classList.contains('nav-link')) {
     closeMenu()
@@ -300,7 +280,7 @@ const handleMenuClick = (event) => {
   .nav-links {
     gap: 20px;
   }
-  
+
   .nav-link {
     font-size: 0.8rem;
   }
@@ -347,32 +327,32 @@ const handleMenuClick = (event) => {
     padding: 12px 0;
     height: 49px;
   }
-  
+
   .logo-brackets {
     font-size: 1.25rem;
   }
-  
+
   .nav-links {
     top: 49px;
     height: calc(100vh - 49px);
     gap: 12px;
     padding-top: 20px;
   }
-  
+
   .nav-link {
     font-size: 1.1rem;
     padding: 8px 0;
   }
-  
+
   .menu-icon {
     width: 20px;
     gap: 4px;
   }
-  
+
   .menu-icon span {
     height: 1.5px;
   }
-  
+
   .nav-link::after {
     bottom: -4px;
   }

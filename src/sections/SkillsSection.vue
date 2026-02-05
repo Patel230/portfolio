@@ -1,8 +1,18 @@
 <template>
-  <section id="skills" class="section skills" aria-labelledby="skills-heading">
+  <section
+    id="skills"
+    class="section skills"
+    aria-labelledby="skills-heading"
+  >
     <div class="container">
       <span class="section-label">Skills</span>
-      <h2 id="skills-heading" class="section-title">Technologies</h2>
+      <h2
+        id="skills-heading"
+        class="section-title"
+      >
+        <LucideCode2 class="title-icon" />
+        Technologies
+      </h2>
       <div 
         class="skills-grid" 
         role="list"
@@ -17,12 +27,23 @@
           :style="{ '--category-color': category.color }"
         >
           <h3 class="category-title">
-            <span class="category-icon" aria-hidden="true" :style="{ backgroundColor: `${category.color}20`, color: category.color }">
-              <Icon :name="category.icon" :size="18" />
+            <span
+              class="category-icon"
+              aria-hidden="true"
+              :style="{ backgroundColor: `${category.color}20`, color: category.color }"
+            >
+              <Icon
+                :name="category.icon"
+                :size="18"
+              />
             </span>
             {{ category.name }}
           </h3>
-          <div class="skills-list" role="list" :aria-label="`${category.name} skills`">
+          <div
+            class="skills-list"
+            role="list"
+            :aria-label="`${category.name} skills`"
+          >
             <span 
               v-for="skill in category.skills" 
               :key="skill" 
@@ -42,11 +63,18 @@
 <script setup>
 import { skillCategories } from '@/data/skills.js'
 import { Icon } from '@/components'
+import { Code2 as LucideCode2 } from 'lucide-vue-next'
 </script>
 
 <style scoped>
 .skills {
   background-color: var(--bg-primary);
+}
+
+.title-icon {
+  color: #22c55e;
+  width: 28px;
+  height: 28px;
 }
 
 .skills-grid {

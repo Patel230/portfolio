@@ -1,8 +1,18 @@
 <template>
-  <section id="contact" class="section contact" aria-labelledby="contact-heading">
+  <section
+    id="contact"
+    class="section contact"
+    aria-labelledby="contact-heading"
+  >
     <div class="container">
       <span class="section-label">Contact</span>
-      <h2 id="contact-heading" class="section-title">Get in Touch</h2>
+      <h2
+        id="contact-heading"
+        class="section-title"
+      >
+        <LucideMail class="title-icon" />
+        Get in Touch
+      </h2>
       <div 
         class="contact-grid" 
         role="list"
@@ -18,7 +28,11 @@
           role="listitem"
           @click="handleContactClick(item)"
         >
-          <span class="contact-icon" :class="`icon-${index}`" aria-hidden="true">
+          <span
+            class="contact-icon"
+            :class="`icon-${index}`"
+            aria-hidden="true"
+          >
             <svg 
               width="20" 
               height="20" 
@@ -27,7 +41,11 @@
               :stroke="item.stroke || 'currentColor'"
               stroke-width="2"
             >
-              <path v-for="(path, i) in item.paths" :key="i" :d="path" />
+              <path
+                v-for="(path, i) in item.paths"
+                :key="i"
+                :d="path"
+              />
             </svg>
           </span>
           <span class="contact-info">
@@ -42,6 +60,7 @@
 
 <script setup>
 import { useAnalytics } from '@/composables/useAnalytics.js'
+import { Mail as LucideMail } from 'lucide-vue-next'
 
 const { trackEvent, trackExternalLink } = useAnalytics()
 
@@ -115,6 +134,12 @@ const handleContactClick = (item) => {
 <style scoped>
 .contact {
   background-color: var(--bg-secondary);
+}
+
+.title-icon {
+  color: #ec4899;
+  width: 28px;
+  height: 28px;
 }
 
 .contact-grid {

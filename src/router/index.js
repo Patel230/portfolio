@@ -12,6 +12,15 @@ const routes = [
     }
   },
   {
+    path: '/gallery',
+    name: 'Gallery',
+    component: () => import('@/views/GalleryView.vue'),
+    meta: {
+      title: 'Project Gallery | Lakshman Patel',
+      description: 'Explore all 30+ projects with detailed image galleries and screenshots.'
+    }
+  },
+  {
     path: '/creations',
     name: 'Creations',
     component: () => import('@/views/PocsView.vue'),

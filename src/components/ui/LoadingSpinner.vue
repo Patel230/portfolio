@@ -1,7 +1,16 @@
 <template>
-  <div class="loading-container" role="status" aria-live="polite">
-    <div class="spinner" aria-hidden="true"></div>
-    <p class="loading-text">Loading...</p>
+  <div
+    class="loading-container"
+    role="status"
+    aria-live="polite"
+  >
+    <div
+      class="spinner"
+      aria-hidden="true"
+    />
+    <p class="loading-text">
+      Loading...
+    </p>
   </div>
 </template>
 

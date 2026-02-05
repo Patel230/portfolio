@@ -1,8 +1,18 @@
 <template>
-  <section id="github" class="section github" aria-labelledby="github-heading">
+  <section
+    id="github"
+    class="section github"
+    aria-labelledby="github-heading"
+  >
     <div class="container">
       <span class="section-label">GitHub</span>
-      <h2 id="github-heading" class="section-title">Stats & Activity</h2>
+      <h2
+        id="github-heading"
+        class="section-title"
+      >
+        <LucideGithub class="title-icon" />
+        Stats & Activity
+      </h2>
       
       <div class="github-content">
         <!-- Stats Image -->
@@ -18,7 +28,7 @@
               alt="GitHub Stats"
               class="stats-image"
               loading="lazy"
-            />
+            >
           </a>
         </div>
 
@@ -32,11 +42,21 @@
             rel="noopener noreferrer"
             class="github-link-item"
           >
-            <span class="link-icon" aria-hidden="true">
-              <Icon :name="link.icon" :size="20" />
+            <span
+              class="link-icon"
+              aria-hidden="true"
+            >
+              <Icon
+                :name="link.icon"
+                :size="20"
+              />
             </span>
             <span class="link-text">{{ link.label }}</span>
-            <Icon name="external" :size="16" class="link-arrow" />
+            <Icon
+              name="external"
+              :size="16"
+              class="link-arrow"
+            />
           </a>
         </div>
       </div>
@@ -46,6 +66,7 @@
 
 <script setup>
 import { Icon } from '@/components'
+import { Github as LucideGithub } from 'lucide-vue-next'
 
 const githubLinks = [
   {
@@ -69,6 +90,12 @@ const githubLinks = [
 <style scoped>
 .github {
   background-color: var(--bg-primary);
+}
+
+.title-icon {
+  color: #9ca3af;
+  width: 28px;
+  height: 28px;
 }
 
 .github-content {

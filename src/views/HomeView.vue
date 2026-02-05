@@ -4,6 +4,7 @@
     <AboutSection />
     <SkillsSection />
     <ProjectsSection />
+    <GallerySection />
     <OpenSourceSection />
     <GitHubSection />
     <PortfolioStackSection />
@@ -17,6 +18,7 @@ import {
   AboutSection,
   SkillsSection,
   ProjectsSection,
+  GallerySection,
   OpenSourceSection,
   GitHubSection,
   PortfolioStackSection,

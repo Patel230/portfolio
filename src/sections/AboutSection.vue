@@ -1,8 +1,18 @@
 <template>
-  <section id="about" class="section about" aria-labelledby="about-heading">
+  <section
+    id="about"
+    class="section about"
+    aria-labelledby="about-heading"
+  >
     <div class="container">
       <span class="section-label">About</span>
-      <h2 id="about-heading" class="section-title">About Me</h2>
+      <h2
+        id="about-heading"
+        class="section-title"
+      >
+        <LucideUser class="title-icon" />
+        About Me
+      </h2>
       <div class="about-content">
         <div class="about-text">
           <p>
@@ -10,15 +20,26 @@
             Creating production-ready systems using Python, TypeScript, and modern frameworks.
           </p>
           <p>
-            Co-founder of <a href="https://graphdone.com/" target="_blank" rel="noopener noreferrer"><strong>GraphDone</strong></a> - an open-source graph-native project management 
+            Co-founder of <a
+              href="https://graphdone.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ><strong>GraphDone</strong></a> - an open-source graph-native project management 
             platform with AI-powered features.
           </p>
           <p>
-            Built <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"><strong>TaskDone</strong></a> and 
+            Built <a
+              href="https://taskdone.gateandtech.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ><strong>TaskDone</strong></a> and 
             <strong>30+ Full stack applications powered with Intelligent System</strong>.
           </p>
         </div>
-        <aside class="about-info" aria-label="Personal Information">
+        <aside
+          class="about-info"
+          aria-label="Personal Information"
+        >
           <div class="info-item">
             <span class="info-label">Education</span>
             <span class="info-value">M.Tech Information Security</span>
@@ -31,7 +52,10 @@
           <div class="info-item">
             <span class="info-label">Status</span>
             <span class="info-value">
-              <span class="status-indicator" aria-hidden="true"></span>
+              <span
+                class="status-indicator"
+                aria-hidden="true"
+              />
               Available for work
             </span>
           </div>
@@ -42,6 +66,7 @@
 </template>
 
 <script setup>
+import { User as LucideUser } from 'lucide-vue-next'
 </script>
 
 <style scoped>
@@ -128,6 +153,12 @@
 .info-sub {
   font-size: 0.9rem;
   color: var(--text-secondary);
+}
+
+.title-icon {
+  color: #3b82f6;
+  width: 28px;
+  height: 28px;
 }
 
 .status-indicator {
