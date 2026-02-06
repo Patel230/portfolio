@@ -343,4 +343,7 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
     transform: none;
   }
 }
+.section-label {
+  color: #06b6d4;
+}
 </style>

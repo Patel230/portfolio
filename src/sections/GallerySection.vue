@@ -1,13 +1,12 @@
 <template>
-  <section id="gallery" class="gallery-section">
+  <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">
-          <LucideImages class="title-icon" />
-          Project Gallery
-        </h2>
-        <p class="section-subtitle">Visual showcase of my work - click to explore</p>
-      </div>
+      <span class="section-label">Gallery</span>
+      <h2 id="gallery-heading" class="section-title">
+        <LucideImages class="title-icon" />
+        Project Gallery
+      </h2>
+      <p class="section-subtitle">Visual showcase of my work - click to explore</p>
 
       <TransitionGroup name="gallery-grid" tag="div" class="gallery-grid">
         <div
@@ -248,8 +247,14 @@ onUnmounted(() => {
 
 
 
-.section-header {
-  margin-bottom: 3rem;
+.section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #a855f7;
+  margin-bottom: 12px;
 }
 
 .section-title {

@@ -237,4 +237,7 @@ import { Code2 as LucideCode2 } from 'lucide-vue-next'
     transform: none;
   }
 }
+.section-label {
+  color: #22c55e;
+}
 </style>

@@ -353,4 +353,7 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
     transform: none;
   }
 }
+.section-label {
+  color: #f59e0b;
+}
 </style>

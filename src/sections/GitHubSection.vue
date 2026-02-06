@@ -301,4 +301,7 @@ const githubLinks = [
     transform: none;
   }
 }
+.section-label {
+  color: #9ca3af;
+}
 </style>

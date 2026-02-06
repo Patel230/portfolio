@@ -317,4 +317,7 @@ const contributions = [
     transform: none;
   }
 }
+.section-label {
+  color: #ef4444;
+}
 </style>

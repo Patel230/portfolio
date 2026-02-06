@@ -282,4 +282,7 @@ import { User as LucideUser } from 'lucide-vue-next'
     transition: none;
   }
 }
+.section-label {
+  color: #3b82f6;
+}
 </style>

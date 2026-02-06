@@ -302,4 +302,7 @@ const handleContactClick = (item) => {
     transform: none;
   }
 }
+.section-label {
+  color: #ec4899;
+}
 </style>
