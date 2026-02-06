@@ -62,14 +62,6 @@
             <LucideX />
           </button>
 
-          <button
-            class="lightbox-nav lightbox-prev"
-            aria-label="Previous project"
-            @click="navigateProject(-1)"
-          >
-            <LucideChevronLeft />
-          </button>
-
           <div v-if="currentProject" class="lightbox-content">
             <div class="lightbox-header">
               <h3 class="lightbox-title">{{ currentProject.name }}</h3>
@@ -127,25 +119,6 @@
               </button>
             </div>
           </div>
-
-          <button
-            class="lightbox-nav lightbox-next"
-            aria-label="Next project"
-            @click="navigateProject(1)"
-          >
-            <LucideChevronRight />
-          </button>
-
-          <div class="lightbox-indicators">
-            <button
-              v-for="(project, index) in galleryProjects"
-              :key="project.id"
-              :class="['indicator', { active: currentProjectIndex === index }]"
-              @click="goToProject(index)"
-            >
-              {{ index + 1 }}
-            </button>
-          </div>
         </div>
       </Transition>
     </Teleport>
@@ -178,18 +151,6 @@ const openLightbox = project => {
 const closeLightbox = () => {
   lightboxOpen.value = false
   document.body.style.overflow = ''
-}
-
-const navigateProject = direction => {
-  currentProjectIndex.value =
-    (currentProjectIndex.value + direction + galleryProjects.length) %
-    galleryProjects.length
-  carouselIndex.value = 0
-}
-
-const goToProject = index => {
-  currentProjectIndex.value = index
-  carouselIndex.value = 0
 }
 
 const navigateCarousel = direction => {

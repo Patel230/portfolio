@@ -67,14 +67,6 @@
               <LucideX />
             </button>
 
-            <button
-              class="lightbox-nav lightbox-prev"
-              aria-label="Previous project"
-              @click="navigateProject(-1)"
-            >
-              <LucideChevronLeft />
-            </button>
-
             <div v-if="currentProject" class="lightbox-content">
               <div class="lightbox-header">
                 <h3 class="lightbox-title">
@@ -140,25 +132,6 @@
                 </button>
               </div>
             </div>
-
-            <button
-              class="lightbox-nav lightbox-next"
-              aria-label="Next project"
-              @click="navigateProject(1)"
-            >
-              <LucideChevronRight />
-            </button>
-
-            <div class="lightbox-indicators">
-              <button
-                v-for="(project, index) in filteredProjects"
-                :key="project.id"
-                :class="['indicator', { active: currentProjectIndex === index }]"
-                @click="goToProject(index)"
-              >
-                {{ index + 1 }}
-              </button>
-            </div>
           </div>
         </Transition>
       </Teleport>
@@ -183,10 +156,10 @@ const carouselIndex = ref(0)
 
 const featuredProjects = computed(() => galleryProjects.slice(0, 9))
 
-const currentProject = computed(() => filteredProjects.value[currentProjectIndex.value])
+const currentProject = computed(() => featuredProjects.value[currentProjectIndex.value])
 
 const openLightbox = project => {
-  currentProjectIndex.value = filteredProjects.value.findIndex(p => p.id === project.id)
+  currentProjectIndex.value = featuredProjects.value.findIndex(p => p.id === project.id)
   carouselIndex.value = 0
   lightboxOpen.value = true
   document.body.style.overflow = 'hidden'
@@ -195,18 +168,6 @@ const openLightbox = project => {
 const closeLightbox = () => {
   lightboxOpen.value = false
   document.body.style.overflow = ''
-}
-
-const navigateProject = direction => {
-  currentProjectIndex.value =
-    (currentProjectIndex.value + direction + filteredProjects.value.length) %
-    filteredProjects.value.length
-  carouselIndex.value = 0
-}
-
-const goToProject = index => {
-  currentProjectIndex.value = index
-  carouselIndex.value = 0
 }
 
 const navigateCarousel = direction => {
@@ -469,32 +430,6 @@ onUnmounted(() => {
   transform: rotate(90deg);
 }
 
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 50%;
-  color: #f8fafc;
-  cursor: pointer;
-  transition: all 0.2s;
-  z-index: 10;
-}
-
-.lightbox-nav:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.lightbox-prev {
-  left: 2rem;
-}
-
-.lightbox-next {
-  right: 2rem;
-}
-
 .lightbox-content {
   width: 100%;
   max-width: 900px;
@@ -628,37 +563,6 @@ onUnmounted(() => {
   object-fit: cover;
 }
 
-.lightbox-indicators {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-}
-
-.indicator {
-  width: 1.75rem;
-  height: 1.75rem;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #94a3b8;
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.indicator:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.indicator.active {
-  background: #a855f7;
-  color: #fff;
-}
-
 .gallery-grid-move,
 .gallery-grid-enter-active,
 .gallery-grid-leave-active {
@@ -700,18 +604,6 @@ onUnmounted(() => {
     max-width: 95%;
   }
 
-  .lightbox-nav {
-    padding: 0.75rem;
-  }
-
-  .lightbox-prev {
-    left: 1rem;
-  }
-
-  .lightbox-next {
-    right: 1rem;
-  }
-
   .thumbnail {
     width: 70px;
     height: 45px;
@@ -750,18 +642,6 @@ onUnmounted(() => {
 
   .lightbox-title {
     font-size: 1.5rem;
-  }
-
-  .lightbox-prev {
-    left: 0.5rem;
-  }
-
-  .lightbox-next {
-    right: 0.5rem;
-  }
-
-  .lightbox-nav {
-    padding: 0.625rem;
   }
 
   .image-carousel {
@@ -846,16 +726,6 @@ onUnmounted(() => {
     font-size: 0.875rem;
   }
 
-  .lightbox-prev {
-    left: 0.25rem;
-    padding: 0.5rem;
-  }
-
-  .lightbox-next {
-    right: 0.25rem;
-    padding: 0.5rem;
-  }
-
   .carousel-nav {
     padding: 0.5rem;
   }
@@ -885,10 +755,6 @@ onUnmounted(() => {
 
   .section-title {
     font-size: 1.25rem;
-  }
-
-  .lightbox-nav {
-    display: none;
   }
 
   .thumbnail {
