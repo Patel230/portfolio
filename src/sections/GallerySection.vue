@@ -733,6 +733,16 @@ onUnmounted(() => {
     gap: 14px;
   }
 
+  /* Always show overlay on mobile - no hover on touch devices */
+  .overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 40%, rgba(13, 13, 13, 0.95) 100%);
+  }
+
+  .overlay-content {
+    transform: translateY(0);
+  }
+
   .lightbox-content {
     max-width: 100%;
     padding: 0 0.5rem;
@@ -793,8 +803,15 @@ onUnmounted(() => {
     gap: 12px;
   }
 
+  /* Always show overlay on mobile - no hover on touch devices */
   .overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 40%, rgba(13, 13, 13, 0.95) 100%);
     padding: 16px;
+  }
+
+  .overlay-content {
+    transform: translateY(0);
   }
 
   .overlay-title {

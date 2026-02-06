@@ -70,8 +70,11 @@ import {
 /* Mobile adjustments */
 @media (max-width: 767px) {
   .version-update {
-    top: 70px;
-    right: 15px;
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 10px auto 0;
+    width: fit-content;
     font-size: 0.75rem;
     padding: 8px 12px;
   }
@@ -79,8 +82,6 @@ import {
 
 @media (max-width: 479px) {
   .version-update {
-    top: 60px;
-    right: 10px;
     font-size: 0.7rem;
     padding: 6px 10px;
     gap: 4px;
@@ -88,8 +89,8 @@ import {
   }
   
   .version-update :deep(svg) {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
   }
 }
 </style>
