@@ -148,18 +148,6 @@ const handleContactClick = (item) => {
   gap: 16px;
 }
 
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .contact-item {
   display: flex;
   align-items: center;
