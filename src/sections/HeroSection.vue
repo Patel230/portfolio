@@ -126,9 +126,9 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid var(--accent);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(255, 215, 0, 0.2),
     0 20px 50px rgba(0, 0, 0, 0.4);
   transition:
     transform 0.4s ease,
