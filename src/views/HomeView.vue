@@ -6,10 +6,10 @@
       <span>Updated: v1.0.1 (February 6, 2026)</span>
     </div>
     <HeroSection />
+    <GallerySection />
     <AboutSection />
     <SkillsSection />
     <ProjectsSection />
-    <GallerySection />
     <OpenSourceSection />
     <GitHubSection />
     <PortfolioStackSection />
