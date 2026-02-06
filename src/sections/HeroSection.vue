@@ -3,19 +3,27 @@
     class="hero"
     aria-labelledby="hero-title"
   >
+    <!-- Animated gradient orbs -->
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    
     <div class="container">
       <div class="hero-content">
         <div
           class="hero-image"
           :class="{ 'fallback': imageError }"
         >
+          <div class="hero-image-glow"></div>
           <img 
             v-if="!imageError"
             src="/lakshman.jpg" 
             alt="Lakshman Patel - Full Stack Developer"
             loading="eager"
-            width="140"
-            height="140"
+            width="150"
+            height="150"
             decoding="async"
             @error="handleImageError"
           >
@@ -131,31 +139,122 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated gradient background orbs */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.1) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  animation-delay: -7s;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -14s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.02);
+  }
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-image {
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 28px;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 32px;
   border-radius: 50%;
   overflow: hidden;
-  border: 3px solid var(--accent);
-  box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  padding: 3px;
 }
 
-.hero-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 30px rgba(251, 191, 36, 0.3);
+.hero-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.hero-image-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, transparent 70%);
+  filter: blur(20px);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
 }
 
 .hero-image img {
@@ -163,29 +262,38 @@ onUnmounted(() => {
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-image.fallback {
-  background-color: var(--accent);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
 }
 
 .initials {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
   color: var(--bg-primary);
+  font-family: var(--font-display);
 }
 
 .hero-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   min-height: 1.5em;
   white-space: nowrap;
   overflow: hidden;
@@ -220,15 +328,18 @@ onUnmounted(() => {
 }
 
 .hero-description {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 36px;
   line-height: 1.8;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-links {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -241,16 +352,26 @@ onUnmounted(() => {
   }
   
   .hero-image {
-    width: 120px;
-    height: 120px;
+    width: 130px;
+    height: 130px;
   }
   
   .hero-title {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
   
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+  
+  .orb-1 {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .orb-2 {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -262,30 +383,34 @@ onUnmounted(() => {
   }
   
   .hero-image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
+    width: 110px;
+    height: 110px;
+    margin-bottom: 24px;
   }
   
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
   
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 1rem;
     min-height: 1.5em;
     padding: 0 10px;
   }
   
   .hero-description {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 0 8px;
   }
   
   .hero-links {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 12px;
+  }
+  
+  .gradient-orb {
+    filter: blur(60px);
   }
 }
 
@@ -297,14 +422,48 @@ onUnmounted(() => {
   }
   
   .hero-image {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 16px;
-    border-width: 2px;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
   }
   
   .initials {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9rem;
+    min-height: 1.5em;
+    padding: 0 8px;
+  }
+  
+  .hero-description {
+    font-size: 0.85rem;
+    margin-bottom: 28px;
+    padding: 0 4px;
+  }
+  
+  .hero-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  
+  .gradient-orb {
+    filter: blur(40px);
+    opacity: 0.3;
+  }
+}
+
+/* Extra Small (< 320px) */
+@media (max-width: 319px) {
+  .hero-image {
+    width: 90px;
+    height: 90px;
   }
   
   .hero-title {
@@ -314,55 +473,19 @@ onUnmounted(() => {
   .hero-subtitle {
     font-size: 0.8rem;
     min-height: 1.5em;
-    padding: 0 8px;
   }
   
   .hero-description {
     font-size: 0.8rem;
-    margin-bottom: 20px;
-    padding: 0 4px;
-  }
-  
-  .hero-links {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-  
-  .btn {
-    padding: 10px 16px;
-    font-size: 0.85rem;
-  }
-}
-
-/* Extra Small (< 320px) */
-@media (max-width: 319px) {
-  .hero-image {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .hero-title {
-    font-size: 1.25rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 0.75rem;
-    min-height: 1.5em;
-  }
-  
-  .hero-description {
-    font-size: 0.75rem;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-image {
+  .hero-image,
+  .gradient-orb,
+  .hero-image-glow {
+    animation: none;
     transition: none;
-  }
-
-  .hero-image:hover {
-    transform: none;
   }
 
   .cursor.blink {

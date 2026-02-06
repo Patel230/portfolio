@@ -160,12 +160,23 @@ const handleMenuClick = event => {
   top: 0;
   left: 0;
   right: 0;
-  background-color: rgba(13, 13, 13, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  background-color: rgba(13, 13, 13, 0.8);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 1000;
   padding: 16px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
 }
 
 .navbar-content {
@@ -185,21 +196,24 @@ const handleMenuClick = event => {
 }
 
 .logo-brackets {
-  font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent) 0%, #fcd34d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: -0.02em;
-  transition: text-shadow 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 .logo:hover .logo-brackets {
-  text-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+  filter: brightness(1.2);
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  gap: 32px;
   align-items: center;
 }
 
@@ -207,23 +221,27 @@ const handleMenuClick = event => {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
   position: relative;
+  letter-spacing: 0.01em;
 }
 
 .nav-link:hover,
 .nav-link.router-link-active {
   color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background-color: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  border-radius: 2px;
   transition: width 0.2s ease;
 }
 
@@ -261,10 +279,12 @@ const handleMenuClick = event => {
   height: 2px;
   background-color: var(--text-primary);
   transition: all 0.3s ease;
+  border-radius: 2px;
 }
 
 .menu-icon.is-open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
+  background-color: var(--accent);
 }
 
 .menu-icon.is-open span:nth-child(2) {
@@ -273,6 +293,7 @@ const handleMenuClick = event => {
 
 .menu-icon.is-open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+  background-color: var(--accent);
 }
 
 /* Tablet (768px - 1023px) */
@@ -298,7 +319,8 @@ const handleMenuClick = event => {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--bg-primary);
+    background-color: rgba(13, 13, 13, 0.98);
+    backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: flex-start;
     gap: 16px;
@@ -318,6 +340,12 @@ const handleMenuClick = event => {
   .nav-link {
     font-size: 1.25rem;
     font-weight: 600;
+  }
+  
+  .nav-link::after {
+    bottom: -4px;
+    left: 0;
+    transform: none;
   }
 }
 
@@ -365,6 +393,10 @@ const handleMenuClick = event => {
   }
 
   .menu-icon span {
+    transition: none;
+  }
+  
+  .nav-link {
     transition: none;
   }
 }

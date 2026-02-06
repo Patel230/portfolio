@@ -204,9 +204,19 @@ onUnmounted(() => {
 .gallery-section {
   padding: 80px 1.5rem;
   background-color: var(--bg-primary);
+  position: relative;
 }
 
-
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3), transparent);
+}
 
 .section-label {
   display: inline-block;
@@ -216,16 +226,22 @@ onUnmounted(() => {
   letter-spacing: 0.15em;
   color: #a855f7;
   margin-bottom: 12px;
+  padding: 6px 14px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
 }
 
 .section-title {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 800;
   color: var(--text-primary);
   margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
 
 .title-icon {
@@ -236,30 +252,33 @@ onUnmounted(() => {
 
 .section-subtitle {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin: 0;
+  font-size: 1rem;
+  margin: 0 0 40px;
+  line-height: 1.6;
 }
 
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 24px;
 }
 
 .gallery-item {
   position: relative;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  transition: all 0.2s ease;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(168, 85, 247, 0.1);
 }
 
 .image-wrapper {
@@ -272,11 +291,11 @@ onUnmounted(() => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .gallery-item:hover .gallery-image {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .image-count-badge {
@@ -286,14 +305,15 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.375rem;
-  padding: 0.375rem 0.75rem;
+  padding: 0.5rem 0.875rem;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   border-radius: 9999px;
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .badge-icon {
@@ -304,7 +324,7 @@ onUnmounted(() => {
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(13, 13, 13, 0.95) 100%);
+  background: linear-gradient(180deg, transparent 20%, rgba(13, 13, 13, 0.98) 100%);
   display: flex;
   align-items: flex-end;
   padding: 24px;
@@ -326,73 +346,80 @@ onUnmounted(() => {
 }
 
 .overlay-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.375rem;
 }
 
 .overlay-description {
   font-size: 0.875rem;
   color: var(--text-secondary);
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.875rem;
+  line-height: 1.5;
 }
 
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.375rem;
-  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+  margin-bottom: 0.875rem;
 }
 
 .tech-tag {
-  padding: 4px 12px;
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border);
+  padding: 5px 12px;
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 20px;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 0.7rem;
+  color: #c4b5fd;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .view-full {
   font-size: 0.875rem;
-  color: var(--accent);
-  font-weight: 500;
-  transition: opacity 0.2s ease;
+  color: #a855f7;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .view-full:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+  color: #c084fc;
 }
 
 .view-all-link {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 48px;
 }
 
 .view-all-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.5rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
+  gap: 0.625rem;
+  padding: 1rem 2rem;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  color: #c4b5fd;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .view-all-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateX(4px);
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+  color: #a855f7;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
 }
 
 .view-all-icon {
@@ -408,16 +435,16 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
 }
 
 .lightbox-close {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  padding: 0.75rem;
+  padding: 0.875rem;
   background: rgba(255, 255, 255, 0.1);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #f8fafc;
   cursor: pointer;
@@ -442,8 +469,9 @@ onUnmounted(() => {
 }
 
 .lightbox-title {
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
   color: #f8fafc;
   margin: 0 0 0.5rem;
 }
@@ -451,6 +479,7 @@ onUnmounted(() => {
 .lightbox-description {
   color: #94a3b8;
   margin: 0 0 1rem;
+  line-height: 1.6;
 }
 
 .lightbox-tech {
@@ -467,9 +496,9 @@ onUnmounted(() => {
 }
 
 .carousel-nav {
-  padding: 0.75rem;
+  padding: 0.875rem;
   background: rgba(255, 255, 255, 0.1);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: #f8fafc;
   cursor: pointer;
@@ -477,7 +506,8 @@ onUnmounted(() => {
 }
 
 .carousel-nav:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(168, 85, 247, 0.3);
+  border-color: rgba(168, 85, 247, 0.5);
 }
 
 .carousel-nav:disabled {
@@ -489,8 +519,9 @@ onUnmounted(() => {
   flex: 1;
   aspect-ratio: 16/9;
   overflow: hidden;
-  border-radius: 0.5rem;
+  border-radius: 12px;
   background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .carousel-image {
@@ -520,6 +551,7 @@ onUnmounted(() => {
   font-size: 0.875rem;
   color: #64748b;
   margin-bottom: 0.25rem;
+  font-weight: 500;
 }
 
 .image-caption {
@@ -542,7 +574,7 @@ onUnmounted(() => {
   height: 50px;
   padding: 0;
   border: 2px solid transparent;
-  border-radius: 0.375rem;
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.2s;
@@ -555,6 +587,7 @@ onUnmounted(() => {
 
 .thumbnail.active {
   border-color: #a855f7;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
 .thumbnail img {
@@ -597,7 +630,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
+    gap: 20px;
   }
 
   .lightbox-content {
@@ -622,7 +655,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .lightbox-content {
@@ -662,6 +695,7 @@ onUnmounted(() => {
 
   .section-label {
     font-size: 0.7rem;
+    padding: 5px 12px;
   }
 
   .section-subtitle {
@@ -670,7 +704,7 @@ onUnmounted(() => {
 
   .gallery-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
   }
 
   .overlay {
@@ -723,7 +757,7 @@ onUnmounted(() => {
   }
 
   .view-all-btn {
-    padding: 0.75rem 1.25rem;
+    padding: 0.875rem 1.5rem;
     font-size: 0.875rem;
     width: 100%;
     justify-content: center;
