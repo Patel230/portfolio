@@ -3,7 +3,7 @@
     <!-- Version Update Badge -->
     <div class="version-update">
       <Icon name="calendar" size="14" />
-      <span>Updated: v1.0.1 (February 6, 2026)</span>
+      <span>Updated: v2.0.0 (February 7, 2026)</span>
     </div>
     <HeroSection />
     <GallerySection />

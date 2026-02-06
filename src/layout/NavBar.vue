@@ -176,7 +176,7 @@ const handleMenuClick = event => {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.3), transparent);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .navbar-content {
@@ -199,10 +199,7 @@ const handleMenuClick = event => {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--accent) 0%, #fcd34d 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--accent);
   letter-spacing: -0.02em;
   transition: filter 0.2s ease;
 }
@@ -240,7 +237,7 @@ const handleMenuClick = event => {
   transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  background: var(--accent);
   border-radius: 2px;
   transition: width 0.2s ease;
 }

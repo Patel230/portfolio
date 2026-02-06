@@ -215,21 +215,21 @@ onUnmounted(() => {
   transform: translateX(-50%);
   width: 80%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.3), transparent);
+  background: rgba(255, 215, 0, 0.2);
 }
 
 .section-label {
   display: inline-block;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #a855f7;
+  color: var(--accent);
   margin-bottom: 12px;
-  padding: 6px 14px;
-  background: rgba(168, 85, 247, 0.1);
-  border: 1px solid rgba(168, 85, 247, 0.2);
-  border-radius: 20px;
+  padding: 8px 16px;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 4px;
 }
 
 .section-title {
@@ -245,16 +245,16 @@ onUnmounted(() => {
 }
 
 .title-icon {
-  color: #a855f7;
+  color: var(--accent);
   width: 28px;
   height: 28px;
 }
 
 .section-subtitle {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 1rem;
   margin: 0 0 40px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .gallery-grid {
@@ -274,11 +274,11 @@ onUnmounted(() => {
 }
 
 .gallery-item:hover {
-  border-color: rgba(168, 85, 247, 0.5);
+  border-color: rgba(255, 215, 0, 0.5);
   transform: translateY(-4px);
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 30px rgba(168, 85, 247, 0.1);
+    0 0 30px rgba(255, 215, 0, 0.1);
 }
 
 .image-wrapper {
@@ -324,7 +324,7 @@ onUnmounted(() => {
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 20%, rgba(13, 13, 13, 0.98) 100%);
+  background: rgba(13, 13, 13, 0.9);
   display: flex;
   align-items: flex-end;
   padding: 24px;
@@ -369,18 +369,18 @@ onUnmounted(() => {
 
 .tech-tag {
   padding: 5px 12px;
-  background: rgba(168, 85, 247, 0.15);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: 20px;
-  font-size: 0.7rem;
-  color: #c4b5fd;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--accent);
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .view-full {
   font-size: 0.875rem;
-  color: #a855f7;
+  color: var(--accent);
   font-weight: 600;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -389,7 +389,7 @@ onUnmounted(() => {
 }
 
 .view-full:hover {
-  color: #c084fc;
+  color: var(--accent-hover);
 }
 
 .view-all-link {
@@ -403,10 +403,10 @@ onUnmounted(() => {
   align-items: center;
   gap: 0.625rem;
   padding: 1rem 2rem;
-  background: rgba(168, 85, 247, 0.1);
-  border: 1px solid rgba(168, 85, 247, 0.3);
-  border-radius: 12px;
-  color: #c4b5fd;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 4px;
+  color: var(--accent);
   font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
@@ -415,11 +415,11 @@ onUnmounted(() => {
 }
 
 .view-all-btn:hover {
-  background: rgba(168, 85, 247, 0.2);
-  border-color: rgba(168, 85, 247, 0.5);
-  color: #a855f7;
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.5);
+  color: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
 }
 
 .view-all-icon {
@@ -506,8 +506,8 @@ onUnmounted(() => {
 }
 
 .carousel-nav:hover:not(:disabled) {
-  background: rgba(168, 85, 247, 0.3);
-  border-color: rgba(168, 85, 247, 0.5);
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.4);
 }
 
 .carousel-nav:disabled {
@@ -586,8 +586,8 @@ onUnmounted(() => {
 }
 
 .thumbnail.active {
-  border-color: #a855f7;
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  border-color: var(--accent);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 .thumbnail img {
