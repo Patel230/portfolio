@@ -1,28 +1,11 @@
 <template>
   <slot v-if="!hasError" />
-  <div
-    v-else
-    class="error-boundary"
-    role="alert"
-    aria-live="assertive"
-  >
+  <div v-else class="error-boundary" role="alert" aria-live="assertive">
     <div class="error-content">
-      <div
-        class="error-icon"
-        aria-hidden="true"
-      >
-        ⚠️
-      </div>
-      <h2 class="error-title">
-        Something went wrong
-      </h2>
-      <p class="error-message">
-        We're sorry, but something unexpected happened.
-      </p>
-      <div
-        v-if="isDevelopment && error"
-        class="error-details"
-      >
+      <div class="error-icon" aria-hidden="true">⚠️</div>
+      <h2 class="error-title">Something went wrong</h2>
+      <p class="error-message">We're sorry, but something unexpected happened.</p>
+      <div v-if="isDevelopment && error" class="error-details">
         <details>
           <summary>Error details</summary>
           <pre>{{ error.message }}</pre>
@@ -30,19 +13,8 @@
         </details>
       </div>
       <div class="error-actions">
-        <button
-          class="btn btn-primary"
-          @click="resetError"
-        >
-          Try Again
-        </button>
-        <router-link
-          to="/"
-          class="btn btn-outline"
-          @click="clearError"
-        >
-          Go Home
-        </router-link>
+        <button class="btn btn-primary" @click="resetError">Try Again</button>
+        <router-link to="/" class="btn btn-outline" @click="clearError"> Go Home </router-link>
       </div>
     </div>
   </div>
@@ -60,12 +32,12 @@ const isDevelopment = import.meta.env.DEV
 onErrorCaptured((err, instance, info) => {
   hasError.value = true
   error.value = err
-  
+
   // Log error to console
   console.error('Error captured by boundary:', err)
   console.error('Component:', instance)
   console.error('Info:', info)
-  
+
   // In production, you could send to error tracking service
   if (!isDevelopment && window.gtag) {
     window.gtag('event', 'exception', {
@@ -73,7 +45,7 @@ onErrorCaptured((err, instance, info) => {
       fatal: true
     })
   }
-  
+
   // Prevent error from propagating
   return false
 })
@@ -158,7 +130,7 @@ const resetError = () => {
   .error-actions {
     flex-direction: column;
   }
-  
+
   .error-actions .btn {
     width: 100%;
   }

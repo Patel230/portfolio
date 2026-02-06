@@ -2,28 +2,18 @@
   <div class="not-found">
     <div class="container">
       <div class="not-found-content">
-        <h1 class="not-found-code">
-          404
-        </h1>
-        <p class="not-found-title">
-          Page Not Found
-        </p>
+        <h1 class="not-found-code">404</h1>
+        <p class="not-found-title">Page Not Found</p>
         <p class="not-found-description">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <router-link
-          to="/"
-          class="btn btn-primary"
-        >
-          ← Go Back Home
-        </router-link>
+        <router-link to="/" class="btn btn-primary"> ← Go Back Home </router-link>
       </div>
     </div>
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .not-found {

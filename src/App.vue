@@ -1,8 +1,5 @@
 <template>
-  <a
-    href="#main-content"
-    class="skip-to-content"
-  >Skip to main content</a>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div id="app">
     <NavBar />
     <main id="main-content">
@@ -11,14 +8,8 @@
           <template v-if="Component">
             <Suspense>
               <template #default>
-                <transition
-                  name="fade"
-                  mode="out-in"
-                >
-                  <component
-                    :is="Component"
-                    :key="$route.path"
-                  />
+                <transition name="fade" mode="out-in">
+                  <component :is="Component" :key="$route.path" />
                 </transition>
               </template>
               <template #fallback>

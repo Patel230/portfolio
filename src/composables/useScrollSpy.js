@@ -13,13 +13,13 @@ export function useScrollSpy(sectionIds, options = {}) {
       // Fallback: use scroll event
       scrollHandler = () => {
         const scrollPosition = window.scrollY + offset
-        
+
         for (const id of sectionIds) {
           const element = document.getElementById(id)
           if (element) {
             const top = element.offsetTop
             const height = element.offsetHeight
-            
+
             if (scrollPosition >= top && scrollPosition < top + height) {
               activeSection.value = id
               break
@@ -27,10 +27,10 @@ export function useScrollSpy(sectionIds, options = {}) {
           }
         }
       }
-      
+
       window.addEventListener('scroll', scrollHandler, { passive: true })
       scrollHandler()
-      
+
       return
     }
 
@@ -41,15 +41,15 @@ export function useScrollSpy(sectionIds, options = {}) {
       threshold
     }
 
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           activeSection.value = entry.target.id
         }
       })
     }, observerOptions)
 
-    sectionIds.forEach((id) => {
+    sectionIds.forEach(id => {
       const element = document.getElementById(id)
       if (element) {
         observer.observe(element)

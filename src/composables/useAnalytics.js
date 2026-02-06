@@ -1,7 +1,7 @@
 /**
  * Analytics composable for tracking page views and events
  * Supports Google Analytics 4 and Plausible out of the box
- * 
+ *
  * @example
  * const { trackPageView, trackEvent, trackExternalLink } = useAnalytics()
  * trackPageView('/about', 'About Page')

@@ -37,8 +37,8 @@
         >
           Home
         </router-link>
-        <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
-        <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
+        <router-link to="/creations" class="nav-link" @click="closeMenu"> Creations </router-link>
+        <router-link to="/gallery" class="nav-link" @click="closeMenu"> Gallery </router-link>
         <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">
           Open Source
         </a>
@@ -79,7 +79,6 @@ const portfolioStackLink = computed(() =>
 )
 const aboutLink = computed(() => (isHomePage.value ? '#about' : '/#about'))
 const contactLink = computed(() => (isHomePage.value ? '#contact' : '/#contact'))
-
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -166,7 +165,9 @@ const handleMenuClick = event => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 1000;
   padding: 16px 0;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .navbar::before {
@@ -218,7 +219,9 @@ const handleMenuClick = event => {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   position: relative;
   letter-spacing: 0.01em;
 }
@@ -338,7 +341,7 @@ const handleMenuClick = event => {
     font-size: 1.25rem;
     font-weight: 600;
   }
-  
+
   .nav-link::after {
     bottom: -4px;
     left: 0;
@@ -392,7 +395,7 @@ const handleMenuClick = event => {
   .menu-icon span {
     transition: none;
   }
-  
+
   .nav-link {
     transition: none;
   }

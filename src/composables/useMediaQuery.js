@@ -13,7 +13,7 @@ export function useMediaQuery(query) {
     if (mediaQueryCache.has(query)) {
       const cached = mediaQueryCache.get(query)
       matches.value = cached.matches
-      
+
       // Add to subscribers
       cached.subscribers.add(updateValue)
       return
@@ -22,7 +22,7 @@ export function useMediaQuery(query) {
     mediaQuery = window.matchMedia(query)
     matches.value = mediaQuery.matches
 
-    handler = (event) => {
+    handler = event => {
       matches.value = event.matches
     }
 
@@ -43,7 +43,7 @@ export function useMediaQuery(query) {
     }
   })
 
-  const updateValue = (event) => {
+  const updateValue = event => {
     matches.value = event.matches
   }
 
@@ -55,12 +55,12 @@ export function useMediaQuery(query) {
         mediaQuery.removeListener(handler)
       }
     }
-    
+
     // Remove from cache subscribers
     if (mediaQueryCache.has(query)) {
       const cached = mediaQueryCache.get(query)
       cached.subscribers.delete(handler)
-      
+
       // Clean up cache if no more subscribers
       if (cached.subscribers.size === 0) {
         mediaQueryCache.delete(query)

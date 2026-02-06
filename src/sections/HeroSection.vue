@@ -1,60 +1,37 @@
 <template>
-  <section
-    class="hero"
-    aria-labelledby="hero-title"
-  >
+  <section class="hero" aria-labelledby="hero-title">
     <div class="container">
       <div class="hero-content">
-        <div
-          class="hero-image"
-          :class="{ 'fallback': imageError }"
-        >
-          <img 
+        <div class="hero-image" :class="{ fallback: imageError }">
+          <img
             v-if="!imageError"
-            src="/lakshman.jpg" 
+            src="/lakshman.jpg"
             alt="Lakshman Patel - Full Stack Developer"
             loading="eager"
             width="150"
             height="150"
             decoding="async"
             @error="handleImageError"
-          >
-          <span
-            v-else
-            class="initials"
-            aria-hidden="true"
-          >LP</span>
+          />
+          <span v-else class="initials" aria-hidden="true">LP</span>
         </div>
-        <h1
-          id="hero-title"
-          class="hero-title"
-        >
-          Lakshman Patel
-        </h1>
+        <h1 id="hero-title" class="hero-title">Lakshman Patel</h1>
         <p class="hero-subtitle">
           <span class="typing-wrapper">
             <span class="typing-text">{{ displayText }}</span>
-            <span
-              class="cursor"
-              :class="{ 'blink': showCursor }"
-            >|</span>
+            <span class="cursor" :class="{ blink: showCursor }">|</span>
           </span>
         </p>
         <p class="hero-description">
-          Building intelligent full-stack applications using AI. 3+ years experience in Python, 
-          TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script, Git/GitHub, and creating production-ready systems.
+          Building intelligent full-stack applications using AI. 3+ years experience in Python,
+          TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script,
+          Git/GitHub, and creating production-ready systems.
         </p>
         <div class="hero-links">
-          <a
-            href="#projects"
-            class="btn btn-primary"
-          >
+          <a href="#projects" class="btn btn-primary">
             <span>View Projects</span>
           </a>
-          <a
-            href="#contact"
-            class="btn btn-outline"
-          >
+          <a href="#contact" class="btn btn-outline">
             <span>Contact</span>
           </a>
         </div>
@@ -70,11 +47,7 @@ const imageError = ref(false)
 const displayText = ref('')
 const showCursor = ref(true)
 
-const roles = [
-  'Full Stack Developer',
-  'AI Engineer',
-  'Open Source Contributor'
-]
+const roles = ['Full Stack Developer', 'AI Engineer', 'Open Source Contributor']
 
 let roleIndex = 0
 let charIndex = 0
@@ -87,7 +60,7 @@ const handleImageError = () => {
 
 const typeEffect = () => {
   const currentRole = roles[roleIndex]
-  
+
   if (isDeleting) {
     displayText.value = currentRole.substring(0, charIndex - 1)
     charIndex--
@@ -154,16 +127,19 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   border: 2px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 
+  box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.05),
     0 20px 50px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 .hero-image:hover {
   transform: scale(1.05) translateY(-5px);
   border-color: var(--accent);
-  box-shadow: 
+  box-shadow:
     0 0 0 1px var(--accent),
     0 30px 60px rgba(0, 0, 0, 0.5);
 }
@@ -293,21 +269,21 @@ onUnmounted(() => {
     min-height: auto;
     padding: 100px 0 60px;
   }
-  
+
   .hero-image {
     width: 140px;
     height: 140px;
     margin-bottom: 32px;
   }
-  
+
   .hero-title {
     font-size: 2.75rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.15rem;
   }
-  
+
   .hero-description {
     font-size: 1rem;
   }
@@ -319,37 +295,37 @@ onUnmounted(() => {
     min-height: auto;
     padding: 80px 0 50px;
   }
-  
+
   .hero-image {
     width: 120px;
     height: 120px;
     margin-bottom: 28px;
     border-width: 3px;
   }
-  
+
   .hero-title {
     font-size: 2.25rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
     min-height: 1.5em;
     padding: 0 10px;
   }
-  
+
   .hero-description {
     font-size: 0.95rem;
     padding: 0 8px;
     margin-bottom: 36px;
   }
-  
+
   .hero-links {
     flex-direction: column;
     align-items: stretch;
     gap: 14px;
     padding: 0 20px;
   }
-  
+
   .hero-links .btn {
     min-width: unset;
   }
@@ -361,41 +337,41 @@ onUnmounted(() => {
     min-height: auto;
     padding: 70px 0 40px;
   }
-  
+
   .hero-image {
     width: 110px;
     height: 110px;
     margin-bottom: 24px;
     border-width: 3px;
   }
-  
+
   .initials {
     font-size: 2.75rem;
   }
-  
+
   .hero-title {
     font-size: 1.85rem;
   }
-  
+
   .hero-subtitle {
     font-size: 0.95rem;
     min-height: 1.5em;
     padding: 0 8px;
   }
-  
+
   .hero-description {
     font-size: 0.9rem;
     margin-bottom: 32px;
     padding: 0 4px;
   }
-  
+
   .hero-links {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
     padding: 0 16px;
   }
-  
+
   .hero-links .btn {
     padding: 14px 24px;
   }
@@ -407,16 +383,16 @@ onUnmounted(() => {
     width: 100px;
     height: 100px;
   }
-  
+
   .hero-title {
     font-size: 1.6rem;
   }
-  
+
   .hero-subtitle {
     font-size: 0.85rem;
     min-height: 1.5em;
   }
-  
+
   .hero-description {
     font-size: 0.85rem;
   }
@@ -434,11 +410,11 @@ onUnmounted(() => {
   .cursor.blink {
     animation: none;
   }
-  
+
   .hero-links .btn {
     transition: none;
   }
-  
+
   .hero-links .btn:hover {
     transform: none;
   }

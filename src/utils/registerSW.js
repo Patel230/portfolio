@@ -6,9 +6,9 @@ export function registerServiceWorker() {
     window.addEventListener('load', () => {
       navigator.serviceWorker
         .register('/sw.js')
-        .then((registration) => {
+        .then(registration => {
           console.log('[SW] Registered:', registration.scope)
-          
+
           // Check for updates
           registration.addEventListener('updatefound', () => {
             const newWorker = registration.installing
@@ -22,7 +22,7 @@ export function registerServiceWorker() {
             })
           })
         })
-        .catch((error) => {
+        .catch(error => {
           console.log('[SW] Registration failed:', error)
         })
     })
@@ -34,7 +34,7 @@ export function registerServiceWorker() {
  */
 export function unregisterServiceWorker() {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then((registration) => {
+    navigator.serviceWorker.ready.then(registration => {
       registration.unregister()
     })
   }

@@ -15,13 +15,41 @@ export const skillCategories = [
     name: 'Frontend',
     icon: 'layout',
     color: '#3b82f6',
-    skills: ['TypeScript', 'JavaScript', 'React', 'Next.js', 'Vue.js', 'Tailwind CSS', 'Apollo', 'Tauri', 'PWA', 'Gamification', 'UI/UX']
+    skills: [
+      'TypeScript',
+      'JavaScript',
+      'React',
+      'Next.js',
+      'Vue.js',
+      'Tailwind CSS',
+      'Apollo',
+      'Tauri',
+      'PWA',
+      'Gamification',
+      'UI/UX'
+    ]
   },
   {
     name: 'Backend',
     icon: 'server',
     color: '#22c55e',
-    skills: ['FastAPI', 'Django', 'Flask', 'Node.js', 'Express', 'Fastify', 'NestJS', 'Golang', 'Rust', 'JWT', 'OAuth2', 'WebSockets', 'Socket.io', 'GraphQL', 'REST APIs']
+    skills: [
+      'FastAPI',
+      'Django',
+      'Flask',
+      'Node.js',
+      'Express',
+      'Fastify',
+      'NestJS',
+      'Golang',
+      'Rust',
+      'JWT',
+      'OAuth2',
+      'WebSockets',
+      'Socket.io',
+      'GraphQL',
+      'REST APIs'
+    ]
   },
   {
     name: 'Databases',
@@ -33,13 +61,41 @@ export const skillCategories = [
     name: 'Cloud & DevOps',
     icon: 'cloud',
     color: '#06b6d4',
-    skills: ['AWS', 'Docker', 'Kubernetes', 'CI/CD', 'Linux', 'Nginx', 'Telegraf', 'MQTT', 'RabbitMQ', 'Self-hosted', 'Docker Compose']
+    skills: [
+      'AWS',
+      'Docker',
+      'Kubernetes',
+      'CI/CD',
+      'Linux',
+      'Nginx',
+      'Telegraf',
+      'MQTT',
+      'RabbitMQ',
+      'Self-hosted',
+      'Docker Compose'
+    ]
   },
   {
     name: 'Tools',
     icon: 'tool',
     color: '#ec4899',
-    skills: ['Git', 'VS Code', 'JetBrains PyCharm', 'Pytest', 'Playwright', 'Turborepo', 'npm', 'yarn', 'pnpm', 'ESLint', 'Prettier', 'Bash/Shell', 'LaTeX', 'Overleaf', 'Markdown']
+    skills: [
+      'Git',
+      'VS Code',
+      'JetBrains PyCharm',
+      'Pytest',
+      'Playwright',
+      'Turborepo',
+      'npm',
+      'yarn',
+      'pnpm',
+      'ESLint',
+      'Prettier',
+      'Bash/Shell',
+      'LaTeX',
+      'Overleaf',
+      'Markdown'
+    ]
   },
   {
     name: 'Security',

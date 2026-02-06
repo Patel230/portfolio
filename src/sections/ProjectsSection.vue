@@ -1,26 +1,15 @@
 <template>
-  <section
-    id="projects"
-    class="section projects"
-    aria-labelledby="projects-heading"
-  >
+  <section id="projects" class="section projects" aria-labelledby="projects-heading">
     <div class="container">
       <span class="section-label">Projects</span>
-      <h2
-        id="projects-heading"
-        class="section-title"
-      >
+      <h2 id="projects-heading" class="section-title">
         <LucideBriefcase class="title-icon" />
         Featured Work
       </h2>
-      <div 
-        class="projects-grid" 
-        role="list"
-        :aria-label="`${projects.length} featured projects`"
-      >
-        <article 
-          v-for="(project, index) in projects" 
-          :key="project.title" 
+      <div class="projects-grid" role="list" :aria-label="`${projects.length} featured projects`">
+        <article
+          v-for="(project, index) in projects"
+          :key="project.title"
           class="project-card"
           :class="`project-${index}`"
           role="listitem"
@@ -31,10 +20,7 @@
             aria-hidden="true"
             :style="{ backgroundColor: `${project.color}20`, color: project.color }"
           >
-            <Icon
-              :name="project.icon"
-              :size="24"
-            />
+            <Icon :name="project.icon" :size="24" />
           </div>
           <h3 class="project-title">
             {{ project.title }}
@@ -43,19 +29,19 @@
             {{ project.description }}
           </p>
           <div class="project-tags">
-            <span 
-              v-for="tech in project.tech" 
-              :key="tech" 
+            <span
+              v-for="tech in project.tech"
+              :key="tech"
               class="tag"
               :style="{ '--tag-hover-color': project.color }"
             >
               {{ tech }}
             </span>
           </div>
-          <a 
-            v-if="project.link" 
-            :href="project.link" 
-            target="_blank" 
+          <a
+            v-if="project.link"
+            :href="project.link"
+            target="_blank"
             rel="noopener noreferrer"
             class="project-link"
             :style="{ color: project.color }"
@@ -243,7 +229,7 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-  
+
   .project-card {
     padding: 20px;
   }
@@ -255,24 +241,24 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .project-card {
     padding: 18px;
   }
-  
+
   .project-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .project-title {
     font-size: 1rem;
   }
-  
+
   .project-description {
     font-size: 0.85rem;
   }
-  
+
   .tag {
     padding: 4px 10px;
     font-size: 0.7rem;
@@ -285,39 +271,39 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  
+
   .project-card {
     padding: 14px;
   }
-  
+
   .project-icon {
     width: 36px;
     height: 36px;
   }
-  
+
   .project-title {
     font-size: 0.95rem;
   }
-  
+
   .project-description {
     font-size: 0.8rem;
     margin-bottom: 12px;
   }
-  
+
   .project-tags {
     gap: 6px;
     margin-bottom: 14px;
   }
-  
+
   .tag {
     padding: 3px 8px;
     font-size: 0.65rem;
   }
-  
+
   .project-link {
     font-size: 0.85rem;
   }
-  
+
   .view-all-link {
     margin-top: 24px;
   }
@@ -328,11 +314,11 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
   .project-card {
     padding: 10px;
   }
-  
+
   .project-title {
     font-size: 0.9rem;
   }
-  
+
   .tag {
     font-size: 0.6rem;
   }

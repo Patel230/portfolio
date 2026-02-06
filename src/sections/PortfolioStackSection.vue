@@ -6,43 +6,31 @@
   >
     <div class="container">
       <span class="section-label">Built With</span>
-      <h2
-        id="portfolio-stack-heading"
-        class="section-title"
-      >
+      <h2 id="portfolio-stack-heading" class="section-title">
         <LucideLayers class="title-icon" />
         Portfolio Tech Stack
       </h2>
-      
+
       <div class="stack-grid">
         <!-- Core Framework -->
         <div class="stack-card">
           <div
             class="stack-icon"
-            style="background-color: rgba(65, 184, 131, 0.15); color: #41b883;"
+            style="background-color: rgba(65, 184, 131, 0.15); color: #41b883"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M2 3h3.5L12 19.5 18.5 3H22L14 21h-4L2 3z" />
             </svg>
           </div>
-          <h3 class="stack-name">
-            Vue 3
-          </h3>
-          <p class="stack-description">
-            Progressive JavaScript framework with Composition API
-          </p>
+          <h3 class="stack-name">Vue 3</h3>
+          <p class="stack-description">Progressive JavaScript framework with Composition API</p>
         </div>
 
         <!-- Build Tool -->
         <div class="stack-card">
           <div
             class="stack-icon"
-            style="background-color: rgba(100, 108, 255, 0.15); color: #646cff;"
+            style="background-color: rgba(100, 108, 255, 0.15); color: #646cff"
           >
             <svg
               width="24"
@@ -55,42 +43,31 @@
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
             </svg>
           </div>
-          <h3 class="stack-name">
-            Vite
-          </h3>
-          <p class="stack-description">
-            Next generation frontend tooling with fast HMR
-          </p>
+          <h3 class="stack-name">Vite</h3>
+          <p class="stack-description">Next generation frontend tooling with fast HMR</p>
         </div>
 
         <!-- Language -->
         <div class="stack-card">
           <div
             class="stack-icon"
-            style="background-color: rgba(49, 120, 198, 0.15); color: #3178c6;"
+            style="background-color: rgba(49, 120, 198, 0.15); color: #3178c6"
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path d="M3 3h18v18H3V3zm10.5 13.5v-1.8l-3.6 1.8v-1.8l3.6-1.8V9.9l-5.4 2.7v1.8l1.8-.9v3.6l3.6-1.8zm4.5-.9v-3.6h-1.8v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h-1.8v3.6c0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7z" />
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M3 3h18v18H3V3zm10.5 13.5v-1.8l-3.6 1.8v-1.8l3.6-1.8V9.9l-5.4 2.7v1.8l1.8-.9v3.6l3.6-1.8zm4.5-.9v-3.6h-1.8v3.6c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-3.6h-1.8v3.6c0 1.5 1.2 2.7 2.7 2.7s2.7-1.2 2.7-2.7z"
+              />
             </svg>
           </div>
-          <h3 class="stack-name">
-            TypeScript
-          </h3>
-          <p class="stack-description">
-            Type-safe JavaScript with enhanced developer experience
-          </p>
+          <h3 class="stack-name">TypeScript</h3>
+          <p class="stack-description">Type-safe JavaScript with enhanced developer experience</p>
         </div>
 
         <!-- Routing -->
         <div class="stack-card">
           <div
             class="stack-icon"
-            style="background-color: rgba(251, 191, 36, 0.15); color: #fbbf24;"
+            style="background-color: rgba(251, 191, 36, 0.15); color: #fbbf24"
           >
             <svg
               width="24"
@@ -100,28 +77,17 @@
               stroke="currentColor"
               stroke-width="2"
             >
-              <circle
-                cx="12"
-                cy="12"
-                r="3"
-              />
+              <circle cx="12" cy="12" r="3" />
               <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
             </svg>
           </div>
-          <h3 class="stack-name">
-            Vue Router
-          </h3>
-          <p class="stack-description">
-            Official routing solution for Vue.js applications
-          </p>
+          <h3 class="stack-name">Vue Router</h3>
+          <p class="stack-description">Official routing solution for Vue.js applications</p>
         </div>
 
         <!-- Testing -->
         <div class="stack-card">
-          <div
-            class="stack-icon"
-            style="background-color: rgba(252, 186, 3, 0.15); color: #fcba03;"
-          >
+          <div class="stack-icon" style="background-color: rgba(252, 186, 3, 0.15); color: #fcba03">
             <svg
               width="24"
               height="24"
@@ -133,20 +99,13 @@
               <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07" />
             </svg>
           </div>
-          <h3 class="stack-name">
-            Vitest
-          </h3>
-          <p class="stack-description">
-            Blazing fast unit testing powered by Vite
-          </p>
+          <h3 class="stack-name">Vitest</h3>
+          <p class="stack-description">Blazing fast unit testing powered by Vite</p>
         </div>
 
         <!-- Linting -->
         <div class="stack-card">
-          <div
-            class="stack-icon"
-            style="background-color: rgba(75, 85, 99, 0.15); color: #9ca3af;"
-          >
+          <div class="stack-icon" style="background-color: rgba(75, 85, 99, 0.15); color: #9ca3af">
             <svg
               width="24"
               height="24"
@@ -159,12 +118,8 @@
               <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
             </svg>
           </div>
-          <h3 class="stack-name">
-            ESLint + Prettier
-          </h3>
-          <p class="stack-description">
-            Code linting and formatting for consistent style
-          </p>
+          <h3 class="stack-name">ESLint + Prettier</h3>
+          <p class="stack-description">Code linting and formatting for consistent style</p>
         </div>
       </div>
     </div>
@@ -241,11 +196,11 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-  
+
   .stack-card {
     padding: 20px;
   }
-  
+
   .stack-icon {
     width: 48px;
     height: 48px;
@@ -258,21 +213,21 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-  
+
   .stack-card {
     padding: 16px;
   }
-  
+
   .stack-icon {
     width: 40px;
     height: 40px;
     margin-bottom: 12px;
   }
-  
+
   .stack-name {
     font-size: 1rem;
   }
-  
+
   .stack-description {
     font-size: 0.8rem;
   }
@@ -284,7 +239,7 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .stack-card {
     padding: 12px;
     display: flex;
@@ -292,19 +247,19 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
     text-align: left;
     gap: 12px;
   }
-  
+
   .stack-icon {
     width: 36px;
     height: 36px;
     margin: 0;
     flex-shrink: 0;
   }
-  
+
   .stack-name {
     font-size: 0.95rem;
     margin-bottom: 4px;
   }
-  
+
   .stack-description {
     font-size: 0.75rem;
   }
@@ -315,16 +270,16 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
   .stack-card {
     padding: 10px;
   }
-  
+
   .stack-icon {
     width: 32px;
     height: 32px;
   }
-  
+
   .stack-name {
     font-size: 0.85rem;
   }
-  
+
   .stack-description {
     font-size: 0.7rem;
   }

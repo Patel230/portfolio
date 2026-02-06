@@ -8,7 +8,8 @@ const routes = [
     component: () => import('@/views/HomeView.vue'),
     meta: {
       title: 'Lakshman Patel | Full Stack Developer',
-      description: 'Full Stack Developer building intelligent applications with AI. 3+ years experience in Python, TypeScript, and cloud infrastructure.'
+      description:
+        'Full Stack Developer building intelligent applications with AI. 3+ years experience in Python, TypeScript, and cloud infrastructure.'
     }
   },
   {
@@ -26,7 +27,8 @@ const routes = [
     component: () => import('@/views/PocsView.vue'),
     meta: {
       title: 'Projects & Creations | Lakshman Patel',
-      description: 'Explore 30+ open source projects and proof-of-concept implementations by Lakshman Patel.'
+      description:
+        'Explore 30+ open source projects and proof-of-concept implementations by Lakshman Patel.'
     }
   },
   {
@@ -62,12 +64,12 @@ const router = createRouter({
 })
 
 // Track page views
-router.afterEach((to) => {
+router.afterEach(to => {
   // Update title
   if (to.meta.title) {
     document.title = to.meta.title
   }
-  
+
   // Update meta description
   if (to.meta.description) {
     const metaDescription = document.querySelector('meta[name="description"]')

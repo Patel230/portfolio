@@ -1,45 +1,33 @@
 <template>
-  <section
-    id="about"
-    class="section about"
-    aria-labelledby="about-heading"
-  >
+  <section id="about" class="section about" aria-labelledby="about-heading">
     <div class="container">
       <span class="section-label">About</span>
-      <h2
-        id="about-heading"
-        class="section-title"
-      >
+      <h2 id="about-heading" class="section-title">
         <LucideUser class="title-icon" />
         About Me
       </h2>
       <div class="about-content">
         <div class="about-text">
           <p>
-            Full Stack Developer building <strong>intelligent applications with AI</strong>. 
+            Full Stack Developer building <strong>intelligent applications with AI</strong>.
             Creating production-ready systems using Python, TypeScript, and modern frameworks.
           </p>
           <p>
-            Co-founder of <a
-              href="https://graphdone.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            ><strong>GraphDone</strong></a> - an open-source graph-native project management 
-            platform with AI-powered features.
+            Co-founder of
+            <a href="https://graphdone.com/" target="_blank" rel="noopener noreferrer"
+              ><strong>GraphDone</strong></a
+            >
+            - an open-source graph-native project management platform with AI-powered features.
           </p>
           <p>
-            Built <a
-              href="https://taskdone.gateandtech.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-            ><strong>TaskDone</strong></a> and 
-            <strong>30+ Full stack applications powered with Intelligent System</strong>.
+            Built
+            <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"
+              ><strong>TaskDone</strong></a
+            >
+            and <strong>30+ Full stack applications powered with Intelligent System</strong>.
           </p>
         </div>
-        <aside
-          class="about-info"
-          aria-label="Personal Information"
-        >
+        <aside class="about-info" aria-label="Personal Information">
           <div class="info-item">
             <span class="info-label">Education</span>
             <span class="info-value">M.Tech Information Security</span>
@@ -52,10 +40,7 @@
           <div class="info-item">
             <span class="info-label">Status</span>
             <span class="info-value">
-              <span
-                class="status-indicator"
-                aria-hidden="true"
-              />
+              <span class="status-indicator" aria-hidden="true" />
               Available for work
             </span>
           </div>
@@ -95,7 +80,9 @@ import { User as LucideUser } from 'lucide-vue-next'
 .about-text a {
   color: var(--accent);
   border-bottom: 1px solid var(--accent);
-  transition: border-bottom-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-bottom-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .about-text a strong {
@@ -192,7 +179,7 @@ import { User as LucideUser } from 'lucide-vue-next'
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .about-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -206,19 +193,19 @@ import { User as LucideUser } from 'lucide-vue-next'
     grid-template-columns: 1fr;
     gap: 32px;
   }
-  
+
   .about-text p {
     font-size: 0.9rem;
   }
-  
+
   .about-info {
     gap: 16px;
   }
-  
+
   .info-item {
     padding: 14px;
   }
-  
+
   .info-value {
     font-size: 0.95rem;
   }
@@ -230,32 +217,32 @@ import { User as LucideUser } from 'lucide-vue-next'
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   .about-text p {
     font-size: 0.85rem;
     margin-bottom: 12px;
   }
-  
+
   .about-info {
     gap: 12px;
   }
-  
+
   .info-item {
     padding: 12px;
   }
-  
+
   .info-label {
     font-size: 0.65rem;
   }
-  
+
   .info-value {
     font-size: 0.9rem;
   }
-  
+
   .info-sub {
     font-size: 0.8rem;
   }
-  
+
   .status-indicator {
     width: 6px;
     height: 6px;
@@ -267,7 +254,7 @@ import { User as LucideUser } from 'lucide-vue-next'
   .about-text p {
     font-size: 0.8rem;
   }
-  
+
   .info-value {
     font-size: 0.85rem;
   }

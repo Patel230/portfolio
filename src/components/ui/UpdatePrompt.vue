@@ -1,27 +1,11 @@
 <template>
   <transition name="slide-up">
-    <div
-      v-if="showPrompt"
-      class="update-prompt"
-      role="alert"
-      aria-live="polite"
-    >
+    <div v-if="showPrompt" class="update-prompt" role="alert" aria-live="polite">
       <div class="update-content">
         <span class="update-message">🚀 A new version is available!</span>
         <div class="update-actions">
-          <button
-            class="btn-update"
-            @click="updateApp"
-          >
-            Update Now
-          </button>
-          <button
-            class="btn-dismiss"
-            aria-label="Dismiss update"
-            @click="dismissPrompt"
-          >
-            ×
-          </button>
+          <button class="btn-update" @click="updateApp">Update Now</button>
+          <button class="btn-dismiss" aria-label="Dismiss update" @click="dismissPrompt">×</button>
         </div>
       </div>
     </div>
@@ -34,7 +18,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const showPrompt = ref(false)
 let newWorker = null
 
-const handleUpdate = (event) => {
+const handleUpdate = event => {
   newWorker = event.detail
   showPrompt.value = true
 }
@@ -54,7 +38,7 @@ const updateApp = () => {
     // Send skip waiting message to service worker
     newWorker.postMessage({ type: 'SKIP_WAITING' })
   }
-  
+
   // Reload the page to activate new service worker
   window.location.reload()
 }

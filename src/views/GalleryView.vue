@@ -2,7 +2,7 @@
   <div class="gallery-page">
     <section class="creations-hero">
       <div class="container">
-        <router-link to="/" class="back-link">← Back</router-link>
+        <router-link to="/" class="back-link"> ← Back </router-link>
         <h1 class="creations-title">Project Gallery</h1>
         <p class="creations-subtitle">Explore all 30+ projects with detailed image galleries</p>
       </div>
@@ -31,8 +31,12 @@
               </div>
               <div class="overlay">
                 <div class="overlay-content">
-                  <h3 class="overlay-title">{{ project.name }}</h3>
-                  <p class="overlay-description">{{ project.description }}</p>
+                  <h3 class="overlay-title">
+                    {{ project.name }}
+                  </h3>
+                  <p class="overlay-description">
+                    {{ project.description }}
+                  </p>
                   <div class="tech-tags">
                     <span v-for="tech in project.tech.slice(0, 3)" :key="tech" class="tech-tag">
                       {{ tech }}
@@ -44,8 +48,6 @@
             </div>
           </div>
         </TransitionGroup>
-
-
       </div>
     </section>
 
@@ -64,8 +66,12 @@
 
           <div v-if="currentProject" class="lightbox-content">
             <div class="lightbox-header">
-              <h3 class="lightbox-title">{{ currentProject.name }}</h3>
-              <p class="lightbox-description">{{ currentProject.description }}</p>
+              <h3 class="lightbox-title">
+                {{ currentProject.name }}
+              </h3>
+              <p class="lightbox-description">
+                {{ currentProject.description }}
+              </p>
               <div class="lightbox-tech">
                 <span v-for="tech in currentProject.tech" :key="tech" class="tech-tag">
                   {{ tech }}
@@ -104,8 +110,12 @@
             </div>
 
             <div class="carousel-footer">
-              <span class="image-counter">{{ carouselIndex + 1 }} / {{ currentProject.images.length }}</span>
-              <p class="image-caption">{{ currentProject.images[carouselIndex].caption }}</p>
+              <span class="image-counter"
+                >{{ carouselIndex + 1 }} / {{ currentProject.images.length }}</span
+              >
+              <p class="image-caption">
+                {{ currentProject.images[carouselIndex].caption }}
+              </p>
             </div>
 
             <div class="thumbnail-strip">
@@ -194,14 +204,14 @@ onUnmounted(() => {
   background-color: var(--bg-secondary);
 }
 
-
-
 .back-link {
   font-size: 0.9rem;
   color: var(--text-secondary);
   margin-bottom: 24px;
   display: inline-block;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .back-link:hover {

@@ -275,30 +275,56 @@ export const galleryProjects = [
   {
     id: 'syncdone',
     name: 'SyncDone',
-    description: 'AI-powered async standups that save 25 minutes daily - turn 30-minute meetings into 5-minute updates',
+    description:
+      'AI-powered async standups that save 25 minutes daily - turn 30-minute meetings into 5-minute updates',
     tech: ['TypeScript', 'React', 'GraphQL', 'Neo4j'],
     color: '#2dd4bf',
     thumbnail: '/images/gallery/syncdone/01.png',
     images: [
-      { src: '/images/gallery/syncdone/01.png', caption: 'Landing Page - Daily Team Syncs Done in 5 Minutes' },
-      { src: '/images/gallery/syncdone/02.png', caption: 'The Problem vs The SyncDone Way - Async Updates' },
-      { src: '/images/gallery/syncdone/03.png', caption: 'How It Works - 3 Simple Steps: Prompt, Response, Digest' },
-      { src: '/images/gallery/syncdone/04.png', caption: 'Ready to Get SyncDone - 14-Day Free Trial & Footer' }
+      {
+        src: '/images/gallery/syncdone/01.png',
+        caption: 'Landing Page - Daily Team Syncs Done in 5 Minutes'
+      },
+      {
+        src: '/images/gallery/syncdone/02.png',
+        caption: 'The Problem vs The SyncDone Way - Async Updates'
+      },
+      {
+        src: '/images/gallery/syncdone/03.png',
+        caption: 'How It Works - 3 Simple Steps: Prompt, Response, Digest'
+      },
+      {
+        src: '/images/gallery/syncdone/04.png',
+        caption: 'Ready to Get SyncDone - 14-Day Free Trial & Footer'
+      }
     ]
   },
   {
     id: 'taskdone',
     name: 'TaskDone',
-    description: 'Gamified task management for students - turn tasks into super powers with rewards and progress tracking',
+    description:
+      'Gamified task management for students - turn tasks into super powers with rewards and progress tracking',
     tech: ['TypeScript', 'Next.js', 'Gamification', 'PWA'],
     color: '#ec4899',
     thumbnail: '/images/gallery/taskdone/01.png',
     images: [
-      { src: '/images/gallery/taskdone/01.png', caption: 'Landing Page - Turn Your Tasks Into Super Powers' },
-      { src: '/images/gallery/taskdone/02.png', caption: 'Super Cool Features - Game-Like Fun, Progress Tracking, Customization' },
-      { src: '/images/gallery/taskdone/03.png', caption: 'Get Started in 3 Easy Steps & Why Everyone Loves TaskDone' },
+      {
+        src: '/images/gallery/taskdone/01.png',
+        caption: 'Landing Page - Turn Your Tasks Into Super Powers'
+      },
+      {
+        src: '/images/gallery/taskdone/02.png',
+        caption: 'Super Cool Features - Game-Like Fun, Progress Tracking, Customization'
+      },
+      {
+        src: '/images/gallery/taskdone/03.png',
+        caption: 'Get Started in 3 Easy Steps & Why Everyone Loves TaskDone'
+      },
       { src: '/images/gallery/taskdone/04.png', caption: 'Newsletter Signup & Footer' },
-      { src: '/images/gallery/taskdone/05.png', caption: 'About Us - Meet the Creators Matthew & Lakshman' },
+      {
+        src: '/images/gallery/taskdone/05.png',
+        caption: 'About Us - Meet the Creators Matthew & Lakshman'
+      },
       { src: '/images/gallery/taskdone/06.png', caption: 'Our Story & Connect With Us' }
     ]
   },
@@ -611,9 +637,18 @@ export const galleryProjects = [
     color: '#f97316',
     thumbnail: '/images/gallery/awesomeskills/01.png',
     images: [
-      { src: '/images/gallery/awesomeskills/01.png', caption: 'Landing Page - Hero with 5,100+ AI Resources, Stats & Categories' },
-      { src: '/images/gallery/awesomeskills/02.png', caption: 'Browse Categories - Systems, Kits, Intelligence, Learning, Links, Security' },
-      { src: '/images/gallery/awesomeskills/03.png', caption: 'Open Source & Community Driven - Contribute on GitHub, Footer' }
+      {
+        src: '/images/gallery/awesomeskills/01.png',
+        caption: 'Landing Page - Hero with 5,100+ AI Resources, Stats & Categories'
+      },
+      {
+        src: '/images/gallery/awesomeskills/02.png',
+        caption: 'Browse Categories - Systems, Kits, Intelligence, Learning, Links, Security'
+      },
+      {
+        src: '/images/gallery/awesomeskills/03.png',
+        caption: 'Open Source & Community Driven - Contribute on GitHub, Footer'
+      }
     ]
   },
   {
@@ -715,16 +750,33 @@ export const galleryProjects = [
   {
     id: 'graphdone',
     name: 'GraphDone',
-    description: 'Open source project management for cognitive diversity - where humans and AI collaborate as equals',
+    description:
+      'Open source project management for cognitive diversity - where humans and AI collaborate as equals',
     tech: ['TypeScript', 'Next.js', 'Neo4j', 'Open Source'],
     color: '#10b981',
     thumbnail: '/images/gallery/graphdone/01.png',
     images: [
-      { src: '/images/gallery/graphdone/01.png', caption: 'Landing Page - Your Team\'s Todone List, Open Source Coming Soon' },
-      { src: '/images/gallery/graphdone/02.png', caption: 'Our Philosophy - Brilliant Minds That Work Differently, Meet the Founders' },
-      { src: '/images/gallery/graphdone/03.png', caption: 'Co-Founders Lakshman Patel & Open Source Philosophy' },
-      { src: '/images/gallery/graphdone/04.png', caption: 'Features - Multiple Thinking Modes, Non-Linear Workflows, Peer-to-Peer Collaboration' },
-      { src: '/images/gallery/graphdone/05.png', caption: 'Be Part of the Future - Early Access & Footer' }
+      {
+        src: '/images/gallery/graphdone/01.png',
+        caption: "Landing Page - Your Team's Todone List, Open Source Coming Soon"
+      },
+      {
+        src: '/images/gallery/graphdone/02.png',
+        caption: 'Our Philosophy - Brilliant Minds That Work Differently, Meet the Founders'
+      },
+      {
+        src: '/images/gallery/graphdone/03.png',
+        caption: 'Co-Founders Lakshman Patel & Open Source Philosophy'
+      },
+      {
+        src: '/images/gallery/graphdone/04.png',
+        caption:
+          'Features - Multiple Thinking Modes, Non-Linear Workflows, Peer-to-Peer Collaboration'
+      },
+      {
+        src: '/images/gallery/graphdone/05.png',
+        caption: 'Be Part of the Future - Early Access & Footer'
+      }
     ]
   },
   {
@@ -912,18 +964,33 @@ export const galleryProjects = [
     thumbnail: '/images/gallery/energydone/01.png',
     images: [
       { src: '/images/gallery/energydone/01.png', caption: 'Landing Page - Hero Section' },
-      { src: '/images/gallery/energydone/02.png', caption: 'Dashboard Overview - Real-time Monitoring' },
+      {
+        src: '/images/gallery/energydone/02.png',
+        caption: 'Dashboard Overview - Real-time Monitoring'
+      },
       { src: '/images/gallery/energydone/03.png', caption: 'Solar Generation - Panel Output' },
       { src: '/images/gallery/energydone/04.png', caption: 'Battery Status - Charge Level' },
       { src: '/images/gallery/energydone/05.png', caption: 'Grid Connection - Power Flow' },
       { src: '/images/gallery/energydone/06.png', caption: 'Energy Analytics - Usage Trends' },
-      { src: '/images/gallery/energydone/07.png', caption: 'Solar Forecast - Predicted Generation' },
+      {
+        src: '/images/gallery/energydone/07.png',
+        caption: 'Solar Forecast - Predicted Generation'
+      },
       { src: '/images/gallery/energydone/08.png', caption: 'Battery Management - Storage Control' },
       { src: '/images/gallery/energydone/09.png', caption: 'Load Distribution - Power Allocation' },
       { src: '/images/gallery/energydone/10.png', caption: 'Cost Savings - Financial Dashboard' },
-      { src: '/images/gallery/energydone/11.png', caption: 'Carbon Footprint - Environmental Impact' },
-      { src: '/images/gallery/energydone/12.png', caption: 'Device Management - Connected Hardware' },
-      { src: '/images/gallery/energydone/13.png', caption: 'Smart Scheduling - Automated Controls' },
+      {
+        src: '/images/gallery/energydone/11.png',
+        caption: 'Carbon Footprint - Environmental Impact'
+      },
+      {
+        src: '/images/gallery/energydone/12.png',
+        caption: 'Device Management - Connected Hardware'
+      },
+      {
+        src: '/images/gallery/energydone/13.png',
+        caption: 'Smart Scheduling - Automated Controls'
+      },
       { src: '/images/gallery/energydone/14.png', caption: 'Peak Hours - Time-of-Use Rates' },
       { src: '/images/gallery/energydone/15.png', caption: 'Energy Reports - Monthly Summary' },
       { src: '/images/gallery/energydone/16.png', caption: 'Real-time Alerts - Notifications' },
@@ -932,14 +999,29 @@ export const galleryProjects = [
       { src: '/images/gallery/energydone/19.png', caption: 'Energy Comparison - Historical Data' },
       { src: '/images/gallery/energydone/20.png', caption: 'Export Power - Sell to Grid' },
       { src: '/images/gallery/energydone/21.png', caption: 'Import Power - Buy from Grid' },
-      { src: '/images/gallery/energydone/22.png', caption: 'Self-Consumption - Usage Optimization' },
+      {
+        src: '/images/gallery/energydone/22.png',
+        caption: 'Self-Consumption - Usage Optimization'
+      },
       { src: '/images/gallery/energydone/23.png', caption: 'Grid Outage - Backup Power' },
-      { src: '/images/gallery/energydone/24.png', caption: 'System Efficiency - Performance Metrics' },
+      {
+        src: '/images/gallery/energydone/24.png',
+        caption: 'System Efficiency - Performance Metrics'
+      },
       { src: '/images/gallery/energydone/25.png', caption: 'ROI Calculator - Investment Returns' },
-      { src: '/images/gallery/energydone/26.png', caption: 'Maintenance Schedule - Service Alerts' },
-      { src: '/images/gallery/energydone/27.png', caption: 'Panel Temperature - Thermal Monitoring' },
+      {
+        src: '/images/gallery/energydone/26.png',
+        caption: 'Maintenance Schedule - Service Alerts'
+      },
+      {
+        src: '/images/gallery/energydone/27.png',
+        caption: 'Panel Temperature - Thermal Monitoring'
+      },
       { src: '/images/gallery/energydone/28.png', caption: 'Shading Analysis - Optimization' },
-      { src: '/images/gallery/energydone/29.png', caption: 'Inverter Efficiency - Conversion Rates' },
+      {
+        src: '/images/gallery/energydone/29.png',
+        caption: 'Inverter Efficiency - Conversion Rates'
+      },
       { src: '/images/gallery/energydone/30.png', caption: 'Grid Stability - Voltage/Frequency' },
       { src: '/images/gallery/energydone/31.png', caption: 'Energy Goals - Target Tracking' },
       { src: '/images/gallery/energydone/32.png', caption: 'Community Solar - Shared Resources' },
@@ -949,7 +1031,10 @@ export const galleryProjects = [
       { src: '/images/gallery/energydone/36.png', caption: 'Data Export - CSV/JSON' },
       { src: '/images/gallery/energydone/37.png', caption: 'User Management - Family Access' },
       { src: '/images/gallery/energydone/38.png', caption: 'Security Settings - Authentication' },
-      { src: '/images/gallery/energydone/39.png', caption: 'Billing Integration - Utility Connect' },
+      {
+        src: '/images/gallery/energydone/39.png',
+        caption: 'Billing Integration - Utility Connect'
+      },
       { src: '/images/gallery/energydone/40.png', caption: 'Tariff Management - Rate Plans' },
       { src: '/images/gallery/energydone/41.png', caption: 'Net Metering - Credits Tracking' },
       { src: '/images/gallery/energydone/42.png', caption: 'Installation Guide - Setup Wizard' },

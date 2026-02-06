@@ -87,7 +87,7 @@ import {
     gap: 4px;
     border-radius: 8px;
   }
-  
+
   .version-update :deep(svg) {
     width: 12px;
     height: 12px;

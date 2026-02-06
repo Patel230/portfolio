@@ -1,62 +1,45 @@
 <template>
-  <section
-    id="github"
-    class="section github"
-    aria-labelledby="github-heading"
-  >
+  <section id="github" class="section github" aria-labelledby="github-heading">
     <div class="container">
       <span class="section-label">GitHub</span>
-      <h2
-        id="github-heading"
-        class="section-title"
-      >
+      <h2 id="github-heading" class="section-title">
         <LucideGithub class="title-icon" />
         Stats & Activity
       </h2>
-      
+
       <div class="github-content">
         <!-- Stats Image -->
         <div class="github-stats-card">
-          <a 
-            href="https://github.com/Patel230" 
-            target="_blank" 
+          <a
+            href="https://github.com/Patel230"
+            target="_blank"
             rel="noopener noreferrer"
             class="stats-link"
           >
-            <img 
+            <img
               src="https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=fbbf24&text_color=ffffff&icon_color=fbbf24"
               alt="GitHub Stats"
               class="stats-image"
               loading="lazy"
-            >
+            />
           </a>
         </div>
 
         <!-- Quick Links -->
         <div class="github-links">
-          <a 
-            v-for="link in githubLinks" 
+          <a
+            v-for="link in githubLinks"
             :key="link.label"
             :href="link.href"
             target="_blank"
             rel="noopener noreferrer"
             class="github-link-item"
           >
-            <span
-              class="link-icon"
-              aria-hidden="true"
-            >
-              <Icon
-                :name="link.icon"
-                :size="20"
-              />
+            <span class="link-icon" aria-hidden="true">
+              <Icon :name="link.icon" :size="20" />
             </span>
             <span class="link-text">{{ link.label }}</span>
-            <Icon
-              name="external"
-              :size="16"
-              class="link-arrow"
-            />
+            <Icon name="external" :size="16" class="link-arrow" />
           </a>
         </div>
       </div>
@@ -190,12 +173,12 @@ const githubLinks = [
     grid-template-columns: 1fr;
     gap: 24px;
   }
-  
+
   .github-links {
     flex-direction: row;
     flex-wrap: wrap;
   }
-  
+
   .github-link-item {
     flex: 1;
     min-width: 200px;
@@ -208,28 +191,28 @@ const githubLinks = [
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .github-stats-card {
     padding: 16px;
   }
-  
+
   .github-links {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
   }
-  
+
   .github-link-item {
     flex: 1;
     min-width: 140px;
     padding: 12px 14px;
   }
-  
+
   .link-icon {
     width: 32px;
     height: 32px;
   }
-  
+
   .link-text {
     font-size: 0.85rem;
   }
@@ -241,35 +224,35 @@ const githubLinks = [
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   .github-stats-card {
     padding: 12px;
   }
-  
+
   .github-links {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .github-link-item {
     padding: 10px 12px;
     min-width: auto;
   }
-  
+
   .link-icon {
     width: 28px;
     height: 28px;
   }
-  
+
   .link-icon svg {
     width: 16px;
     height: 16px;
   }
-  
+
   .link-text {
     font-size: 0.8rem;
   }
-  
+
   .link-arrow {
     width: 14px;
     height: 14px;
@@ -281,11 +264,11 @@ const githubLinks = [
   .github-stats-card {
     padding: 8px;
   }
-  
+
   .github-link-item {
     padding: 8px 10px;
   }
-  
+
   .link-text {
     font-size: 0.75rem;
   }

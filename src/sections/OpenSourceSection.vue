@@ -1,26 +1,19 @@
 <template>
-  <section
-    id="opensource"
-    class="section opensource"
-    aria-labelledby="opensource-heading"
-  >
+  <section id="opensource" class="section opensource" aria-labelledby="opensource-heading">
     <div class="container">
       <span class="section-label">Open Source</span>
-      <h2
-        id="opensource-heading"
-        class="section-title"
-      >
+      <h2 id="opensource-heading" class="section-title">
         <LucideHeart class="title-icon" />
         Contributions
       </h2>
-      <div 
-        class="opensource-grid" 
+      <div
+        class="opensource-grid"
         role="list"
         :aria-label="`${contributions.length} open source contributions`"
       >
-        <article 
-          v-for="(item, index) in contributions" 
-          :key="item.title" 
+        <article
+          v-for="(item, index) in contributions"
+          :key="item.title"
           class="opensource-card"
           :class="`opensource-${index}`"
           role="listitem"
@@ -31,10 +24,7 @@
             aria-hidden="true"
             :style="{ backgroundColor: `${item.color}20`, color: item.color }"
           >
-            <Icon
-              :name="item.icon"
-              :size="24"
-            />
+            <Icon :name="item.icon" :size="24" />
           </div>
           <div class="opensource-content">
             <h3 class="opensource-title">
@@ -44,9 +34,9 @@
               {{ item.description }}
             </p>
             <div class="opensource-tags">
-              <span 
-                v-for="tech in item.tech" 
-                :key="tech" 
+              <span
+                v-for="tech in item.tech"
+                :key="tech"
                 class="tag"
                 :style="{ '--tag-hover-color': item.color }"
               >
@@ -54,18 +44,15 @@
               </span>
             </div>
           </div>
-          <a 
-            :href="item.link" 
-            target="_blank" 
+          <a
+            :href="item.link"
+            target="_blank"
             rel="noopener noreferrer"
             class="opensource-link"
             :style="{ color: item.color }"
             aria-label="View on GitHub"
           >
-            <Icon
-              name="github"
-              :size="20"
-            />
+            <Icon name="github" :size="20" />
           </a>
         </article>
       </div>
@@ -80,7 +67,8 @@ import { Heart as LucideHeart } from 'lucide-vue-next'
 const contributions = [
   {
     title: 'Kilo',
-    description: 'All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.',
+    description:
+      'All-in-one agentic engineering platform — VS Code extension for AI-driven development. 1M+ users, #1 on OpenRouter.',
     tech: ['TypeScript', 'Kotlin', 'CSS', 'JavaScript', 'Shell'],
     link: 'https://github.com/Patel230/kilocode',
     icon: 'kilocode',
@@ -88,7 +76,8 @@ const contributions = [
   },
   {
     title: 'Sim Studio',
-    description: 'Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.',
+    description:
+      'Build and deploy AI agent workflows visually. Self-hosted platform with vector database integration.',
     tech: ['TypeScript', 'MDX', 'Python', 'CSS', 'JavaScript', 'Shell'],
     link: 'https://github.com/Patel230/sim',
     icon: 'sim',
@@ -225,7 +214,7 @@ const contributions = [
   .opensource-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .opensource-card {
     padding: 20px;
   }
@@ -236,27 +225,27 @@ const contributions = [
   .opensource-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .opensource-card {
     padding: 16px;
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
   }
-  
+
   .opensource-icon {
     width: 40px;
     height: 40px;
   }
-  
+
   .opensource-title {
     font-size: 1rem;
   }
-  
+
   .opensource-description {
     font-size: 0.85rem;
   }
-  
+
   .opensource-link {
     width: 36px;
     height: 36px;
@@ -269,32 +258,32 @@ const contributions = [
   .opensource-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .opensource-card {
     padding: 12px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
-  
+
   .opensource-icon {
     width: 36px;
     height: 36px;
   }
-  
+
   .opensource-title {
     font-size: 0.95rem;
   }
-  
+
   .opensource-description {
     font-size: 0.8rem;
   }
-  
+
   .opensource-tags .tag {
     padding: 3px 8px;
     font-size: 0.7rem;
   }
-  
+
   .opensource-link {
     width: 32px;
     height: 32px;

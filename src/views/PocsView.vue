@@ -2,32 +2,23 @@
   <div class="pocs">
     <section class="pocs-hero">
       <div class="container">
-        <router-link
-          to="/"
-          class="back-link"
-        >
-          ← Back
-        </router-link>
-        <h1 class="pocs-title">
-          Projects & Creations
-        </h1>
-        <p class="pocs-subtitle">
-          Open source projects and proof-of-concept implementations.
-        </p>
+        <router-link to="/" class="back-link"> ← Back </router-link>
+        <h1 class="pocs-title">Projects & Creations</h1>
+        <p class="pocs-subtitle">Open source projects and proof-of-concept implementations.</p>
       </div>
     </section>
     <section class="section pocs-grid-section">
       <div class="container">
-        <TransitionGroup 
-          name="list" 
+        <TransitionGroup
+          name="list"
           tag="div"
-          class="pocs-grid" 
+          class="pocs-grid"
           role="list"
           :aria-label="`${pocs.length} projects`"
         >
-          <article 
-            v-for="poc in pocs" 
-            :key="poc.name" 
+          <article
+            v-for="poc in pocs"
+            :key="poc.name"
             class="poc-card"
             role="listitem"
             :style="{ '--poc-color': poc.color }"
@@ -38,16 +29,10 @@
                 aria-hidden="true"
                 :style="{ backgroundColor: `${poc.color}20`, color: poc.color }"
               >
-                <Icon
-                  :name="poc.icon"
-                  :size="20"
-                />
+                <Icon :name="poc.icon" :size="20" />
               </div>
             </div>
-            <span 
-              class="poc-status"
-              :class="poc.status === 'Live' ? 'status-live' : 'status-dev'"
-            >
+            <span class="poc-status" :class="poc.status === 'Live' ? 'status-live' : 'status-dev'">
               {{ poc.status }}
             </span>
             <h3 class="poc-name">
@@ -57,19 +42,19 @@
               {{ poc.description }}
             </p>
             <div class="poc-tags">
-              <span 
-                v-for="tech in poc.tech" 
-                :key="tech" 
+              <span
+                v-for="tech in poc.tech"
+                :key="tech"
                 class="tag"
                 :style="{ '--tag-hover-color': poc.color }"
               >
                 {{ tech }}
               </span>
             </div>
-            <a 
-              v-if="poc.link" 
-              :href="poc.link" 
-              target="_blank" 
+            <a
+              v-if="poc.link"
+              :href="poc.link"
+              target="_blank"
               rel="noopener noreferrer"
               class="poc-link"
               :style="{ color: poc.color }"
@@ -115,7 +100,9 @@ import Icon from '@/components/Icon.vue'
   color: var(--text-secondary);
   margin-bottom: 24px;
   display: inline-block;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .back-link:hover {
@@ -298,7 +285,7 @@ import Icon from '@/components/Icon.vue'
   .pocs-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .poc-card {
     padding: 20px;
   }
@@ -309,27 +296,27 @@ import Icon from '@/components/Icon.vue'
   .pocs-hero {
     padding: 40px 0 50px;
   }
-  
+
   .pocs-title {
     font-size: 1.5rem;
   }
-  
+
   .pocs-subtitle {
     font-size: 0.9rem;
   }
-  
+
   .pocs-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .poc-card {
     padding: 18px;
   }
-  
+
   .poc-name {
     font-size: 1rem;
   }
-  
+
   .poc-description {
     font-size: 0.8rem;
   }
@@ -340,51 +327,51 @@ import Icon from '@/components/Icon.vue'
   .pocs-hero {
     padding: 30px 0 40px;
   }
-  
+
   .back-link {
     font-size: 0.8rem;
     margin-bottom: 16px;
   }
-  
+
   .pocs-title {
     font-size: 1.25rem;
   }
-  
+
   .pocs-subtitle {
     font-size: 0.85rem;
   }
-  
+
   .pocs-grid-section {
     padding: 50px 0;
   }
-  
+
   .pocs-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  
+
   .poc-card {
     padding: 14px;
   }
-  
+
   .poc-icon {
     width: 32px;
     height: 32px;
   }
-  
+
   .poc-name {
     font-size: 0.95rem;
   }
-  
+
   .poc-description {
     font-size: 0.75rem;
   }
-  
+
   .poc-tags .tag {
     padding: 3px 10px;
     font-size: 0.7rem;
   }
-  
+
   .poc-status {
     font-size: 0.6rem;
     padding: 3px 8px;

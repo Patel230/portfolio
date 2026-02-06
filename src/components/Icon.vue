@@ -50,11 +50,7 @@ const icons = {
   },
   layers: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M12 2L2 7l10 5 10-5-10-5z',
-      'M2 17l10 5 10-5',
-      'M2 12l10 5 10-5'
-    ]
+    paths: ['M12 2L2 7l10 5 10-5-10-5z', 'M2 17l10 5 10-5', 'M2 12l10 5 10-5']
   },
   mail: {
     viewBox: '0 0 24 24',
@@ -79,10 +75,7 @@ const icons = {
   },
   location: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z',
-      'M12 10a3 3 0 110-6 3 3 0 010 6z'
-    ]
+    paths: ['M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z', 'M12 10a3 3 0 110-6 3 3 0 010 6z']
   },
   x: {
     viewBox: '0 0 24 24',
@@ -121,9 +114,7 @@ const icons = {
   },
   layout: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M3 3h18v18H3zM3 9h18M9 21V9'
-    ]
+    paths: ['M3 3h18v18H3zM3 9h18M9 21V9']
   },
   server: {
     viewBox: '0 0 24 24',
@@ -156,16 +147,11 @@ const icons = {
   },
   shield: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'
-    ]
+    paths: ['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z']
   },
   smartphone: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z',
-      'M12 18h.01'
-    ]
+    paths: ['M17 2H7a2 2 0 00-2 2v16a2 2 0 002 2h10a2 2 0 002-2V4a2 2 0 00-2-2z', 'M12 18h.01']
   },
   // Project icons
   tractor: {
@@ -181,9 +167,7 @@ const icons = {
   },
   zap: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M13 2L3 14h9l-1 8 10-12h-9l1-8z'
-    ]
+    paths: ['M13 2L3 14h9l-1 8 10-12h-9l1-8z']
   },
   'git-branch': {
     viewBox: '0 0 24 24',
@@ -196,26 +180,15 @@ const icons = {
   },
   'check-square': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M9 11l3 3L22 4',
-      'M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11'
-    ]
+    paths: ['M9 11l3 3L22 4', 'M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11']
   },
   'book-open': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z',
-      'M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z'
-    ]
+    paths: ['M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z', 'M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z']
   },
   award: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M12 8a5 5 0 110 10 5 5 0 010-10z',
-      'M12 2v6',
-      'M6 4l2 3',
-      'M18 4l-2 3'
-    ]
+    paths: ['M12 8a5 5 0 110 10 5 5 0 010-10z', 'M12 2v6', 'M6 4l2 3', 'M18 4l-2 3']
   },
   // POC icons
   compass: {
@@ -227,10 +200,7 @@ const icons = {
   },
   'dollar-sign': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M12 1v22',
-      'M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6'
-    ]
+    paths: ['M12 1v22', 'M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6']
   },
   keyboard: {
     viewBox: '0 0 24 24',
@@ -280,10 +250,7 @@ const icons = {
   },
   video: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M23 7l-7 5 7 5V7z',
-      'M1 5h16v14H1V5z'
-    ]
+    paths: ['M23 7l-7 5 7 5V7z', 'M1 5h16v14H1V5z']
   },
   bitcoin: {
     viewBox: '0 0 24 24',
@@ -293,9 +260,7 @@ const icons = {
   },
   activity: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M22 12h-4l-3 9L9 3l-3 9H2'
-    ]
+    paths: ['M22 12h-4l-3 9L9 3l-3 9H2']
   },
   users: {
     viewBox: '0 0 24 24',
@@ -308,11 +273,7 @@ const icons = {
   },
   music: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M9 18V5l12-2v13',
-      'M6 21a3 3 0 100-6 3 3 0 000 6z',
-      'M18 19a3 3 0 100-6 3 3 0 000 6z'
-    ]
+    paths: ['M9 18V5l12-2v13', 'M6 21a3 3 0 100-6 3 3 0 000 6z', 'M18 19a3 3 0 100-6 3 3 0 000 6z']
   },
   book: {
     viewBox: '0 0 24 24',
@@ -362,43 +323,23 @@ const icons = {
   },
   'list-checks': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M10 6H3',
-      'M10 12H3',
-      'M10 18H3',
-      'M14 8l2 2 4-4'
-    ]
+    paths: ['M10 6H3', 'M10 12H3', 'M10 18H3', 'M14 8l2 2 4-4']
   },
   'shield-check': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
-      'M9 12l2 2 4-4'
-    ]
+    paths: ['M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z', 'M9 12l2 2 4-4']
   },
   'flask-conical': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M10 2v8L4 20h16l-6-10V2',
-      'M9.5 14h5',
-      'M7.5 18h9'
-    ]
+    paths: ['M10 2v8L4 20h16l-6-10V2', 'M9.5 14h5', 'M7.5 18h9']
   },
   languages: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M5 8l3 3-3 3',
-      'M12 15h6',
-      'M2 5h12a2 2 0 012 2v10a2 2 0 01-2 2H2',
-      'M12 2v20'
-    ]
+    paths: ['M5 8l3 3-3 3', 'M12 15h6', 'M2 5h12a2 2 0 012 2v10a2 2 0 01-2 2H2', 'M12 2v20']
   },
   'graduation-cap': {
     viewBox: '0 0 24 24',
-    paths: [
-      'M22 10v6M2 10l10-5 10 5-10 5z',
-      'M6 12v5c3 3 9 3 12 0v-5'
-    ]
+    paths: ['M22 10v6M2 10l10-5 10 5-10 5z', 'M6 12v5c3 3 9 3 12 0v-5']
   },
   sparkles: {
     viewBox: '0 0 24 24',
@@ -434,10 +375,7 @@ const icons = {
   },
   code: {
     viewBox: '0 0 24 24',
-    paths: [
-      'M16 18l6-6-6-6',
-      'M8 6l-6 6 6 6'
-    ]
+    paths: ['M16 18l6-6-6-6', 'M8 6l-6 6 6 6']
   },
   cpu: {
     viewBox: '0 0 24 24',
@@ -469,9 +407,7 @@ const icons = {
   sim: {
     viewBox: '0 0 24 24',
     fill: 'currentColor',
-    paths: [
-      'M4,4h16v16H4V4zM6,6v12h12V6H6z'
-    ]
+    paths: ['M4,4h16v16H4V4zM6,6v12h12V6H6z']
   }
 }
 
@@ -479,19 +415,19 @@ const viewBox = computed(() => icons[props.name]?.viewBox || '0 0 24 24')
 
 const iconComponent = computed(() => {
   const icon = icons[props.name]
-  
+
   return {
     render() {
       // If icon not found, render a default circle
       if (!icon) {
         return h('circle', { cx: '12', cy: '12', r: '6', fill: 'currentColor' })
       }
-      
+
       return icon.paths.map(path => {
         const hasFill = icon.fill || props.fill !== 'none'
-        return h('path', { 
-          d: path, 
-          fill: hasFill ? (icon.fill || props.fill) : 'none',
+        return h('path', {
+          d: path,
+          fill: hasFill ? icon.fill || props.fill : 'none',
           stroke: !hasFill ? props.stroke : undefined
         })
       })
