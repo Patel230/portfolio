@@ -118,12 +118,13 @@
               </p>
             </div>
 
-            <div class="thumbnail-strip">
+            <div class="thumbnail-strip" ref="thumbnailStripRef">
               <button
                 v-for="(img, index) in currentProject.images"
                 :key="index"
+                :ref="el => setThumbnailRef(el, index)"
                 :class="['thumbnail', { active: carouselIndex === index }]"
-                @click="carouselIndex = index"
+                @click="selectThumbnail(index)"
               >
                 <img :src="img.src" :alt="img.caption" @error="handleImageError" />
               </button>
@@ -136,7 +137,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { galleryProjects } from '@/data/gallery'
 import {
   Images as LucideImages,
@@ -148,14 +149,40 @@ import {
 const lightboxOpen = ref(false)
 const currentProjectIndex = ref(0)
 const carouselIndex = ref(0)
+const thumbnailStripRef = ref(null)
+const thumbnailRefs = ref([])
 
 const currentProject = computed(() => galleryProjects[currentProjectIndex.value])
+
+const setThumbnailRef = (el, index) => {
+  if (el) thumbnailRefs.value[index] = el
+}
+
+const scrollThumbnailIntoView = index => {
+  const thumbnail = thumbnailRefs.value[index]
+  if (thumbnail && thumbnailStripRef.value) {
+    const stripRect = thumbnailStripRef.value.getBoundingClientRect()
+    const thumbRect = thumbnail.getBoundingClientRect()
+    const thumbCenter = thumbRect.left + thumbRect.width / 2
+    const stripCenter = stripRect.left + stripRect.width / 2
+    thumbnailStripRef.value.scrollBy({
+      left: thumbCenter - stripCenter,
+      behavior: 'smooth'
+    })
+  }
+}
+
+const selectThumbnail = index => {
+  carouselIndex.value = index
+  scrollThumbnailIntoView(index)
+}
 
 const openLightbox = project => {
   currentProjectIndex.value = galleryProjects.findIndex(p => p.id === project.id)
   carouselIndex.value = 0
   lightboxOpen.value = true
   document.body.style.overflow = 'hidden'
+  thumbnailRefs.value = []
 }
 
 const closeLightbox = () => {
@@ -168,8 +195,13 @@ const navigateCarousel = direction => {
   const newIndex = carouselIndex.value + direction
   if (newIndex >= 0 && newIndex < currentProject.value.images.length) {
     carouselIndex.value = newIndex
+    scrollThumbnailIntoView(newIndex)
   }
 }
+
+watch(carouselIndex, () => {
+  scrollThumbnailIntoView(carouselIndex.value)
+})
 
 const handleImageError = e => {
   e.target.src =

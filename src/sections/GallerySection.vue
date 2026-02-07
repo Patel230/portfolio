@@ -121,12 +121,13 @@
                 </p>
               </div>
 
-              <div class="thumbnail-strip">
+              <div class="thumbnail-strip" ref="thumbnailStripRef">
                 <button
                   v-for="(img, index) in currentProject.images"
                   :key="index"
+                  :ref="el => setThumbnailRef(el, index)"
                   :class="['thumbnail', { active: carouselIndex === index }]"
-                  @click="carouselIndex = index"
+                  @click="selectThumbnail(index)"
                 >
                   <img :src="img.src" :alt="img.caption" @error="handleImageError" />
                 </button>
@@ -140,7 +141,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { galleryProjects } from '@/data/gallery'
 import {
   Images as LucideImages,
@@ -153,16 +154,42 @@ import {
 const lightboxOpen = ref(false)
 const currentProjectIndex = ref(0)
 const carouselIndex = ref(0)
+const thumbnailStripRef = ref(null)
+const thumbnailRefs = ref([])
 
 const featuredProjects = computed(() => galleryProjects.slice(0, 9))
 
 const currentProject = computed(() => featuredProjects.value[currentProjectIndex.value])
+
+const setThumbnailRef = (el, index) => {
+  if (el) thumbnailRefs.value[index] = el
+}
+
+const scrollThumbnailIntoView = index => {
+  const thumbnail = thumbnailRefs.value[index]
+  if (thumbnail && thumbnailStripRef.value) {
+    const stripRect = thumbnailStripRef.value.getBoundingClientRect()
+    const thumbRect = thumbnail.getBoundingClientRect()
+    const thumbCenter = thumbRect.left + thumbRect.width / 2
+    const stripCenter = stripRect.left + stripRect.width / 2
+    thumbnailStripRef.value.scrollBy({
+      left: thumbCenter - stripCenter,
+      behavior: 'smooth'
+    })
+  }
+}
+
+const selectThumbnail = index => {
+  carouselIndex.value = index
+  scrollThumbnailIntoView(index)
+}
 
 const openLightbox = project => {
   currentProjectIndex.value = featuredProjects.value.findIndex(p => p.id === project.id)
   carouselIndex.value = 0
   lightboxOpen.value = true
   document.body.style.overflow = 'hidden'
+  thumbnailRefs.value = []
 }
 
 const closeLightbox = () => {
@@ -175,6 +202,7 @@ const navigateCarousel = direction => {
   const newIndex = carouselIndex.value + direction
   if (newIndex >= 0 && newIndex < currentProject.value.images.length) {
     carouselIndex.value = newIndex
+    scrollThumbnailIntoView(newIndex)
   }
 }
 
@@ -192,6 +220,10 @@ const handleKeydown = e => {
 
 onMounted(() => {
   window.addEventListener('keydown', handleKeydown)
+})
+
+watch(carouselIndex, () => {
+  scrollThumbnailIntoView(carouselIndex.value)
 })
 
 onUnmounted(() => {
@@ -562,11 +594,15 @@ onUnmounted(() => {
 
 .thumbnail-strip {
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
   margin-top: 1.5rem;
   padding: 0 1rem;
   overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 0 1rem;
 }
 
 .thumbnail {
@@ -579,6 +615,8 @@ onUnmounted(() => {
   cursor: pointer;
   transition: all 0.2s;
   background: none;
+  scroll-snap-align: center;
+  flex-shrink: 0;
 }
 
 .thumbnail:hover {
@@ -641,6 +679,36 @@ onUnmounted(() => {
     width: 70px;
     height: 45px;
   }
+
+  .thumbnail-strip {
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+}
+
+/* iPad Pro (1024px - 1366px) */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .thumbnail {
+    width: 75px;
+    height: 48px;
+  }
+
+  .thumbnail-strip {
+    gap: 0.5rem;
+  }
+}
+
+/* iPad (768px - 1024px) in portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .thumbnail {
+    width: 65px;
+    height: 42px;
+  }
+
+  .thumbnail-strip {
+    gap: 0.45rem;
+    padding: 0 0.75rem;
+  }
 }
 
 /* Mobile Large (480px - 767px) */
@@ -674,6 +742,11 @@ onUnmounted(() => {
   .thumbnail {
     width: 60px;
     height: 40px;
+  }
+
+  .thumbnail-strip {
+    gap: 0.4rem;
+    padding: 0 0.75rem;
   }
 }
 
@@ -750,10 +823,12 @@ onUnmounted(() => {
   .thumbnail {
     width: 50px;
     height: 32px;
+    flex-shrink: 0;
   }
 
   .thumbnail-strip {
-    gap: 0.375rem;
+    gap: 0.35rem;
+    padding: 0 0.5rem;
   }
 
   .view-all-btn {
@@ -777,6 +852,12 @@ onUnmounted(() => {
   .thumbnail {
     width: 40px;
     height: 26px;
+    flex-shrink: 0;
+  }
+
+  .thumbnail-strip {
+    gap: 0.25rem;
+    padding: 0 0.25rem;
   }
 }
 
