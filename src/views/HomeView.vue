@@ -3,7 +3,7 @@
     <!-- Version Update Badge -->
     <div class="version-update">
       <Icon name="calendar" size="14" />
-      <span>Updated: v2.0.0 (February 7, 2026)</span>
+      <span>Updated: v{{ APP_VERSION }} ({{ BUILD_DATE }})</span>
     </div>
     <HeroSection />
     <GallerySection />
@@ -19,6 +19,7 @@
 
 <script setup>
 import Icon from '@/components/Icon.vue'
+import { APP_VERSION, BUILD_DATE } from '@/version.js'
 import {
   HeroSection,
   AboutSection,

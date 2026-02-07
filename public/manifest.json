@@ -17,7 +17,7 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["portfolio", "developer", "technology"],
+  "version": "__APP_VERSION__",
   "screenshots": [
     {
       "src": "/screenshot-wide.png",

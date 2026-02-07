@@ -7,7 +7,7 @@ export function registerServiceWorker() {
       navigator.serviceWorker
         .register('/sw.js')
         .then(registration => {
-          console.log('[SW] Registered:', registration.scope)
+          console.log('[SW] Registered:', registration.scope, 'v' + __APP_VERSION__)
 
           // Check for updates
           registration.addEventListener('updatefound', () => {

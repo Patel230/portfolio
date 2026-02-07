@@ -1,18 +1,36 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import fs from 'fs'
+
+const version = JSON.parse(fs.readFileSync('./package.json', 'utf-8')).version
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      name: 'manifest-version-injector',
+      enforce: 'pre',
+      transformIndexHtml(html) {
+        return html.replace(/__APP_VERSION__/g, version)
+      }
+    }
+  ],
+  define: {
+    __APP_VERSION__: JSON.stringify(version)
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
     }
   },
   server: {
-    port: 3681,
+    port: 3686,
     host: true,
     open: false
+  },
+  optimizeDeps: {
+    include: ['url']
   },
   build: {
     target: 'esnext',
@@ -25,7 +43,7 @@ export default defineConfig({
         },
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: (assetInfo) => {
+        assetFileNames: assetInfo => {
           const info = assetInfo.name.split('.')
           const ext = info[info.length - 1]
           if (/\.(png|jpe?g|gif|svg|webp|ico)$/i.test(assetInfo.name)) {
