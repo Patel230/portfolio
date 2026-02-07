@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2026-02-07
+
+### Enhanced
+- Gallery thumbnail strip with smooth scroll-to-view behavior
+- Scroll snapping for precise thumbnail navigation on all devices
+- Responsive thumbnail sizing for tablet, iPad, and mobile
+
 ## [2.0.0] - 2026-02-07
 
 ### Added
@@ -22,11 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mobile menu positioning (now properly below navbar)
 - Profile picture centering on mobile devices
 - Mobile menu height calculation
-
-### Enhanced
-- Gallery thumbnail strip with smooth scroll-to-view behavior
-- Scroll snapping for precise thumbnail navigation on all devices
-- Responsive thumbnail sizing for tablet, iPad, and mobile
 
 ## [1.0.0] - 2026-02-04
 

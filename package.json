@@ -1,6 +1,6 @@
 {
   "name": "lakshman-patel-portfolio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Full Stack Developer & AI Engineer Portfolio - Vue.js, TypeScript, Python, FastAPI, Neo4j - Creator of GraphDone & TaskDone",
   "private": true,
   "type": "module",
