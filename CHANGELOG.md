@@ -23,6 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Profile picture centering on mobile devices
 - Mobile menu height calculation
 
+### Enhanced
+- Gallery thumbnail strip with smooth scroll-to-view behavior
+- Scroll snapping for precise thumbnail navigation on all devices
+- Responsive thumbnail sizing for tablet, iPad, and mobile
+
 ## [1.0.0] - 2026-02-04
 
 ### Added
