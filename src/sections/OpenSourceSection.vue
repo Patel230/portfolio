@@ -82,6 +82,24 @@ const contributions = [
     link: 'https://github.com/Patel230/sim',
     icon: 'sim',
     color: '#6F3DFA'
+  },
+  {
+    title: 'Herm',
+    description:
+      'Terminal-native AI coding agent running in containers. Secure, isolated environments for autonomous development.',
+    tech: ['Go', 'Docker', 'AI'],
+    link: 'https://github.com/aduermael/herm',
+    icon: 'bot',
+    color: '#06b6d4'
+  },
+  {
+    title: 'LangDAG',
+    description:
+      'High-performance tool for managing LLM conversations and workflows as DAGs. Build complex AI pipelines with ease.',
+    tech: ['Go', 'LLM', 'DAG'],
+    link: 'https://github.com/aduermael/langdag',
+    icon: 'network',
+    color: '#8b5cf6'
   }
 ]
 </script>
