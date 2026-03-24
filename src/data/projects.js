@@ -71,12 +71,4 @@ export const projects = [
     icon: 'cpu',
     color: '#06b6d4'
   },
-  {
-    title: 'GATE And Tech',
-    description: 'Exam preparation platform for GATE, PGEE with practice questions and test series.',
-    tech: ['TypeScript', 'Next.js', 'Education'],
-    link: 'https://gateandtech.in/',
-    icon: 'book-open',
-    color: '#f59e0b'
-  }
 ]

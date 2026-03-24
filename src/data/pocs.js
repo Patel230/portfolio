@@ -1,5 +1,14 @@
 export const pocs = [
   {
+    name: 'GATE And Tech',
+    description: 'Exam preparation platform for GATE, PGEE with practice questions and test series.',
+    tech: ['TypeScript', 'Next.js', 'Education'],
+    link: 'https://gateandtech.in/',
+    icon: 'book-open',
+    color: '#f59e0b',
+    status: 'Live'
+  },
+  {
     name: 'AgriDone',
     description: 'Agriculture management with weather integration and task scheduling.',
     tech: ['JavaScript', 'Bun', 'Elysia', 'PostgreSQL'],
