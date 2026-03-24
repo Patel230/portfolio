@@ -46,5 +46,37 @@ export const projects = [
     link: 'https://awesome-skills-eight.vercel.app/',
     icon: 'award',
     color: '#0891b2'
+  },
+  {
+    title: 'Growth',
+    description: 'Personal growth tracker with habit building, journaling, and progress analytics.',
+    tech: ['TypeScript', 'Next.js', 'Analytics'],
+    link: 'https://growth.gateandtech.in/',
+    icon: 'sprout',
+    color: '#10b981'
+  },
+  {
+    title: 'MindShift',
+    description: 'Book summary platform with 1000+ titles, audio summaries, and key takeaways.',
+    tech: ['TypeScript', 'Next.js', 'Audio'],
+    link: 'https://mindshift.gateandtech.in/',
+    icon: 'book',
+    color: '#8b5cf6'
+  },
+  {
+    title: 'Iterate',
+    description: 'Self-evolving coding agent that reads, improves, tests, and commits autonomously.',
+    tech: ['Go', 'AI', 'Open Source'],
+    link: 'https://graycodeai.github.io/iterate/',
+    icon: 'cpu',
+    color: '#06b6d4'
+  },
+  {
+    title: 'GATE And Tech',
+    description: 'Exam preparation platform for GATE, PGEE with practice questions and test series.',
+    tech: ['TypeScript', 'Next.js', 'Education'],
+    link: 'https://gateandtech.in/',
+    icon: 'book-open',
+    color: '#f59e0b'
   }
 ]

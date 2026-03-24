@@ -1040,5 +1040,65 @@ export const galleryProjects = [
       { src: '/images/gallery/energydone/42.png', caption: 'Installation Guide - Setup Wizard' },
       { src: '/images/gallery/energydone/43.png', caption: 'Support Center - Help & FAQ' }
     ]
+  },
+  {
+    id: 'growth',
+    name: 'Growth',
+    description: 'Personal growth tracker with habit building, journaling, and progress analytics',
+    tech: ['TypeScript', 'Next.js', 'Analytics', 'Gamification'],
+    color: '#10b981',
+    thumbnail: '/images/gallery/growth/01.png',
+    images: [
+      { src: '/images/gallery/growth/01.png', caption: 'Landing Page - Build Habits That Actually Stick' },
+      { src: '/images/gallery/growth/02.png', caption: 'Features - Goal Tracking, Habit Building, Daily Journal' },
+      { src: '/images/gallery/growth/03.png', caption: 'How It Works - Set Goals, Track Daily, See Progress' },
+      { src: '/images/gallery/growth/04.png', caption: 'Science Behind Habits - Tiny Habits, Kaizen, Habit Stacking' },
+      { src: '/images/gallery/growth/05.png', caption: 'Pricing Plans - Seed, Sprout, Growth' }
+    ]
+  },
+  {
+    id: 'mindshift',
+    name: 'MindShift',
+    description: 'Book summary platform with 1000+ titles, audio summaries, and key takeaways',
+    tech: ['TypeScript', 'Next.js', 'Audio', 'Education'],
+    color: '#8b5cf6',
+    thumbnail: '/images/gallery/mindshift/01.png',
+    images: [
+      { src: '/images/gallery/mindshift/01.png', caption: 'Landing Page - Read More, Learn Faster' },
+      { src: '/images/gallery/mindshift/02.png', caption: 'Stats - 1000+ Books, 50K+ Readers, 4.9 Rating' },
+      { src: '/images/gallery/mindshift/03.png', caption: 'Features - Quick Reads, Audio Summaries, Mobile Friendly' },
+      { src: '/images/gallery/mindshift/04.png', caption: 'Categories - Explore by Topic' },
+      { src: '/images/gallery/mindshift/05.png', caption: 'Pricing - Monthly, Yearly, Lifetime Plans' }
+    ]
+  },
+  {
+    id: 'iterate',
+    name: 'Iterate',
+    description: 'Self-evolving coding agent that reads, improves, tests, and commits autonomously',
+    tech: ['Go', 'AI', 'Open Source', 'Automation'],
+    color: '#06b6d4',
+    thumbnail: '/images/gallery/iterate/01.png',
+    images: [
+      { src: '/images/gallery/iterate/01.png', caption: 'Landing Page - A Coding Agent That Improves Itself' },
+      { src: '/images/gallery/iterate/02.png', caption: 'Journal - Every Session Documented' },
+      { src: '/images/gallery/iterate/03.png', caption: 'How It Works - Read, Decide, Build, Journal' },
+      { src: '/images/gallery/iterate/04.png', caption: 'Features - Fully Autonomous, Honest Journal, Test-Gated' },
+      { src: '/images/gallery/iterate/05.png', caption: 'Identity - Mission, Principles, Rules' }
+    ]
+  },
+  {
+    id: 'gateandtech',
+    name: 'GATE And Tech',
+    description: 'Exam preparation platform for GATE, PGEE with practice questions and test series',
+    tech: ['TypeScript', 'Next.js', 'Education', 'Analytics'],
+    color: '#f59e0b',
+    thumbnail: '/images/gallery/gateandtech/01.png',
+    images: [
+      { src: '/images/gallery/gateandtech/01.png', caption: 'Landing Page - Learn. Practice. Succeed.' },
+      { src: '/images/gallery/gateandtech/02.png', caption: 'Learn to Code - Programming, DSA, AI/ML, System Design' },
+      { src: '/images/gallery/gateandtech/03.png', caption: 'Features - Learn, Practice, Quiz, Test Series' },
+      { src: '/images/gallery/gateandtech/04.png', caption: 'Supported Exams - GATE CSE, GATE DA, IIITH PGEE, BITS HD' },
+      { src: '/images/gallery/gateandtech/05.png', caption: 'Pricing - Free, Pro, Mentorship Plans' }
+    ]
   }
 ]
