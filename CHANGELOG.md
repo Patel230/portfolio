@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.2] - 2026-03-24
+
+### Added
+- Growth - Personal growth tracker with habit building and analytics
+- MindShift - Book summary platform with 1000+ titles
+- Iterate - Self-evolving coding agent
+- GATE And Tech - Exam preparation platform
+- Herm and LangDAG open source contributions
+- Screenshot capture script using Puppeteer
+
 ## [2.0.1] - 2026-02-07
 
 ### Enhanced
