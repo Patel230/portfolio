@@ -13,7 +13,7 @@ export const projects = [
     tech: ['TypeScript', 'Next.js', 'AI Agents'],
     link: 'https://graycodeai.gateandtech.in/',
     icon: 'bot',
-    color: '#f97316'
+    color: '#e11d48'
   },
   {
     title: 'GraphDone',

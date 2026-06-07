@@ -6,9 +6,13 @@
         <LucideBriefcase class="title-icon" />
         Featured Work
       </h2>
-      <div class="projects-grid" role="list" :aria-label="`${projects.length} featured projects`">
+      <div
+        class="projects-grid"
+        role="list"
+        :aria-label="`${featuredProjects.length} featured projects`"
+      >
         <article
-          v-for="(project, index) in projects"
+          v-for="(project, index) in featuredProjects"
           :key="project.title"
           class="project-card"
           :class="`project-${index}`"
@@ -75,6 +79,8 @@
 import { projects } from '@/data/projects.js'
 import { Icon } from '@/components'
 import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
+
+const featuredProjects = projects.slice(0, 6)
 </script>
 
 <style scoped>
@@ -90,7 +96,7 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
