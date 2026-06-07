@@ -1079,10 +1079,22 @@ export const galleryProjects = [
     color: '#10b981',
     thumbnail: '/images/gallery/growth/01.png',
     images: [
-      { src: '/images/gallery/growth/01.png', caption: 'Landing Page - Build Habits That Actually Stick' },
-      { src: '/images/gallery/growth/02.png', caption: 'Features - Goal Tracking, Habit Building, Daily Journal' },
-      { src: '/images/gallery/growth/03.png', caption: 'How It Works - Set Goals, Track Daily, See Progress' },
-      { src: '/images/gallery/growth/04.png', caption: 'Science Behind Habits - Tiny Habits, Kaizen, Habit Stacking' },
+      {
+        src: '/images/gallery/growth/01.png',
+        caption: 'Landing Page - Build Habits That Actually Stick'
+      },
+      {
+        src: '/images/gallery/growth/02.png',
+        caption: 'Features - Goal Tracking, Habit Building, Daily Journal'
+      },
+      {
+        src: '/images/gallery/growth/03.png',
+        caption: 'How It Works - Set Goals, Track Daily, See Progress'
+      },
+      {
+        src: '/images/gallery/growth/04.png',
+        caption: 'Science Behind Habits - Tiny Habits, Kaizen, Habit Stacking'
+      },
       { src: '/images/gallery/growth/05.png', caption: 'Pricing Plans - Seed, Sprout, Growth' }
     ]
   },
@@ -1094,11 +1106,23 @@ export const galleryProjects = [
     color: '#8b5cf6',
     thumbnail: '/images/gallery/mindshift/01.png',
     images: [
-      { src: '/images/gallery/mindshift/01.png', caption: 'Landing Page - Read More, Learn Faster' },
-      { src: '/images/gallery/mindshift/02.png', caption: 'Stats - 1000+ Books, 50K+ Readers, 4.9 Rating' },
-      { src: '/images/gallery/mindshift/03.png', caption: 'Features - Quick Reads, Audio Summaries, Mobile Friendly' },
+      {
+        src: '/images/gallery/mindshift/01.png',
+        caption: 'Landing Page - Read More, Learn Faster'
+      },
+      {
+        src: '/images/gallery/mindshift/02.png',
+        caption: 'Stats - 1000+ Books, 50K+ Readers, 4.9 Rating'
+      },
+      {
+        src: '/images/gallery/mindshift/03.png',
+        caption: 'Features - Quick Reads, Audio Summaries, Mobile Friendly'
+      },
       { src: '/images/gallery/mindshift/04.png', caption: 'Categories - Explore by Topic' },
-      { src: '/images/gallery/mindshift/05.png', caption: 'Pricing - Monthly, Yearly, Lifetime Plans' }
+      {
+        src: '/images/gallery/mindshift/05.png',
+        caption: 'Pricing - Monthly, Yearly, Lifetime Plans'
+      }
     ]
   },
   {
@@ -1109,10 +1133,19 @@ export const galleryProjects = [
     color: '#06b6d4',
     thumbnail: '/images/gallery/iterate/01.png',
     images: [
-      { src: '/images/gallery/iterate/01.png', caption: 'Landing Page - A Coding Agent That Improves Itself' },
+      {
+        src: '/images/gallery/iterate/01.png',
+        caption: 'Landing Page - A Coding Agent That Improves Itself'
+      },
       { src: '/images/gallery/iterate/02.png', caption: 'Journal - Every Session Documented' },
-      { src: '/images/gallery/iterate/03.png', caption: 'How It Works - Read, Decide, Build, Journal' },
-      { src: '/images/gallery/iterate/04.png', caption: 'Features - Fully Autonomous, Honest Journal, Test-Gated' },
+      {
+        src: '/images/gallery/iterate/03.png',
+        caption: 'How It Works - Read, Decide, Build, Journal'
+      },
+      {
+        src: '/images/gallery/iterate/04.png',
+        caption: 'Features - Fully Autonomous, Honest Journal, Test-Gated'
+      },
       { src: '/images/gallery/iterate/05.png', caption: 'Identity - Mission, Principles, Rules' }
     ]
   },
@@ -1124,11 +1157,26 @@ export const galleryProjects = [
     color: '#f59e0b',
     thumbnail: '/images/gallery/gateandtech/01.png',
     images: [
-      { src: '/images/gallery/gateandtech/01.png', caption: 'Landing Page - Learn. Practice. Succeed.' },
-      { src: '/images/gallery/gateandtech/02.png', caption: 'Learn to Code - Programming, DSA, AI/ML, System Design' },
-      { src: '/images/gallery/gateandtech/03.png', caption: 'Features - Learn, Practice, Quiz, Test Series' },
-      { src: '/images/gallery/gateandtech/04.png', caption: 'Supported Exams - GATE CSE, GATE DA, IIITH PGEE, BITS HD' },
-      { src: '/images/gallery/gateandtech/05.png', caption: 'Pricing - Free, Pro, Mentorship Plans' }
+      {
+        src: '/images/gallery/gateandtech/01.png',
+        caption: 'Landing Page - Learn. Practice. Succeed.'
+      },
+      {
+        src: '/images/gallery/gateandtech/02.png',
+        caption: 'Learn to Code - Programming, DSA, AI/ML, System Design'
+      },
+      {
+        src: '/images/gallery/gateandtech/03.png',
+        caption: 'Features - Learn, Practice, Quiz, Test Series'
+      },
+      {
+        src: '/images/gallery/gateandtech/04.png',
+        caption: 'Supported Exams - GATE CSE, GATE DA, IIITH PGEE, BITS HD'
+      },
+      {
+        src: '/images/gallery/gateandtech/05.png',
+        caption: 'Pricing - Free, Pro, Mentorship Plans'
+      }
     ]
   }
 ]

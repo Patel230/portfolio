@@ -73,10 +73,11 @@ export const projects = [
   },
   {
     title: 'Iterate',
-    description: 'Self-evolving coding agent that reads, improves, tests, and commits autonomously.',
+    description:
+      'Self-evolving coding agent that reads, improves, tests, and commits autonomously.',
     tech: ['Go', 'AI', 'Open Source'],
     link: 'https://graycodeai.github.io/iterate/',
     icon: 'cpu',
     color: '#06b6d4'
-  },
+  }
 ]

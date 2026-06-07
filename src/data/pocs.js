@@ -10,7 +10,8 @@ export const pocs = [
   },
   {
     name: 'GATE And Tech',
-    description: 'Exam preparation platform for GATE, PGEE with practice questions and test series.',
+    description:
+      'Exam preparation platform for GATE, PGEE with practice questions and test series.',
     tech: ['TypeScript', 'Next.js', 'Education'],
     link: 'https://gateandtech.in/',
     icon: 'book-open',
