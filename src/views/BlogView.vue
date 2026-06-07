@@ -171,22 +171,22 @@ const posts = rawPosts.map(post => ({
 }
 
 /* Stagger entrance animation for timeline posts */
-.post {
-  animation: fadeInUp 0.5s ease forwards;
+.post-card {
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
   opacity: 0;
 }
 
-.post:nth-child(1) { animation-delay: 0.04s; }
-.post:nth-child(2) { animation-delay: 0.08s; }
-.post:nth-child(3) { animation-delay: 0.12s; }
-.post:nth-child(4) { animation-delay: 0.16s; }
-.post:nth-child(5) { animation-delay: 0.20s; }
-.post:nth-child(6) { animation-delay: 0.24s; }
-.post:nth-child(7) { animation-delay: 0.28s; }
-.post:nth-child(8) { animation-delay: 0.32s; }
-.post:nth-child(9) { animation-delay: 0.36s; }
-.post:nth-child(10) { animation-delay: 0.40s; }
-.post:nth-child(11) { animation-delay: 0.44s; }
+.post-card:nth-child(1) { animation-delay: 0.04s; }
+.post-card:nth-child(2) { animation-delay: 0.08s; }
+.post-card:nth-child(3) { animation-delay: 0.12s; }
+.post-card:nth-child(4) { animation-delay: 0.16s; }
+.post-card:nth-child(5) { animation-delay: 0.20s; }
+.post-card:nth-child(6) { animation-delay: 0.24s; }
+.post-card:nth-child(7) { animation-delay: 0.28s; }
+.post-card:nth-child(8) { animation-delay: 0.32s; }
+.post-card:nth-child(9) { animation-delay: 0.36s; }
+.post-card:nth-child(10) { animation-delay: 0.40s; }
+.post-card:nth-child(11) { animation-delay: 0.44s; }
 
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -255,7 +255,7 @@ const posts = rawPosts.map(post => ({
     transform: none;
   }
 
-  .post {
+  .post-card {
     animation: none;
     opacity: 1;
   }

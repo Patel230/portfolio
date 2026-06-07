@@ -43,6 +43,7 @@
         <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
         <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">Open Source</a>
         <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">GitHub</a>
+        <a :href="stackLink" class="nav-link" @click.prevent="handleNavClick('portfolio-stack')">Stack</a>
         <router-link to="/blog" class="nav-link" @click="closeMenu">Journey</router-link>
         <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')">About</a>
         <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')">Contact</a>
@@ -68,6 +69,7 @@ const skillsLink = sectionLink('skills')
 const projectsLink = sectionLink('projects')
 const opensourceLink = sectionLink('opensource')
 const githubLink = sectionLink('github')
+const stackLink = sectionLink('portfolio-stack')
 const aboutLink = sectionLink('about')
 const contactLink = sectionLink('contact')
 
