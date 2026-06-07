@@ -124,13 +124,9 @@ const { displayText, showCursor } = useTypingEffect(roles)
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 16px;
-  color: #ffffff;
+  color: var(--accent);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  background: var(--gradient-hero);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .hero-title .accent {
