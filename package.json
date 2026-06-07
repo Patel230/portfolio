@@ -1,7 +1,7 @@
 {
   "name": "lakshman-patel-portfolio",
   "version": "0.2.0",
-  "buildDate": "June 7, 2026",
+  "buildDate": "June 8, 2026",
   "description": "Full Stack Developer & AI Engineer Portfolio - Vue.js, TypeScript, Python, FastAPI, Neo4j - Creator of GraphDone & TaskDone",
   "private": true,
   "type": "module",
