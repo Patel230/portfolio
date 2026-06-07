@@ -3,9 +3,9 @@
     <section class="blog-hero">
       <div class="container">
         <router-link to="/" class="back-link"> ← Back </router-link>
-        <h1 class="blog-title">My Journey</h1>
+        <h1 class="blog-title">Journey</h1>
         <p class="blog-subtitle">
-          From curious student to full-stack AI engineer — the unfiltered story.
+          From Monarch Tractor to a layoff, and everything I've built since. More coming soon.
         </p>
       </div>
     </section>
@@ -31,128 +31,84 @@
 const posts = [
   {
     id: 1,
-    tag: 'Origins',
-    date: '2019',
-    color: '#3b82f6',
-    title: 'The Beginning — A Kid Who Just Wanted to Build Things',
+    tag: 'First Job',
+    date: 'June 2022',
+    color: '#db2777',
+    title: 'Monarch Tractor — My First Real Engineering Job',
     body: `
-      <p>I grew up curious. Not the kind that sticks to textbooks, but the kind that takes apart things to see how they work. When I first touched a computer in school, something clicked. Not the browser, not the games — the terminal. That blinking cursor felt like a door.</p>
-      <p>My first program was a mess. A Python script that printed my name in a loop. But it <em>ran</em>. That feeling — watching a machine execute your intent — became an obsession.</p>
-      <p>I started building small things: calculators, text adventures, scrapers for cricket scores. Each one taught me something new. Each bug taught me patience. I didn't know yet what "full stack" or "AI" meant, but I knew I wanted to build things that mattered.</p>
+      <p>Fresh out of college, I joined <strong>Monarch Tractor</strong> — a Silicon Valley company building electric autonomous tractors. My first task was to not break production. My actual job was building APIs and cloud infrastructure for systems that talked to real machines on real farms in California.</p>
+      <p>The stack hit me all at once: Python, Flask, FastAPI, AWS, InfluxDB for time-series sensor data, MQTT for IoT, ROS for the robot operating layer. Every service I touched was connected to hardware in the field. A bad deploy could affect a tractor mid-row.</p>
+      <p>That weight was a good teacher. I learned what uptime actually means when it's not just a metric but a physical thing in a field. I learned to write code that survives hardware failures, flaky networks, and 3am on-call pages. I learned to review code without ego and receive feedback without defensiveness.</p>
+      <p>Three years of that discipline became my foundation. Everything I've built since carries its DNA.</p>
     `
   },
   {
     id: 2,
-    tag: 'Education',
-    date: '2020–2022',
-    color: '#8b5cf6',
-    title: 'Engineering & the Rabbit Hole of Systems',
+    tag: 'Side Projects',
+    date: '2022–2024',
+    color: '#7c3aed',
+    title: 'The Done Universe — Building in the Margins',
     body: `
-      <p>College opened new doors — and exposed how much I didn't know. Data structures, algorithms, operating systems, computer networks. I dove deep into each, not to pass exams, but because I genuinely wanted to understand how computers think.</p>
-      <p>I started contributing to open source during this period. Small things at first — fixing typos in docs, then fixing actual bugs, then writing features. The open source community showed me what collaborative engineering looked like at scale.</p>
-      <p>I built my first real web app: a task tracker. It was ugly, had zero tests, and crashed if you clicked the wrong button. But users (my classmates) used it. That was enough.</p>
-      <p>I also started getting serious about security — how systems break, how data leaks, how trust can be exploited. This led me to pursue <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong>, one of India's top institutions for it.</p>
+      <p>While working full-time, I was building on the side. Not tutorials. Not clones. Real products with real deployments.</p>
+      <p>The "Done" series started from a simple frustration: I had too many unfinished side projects. So I made a rule — everything ships. If it doesn't run in production, it doesn't count.</p>
+      <p><strong>GraphDone</strong> was the most ambitious: a graph-native project management platform where tasks and dependencies live as first-class graph nodes in Neo4j. Built with React, GraphQL, TypeScript. It got users. It got real feedback. But running Neo4j at scale alone, without funding, eventually became untenable. It's paused — the idea isn't.</p>
+      <p><strong>TaskDone</strong> followed — modern task management with multiple views, graph-based relationships, and analytics. Still live at <a href="https://taskdone.gateandtech.in" target="_blank" rel="noopener noreferrer">taskdone.gateandtech.in</a>.</p>
+      <p>Then came SyncDone, DrawDone, ContactDone, DocDone, EnergyDone, MeshDone, FileDone... each one a real attempt at a real problem. Over 30 apps across three years. Some live. Some paused. All mine.</p>
     `
   },
   {
     id: 3,
-    tag: 'First Real Job',
-    date: '2022–2023',
-    color: '#db2777',
-    title: 'Monarch Tractor — Where Scale Became Real',
+    tag: 'Layoff',
+    date: '12 November 2025',
+    color: '#f97316',
+    title: 'The Day Everything Changed — And I Chose to Build',
     body: `
-      <p>Getting into <strong>Monarch Tractor</strong> felt surreal. A Silicon Valley autonomous farming company. I was building APIs and cloud infrastructure for actual robots working on real farms in California.</p>
-      <p>The stack was serious: Python, Flask, FastAPI, AWS, InfluxDB, ROS (Robot Operating System), MQTT for IoT sensors. Data from tractors flowed through systems I helped build. If my code had a bug, a tractor might behave wrong in a field.</p>
-      <p>That responsibility sharpened me fast. I learned what production engineering means — 99.9% uptime isn't a metric, it's a discipline. I learned to write code that survives traffic spikes, hardware failures, and network partitions.</p>
-      <p>Beyond the technical, I learned how great teams work: code reviews that don't feel like attacks, postmortems without blame, documentation as a first-class concern.</p>
-      <p>This was my foundation. Everything I build now carries DNA from what I learned here.</p>
+      <p>On November 12, 2025, I was laid off.</p>
+      <p>No drama. The company had its reasons. These things happen. But it was still a jolt — three years of identity, routine, and purpose, suddenly gone in a morning.</p>
+      <p>I spent exactly one day feeling sorry for myself. Then I opened my laptop.</p>
+      <p>I'd been watching AI eat software for two years while working inside a company moving at company speed. Now I had no speed limit. No sprint planning. No stakeholder sign-off. Just time, curiosity, and a clear question: <em>what can I build if I go all-in on AI as the actual primitive, not the feature?</em></p>
+      <p>That question became the next chapter. And I've been running on it ever since.</p>
     `
   },
   {
     id: 4,
-    tag: 'Building',
-    date: '2022–2024',
-    color: '#059669',
-    title: 'The Done Universe — Building 30+ Products',
+    tag: 'GrayCodeAI',
+    date: 'November 2025',
+    color: '#e11d48',
+    title: 'GrayCodeAI — A Place for Humans and AI Agents to Build Together',
     body: `
-      <p>Parallel to my career, I was building. Constantly. What started as weekend experiments became a philosophy: <em>ship something real, learn from it, improve it</em>.</p>
-      <p>The "Done" series was born out of frustration with incomplete side projects. Everything needed to be functional, deployed, and real — not just a GitHub repo with 3 commits.</p>
-      <p><strong>TaskDone</strong> was first: modern task management with graph-based relationships, multiple views, and analytics. Built with TypeScript, Next.js, Neo4j, and deployed on Cloudflare. Real users, real feedback.</p>
-      <p><strong>GraphDone</strong> came next — my most ambitious project. Graph-native project management where tasks and dependencies are first-class graph nodes. Built on Neo4j, React, and GraphQL. It was featured and got real users, but the infrastructure cost became unsustainable for a solo project without funding. It's paused, not dead.</p>
-      <p>Then came the cascade: TaskDone, SyncDone, DrawDone, ContactDone, DocDone, SecureDone... Each one solving a real problem, each one teaching me something new about systems design, UX, or scalability.</p>
-      <p>Over 30 apps. Some live. Some paused. All real. All mine.</p>
+      <p>The first thing I built after the layoff was <strong>GrayCodeAI</strong>.</p>
+      <p>Not because I had a roadmap. Because I had a conviction: the future of software development isn't AI replacing engineers — it's AI agents and humans working in shared context, sharing a codebase, coordinating on tasks the way a great team does.</p>
+      <p>GrayCodeAI is that bet made concrete. A platform where humans and AI agents build together — not autocomplete, not chat, but agents that understand your project, maintain state across sessions, and actually contribute. Built on TypeScript and Next.js with agent orchestration as a first-class primitive.</p>
+      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. Minimal change, maximum precision. That's the kind of AI collaboration worth building: not chaos, not takeover — just intelligent, precise steps forward.</p>
+      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a>. Still evolving every day.</p>
     `
   },
   {
     id: 5,
-    tag: 'AI Era',
-    date: '2023–2024',
-    color: '#e11d48',
-    title: 'GrayCodeAI — Where Humans and AI Build Together',
+    tag: 'Open Source',
+    date: 'December 2025',
+    color: '#0891b2',
+    title: 'Herm & LangDAG — Going Deeper Into the Ecosystem',
     body: `
-      <p>When LLMs went mainstream, I didn't chase the hype. I asked: <em>what does AI actually change about how software gets built?</em></p>
-      <p>The answer: everything. Not because AI writes perfect code, but because the collaboration between human intent and AI capability unlocks a new category of velocity. You can prototype ideas that would have taken weeks in hours. You can iterate on systems that would have taken months in days.</p>
-      <p><strong>GrayCodeAI</strong> is my answer to that question made concrete. A platform where humans and AI agents build together — not just AI-assisted autocomplete, but genuine AI agents that understand context, maintain state, and contribute meaningfully to a codebase.</p>
-      <p>It's built on TypeScript, Next.js, with AI agent orchestration as a first-class primitive. The name "GrayCode" comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. It represents the idea of intelligent, minimal, precise transitions. That's what good AI-human collaboration should feel like.</p>
-      <p>This is where most of my energy goes now. It's not just a product. It's a thesis about the future of engineering.</p>
+      <p>With more time and more focus, I started contributing more seriously to open source.</p>
+      <p><strong>Herm</strong> is a terminal-based Heroku CLI wrapper. I contributed improvements to the CLI UX — better error messages, cleaner command flow, things that matter when you live in the terminal. Small surface area, real impact. Someone opened an issue thanking me within a week.</p>
+      <p><strong>LangDAG</strong> was the more interesting contribution. It's a DAG-based workflow engine for language model pipelines — exactly the kind of infrastructure GrayCodeAI sits on top of. I contributed graph optimization logic that eliminated redundant LLM calls in multi-step pipelines. The intersection of my graph obsession and my AI work, in one PR.</p>
+      <p>Open source is accountability in public. Your code is read by strangers, debated by maintainers, and merged (or not) on its merits alone. There's no politics, no hierarchy — just the code. I find that clarifying.</p>
     `
   },
   {
     id: 6,
-    tag: 'Open Source',
-    date: '2023–Present',
-    color: '#0891b2',
-    title: 'Herm & LangDAG — Contributing Back',
-    body: `
-      <p>Building in private is easy. Contributing publicly is accountability.</p>
-      <p><strong>Herm</strong> is a terminal-based Heroku CLI wrapper. I contributed improvements to the CLI UX, making it more intuitive for developers who live in the terminal. Small contribution, real impact — people thanked me in the issues.</p>
-      <p><strong>LangDAG</strong> is more interesting: a DAG-based workflow engine for language model pipelines. I contributed graph optimization logic that reduced redundant LLM calls in complex workflows. This is the intersection of my graph obsession and AI work.</p>
-      <p>Open source taught me something school can't: how to write code for strangers. Code that other developers will read, maintain, debate, and extend. It's humbling and precise work.</p>
-      <p>I continue contributing. Whenever I use a tool that has a rough edge, I try to file a PR, not just an issue.</p>
-    `
-  },
-  {
-    id: 7,
-    tag: 'Growth',
-    date: '2024',
-    title: 'The Tools — What I Actually Use to Build',
-    color: '#f59e0b',
-    body: `
-      <p>People ask what my stack is. Here's the honest answer: it depends on the problem, but there are patterns.</p>
-      <p><strong>Languages:</strong> TypeScript is my default for anything web. Python for AI/ML pipelines and data work. Go when I need performance and concurrency without the complexity of Rust. Rust when I need maximum performance (MeshDone, FileDone). Shell script for glue.</p>
-      <p><strong>Frontend:</strong> Vue.js for my own projects (this portfolio is Vue 3 + Vite). React for client work and Next.js for full-stack. I care about performance, accessibility, and actual usability — not just visual polish.</p>
-      <p><strong>Backend:</strong> FastAPI and Flask for Python services. NestJS or Fastify for TypeScript. Go's standard library for lean services.</p>
-      <p><strong>Data:</strong> PostgreSQL as the default. Neo4j for graph problems (GraphDone, SyncDone). InfluxDB for time-series (Monarch Tractor, Smart Power Grid). Redis for caching and queues.</p>
-      <p><strong>Infrastructure:</strong> AWS for serious production workloads. Cloudflare Pages + Workers for edge-deployed apps (this portfolio, TaskDone). Docker everywhere. Linux as my daily driver.</p>
-      <p>The most important tool I use: a clear head and a blank file. Starting from understanding beats starting from templates.</p>
-    `
-  },
-  {
-    id: 8,
-    tag: 'Now',
-    date: '2025–Present',
+    tag: 'Building Now',
+    date: '2026 — Present',
     color: '#10b981',
-    title: 'M.Tech at ABV-IIITM Gwalior — Security Meets AI',
+    title: "What I'm Building Right Now",
     body: `
-      <p>I'm currently pursuing <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong>. The coursework is rigorous: cryptography, network security, secure systems design, vulnerability analysis.</p>
-      <p>But what excites me most is the intersection with AI. Security systems powered by AI. AI systems that need to be secured. The attack surface of LLM-based applications is a new frontier, and I'm studying it both theoretically and practically.</p>
-      <p>I'm also based in <strong>Gurgaon</strong> and actively available for roles where I can build things that matter — senior engineering, AI product development, or founding engineer positions at companies serious about using AI to reshape how software gets built.</p>
-      <p>I'm not looking for a job that pays. I'm looking for a problem worth solving with people worth solving it with.</p>
-    `
-  },
-  {
-    id: 9,
-    tag: 'Philosophy',
-    date: 'Always',
-    color: '#6366f1',
-    title: 'What I Believe About Building Software',
-    body: `
-      <p><strong>Ship real things.</strong> A GitHub repo with no deployment is a draft. Real feedback only comes from real usage. I'd rather have a live, imperfect product than a perfect private one.</p>
-      <p><strong>Understand your tools.</strong> Every abstraction leaks eventually. When it does, the engineers who understand what's underneath debug in minutes. The others debug for days.</p>
-      <p><strong>Build with empathy.</strong> Every line of code is a message to the person who maintains it next — often future you. Make it legible.</p>
-      <p><strong>Stay curious, not trendy.</strong> LLMs are genuinely revolutionary. But so was TCP/IP, and so was the relational database. New doesn't mean universally applicable. Think first.</p>
-      <p><strong>The best code is no code.</strong> Before writing a system, ask if the problem can be eliminated. Before adding a feature, ask if users actually need it. Constraints force creativity.</p>
-      <p>I build because I can't not build. The problems are too interesting and the tools are too good. If you've read this far, maybe you feel the same. Let's build something together.</p>
+      <p>Seven months after the layoff, I'm still building — and the output has been the highest of my career.</p>
+      <p>GrayCodeAI continues to evolve. The agent coordination layer is getting more capable. The gap between "AI writes code" and "AI collaborates on a codebase" is real, and closing it is the work.</p>
+      <p>The Done universe keeps growing. New apps in progress: <strong>Iterate</strong> — a self-evolving coding agent that reads, improves, tests, and commits autonomously (built in Go, open source). <strong>Growth</strong> — a personal tracker for habits, journaling, and progress analytics. <strong>MindShift</strong> — book summaries with audio and key takeaways.</p>
+      <p>I'm also pursuing my <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong>, which has given me a new lens on AI: not just what it can build, but what it can break — and how to design systems that are resilient to both.</p>
+      <p>Based in <strong>Gurgaon</strong>. Available for roles where the work is hard, the team is serious, and AI is a genuine primitive — not a marketing slide. If that's you, let's talk.</p>
     `
   }
 ]

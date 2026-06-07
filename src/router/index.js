@@ -36,9 +36,9 @@ const routes = [
     name: 'Blog',
     component: () => import('@/views/BlogView.vue'),
     meta: {
-      title: 'My Journey | Lakshman Patel',
+      title: 'Journey | Lakshman Patel',
       description:
-        'The story of how Lakshman Patel went from curious student to full-stack AI engineer — building 30+ products along the way.'
+        'From Monarch Tractor to a layoff on Nov 12, 2025 — and the AI-powered building sprint that followed. The real story.'
     }
   },
   {

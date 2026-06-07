@@ -39,7 +39,7 @@
         </router-link>
         <router-link to="/creations" class="nav-link" @click="closeMenu"> Creations </router-link>
         <router-link to="/gallery" class="nav-link" @click="closeMenu"> Gallery </router-link>
-        <router-link to="/blog" class="nav-link" @click="closeMenu"> Blog </router-link>
+        <router-link to="/blog" class="nav-link" @click="closeMenu"> Journey </router-link>
         <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">
           Open Source
         </a>
