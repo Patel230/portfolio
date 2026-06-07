@@ -14,18 +14,28 @@
           </p>
           <p>
             Building
-            <a href="https://graycodeai.gateandtech.in/" target="_blank" rel="noopener noreferrer"><strong>GrayCode AI</strong></a>
+            <a href="https://graycodeai.gateandtech.in/" target="_blank" rel="noopener noreferrer"
+              ><strong>GrayCode AI</strong></a
+            >
             — an intelligent developer tooling platform. Founder of
-            <a href="https://gateandtech.in" target="_blank" rel="noopener noreferrer"><strong>GATEAndTech</strong></a>
+            <a href="https://gateandtech.in" target="_blank" rel="noopener noreferrer"
+              ><strong>GATEAndTech</strong></a
+            >
             — EdTech platform for engineering students.
           </p>
           <p>
             Building
-            <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"><strong>TaskDone</strong></a>,
-            <a href="https://graphlings.net/" target="_blank" rel="noopener noreferrer"><strong>Graphlings</strong></a>,
-            contributed to
-            <a href="https://github.com/aduermael/herm" target="_blank" rel="noopener noreferrer"><strong>Herm</strong></a>
-            open source, and <strong>30+ full stack applications powered by intelligent systems</strong>.
+            <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"
+              ><strong>TaskDone</strong></a
+            >,
+            <a href="https://graphlings.net/" target="_blank" rel="noopener noreferrer"
+              ><strong>Graphlings</strong></a
+            >, contributed to
+            <a href="https://github.com/aduermael/herm" target="_blank" rel="noopener noreferrer"
+              ><strong>Herm</strong></a
+            >
+            open source, and
+            <strong>30+ full stack applications powered by intelligent systems</strong>.
           </p>
         </div>
         <aside class="about-info" aria-label="Personal Information">

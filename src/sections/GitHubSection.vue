@@ -8,19 +8,29 @@
       </h2>
 
       <div class="github-grid">
-
         <!-- Stats Card -->
         <div class="gh-card stats-card fade-in-up stagger-1" data-reveal>
           <div class="card-header">
-            <span class="card-icon" style="background:rgba(255,215,0,0.12);color:#ffd700">
+            <span class="card-icon" style="background: rgba(255, 215, 0, 0.12); color: #ffd700">
               <LucideBarChart2 :size="18" />
             </span>
             <span class="card-title">GitHub Stats</span>
-            <a href="https://github.com/Patel230" target="_blank" rel="noopener noreferrer" class="card-action" aria-label="View GitHub profile">
+            <a
+              href="https://github.com/Patel230"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-action"
+              aria-label="View GitHub profile"
+            >
               <LucideExternalLink :size="14" />
             </a>
           </div>
-          <a href="https://github.com/Patel230" target="_blank" rel="noopener noreferrer" class="stats-img-link">
+          <a
+            href="https://github.com/Patel230"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stats-img-link"
+          >
             <div v-if="!statsLoaded && !statsError" class="img-shimmer" aria-hidden="true" />
             <img
               v-if="!statsError"
@@ -39,12 +49,17 @@
         <!-- Streak Card -->
         <div class="gh-card streak-card fade-in-up stagger-2" data-reveal>
           <div class="card-header">
-            <span class="card-icon" style="background:rgba(249,115,22,0.12);color:#f97316">
+            <span class="card-icon" style="background: rgba(249, 115, 22, 0.12); color: #f97316">
               <LucideFlame :size="18" />
             </span>
             <span class="card-title">Contribution Streak</span>
           </div>
-          <a href="https://github.com/Patel230" target="_blank" rel="noopener noreferrer" class="stats-img-link">
+          <a
+            href="https://github.com/Patel230"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stats-img-link"
+          >
             <div v-if="!streakLoaded && !streakError" class="img-shimmer" aria-hidden="true" />
             <img
               v-if="!streakError"
@@ -63,12 +78,17 @@
         <!-- Top Languages Card -->
         <div class="gh-card langs-card fade-in-up stagger-3" data-reveal>
           <div class="card-header">
-            <span class="card-icon" style="background:rgba(139,92,246,0.12);color:#8b5cf6">
+            <span class="card-icon" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6">
               <LucideCode2 :size="18" />
             </span>
             <span class="card-title">Top Languages</span>
           </div>
-          <a href="https://github.com/Patel230?tab=repositories" target="_blank" rel="noopener noreferrer" class="stats-img-link">
+          <a
+            href="https://github.com/Patel230?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stats-img-link"
+          >
             <div v-if="!langsLoaded && !langsError" class="img-shimmer" aria-hidden="true" />
             <img
               v-if="!langsError"
@@ -87,7 +107,7 @@
         <!-- Quick Links Card -->
         <div class="gh-card links-card fade-in-up stagger-4" data-reveal>
           <div class="card-header">
-            <span class="card-icon" style="background:rgba(34,197,94,0.12);color:#22c55e">
+            <span class="card-icon" style="background: rgba(34, 197, 94, 0.12); color: #22c55e">
               <LucideLink :size="18" />
             </span>
             <span class="card-title">Quick Links</span>
@@ -110,7 +130,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -129,7 +148,7 @@ import {
   User as LucideUser,
   FolderOpen as LucideFolderOpen,
   GitPullRequest as LucideGitPullRequest,
-  Star as LucideStar,
+  Star as LucideStar
 } from 'lucide-vue-next'
 
 const statsLoaded = ref(false)
@@ -139,14 +158,33 @@ const streakError = ref(false)
 const langsLoaded = ref(false)
 const langsError = ref(false)
 
-const handleStatsLoad = () => { statsLoaded.value = true }
-const handleStatsError = () => { statsError.value = true }
+const handleStatsLoad = () => {
+  statsLoaded.value = true
+}
+const handleStatsError = () => {
+  statsError.value = true
+}
 
 const githubLinks = [
   { label: 'Profile', href: 'https://github.com/Patel230', icon: LucideUser, color: '#ffd700' },
-  { label: 'Repositories', href: 'https://github.com/Patel230?tab=repositories', icon: LucideFolderOpen, color: '#22c55e' },
-  { label: 'Pull Requests', href: 'https://github.com/Patel230?tab=overview', icon: LucideGitPullRequest, color: '#8b5cf6' },
-  { label: 'Stars Given', href: 'https://github.com/Patel230?tab=stars', icon: LucideStar, color: '#f97316' },
+  {
+    label: 'Repositories',
+    href: 'https://github.com/Patel230?tab=repositories',
+    icon: LucideFolderOpen,
+    color: '#22c55e'
+  },
+  {
+    label: 'Pull Requests',
+    href: 'https://github.com/Patel230?tab=overview',
+    icon: LucideGitPullRequest,
+    color: '#8b5cf6'
+  },
+  {
+    label: 'Stars Given',
+    href: 'https://github.com/Patel230?tab=stars',
+    icon: LucideStar,
+    color: '#f97316'
+  }
 ]
 </script>
 
@@ -179,7 +217,10 @@ const githubLinks = [
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 24px;
-  transition: border-color 0.25s ease, transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s var(--ease-spring),
+    box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
 }
@@ -260,14 +301,23 @@ const githubLinks = [
   width: 100%;
   height: 160px;
   border-radius: 6px;
-  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-tertiary) 50%, var(--bg-card) 75%);
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-card) 75%
+  );
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .fallback-msg {
@@ -290,7 +340,7 @@ const githubLinks = [
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -298,7 +348,7 @@ const githubLinks = [
 }
 
 .quick-link:hover {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--link-color);
   transform: translateX(4px);
 }

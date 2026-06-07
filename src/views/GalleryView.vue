@@ -128,7 +128,11 @@
                 :aria-label="`View image ${index + 1}: ${img.caption}`"
                 @click="selectThumbnail(index)"
               >
-                <img :src="img.src" :alt="`${currentProject.name} — screenshot ${index + 1}`" @error="handleImageError" />
+                <img
+                  :src="img.src"
+                  :alt="`${currentProject.name} — screenshot ${index + 1}`"
+                  @error="handleImageError"
+                />
               </button>
             </div>
           </div>
