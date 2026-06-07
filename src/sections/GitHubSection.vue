@@ -252,15 +252,15 @@ const githubLinks = [
 /* ── Grid layout ── */
 .github-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
 .stats-card { grid-column: span 1; }
 .streak-card { grid-column: span 1; }
-.langs-card { grid-column: span 1; }
+.langs-card { grid-column: span 2; }
 .orgs-card { grid-column: span 1; }
-.links-card { grid-column: span 2; }
+.links-card { grid-column: span 1; }
 
 /* ── Shared card base ── */
 .gh-card {
@@ -501,11 +501,9 @@ const githubLinks = [
     gap: 16px;
   }
 
-  .stats-card { grid-column: span 1; }
-  .streak-card { grid-column: span 1; }
-  .langs-card { grid-column: span 1; }
+  .langs-card { grid-column: span 2; }
   .orgs-card { grid-column: span 1; }
-  .links-card { grid-column: span 2; }
+  .links-card { grid-column: span 1; }
 }
 
 @media (max-width: 767px) {
