@@ -227,7 +227,9 @@ img {
 .btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.2);
+  box-shadow:
+    0 8px 30px rgba(255, 215, 0, 0.5),
+    0 0 0 1px rgba(255, 215, 0, 0.2);
 }
 
 .btn-primary:focus-visible {
@@ -395,7 +397,9 @@ img {
 /* Page route transitions */
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .page-enter-from,
@@ -413,8 +417,12 @@ img {
 
 /* Shimmer loading animation */
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .shimmer {

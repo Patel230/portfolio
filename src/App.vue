@@ -37,4 +37,3 @@ import { useScrollReveal } from './composables/useScrollReveal.js'
 
 useScrollReveal('[data-reveal]')
 </script>
-

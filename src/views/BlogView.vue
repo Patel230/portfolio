@@ -176,21 +176,49 @@ const posts = rawPosts.map(post => ({
   opacity: 0;
 }
 
-.post-card:nth-child(1) { animation-delay: 0.04s; }
-.post-card:nth-child(2) { animation-delay: 0.08s; }
-.post-card:nth-child(3) { animation-delay: 0.12s; }
-.post-card:nth-child(4) { animation-delay: 0.16s; }
-.post-card:nth-child(5) { animation-delay: 0.20s; }
-.post-card:nth-child(6) { animation-delay: 0.24s; }
-.post-card:nth-child(7) { animation-delay: 0.28s; }
-.post-card:nth-child(8) { animation-delay: 0.32s; }
-.post-card:nth-child(9) { animation-delay: 0.36s; }
-.post-card:nth-child(10) { animation-delay: 0.40s; }
-.post-card:nth-child(11) { animation-delay: 0.44s; }
+.post-card:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.post-card:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.post-card:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.post-card:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.post-card:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.post-card:nth-child(6) {
+  animation-delay: 0.24s;
+}
+.post-card:nth-child(7) {
+  animation-delay: 0.28s;
+}
+.post-card:nth-child(8) {
+  animation-delay: 0.32s;
+}
+.post-card:nth-child(9) {
+  animation-delay: 0.36s;
+}
+.post-card:nth-child(10) {
+  animation-delay: 0.4s;
+}
+.post-card:nth-child(11) {
+  animation-delay: 0.44s;
+}
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Mobile */

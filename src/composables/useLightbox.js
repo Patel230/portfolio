@@ -12,7 +12,8 @@ export function useLightbox(projectList) {
   const { activate: trapFocus, deactivate: releaseFocus } = useFocusTrap()
 
   // Resolve list — accept ref or plain array
-  const resolveList = () => (typeof projectList === 'function' ? projectList() : projectList?.value ?? projectList)
+  const resolveList = () =>
+    typeof projectList === 'function' ? projectList() : (projectList?.value ?? projectList)
 
   const currentProject = computed(() => resolveList()[currentProjectIndex.value])
 

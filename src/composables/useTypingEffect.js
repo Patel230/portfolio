@@ -1,6 +1,15 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
-export function useTypingEffect(roles, { startDelay = 500, typeSpeed = 100, deleteSpeed = 50, pauseDuration = 2000, resumeDelay = 500 } = {}) {
+export function useTypingEffect(
+  roles,
+  {
+    startDelay = 500,
+    typeSpeed = 100,
+    deleteSpeed = 50,
+    pauseDuration = 2000,
+    resumeDelay = 500
+  } = {}
+) {
   const displayText = ref('')
   const showCursor = ref(true)
 
@@ -26,7 +35,9 @@ export function useTypingEffect(roles, { startDelay = 500, typeSpeed = 100, dele
       delay = pauseDuration
       isDeleting = true
       showCursor.value = false
-      setTimeout(() => { showCursor.value = true }, 100)
+      setTimeout(() => {
+        showCursor.value = true
+      }, 100)
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false
       roleIndex = (roleIndex + 1) % roles.length

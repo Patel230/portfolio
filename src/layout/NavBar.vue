@@ -1,5 +1,10 @@
 <template>
-  <nav class="navbar" :class="{ scrolled: isScrolled }" role="navigation" aria-label="Main navigation">
+  <nav
+    class="navbar"
+    :class="{ scrolled: isScrolled }"
+    role="navigation"
+    aria-label="Main navigation"
+  >
     <div class="container navbar-content">
       <router-link to="/" class="logo" aria-label="Go to homepage">
         <span class="logo-brackets" aria-hidden="true">{LP}</span>
@@ -38,15 +43,23 @@
           Home
         </router-link>
         <a :href="skillsLink" class="nav-link" @click.prevent="handleNavClick('skills')">Skills</a>
-        <a :href="projectsLink" class="nav-link" @click.prevent="handleNavClick('projects')">Projects</a>
+        <a :href="projectsLink" class="nav-link" @click.prevent="handleNavClick('projects')"
+          >Projects</a
+        >
         <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
         <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
-        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">Open Source</a>
+        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')"
+          >Open Source</a
+        >
         <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">GitHub</a>
-        <a :href="stackLink" class="nav-link" @click.prevent="handleNavClick('portfolio-stack')">Stack</a>
+        <a :href="stackLink" class="nav-link" @click.prevent="handleNavClick('portfolio-stack')"
+          >Stack</a
+        >
         <router-link to="/blog" class="nav-link" @click="closeMenu">Journey</router-link>
         <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')">About</a>
-        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')">Contact</a>
+        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')"
+          >Contact</a
+        >
       </div>
     </div>
   </nav>
@@ -64,7 +77,7 @@ const menuButtonRef = ref(null)
 const isScrolled = ref(false)
 
 const isHomePage = computed(() => route.path === '/')
-const sectionLink = (id) => computed(() => isHomePage.value ? `#${id}` : `/#${id}`)
+const sectionLink = id => computed(() => (isHomePage.value ? `#${id}` : `/#${id}`))
 const skillsLink = sectionLink('skills')
 const projectsLink = sectionLink('projects')
 const opensourceLink = sectionLink('opensource')
@@ -81,14 +94,14 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const scrollToSection = (section) => {
+const scrollToSection = section => {
   const el = document.getElementById(section)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })
   }
 }
 
-const handleNavClick = async (section) => {
+const handleNavClick = async section => {
   closeMenu()
   if (isHomePage.value) {
     scrollToSection(section)

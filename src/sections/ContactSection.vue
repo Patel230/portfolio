@@ -20,7 +20,14 @@
           :style="{ '--item-color': item.color }"
           @click="handleContactClick(item)"
         >
-          <span class="contact-icon" aria-hidden="true" :style="{ backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`, color: item.color }">
+          <span
+            class="contact-icon"
+            aria-hidden="true"
+            :style="{
+              backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`,
+              color: item.color
+            }"
+          >
             <svg
               width="20"
               height="20"
@@ -179,7 +186,7 @@ const handleContactClick = item => {
 .contact-item:hover {
   border-color: color-mix(in srgb, var(--item-color, var(--accent)) 40%, transparent);
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
 .contact-item:hover::after {
@@ -201,7 +208,6 @@ const handleContactClick = item => {
   border-radius: 10px;
   flex-shrink: 0;
 }
-
 
 .contact-info {
   display: flex;
