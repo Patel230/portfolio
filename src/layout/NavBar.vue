@@ -42,22 +42,56 @@
         >
           Home
         </router-link>
-        <a :href="skillsLink" class="nav-link" @click.prevent="handleNavClick('skills')">Skills</a>
-        <a :href="projectsLink" class="nav-link" @click.prevent="handleNavClick('projects')"
+        <a
+          :href="skillsLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'skills' }"
+          @click.prevent="handleNavClick('skills')"
+          >Skills</a
+        >
+        <a
+          :href="projectsLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'projects' }"
+          @click.prevent="handleNavClick('projects')"
           >Projects</a
         >
         <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
         <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
-        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')"
+        <a
+          :href="opensourceLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'opensource' }"
+          @click.prevent="handleNavClick('opensource')"
           >Open Source</a
         >
-        <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">GitHub</a>
-        <a :href="stackLink" class="nav-link" @click.prevent="handleNavClick('portfolio-stack')"
+        <a
+          :href="githubLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'github' }"
+          @click.prevent="handleNavClick('github')"
+          >GitHub</a
+        >
+        <a
+          :href="stackLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'portfolio-stack' }"
+          @click.prevent="handleNavClick('portfolio-stack')"
           >Stack</a
         >
         <router-link to="/blog" class="nav-link" @click="closeMenu">Journey</router-link>
-        <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')">About</a>
-        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')"
+        <a
+          :href="aboutLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'about' }"
+          @click.prevent="handleNavClick('about')"
+          >About</a
+        >
+        <a
+          :href="contactLink"
+          class="nav-link"
+          :class="{ active: activeSection === 'contact' }"
+          @click.prevent="handleNavClick('contact')"
           >Contact</a
         >
       </div>
@@ -85,6 +119,33 @@ const githubLink = sectionLink('github')
 const stackLink = sectionLink('portfolio-stack')
 const aboutLink = sectionLink('about')
 const contactLink = sectionLink('contact')
+
+const activeSection = ref('')
+const SECTIONS = [
+  'skills',
+  'projects',
+  'opensource',
+  'github',
+  'portfolio-stack',
+  'about',
+  'contact'
+]
+let sectionObserver = null
+
+const setupSectionObserver = () => {
+  if (sectionObserver) sectionObserver.disconnect()
+  const els = SECTIONS.map(id => document.getElementById(id)).filter(Boolean)
+  if (!els.length) return
+  sectionObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) activeSection.value = entry.target.id
+      })
+    },
+    { threshold: 0.3 }
+  )
+  els.forEach(el => sectionObserver.observe(el))
+}
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -147,6 +208,7 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
+  if (isHomePage.value) setupSectionObserver()
 })
 
 onUnmounted(() => {
@@ -154,6 +216,15 @@ onUnmounted(() => {
   document.removeEventListener('keydown', handleEscape)
   window.removeEventListener('scroll', handleScroll)
   preventBodyScroll(false)
+  if (sectionObserver) sectionObserver.disconnect()
+})
+
+watch(isHomePage, val => {
+  if (val) setTimeout(setupSectionObserver, 100)
+  else {
+    activeSection.value = ''
+    if (sectionObserver) sectionObserver.disconnect()
+  }
 })
 
 // Watch menu state to toggle body scroll
@@ -249,7 +320,8 @@ const handleMenuClick = event => {
 }
 
 .nav-link:hover,
-.nav-link.router-link-active {
+.nav-link.router-link-active,
+.nav-link.active {
   color: var(--accent);
   transform: translateY(-1px);
 }
@@ -268,7 +340,8 @@ const handleMenuClick = event => {
 }
 
 .nav-link:hover::after,
-.nav-link.router-link-active::after {
+.nav-link.router-link-active::after,
+.nav-link.active::after {
   width: 100%;
 }
 
