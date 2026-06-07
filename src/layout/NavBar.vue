@@ -32,7 +32,6 @@
         ref="menuRef"
         class="nav-links"
         :class="{ 'is-open': isMenuOpen }"
-        @click="handleMenuClick"
       >
         <router-link
           to="/"
@@ -202,7 +201,6 @@ const handleNavClick = async section => {
     scrollToSection(section)
   } else {
     await router.push({ path: '/', hash: `#${section}` })
-    setTimeout(() => scrollToSection(section), 100)
   }
   setTimeout(() => {
     scrollLocked = false
@@ -267,12 +265,6 @@ watch(isMenuOpen, newValue => {
   preventBodyScroll(newValue)
 })
 
-const handleMenuClick = event => {
-  // Close menu when clicking on a link
-  if (event.target.classList.contains('nav-link')) {
-    closeMenu()
-  }
-}
 </script>
 
 <style scoped>
@@ -340,7 +332,14 @@ const handleMenuClick = event => {
   display: flex;
   gap: 32px;
   align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   will-change: transform;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
 }
 
 .nav-link {
@@ -352,6 +351,7 @@ const handleMenuClick = event => {
     transform 0.2s ease;
   position: relative;
   letter-spacing: 0.01em;
+  white-space: nowrap;
 }
 
 .nav-link:hover,

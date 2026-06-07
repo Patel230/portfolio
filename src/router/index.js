@@ -1,6 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAnalytics } from '@/composables/useAnalytics.js'
 
+// Prevent browser from interfering with Vue Router's scroll management
+if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
+  history.scrollRestoration = 'manual'
+}
+
 const routes = [
   {
     path: '/',
@@ -73,7 +78,7 @@ const router = createRouter({
   }
 })
 
-// Track page views
+// Track page views and manage focus
 router.afterEach(to => {
   // Update title
   if (to.meta.title) {
@@ -91,6 +96,15 @@ router.afterEach(to => {
   // Track page view
   const { trackPageView } = useAnalytics()
   trackPageView(to.fullPath, to.meta.title || document.title)
+
+  // Move focus to main content for keyboard/AT users after page transition
+  setTimeout(() => {
+    const main = document.getElementById('main-content')
+    if (main && !main.contains(document.activeElement)) {
+      main.setAttribute('tabindex', '-1')
+      main.focus({ preventScroll: true })
+    }
+  }, 100)
 })
 
 export default router
