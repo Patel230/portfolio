@@ -32,6 +32,16 @@ const routes = [
     }
   },
   {
+    path: '/blog',
+    name: 'Blog',
+    component: () => import('@/views/BlogView.vue'),
+    meta: {
+      title: 'My Journey | Lakshman Patel',
+      description:
+        'The story of how Lakshman Patel went from curious student to full-stack AI engineer — building 30+ products along the way.'
+    }
+  },
+  {
     path: '/pocs',
     redirect: '/creations'
   },
