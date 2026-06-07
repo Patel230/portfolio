@@ -17,9 +17,10 @@
           :class="`stagger-${Math.min(index + 1, 6)}`"
           role="listitem"
           data-reveal
+          :style="{ '--item-color': item.color }"
           @click="handleContactClick(item)"
         >
-          <span class="contact-icon" :class="`icon-${index}`" aria-hidden="true">
+          <span class="contact-icon" aria-hidden="true" :style="{ backgroundColor: `color-mix(in srgb, ${item.color} 15%, transparent)`, color: item.color }">
             <svg
               width="20"
               height="20"
@@ -53,6 +54,7 @@ const contactItems = [
     value: 'lakshmanp230@gmail.com',
     href: 'mailto:lakshmanp230@gmail.com',
     external: false,
+    color: '#ea4335',
     paths: [
       'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z',
       'M22 6l-10 7L2 6'
@@ -64,6 +66,7 @@ const contactItems = [
     value: '@Patel230',
     href: 'https://github.com/Patel230',
     external: true,
+    color: '#e5e5e5',
     fill: 'currentColor',
     stroke: 'none',
     paths: [
@@ -75,6 +78,7 @@ const contactItems = [
     value: 'lakshman-patel',
     href: 'https://linkedin.com/in/lakshman-patel',
     external: true,
+    color: '#0a66c2',
     fill: 'currentColor',
     stroke: 'none',
     paths: [
@@ -86,6 +90,7 @@ const contactItems = [
     value: 'Bengaluru, India',
     href: 'https://maps.google.com/?q=Bengaluru,India',
     external: true,
+    color: '#22c55e',
     paths: ['M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z', 'M12 10a3 3 0 110-6 3 3 0 010 6z'],
     stroke: 'currentColor'
   },
@@ -94,6 +99,7 @@ const contactItems = [
     value: '@Lakshman2302',
     href: 'https://x.com/Lakshman2302',
     external: true,
+    color: '#e5e5e5',
     fill: 'currentColor',
     stroke: 'none',
     paths: [
@@ -105,6 +111,7 @@ const contactItems = [
     value: '@gateandtechofficial',
     href: 'https://www.youtube.com/@gateandtechofficial',
     external: true,
+    color: '#ff0000',
     fill: 'currentColor',
     stroke: 'none',
     paths: [
@@ -150,13 +157,33 @@ const handleContactClick = item => {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  transition: all 0.25s var(--ease-spring);
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--item-color, var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .contact-item:hover {
-  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--item-color, var(--accent)) 40%, transparent);
   transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+}
+
+.contact-item:hover::after {
+  transform: scaleX(1);
 }
 
 .contact-item:focus-visible {
@@ -175,30 +202,6 @@ const handleContactClick = item => {
   flex-shrink: 0;
 }
 
-.contact-icon.icon-0 {
-  background-color: rgba(234, 67, 53, 0.12);
-  color: #ea4335;
-}
-.contact-icon.icon-1 {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-}
-.contact-icon.icon-2 {
-  background-color: rgba(10, 102, 194, 0.12);
-  color: #0a66c2;
-}
-.contact-icon.icon-3 {
-  background-color: rgba(34, 197, 94, 0.12);
-  color: #22c55e;
-}
-.contact-icon.icon-4 {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-}
-.contact-icon.icon-5 {
-  background-color: rgba(255, 0, 0, 0.12);
-  color: #ff0000;
-}
 
 .contact-info {
   display: flex;

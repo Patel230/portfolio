@@ -121,14 +121,14 @@ const featuredProjects = projects.slice(0, 6)
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--project-color, var(--accent));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-base);
 }
 
 .project-card:hover {
-  border-color: rgba(255, 215, 0, 0.3);
+  border-color: color-mix(in srgb, var(--project-color, var(--accent)) 40%, transparent);
   transform: translateY(-3px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
 }
