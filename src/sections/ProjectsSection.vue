@@ -96,8 +96,12 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
 
 .project-card {
   padding: 28px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--project-color) 8%, transparent),
+    color-mix(in srgb, var(--project-color) 3%, var(--bg-card))
+  );
+  border: 1px solid color-mix(in srgb, var(--project-color) 40%, transparent);
   border-radius: 12px;
   transition: all 0.2s ease;
   display: flex;
@@ -107,7 +111,7 @@ import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lu
 .project-card:hover {
   border-color: var(--project-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--project-color) 25%, transparent);
 }
 
 .project-card:focus-within {

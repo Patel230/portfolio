@@ -135,8 +135,12 @@ import Icon from '@/components/Icon.vue'
 
 .poc-card {
   padding: 24px;
-  background-color: var(--bg-card);
-  border: 1px solid var(--border);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--poc-color) 8%, transparent),
+    color-mix(in srgb, var(--poc-color) 3%, var(--bg-card))
+  );
+  border: 1px solid color-mix(in srgb, var(--poc-color) 40%, transparent);
   border-radius: 12px;
   transition: all 0.2s ease;
   display: flex;
@@ -146,7 +150,7 @@ import Icon from '@/components/Icon.vue'
 .poc-card:hover {
   border-color: var(--poc-color);
   transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 24px color-mix(in srgb, var(--poc-color) 25%, transparent);
 }
 
 .poc-card:focus-within {

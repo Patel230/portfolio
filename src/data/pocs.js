@@ -5,7 +5,7 @@ export const pocs = [
     tech: ['TypeScript', 'Next.js', 'AI Agents'],
     link: 'https://graycodeai.gateandtech.in/',
     icon: 'bot',
-    color: '#6b7280',
+    color: '#f97316',
     status: 'Live'
   },
   {
@@ -249,7 +249,7 @@ export const pocs = [
     tech: ['TypeScript', 'React', 'GraphQL', 'Neo4j'],
     link: null,
     icon: 'refresh-cw',
-    color: '#64748b',
+    color: '#06b6d4',
     status: 'In Development'
   },
   {
@@ -258,7 +258,7 @@ export const pocs = [
     tech: ['TypeScript', 'Next.js', 'Neo4j', 'Prisma'],
     link: 'https://taskdone.gateandtech.in/',
     icon: 'check-square',
-    color: '#78716c',
+    color: '#4f46e5',
     status: 'Live'
   },
   {
@@ -267,7 +267,7 @@ export const pocs = [
     tech: ['TypeScript', 'AI', 'Cross-browser'],
     link: null,
     icon: 'flask-conical',
-    color: '#737373',
+    color: '#e11d48',
     status: 'In Development'
   },
   {
