@@ -47,7 +47,18 @@ const currentYear = new Date().getFullYear()
 .footer {
   padding: 40px 0;
   background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border);
+  border-top: none;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
 }
 
 .footer-content {

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar" :class="{ scrolled: isScrolled }" role="navigation" aria-label="Main navigation">
     <div class="container navbar-content">
       <router-link to="/" class="logo" aria-label="Go to homepage">
         <span class="logo-brackets" aria-hidden="true">{LP}</span>
@@ -71,6 +71,7 @@ const router = useRouter()
 const isMenuOpen = ref(false)
 const menuRef = ref(null)
 const menuButtonRef = ref(null)
+const isScrolled = ref(false)
 
 const isHomePage = computed(() => route.path === '/')
 const opensourceLink = computed(() => (isHomePage.value ? '#opensource' : '/#opensource'))
@@ -130,14 +131,20 @@ const preventBodyScroll = prevent => {
   }
 }
 
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20
+}
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
+  window.addEventListener('scroll', handleScroll, { passive: true })
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
   document.removeEventListener('keydown', handleEscape)
+  window.removeEventListener('scroll', handleScroll)
   preventBodyScroll(false)
 })
 
@@ -169,6 +176,11 @@ const handleMenuClick = event => {
   transition:
     background-color 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  background-color: rgba(13, 13, 13, 0.95);
 }
 
 .navbar::before {
@@ -214,6 +226,7 @@ const handleMenuClick = event => {
   display: flex;
   gap: 32px;
   align-items: center;
+  will-change: transform;
 }
 
 .nav-link {

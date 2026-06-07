@@ -110,12 +110,14 @@ import { User as LucideUser } from 'lucide-vue-next'
   padding: 16px;
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  transition: border-color 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .info-item:hover {
-  border-color: var(--border);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .info-label {

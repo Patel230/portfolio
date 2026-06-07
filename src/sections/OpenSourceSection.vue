@@ -124,6 +124,7 @@ const contributions = [
 @media (max-width: 768px) {
   .opensource-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 
@@ -131,11 +132,12 @@ const contributions = [
   padding: 24px;
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
   display: flex;
   align-items: flex-start;
   gap: 16px;
+  will-change: transform;
 }
 
 .opensource-card:hover {
@@ -222,7 +224,7 @@ const contributions = [
 }
 
 .opensource-link:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-radius: 8px;
 }

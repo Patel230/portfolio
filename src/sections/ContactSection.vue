@@ -137,7 +137,7 @@ const handleContactClick = item => {
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
 .contact-item {
@@ -147,8 +147,9 @@ const handleContactClick = item => {
   padding: 16px 20px;
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  will-change: transform;
 }
 
 .contact-item:hover {
@@ -173,27 +174,27 @@ const handleContactClick = item => {
 }
 
 .contact-icon.icon-0 {
-  background-color: rgba(234, 67, 53, 0.15);
+  background-color: rgba(234, 67, 53, 0.12);
   color: #ea4335;
 }
 .contact-icon.icon-1 {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   color: #ffffff;
 }
 .contact-icon.icon-2 {
-  background-color: rgba(10, 102, 194, 0.15);
+  background-color: rgba(10, 102, 194, 0.12);
   color: #0a66c2;
 }
 .contact-icon.icon-3 {
-  background-color: rgba(34, 197, 94, 0.15);
+  background-color: rgba(34, 197, 94, 0.12);
   color: #22c55e;
 }
 .contact-icon.icon-4 {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.12);
   color: #ffffff;
 }
 .contact-icon.icon-5 {
-  background-color: rgba(255, 0, 0, 0.15);
+  background-color: rgba(255, 0, 0, 0.12);
   color: #ff0000;
 }
 

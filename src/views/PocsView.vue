@@ -9,15 +9,41 @@
     </section>
     <section class="section pocs-grid-section">
       <div class="container">
+        <div class="filter-tabs" role="tablist" aria-label="Filter projects by status">
+          <button
+            role="tab"
+            :aria-selected="activeFilter === 'all'"
+            :class="['filter-btn', { active: activeFilter === 'all' }]"
+            @click="activeFilter = 'all'"
+          >
+            All <span class="filter-count">{{ pocs.length }}</span>
+          </button>
+          <button
+            role="tab"
+            :aria-selected="activeFilter === 'live'"
+            :class="['filter-btn', { active: activeFilter === 'live' }]"
+            @click="activeFilter = 'live'"
+          >
+            Live <span class="filter-count">{{ liveCount }}</span>
+          </button>
+          <button
+            role="tab"
+            :aria-selected="activeFilter === 'dev'"
+            :class="['filter-btn', { active: activeFilter === 'dev' }]"
+            @click="activeFilter = 'dev'"
+          >
+            In Development <span class="filter-count">{{ devCount }}</span>
+          </button>
+        </div>
         <TransitionGroup
           name="list"
           tag="div"
           class="pocs-grid"
           role="list"
-          :aria-label="`${pocs.length} projects`"
+          :aria-label="`${filteredPocs.length} projects`"
         >
           <article
-            v-for="poc in pocs"
+            v-for="poc in filteredPocs"
             :key="poc.name"
             class="poc-card"
             role="listitem"
@@ -80,8 +106,19 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 import { pocs } from '@/data/pocs.js'
 import Icon from '@/components/Icon.vue'
+
+const activeFilter = ref('all')
+const liveCount = computed(() => pocs.filter(p => p.status === 'Live').length)
+const devCount = computed(() => pocs.filter(p => p.status === 'In Development').length)
+
+const filteredPocs = computed(() => {
+  if (activeFilter.value === 'live') return pocs.filter(p => p.status === 'Live')
+  if (activeFilter.value === 'dev') return pocs.filter(p => p.status === 'In Development')
+  return pocs
+})
 </script>
 
 <style scoped>
@@ -125,6 +162,57 @@ import Icon from '@/components/Icon.vue'
 .pocs-grid-section {
   background-color: var(--bg-primary);
   padding: 80px 0;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.filter-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.4);
+  color: var(--accent);
+}
+
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(255, 215, 0, 0.2);
 }
 
 .pocs-grid {
@@ -201,6 +289,8 @@ import Icon from '@/components/Icon.vue'
   letter-spacing: 0.05em;
   padding: 4px 10px;
   border-radius: 12px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .status-live {
