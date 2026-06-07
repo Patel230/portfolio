@@ -153,28 +153,20 @@ const posts = [
   },
   {
     id: 11,
-    tag: 'GrayCodeAI',
+    tag: "Now — What I'm Building",
     date: '2025 – Present',
     color: '#e11d48',
-    title: 'GrayCodeAI — Building My Own AI Platform',
+    title: "Three Things I'm Working on Right Now",
     body: `
-      <p>Alongside the open source work, I started building <strong>GrayCodeAI</strong> — my own project, open source, built from conviction rather than a brief.</p>
-      <p>The core idea: a platform where humans and AI agents build together. Not AI as a feature bolted on the side — AI as a genuine collaborator in the development process. Inside GrayCodeAI there are three pieces I'm building out: <strong>Hawk</strong> — a coding agent CLI, <strong>Gitant</strong> — a decentralised GitHub alternative, and <strong>Lark</strong> — a messaging application built for developers and agents, like Slack but designed from the start for human-agent teams.</p>
-      <p>The name comes from Gray code — a binary system where adjacent values differ by exactly one bit. Precise, minimal, intentional change. That's the ethos.</p>
-      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a> and I push to it every single day.</p>
-    `
-  },
-  {
-    id: 12,
-    tag: 'Now',
-    date: '2026 — Present',
-    color: '#10b981',
-    title: 'Graphlings, Every Side Project, and Keeping the Momentum',
-    body: `
-      <p>Matthew has been building <strong>Graphlings</strong> — a Digital Life game. I've recently started contributing to that too. One of the things I value most about this period is the genuine collaboration: two people who lost their jobs on the same day, now building different things and helping each other along the way.</p>
-      <p>Beyond that: the side projects kept coming. <strong>TaskDone</strong>, <strong>Growth</strong>, <strong>MindShift</strong>, <strong>Iterate</strong> (a self-evolving coding agent in Go) — over 30 applications built and deployed across the years. All real. All shipped. All mine.</p>
-      <p>I'm currently based in <strong>Bengaluru</strong> — India's Silicon Valley — and I keep pushing every single day. That's not a slogan. It's genuinely how I operate. Every day something moves forward, something improves, something ships.</p>
-      <p>If you've read this far, you know where I came from — a village farm, a folk singing dream, a long road through Kota and Gwalior and late-night US shifts — and where I'm going. Let's build something together.</p>
+      <p>This is where I am today. Three things running in parallel, each one demanding, each one meaningful.</p>
+
+      <p><strong>1. GrayCodeAI</strong> — my main project and the one I care about most. Open source. A platform where humans and AI agents build together. Not AI as a feature — AI as a genuine teammate in the development process. Inside GrayCodeAI I'm building three tools: <strong>Hawk</strong> — a coding agent CLI, <strong>Gitant</strong> — a decentralised GitHub alternative, and <strong>Lark</strong> — a messaging app for developers and agents, like Slack but designed from the start for human-agent collaboration. The name comes from Gray code — a binary system where adjacent values differ by exactly one bit. Precise, intentional, minimal change. That's the ethos. Live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a>.</p>
+
+      <p><strong>2. Contributing to Herm</strong> — an open source coding agents platform at <a href="https://hermagent.com" target="_blank" rel="noopener noreferrer">hermagent.com</a>. I contribute to the codebase: improving the agent tooling, fixing rough edges, helping push the project forward. It's work I believe in — the overlap with what I'm building in GrayCodeAI is real, and contributing to Herm keeps me sharp and connected to how others are solving similar problems.</p>
+
+      <p><strong>3. Contributing to Graphlings</strong> — Matthew's Digital Life game at <a href="https://graphlings.net" target="_blank" rel="noopener noreferrer">graphlings.net</a>. Matthew and I started this whole chapter together on the same day we were laid off. Now we're building separate things and contributing to each other's work. There's something meaningful about that — two people who hit the same wall on the same morning, now building side by side.</p>
+
+      <p>Based in <strong>Bengaluru</strong> — India's Silicon Valley — pushing every single day. That's not a slogan. It's just how I operate. If you've read this far, you know where I came from. Let's build something together.</p>
     `
   }
 ]
