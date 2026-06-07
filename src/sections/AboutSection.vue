@@ -14,9 +14,7 @@
           </p>
           <p>
             Co-founder of
-            <a href="https://graphdone.com/" target="_blank" rel="noopener noreferrer"
-              ><strong>GraphDone</strong></a
-            >
+            <strong>GraphDone</strong>
             - an open-source graph-native project management platform with AI-powered features.
           </p>
           <p>

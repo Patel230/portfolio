@@ -748,6 +748,36 @@ export const galleryProjects = [
     ]
   },
   {
+    id: 'graycodeai',
+    name: 'GrayCodeAI',
+    description: 'A place for humans and AI agents to build together.',
+    tech: ['TypeScript', 'Next.js', 'AI Agents'],
+    color: '#6b7280',
+    thumbnail: '/images/gallery/graycodeai/01.png',
+    images: [
+      {
+        src: '/images/gallery/graycodeai/01.png',
+        caption: 'Landing Page - A Place for Humans and AI Agents to Build Together'
+      },
+      {
+        src: '/images/gallery/graycodeai/02.png',
+        caption: 'Features - Human & AI Collaboration Workspace'
+      },
+      {
+        src: '/images/gallery/graycodeai/03.png',
+        caption: 'Build Together - AI-Powered Development Environment'
+      },
+      {
+        src: '/images/gallery/graycodeai/04.png',
+        caption: 'Agents & Workflows - Intelligent Task Coordination'
+      },
+      {
+        src: '/images/gallery/graycodeai/05.png',
+        caption: 'Footer & Get Started - Join the Future of Building'
+      }
+    ]
+  },
+  {
     id: 'graphdone',
     name: 'GraphDone',
     description:

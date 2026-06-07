@@ -8,10 +8,18 @@ export const projects = [
     color: '#db2777'
   },
   {
+    title: 'GrayCodeAI',
+    description: 'A place for humans and AI agents to build together.',
+    tech: ['TypeScript', 'Next.js', 'AI Agents'],
+    link: 'https://graycodeai.gateandtech.in/',
+    icon: 'bot',
+    color: '#6b7280'
+  },
+  {
     title: 'GraphDone',
     description: 'AI-powered graph-native project management platform.',
     tech: ['TypeScript', 'Neo4j', 'React', 'GraphQL'],
-    link: 'https://graphdone.com/',
+    link: null,
     icon: 'git-branch',
     color: '#7c3aed'
   },

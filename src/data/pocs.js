@@ -1,5 +1,14 @@
 export const pocs = [
   {
+    name: 'GrayCodeAI',
+    description: 'A place for humans and AI agents to build together.',
+    tech: ['TypeScript', 'Next.js', 'AI Agents'],
+    link: 'https://graycodeai.gateandtech.in/',
+    icon: 'bot',
+    color: '#6b7280',
+    status: 'Live'
+  },
+  {
     name: 'GATE And Tech',
     description: 'Exam preparation platform for GATE, PGEE with practice questions and test series.',
     tech: ['TypeScript', 'Next.js', 'Education'],
@@ -138,7 +147,7 @@ export const pocs = [
     name: 'GraphDone',
     description: 'Graph-native project management with dependency-based coordination.',
     tech: ['TypeScript', 'Neo4j', 'React', 'GraphQL'],
-    link: 'https://graphdone.com/',
+    link: null,
     icon: 'git-branch',
     color: '#d946ef',
     status: 'Live'
