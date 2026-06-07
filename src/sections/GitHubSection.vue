@@ -75,35 +75,6 @@
           </a>
         </div>
 
-        <!-- Top Languages Card -->
-        <div class="gh-card langs-card fade-in-up stagger-3" data-reveal>
-          <div class="card-header">
-            <span class="card-icon" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6">
-              <LucideCode2 :size="18" />
-            </span>
-            <span class="card-title">Top Languages</span>
-          </div>
-          <a
-            href="https://github.com/Patel230?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="stats-img-link"
-          >
-            <div v-if="!langsLoaded && !langsError" class="img-shimmer" aria-hidden="true" />
-            <img
-              v-if="!langsError"
-              v-show="langsLoaded"
-              src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Patel230&layout=compact&theme=dark&hide_border=true&bg_color=00000000&title_color=8b5cf6&text_color=e5e5e5&langs_count=6"
-              alt="Top languages for Patel230"
-              class="stats-img"
-              loading="lazy"
-              @load="langsLoaded = true"
-              @error="langsError = true"
-            />
-            <p v-if="langsError" class="fallback-msg">View repositories on GitHub</p>
-          </a>
-        </div>
-
         <!-- Organizations Card -->
         <div class="gh-card orgs-card fade-in-up stagger-4" data-reveal>
           <div class="card-header">
@@ -165,6 +136,35 @@
               <LucideArrowUpRight :size="14" class="ql-arrow" />
             </a>
           </div>
+        </div>
+
+        <!-- Top Languages Card -->
+        <div class="gh-card langs-card fade-in-up stagger-3" data-reveal>
+          <div class="card-header">
+            <span class="card-icon" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6">
+              <LucideCode2 :size="18" />
+            </span>
+            <span class="card-title">Top Languages</span>
+          </div>
+          <a
+            href="https://github.com/Patel230?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="stats-img-link"
+          >
+            <div v-if="!langsLoaded && !langsError" class="img-shimmer" aria-hidden="true" />
+            <img
+              v-if="!langsError"
+              v-show="langsLoaded"
+              src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Patel230&layout=compact&theme=dark&hide_border=true&bg_color=00000000&title_color=8b5cf6&text_color=e5e5e5&langs_count=6"
+              alt="Top languages for Patel230"
+              class="stats-img"
+              loading="lazy"
+              @load="langsLoaded = true"
+              @error="langsError = true"
+            />
+            <p v-if="langsError" class="fallback-msg">View repositories on GitHub</p>
+          </a>
         </div>
       </div>
     </div>
@@ -256,11 +256,21 @@ const githubLinks = [
   gap: 20px;
 }
 
-.stats-card { grid-column: span 1; }
-.streak-card { grid-column: span 1; }
-.langs-card { grid-column: span 2; }
-.orgs-card { grid-column: span 1; }
-.links-card { grid-column: span 1; }
+.stats-card {
+  grid-column: span 1;
+}
+.streak-card {
+  grid-column: span 1;
+}
+.orgs-card {
+  grid-column: span 1;
+}
+.links-card {
+  grid-column: span 1;
+}
+.langs-card {
+  grid-column: span 2;
+}
 
 /* ── Shared card base ── */
 .gh-card {
@@ -501,9 +511,15 @@ const githubLinks = [
     gap: 16px;
   }
 
-  .langs-card { grid-column: span 2; }
-  .orgs-card { grid-column: span 1; }
-  .links-card { grid-column: span 1; }
+  .langs-card {
+    grid-column: span 2;
+  }
+  .orgs-card {
+    grid-column: span 1;
+  }
+  .links-card {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 767px) {
