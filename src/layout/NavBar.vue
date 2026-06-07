@@ -256,7 +256,7 @@ const handleMenuClick = event => {
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
-  transition: width 0.2s ease;
+  transition: width 0.25s var(--ease-spring);
 }
 
 .nav-link:hover::after,

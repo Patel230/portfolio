@@ -1,8 +1,8 @@
 <template>
   <section id="opensource" class="section opensource" aria-labelledby="opensource-heading">
     <div class="container">
-      <span class="section-label">Open Source</span>
-      <h2 id="opensource-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>Open Source</span>
+      <h2 id="opensource-heading" class="section-title fade-in-up" data-reveal>
         <LucideHeart class="title-icon" />
         Contributions
       </h2>
@@ -14,9 +14,10 @@
         <article
           v-for="(item, index) in contributions"
           :key="item.title"
-          class="opensource-card"
-          :class="`opensource-${index}`"
+          class="opensource-card fade-in-up"
+          :class="[`opensource-${index}`, `stagger-${Math.min(index + 1, 6)}`]"
           role="listitem"
+          data-reveal
           :style="{ '--item-color': item.color }"
         >
           <div
@@ -160,11 +161,11 @@ const contributions = [
   justify-content: center;
   border-radius: 10px;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .opensource-card:hover .opensource-icon {
-  transform: scale(1.1);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .opensource-content {

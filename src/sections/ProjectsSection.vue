@@ -1,8 +1,8 @@
 <template>
   <section id="projects" class="section projects" aria-labelledby="projects-heading">
     <div class="container">
-      <span class="section-label">Projects</span>
-      <h2 id="projects-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>Projects</span>
+      <h2 id="projects-heading" class="section-title fade-in-up" data-reveal>
         <LucideBriefcase class="title-icon" />
         Featured Work
       </h2>
@@ -14,9 +14,10 @@
         <article
           v-for="(project, index) in featuredProjects"
           :key="project.title"
-          class="project-card"
-          :class="`project-${index}`"
+          class="project-card fade-in-up"
+          :class="[`project-${index}`, `stagger-${Math.min(index + 1, 6)}`]"
           role="listitem"
+          data-reveal
           :style="{ '--project-color': project.color }"
         >
           <div
@@ -150,11 +151,11 @@ const featuredProjects = projects.slice(0, 6)
   justify-content: center;
   border-radius: 10px;
   margin-bottom: 16px;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .project-card:hover .project-icon {
-  transform: scale(1.1);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .project-title {

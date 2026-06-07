@@ -1,7 +1,7 @@
 <template>
   <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="footer-content">
+      <div class="footer-content fade-in" data-reveal>
         <div class="footer-brand">
           <span class="footer-logo" aria-hidden="true">{LP}</span>
           <div class="footer-legal">

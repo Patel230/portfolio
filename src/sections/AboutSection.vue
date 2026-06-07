@@ -1,8 +1,8 @@
 <template>
   <section id="about" class="section about" aria-labelledby="about-heading">
     <div class="container">
-      <span class="section-label">About</span>
-      <h2 id="about-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>About</span>
+      <h2 id="about-heading" class="section-title fade-in-up" data-reveal>
         <LucideUser class="title-icon" />
         About Me
       </h2>
@@ -26,16 +26,16 @@
           </p>
         </div>
         <aside class="about-info" aria-label="Personal Information">
-          <div class="info-item">
+          <div class="info-item fade-in-up stagger-1" data-reveal>
             <span class="info-label">Education</span>
             <span class="info-value">M.Tech Information Security</span>
             <span class="info-sub">ABV-IIITM Gwalior</span>
           </div>
-          <div class="info-item">
+          <div class="info-item fade-in-up stagger-2" data-reveal>
             <span class="info-label">Location</span>
             <span class="info-value">Gurgaon, India</span>
           </div>
-          <div class="info-item">
+          <div class="info-item fade-in-up stagger-3" data-reveal>
             <span class="info-label">Status</span>
             <span class="info-value">
               <span class="status-indicator" aria-hidden="true" />
