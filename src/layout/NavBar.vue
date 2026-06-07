@@ -37,7 +37,9 @@
         <router-link
           to="/"
           class="nav-link"
-          :class="{ 'router-link-active': $route.path === '/' }"
+          active-class=""
+          exact-active-class=""
+          :class="{ active: $route.path === '/' && activeSection === '' }"
           @click="closeMenu"
         >
           Home
@@ -56,8 +58,24 @@
           @click.prevent="handleNavClick('projects')"
           >Projects</a
         >
-        <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
-        <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
+        <router-link
+          to="/creations"
+          class="nav-link"
+          active-class=""
+          exact-active-class=""
+          :class="{ active: $route.path === '/creations' }"
+          @click="closeMenu"
+          >Creations</router-link
+        >
+        <router-link
+          to="/gallery"
+          class="nav-link"
+          active-class=""
+          exact-active-class=""
+          :class="{ active: $route.path === '/gallery' }"
+          @click="closeMenu"
+          >Gallery</router-link
+        >
         <a
           :href="opensourceLink"
           class="nav-link"
@@ -79,7 +97,15 @@
           @click.prevent="handleNavClick('portfolio-stack')"
           >Stack</a
         >
-        <router-link to="/blog" class="nav-link" @click="closeMenu">Journey</router-link>
+        <router-link
+          to="/blog"
+          class="nav-link"
+          active-class=""
+          exact-active-class=""
+          :class="{ active: $route.path === '/blog' }"
+          @click="closeMenu"
+          >Journey</router-link
+        >
         <a
           :href="aboutLink"
           class="nav-link"
