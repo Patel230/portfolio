@@ -13,17 +13,17 @@
             Creating production-ready systems using Python, TypeScript, and modern frameworks.
           </p>
           <p>
-            Co-founder of
-            <strong>GraphDone</strong>
-            — an open-source graph-native project management platform with AI-powered features.
             Building <strong>GrayCode AI</strong> — an intelligent developer tooling platform.
+            Founder of <strong>GATEAndTech</strong> — EdTech platform for engineering students.
           </p>
           <p>
             Built
             <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"
               ><strong>TaskDone</strong></a
-            >
-            and <strong>30+ full stack applications powered by intelligent systems</strong>.
+            >,
+            <strong>Graphlings</strong>, contributed to
+            <strong>Herm</strong> open source, and
+            <strong>30+ full stack applications powered by intelligent systems</strong>.
           </p>
         </div>
         <aside class="about-info" aria-label="Personal Information">
