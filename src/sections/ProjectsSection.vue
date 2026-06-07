@@ -102,28 +102,43 @@ const featuredProjects = projects.slice(0, 6)
 
 .project-card {
   padding: 28px;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--project-color) 8%, transparent),
-    color-mix(in srgb, var(--project-color) 3%, var(--bg-card))
-  );
-  border: 1px solid color-mix(in srgb, var(--project-color) 40%, transparent);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
 }
 
 .project-card:hover {
-  border-color: var(--project-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--project-color) 25%, transparent);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover::after {
+  transform: scaleX(1);
 }
 
 .project-card:focus-within {
-  border-color: var(--project-color);
-  outline: 2px solid var(--project-color);
+  border-color: rgba(255, 215, 0, 0.4);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -338,6 +353,7 @@ const featuredProjects = projects.slice(0, 6)
 
 @media (prefers-reduced-motion: reduce) {
   .project-card,
+  .project-card::after,
   .project-icon,
   .tag {
     transition: none;
@@ -345,6 +361,10 @@ const featuredProjects = projects.slice(0, 6)
 
   .project-card:hover {
     transform: none;
+  }
+
+  .project-card:hover::after {
+    transform: scaleX(1);
   }
 
   .project-card:hover .project-icon {
