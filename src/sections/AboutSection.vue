@@ -36,7 +36,7 @@
           </div>
           <div class="info-item fade-in-up stagger-2" data-reveal>
             <span class="info-label">Location</span>
-            <span class="info-value">Gurgaon, India</span>
+            <span class="info-value">Bengaluru, India</span>
           </div>
           <div class="info-item fade-in-up stagger-3" data-reveal>
             <span class="info-label">Status</span>
