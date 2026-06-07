@@ -33,5 +33,8 @@ import LoadingSpinner from './components/ui/LoadingSpinner.vue'
 import ErrorBoundary from './components/ui/ErrorBoundary.vue'
 import ScrollToTop from './components/ui/ScrollToTop.vue'
 import UpdatePrompt from './components/ui/UpdatePrompt.vue'
+import { useScrollReveal } from './composables/useScrollReveal.js'
+
+useScrollReveal('[data-reveal]')
 </script>
 

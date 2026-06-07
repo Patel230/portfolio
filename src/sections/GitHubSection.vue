@@ -1,15 +1,15 @@
 <template>
   <section id="github" class="section github" aria-labelledby="github-heading">
     <div class="container">
-      <span class="section-label">GitHub</span>
-      <h2 id="github-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>GitHub</span>
+      <h2 id="github-heading" class="section-title fade-in-up" data-reveal>
         <LucideGithub class="title-icon" />
         Stats & Activity
       </h2>
 
       <div class="github-content">
         <!-- Stats Image -->
-        <div class="github-stats-card">
+        <div class="github-stats-card fade-in-up stagger-1" data-reveal>
           <a
             href="https://github.com/Patel230"
             target="_blank"
@@ -32,7 +32,7 @@
         </div>
 
         <!-- Quick Links -->
-        <div class="github-links">
+        <div class="github-links fade-in-up stagger-2" data-reveal>
           <a
             v-for="link in githubLinks"
             :key="link.label"

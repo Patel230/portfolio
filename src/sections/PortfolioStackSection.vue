@@ -5,15 +5,15 @@
     aria-labelledby="portfolio-stack-heading"
   >
     <div class="container">
-      <span class="section-label">Built With</span>
-      <h2 id="portfolio-stack-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>Built With</span>
+      <h2 id="portfolio-stack-heading" class="section-title fade-in-up" data-reveal>
         <LucideLayers class="title-icon" />
         Portfolio Tech Stack
       </h2>
 
       <div class="stack-grid">
         <!-- Core Framework -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-1" data-reveal>
           <div
             class="stack-icon"
             style="background-color: rgba(65, 184, 131, 0.15); color: #41b883"
@@ -27,7 +27,7 @@
         </div>
 
         <!-- Build Tool -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-2" data-reveal>
           <div
             class="stack-icon"
             style="background-color: rgba(100, 108, 255, 0.15); color: #646cff"
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Language -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-3" data-reveal>
           <div
             class="stack-icon"
             style="background-color: rgba(49, 120, 198, 0.15); color: #3178c6"
@@ -64,7 +64,7 @@
         </div>
 
         <!-- Routing -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-4" data-reveal>
           <div
             class="stack-icon"
             style="background-color: rgba(251, 191, 36, 0.15); color: #fbbf24"
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Testing -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-5" data-reveal>
           <div class="stack-icon" style="background-color: rgba(252, 186, 3, 0.15); color: #fcba03">
             <svg
               width="24"
@@ -104,7 +104,7 @@
         </div>
 
         <!-- Linting -->
-        <div class="stack-card">
+        <div class="stack-card fade-in-up stagger-6" data-reveal>
           <div class="stack-icon" style="background-color: rgba(75, 85, 99, 0.15); color: #9ca3af">
             <svg
               width="24"
@@ -189,11 +189,11 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
   justify-content: center;
   border-radius: 12px;
   margin: 0 auto 16px;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .stack-card:hover .stack-icon {
-  transform: scale(1.1);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .stack-name {

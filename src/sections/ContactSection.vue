@@ -1,8 +1,8 @@
 <template>
   <section id="contact" class="section contact" aria-labelledby="contact-heading">
     <div class="container">
-      <span class="section-label">Contact</span>
-      <h2 id="contact-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>Contact</span>
+      <h2 id="contact-heading" class="section-title fade-in-up" data-reveal>
         <LucideMail class="title-icon" />
         Get in Touch
       </h2>
@@ -13,8 +13,10 @@
           :href="item.href"
           :target="item.external ? '_blank' : undefined"
           :rel="item.external ? 'noopener noreferrer' : undefined"
-          class="contact-item"
+          class="contact-item fade-in-scale"
+          :class="`stagger-${Math.min(index + 1, 6)}`"
           role="listitem"
+          data-reveal
           @click="handleContactClick(item)"
         >
           <span class="contact-icon" :class="`icon-${index}`" aria-hidden="true">

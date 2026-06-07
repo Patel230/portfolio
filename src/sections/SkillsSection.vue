@@ -1,8 +1,8 @@
 <template>
   <section id="skills" class="section skills" aria-labelledby="skills-heading">
     <div class="container">
-      <span class="section-label">Skills</span>
-      <h2 id="skills-heading" class="section-title">
+      <span class="section-label fade-in-up" data-reveal>Skills</span>
+      <h2 id="skills-heading" class="section-title fade-in-up" data-reveal>
         <LucideCode2 class="title-icon" />
         Technologies
       </h2>
@@ -14,9 +14,10 @@
         <article
           v-for="(category, index) in skillCategories"
           :key="category.name"
-          class="skill-category"
-          :class="`category-${index}`"
+          class="skill-category fade-in-up"
+          :class="[`category-${index}`, `stagger-${Math.min(index + 1, 6)}`]"
           role="listitem"
+          data-reveal
           :style="{ '--category-color': category.color }"
         >
           <h3 class="category-title">
@@ -100,11 +101,11 @@ import { Code2 as LucideCode2 } from 'lucide-vue-next'
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .skill-category:hover .category-icon {
-  transform: scale(1.1);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .skills-list {
