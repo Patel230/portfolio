@@ -75,13 +75,32 @@ import { Code2 as LucideCode2 } from 'lucide-vue-next'
   background-color: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: all 0.2s ease;
+  transition: all 0.25s var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-category::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--category-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .skill-category:hover {
-  border-color: var(--category-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-color: color-mix(in srgb, var(--category-color) 40%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.skill-category:hover::after {
+  transform: scaleX(1);
 }
 
 .category-title {

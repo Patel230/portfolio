@@ -134,17 +134,36 @@ const contributions = [
   background-color: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  transition: all 0.25s var(--ease-spring);
   display: flex;
   align-items: flex-start;
   gap: 16px;
   will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.opensource-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--item-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .opensource-card:hover {
-  border-color: var(--item-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-color: color-mix(in srgb, var(--item-color) 40%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.opensource-card:hover::after {
+  transform: scaleX(1);
 }
 
 .opensource-card:focus-within {

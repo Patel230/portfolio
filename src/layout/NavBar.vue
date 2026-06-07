@@ -37,26 +37,15 @@
         >
           Home
         </router-link>
-        <router-link to="/creations" class="nav-link" @click="closeMenu"> Creations </router-link>
-        <router-link to="/gallery" class="nav-link" @click="closeMenu"> Gallery </router-link>
-        <router-link to="/blog" class="nav-link" @click="closeMenu"> Journey </router-link>
-        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">
-          Open Source
-        </a>
-        <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">
-          GitHub
-        </a>
-        <a
-          :href="portfolioStackLink"
-          class="nav-link"
-          @click.prevent="handleNavClick('portfolio-stack')"
-        >
-          Stack
-        </a>
-        <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')"> About </a>
-        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')">
-          Contact
-        </a>
+        <a :href="skillsLink" class="nav-link" @click.prevent="handleNavClick('skills')">Skills</a>
+        <a :href="projectsLink" class="nav-link" @click.prevent="handleNavClick('projects')">Projects</a>
+        <router-link to="/creations" class="nav-link" @click="closeMenu">Creations</router-link>
+        <router-link to="/gallery" class="nav-link" @click="closeMenu">Gallery</router-link>
+        <a :href="opensourceLink" class="nav-link" @click.prevent="handleNavClick('opensource')">Open Source</a>
+        <a :href="githubLink" class="nav-link" @click.prevent="handleNavClick('github')">GitHub</a>
+        <router-link to="/blog" class="nav-link" @click="closeMenu">Journey</router-link>
+        <a :href="aboutLink" class="nav-link" @click.prevent="handleNavClick('about')">About</a>
+        <a :href="contactLink" class="nav-link" @click.prevent="handleNavClick('contact')">Contact</a>
       </div>
     </div>
   </nav>
@@ -74,13 +63,13 @@ const menuButtonRef = ref(null)
 const isScrolled = ref(false)
 
 const isHomePage = computed(() => route.path === '/')
-const opensourceLink = computed(() => (isHomePage.value ? '#opensource' : '/#opensource'))
-const githubLink = computed(() => (isHomePage.value ? '#github' : '/#github'))
-const portfolioStackLink = computed(() =>
-  isHomePage.value ? '#portfolio-stack' : '/#portfolio-stack'
-)
-const aboutLink = computed(() => (isHomePage.value ? '#about' : '/#about'))
-const contactLink = computed(() => (isHomePage.value ? '#contact' : '/#contact'))
+const sectionLink = (id) => computed(() => isHomePage.value ? `#${id}` : `/#${id}`)
+const skillsLink = sectionLink('skills')
+const projectsLink = sectionLink('projects')
+const opensourceLink = sectionLink('opensource')
+const githubLink = sectionLink('github')
+const aboutLink = sectionLink('about')
+const contactLink = sectionLink('contact')
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -90,16 +79,20 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const handleNavClick = section => {
-  closeMenu()
+const scrollToSection = (section) => {
+  const el = document.getElementById(section)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
 
+const handleNavClick = async (section) => {
+  closeMenu()
   if (isHomePage.value) {
-    const element = document.getElementById(section)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    scrollToSection(section)
   } else {
-    router.push({ path: '/', hash: `#${section}` })
+    await router.push({ path: '/', hash: `#${section}` })
+    setTimeout(() => scrollToSection(section), 100)
   }
 }
 
