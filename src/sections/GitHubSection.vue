@@ -64,7 +64,7 @@
             <img
               v-if="!streakError"
               v-show="streakLoaded"
-              src="https://github-readme-streak-stats.herokuapp.com/?user=Patel230&theme=dark&hide_border=true&background=00000000&ring=ffd700&fire=f97316&currStreakLabel=ffd700&sideLabels=b3b3b3"
+              src="https://streak-stats.demolab.com/?user=Patel230&theme=dark&hide_border=true&background=00000000&ring=ffd700&fire=f97316&currStreakLabel=ffd700&sideLabels=b3b3b3"
               alt="GitHub streak for Patel230"
               class="stats-img"
               loading="lazy"
