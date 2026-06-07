@@ -196,6 +196,7 @@ const scrollToSection = section => {
 
 const handleNavClick = async section => {
   closeMenu()
+  activeSection.value = section
   if (isHomePage.value) {
     scrollToSection(section)
   } else {
