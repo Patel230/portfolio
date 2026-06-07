@@ -122,13 +122,6 @@ const contributions = [
   gap: 20px;
 }
 
-@media (max-width: 768px) {
-  .opensource-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-}
-
 .opensource-card {
   padding: 24px;
   background-color: var(--bg-card);

@@ -51,13 +51,46 @@
   margin-bottom: 32px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .not-found-code {
     font-size: 5rem;
   }
 
   .not-found-title {
     font-size: 1.25rem;
+  }
+
+  .not-found-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .not-found-code {
+    font-size: 4rem;
+  }
+
+  .not-found-title {
+    font-size: 1.1rem;
+  }
+
+  .not-found-description {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  .not-found-content {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 319px) {
+  .not-found-code {
+    font-size: 3.5rem;
+  }
+
+  .not-found-title {
+    font-size: 1rem;
   }
 }
 </style>
