@@ -72,29 +72,28 @@ const posts = [
   },
   {
     id: 4,
-    tag: 'Herm + GrayCodeAI',
+    tag: 'GrayCodeAI',
     date: 'November 2025 — Present',
     color: '#e11d48',
-    title: 'Building GrayCodeAI Inside the Herm Ecosystem',
+    title: 'GrayCodeAI — My Own Open Source AI Project',
     body: `
-      <p>After the layoff, I didn't start from scratch. I found the <strong>Herm ecosystem</strong> — and decided to build inside it and contribute to it at the same time.</p>
-      <p>Herm is a developer tooling platform. I'm building <strong>GrayCodeAI</strong> as part of that ecosystem — a place where humans and AI agents build together. Not autocomplete, not a chat window bolted onto a repo. Real agents that understand your project, maintain state, and contribute the way a teammate does.</p>
-      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. Minimal change, maximum precision. That's the philosophy: AI that moves with intention, not noise.</p>
-      <p>Building inside an existing ecosystem means I'm not just shipping a product — I'm also contributing back to the infrastructure around it. Every gap I find in Herm's tooling is a contribution opportunity. Every feature I build in GrayCodeAI feeds back into what Herm needs to support.</p>
-      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a> and actively in development.</p>
+      <p>The day after the layoff, I started building <strong>GrayCodeAI</strong>. My project. Open source. No roadmap handed to me — just a clear conviction about where software development is heading.</p>
+      <p>The idea: a place where humans and AI agents build together. Not a chat interface bolted onto a repo. Real agents that understand your codebase, maintain context across sessions, and contribute the way a teammate does — with intention and precision.</p>
+      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. That's the philosophy baked into it: minimal change, maximum signal. AI that moves with precision, not noise.</p>
+      <p>It's open source and live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a>. Actively being built every day.</p>
     `
   },
   {
     id: 5,
-    tag: 'Contributing',
-    date: 'December 2025 — Present',
+    tag: 'Open Source',
+    date: 'November 2025 — Present',
     color: '#0891b2',
-    title: 'Open Source Contributions — Herm, LangDAG, and the Ecosystem',
+    title: 'Contributing to Herm & LangDAG',
     body: `
-      <p>Building inside Herm means understanding it deeply — which means contributing to it.</p>
-      <p>I've been contributing to <strong>Herm</strong> directly: CLI UX improvements, cleaner command flows, better error surfaces. The kind of work that doesn't ship features but makes every developer who uses the tool move faster. That matters.</p>
-      <p><strong>LangDAG</strong> connects to GrayCodeAI at the infrastructure level — it's a DAG-based workflow engine for language model pipelines. I contributed graph optimization logic that cuts redundant LLM calls in multi-step pipelines. Less waste, faster execution, lower cost. Exactly the kind of improvement that compounds as agent workflows get more complex.</p>
-      <p>Contributing to an ecosystem you're also building in is a different experience than standalone open source. You feel every rough edge. You fix the ones that slow you down, and in doing so, you fix them for everyone.</p>
+      <p>Alongside building GrayCodeAI, I've been contributing to other open source projects I use and believe in.</p>
+      <p><strong>Herm</strong> is an open source developer tooling project — separate from GrayCodeAI, not mine. I contribute to it: CLI UX improvements, cleaner command flows, better error handling. The kind of work that makes every developer who uses the tool move faster. You use something enough, you start fixing what's rough.</p>
+      <p><strong>LangDAG</strong> is an open source DAG-based workflow engine for language model pipelines. I contributed graph optimization logic that eliminates redundant LLM calls in multi-step pipelines — less waste, faster execution, lower cost. Right at the intersection of my graph background and AI work.</p>
+      <p>Contributing to projects you don't own is a different discipline. The code gets read by maintainers who don't know you, merged on its merits alone. That keeps you sharp.</p>
     `
   },
   {
@@ -105,9 +104,9 @@ const posts = [
     title: 'Still Building — Every Day',
     body: `
       <p>Seven months post-layoff. Still going. Output higher than any point in my career.</p>
-      <p>GrayCodeAI is the main focus — building it out within the Herm ecosystem, tightening the agent collaboration layer, closing the gap between "AI writes code" and "AI works on a codebase with you."</p>
-      <p>The Done universe keeps growing alongside it: <strong>Iterate</strong> — a self-evolving coding agent in Go, open source. <strong>Growth</strong> — habit tracking and journaling with analytics. <strong>MindShift</strong> — book summaries with audio and key takeaways. Each one a real product, deployed, used.</p>
-      <p>Pursuing <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong> in parallel — studying how AI systems can be broken, and how to build ones that hold.</p>
+      <p><strong>GrayCodeAI</strong> is the main thing — open source, actively developed, getting more capable every week.</p>
+      <p>The rest of the portfolio keeps growing too: <strong>Iterate</strong> — a self-evolving coding agent in Go, open source. <strong>Growth</strong> — habit tracking and journaling with analytics. <strong>MindShift</strong> — book summaries with audio. <strong>TaskDone</strong> — still live, still used. 30+ projects total, all real, all deployed.</p>
+      <p>Pursuing <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong> in parallel — studying how AI systems can be broken, and how to design ones that hold.</p>
       <p>Based in <strong>Gurgaon</strong>. Available for serious work with serious people. If you're building something real with AI, let's talk.</p>
     `
   }
