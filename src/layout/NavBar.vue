@@ -163,13 +163,18 @@ let scrollLocked = false
 const updateActiveSection = () => {
   if (!isHomePage.value || scrollLocked) return
   const navHeight = 80
-  const mid = window.scrollY + navHeight + window.innerHeight * 0.3
-  let current = ''
-  for (const id of SECTIONS) {
+  const threshold = window.scrollY + navHeight + 20
+  const positions = SECTIONS.map(id => {
     const el = document.getElementById(id)
-    if (!el) continue
-    const top = el.getBoundingClientRect().top + window.scrollY
-    if (top <= mid) current = id
+    if (!el) return null
+    return { id, top: el.getBoundingClientRect().top + window.scrollY }
+  })
+    .filter(Boolean)
+    .sort((a, b) => a.top - b.top)
+
+  let current = ''
+  for (const { id, top } of positions) {
+    if (top <= threshold) current = id
   }
   activeSection.value = current
 }
@@ -201,7 +206,8 @@ const handleNavClick = async section => {
   }
   setTimeout(() => {
     scrollLocked = false
-  }, 1000)
+    updateActiveSection()
+  }, 1500)
 }
 
 // Close menu when clicking outside
