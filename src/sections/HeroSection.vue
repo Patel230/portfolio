@@ -91,7 +91,7 @@ const { displayText, showCursor } = useTypingEffect(roles)
     box-shadow 0.35s var(--ease-spring),
     border-color 0.35s var(--ease-spring);
   will-change: transform;
-  animation: heroFadeUp 0.5s var(--ease-spring) 0.1s both;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
 .hero-image:hover {
@@ -129,7 +129,7 @@ const { displayText, showCursor } = useTypingEffect(roles)
   color: var(--accent);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  animation: heroFadeUp 0.5s var(--ease-spring) 0.2s both;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
 }
 
 .hero-title .accent {
@@ -142,7 +142,7 @@ const { displayText, showCursor } = useTypingEffect(roles)
   margin-bottom: 24px;
   min-height: 1.5em;
   font-weight: 500;
-  animation: heroFadeUp 0.5s var(--ease-spring) 0.3s both;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
 
 .typing-wrapper {
@@ -181,7 +181,7 @@ const { displayText, showCursor } = useTypingEffect(roles)
   max-width: 580px;
   margin-left: auto;
   margin-right: auto;
-  animation: heroFadeUp 0.5s var(--ease-spring) 0.4s both;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
 }
 
 .hero-links {
@@ -189,7 +189,7 @@ const { displayText, showCursor } = useTypingEffect(roles)
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  animation: heroFadeUp 0.5s var(--ease-spring) 0.5s both;
+  animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
 }
 
 .hero-links .btn {
