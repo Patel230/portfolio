@@ -57,9 +57,11 @@
           v-if="lightboxOpen"
           ref="lightboxRef"
           class="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project gallery lightbox"
           tabindex="-1"
           @click.self="closeLightbox"
-          @keydown.escape="closeLightbox"
         >
           <button class="lightbox-close" aria-label="Close" @click="closeLightbox">
             <LucideX />
