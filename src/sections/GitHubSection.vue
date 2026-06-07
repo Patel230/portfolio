@@ -16,15 +16,18 @@
             rel="noopener noreferrer"
             class="stats-link"
           >
+            <div v-if="!statsLoaded && !statsError" class="stats-shimmer" aria-hidden="true" />
             <img
               v-if="!statsError"
+              v-show="statsLoaded"
               src="https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=fbbf24&text_color=ffffff&icon_color=fbbf24"
               alt="GitHub Stats for Patel230"
               class="stats-image"
               loading="lazy"
+              @load="handleStatsLoad"
               @error="handleStatsError"
             />
-            <p v-else class="stats-fallback">View GitHub profile for full stats</p>
+            <p v-if="statsError" class="stats-fallback">View GitHub profile for full stats</p>
           </a>
         </div>
 
@@ -56,7 +59,9 @@ import { Icon } from '@/components'
 import { Github as LucideGithub } from 'lucide-vue-next'
 
 const statsError = ref(false)
+const statsLoaded = ref(false)
 const handleStatsError = () => { statsError.value = true }
+const handleStatsLoad = () => { statsLoaded.value = true }
 
 const githubLinks = [
   {
@@ -124,6 +129,29 @@ const githubLinks = [
   color: var(--text-secondary);
   font-size: 0.9rem;
   margin: 0;
+}
+
+.stats-shimmer {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-shimmer { animation: none; }
 }
 
 .github-links {

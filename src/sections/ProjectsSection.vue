@@ -108,10 +108,11 @@ const featuredProjects = projects.slice(0, 6)
     color-mix(in srgb, var(--project-color) 3%, var(--bg-card))
   );
   border: 1px solid color-mix(in srgb, var(--project-color) 40%, transparent);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
+  will-change: transform;
 }
 
 .project-card:hover {
@@ -209,23 +210,24 @@ const featuredProjects = projects.slice(0, 6)
 .view-all-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.5rem;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
+  gap: 0.625rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.22);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: all var(--transition-base);
   cursor: pointer;
 }
 
 .view-all-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateX(4px);
+  background: rgba(255, 215, 0, 0.15);
+  border-color: rgba(255, 215, 0, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
 }
 
 .view-all-icon {

@@ -131,7 +131,7 @@ const posts = rawPosts.map(post => ({
 }
 
 .post-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 20px;
@@ -157,6 +157,40 @@ const posts = rawPosts.map(post => ({
 .post-body :deep(em) {
   color: var(--accent);
   font-style: italic;
+}
+
+.post-body :deep(a) {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity var(--transition-fast);
+}
+
+.post-body :deep(a:hover) {
+  opacity: 0.8;
+}
+
+/* Stagger entrance animation for timeline posts */
+.post {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.post:nth-child(1) { animation-delay: 0.04s; }
+.post:nth-child(2) { animation-delay: 0.08s; }
+.post:nth-child(3) { animation-delay: 0.12s; }
+.post:nth-child(4) { animation-delay: 0.16s; }
+.post:nth-child(5) { animation-delay: 0.20s; }
+.post:nth-child(6) { animation-delay: 0.24s; }
+.post:nth-child(7) { animation-delay: 0.28s; }
+.post:nth-child(8) { animation-delay: 0.32s; }
+.post:nth-child(9) { animation-delay: 0.36s; }
+.post:nth-child(10) { animation-delay: 0.40s; }
+.post:nth-child(11) { animation-delay: 0.44s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Mobile */
@@ -219,6 +253,11 @@ const posts = rawPosts.map(post => ({
 
   .back-link:hover {
     transform: none;
+  }
+
+  .post {
+    animation: none;
+    opacity: 1;
   }
 }
 </style>

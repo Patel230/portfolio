@@ -174,7 +174,7 @@ const {
 
 <style scoped>
 .gallery-section {
-  padding: 80px 1.5rem;
+  padding: 90px 0;
   background-color: var(--bg-primary);
   position: relative;
 }

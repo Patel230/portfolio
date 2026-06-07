@@ -151,15 +151,34 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
   padding: 28px;
   background-color: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stack-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
+  transform-origin: left;
 }
 
 .stack-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.stack-card:hover::after {
+  transform: scaleX(1);
 }
 
 .stack-icon {
@@ -286,12 +305,17 @@ import { Layers as LucideLayers } from 'lucide-vue-next'
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .stack-card {
+  .stack-card,
+  .stack-card::after {
     transition: none;
   }
 
   .stack-card:hover {
     transform: none;
+  }
+
+  .stack-card:hover::after {
+    transform: scaleX(1);
   }
 
   .stack-card:hover .stack-icon {
