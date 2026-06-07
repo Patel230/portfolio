@@ -92,12 +92,21 @@ onUnmounted(() => {
   transform: translateY(10px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .scroll-to-top {
     bottom: 16px;
     right: 16px;
     width: 44px;
     height: 44px;
+  }
+}
+
+@media (max-width: 479px) {
+  .scroll-to-top {
+    bottom: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
   }
 }
 
