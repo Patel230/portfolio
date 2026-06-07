@@ -58,8 +58,9 @@
         <Transition name="lightbox">
           <div
             v-if="lightboxOpen"
+            ref="lightboxRef"
             class="lightbox"
-            tabindex="0"
+            tabindex="-1"
             @click.self="closeLightbox"
             @keydown.escape="closeLightbox"
           >
@@ -127,6 +128,7 @@
                   :key="index"
                   :ref="el => setThumbnailRef(el, index)"
                   :class="['thumbnail', { active: carouselIndex === index }]"
+                  :aria-label="`View image ${index + 1}: ${img.caption}`"
                   @click="selectThumbnail(index)"
                 >
                   <img :src="img.src" :alt="img.caption" @error="handleImageError" />
@@ -141,8 +143,9 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 import { galleryProjects } from '@/data/gallery'
+import { useLightbox } from '@/composables/useLightbox.js'
 import {
   Images as LucideImages,
   X as LucideX,
@@ -151,85 +154,22 @@ import {
   LayoutGrid as LucideGrid
 } from 'lucide-vue-next'
 
-const lightboxOpen = ref(false)
-const currentProjectIndex = ref(0)
-const carouselIndex = ref(0)
-const thumbnailStripRef = ref(null)
-const thumbnailRefs = ref([])
-
 const featuredProjects = computed(() => galleryProjects.slice(0, 9))
 
-const currentProject = computed(() => featuredProjects.value[currentProjectIndex.value])
-
-const setThumbnailRef = (el, index) => {
-  if (el) thumbnailRefs.value[index] = el
-}
-
-const scrollThumbnailIntoView = index => {
-  const thumbnail = thumbnailRefs.value[index]
-  if (thumbnail && thumbnailStripRef.value) {
-    const stripRect = thumbnailStripRef.value.getBoundingClientRect()
-    const thumbRect = thumbnail.getBoundingClientRect()
-    const thumbCenter = thumbRect.left + thumbRect.width / 2
-    const stripCenter = stripRect.left + stripRect.width / 2
-    thumbnailStripRef.value.scrollBy({
-      left: thumbCenter - stripCenter,
-      behavior: 'smooth'
-    })
-  }
-}
-
-const selectThumbnail = index => {
-  carouselIndex.value = index
-  scrollThumbnailIntoView(index)
-}
-
-const openLightbox = project => {
-  currentProjectIndex.value = featuredProjects.value.findIndex(p => p.id === project.id)
-  carouselIndex.value = 0
-  lightboxOpen.value = true
-  document.body.style.overflow = 'hidden'
-  thumbnailRefs.value = []
-}
-
-const closeLightbox = () => {
-  lightboxOpen.value = false
-  document.body.style.overflow = ''
-}
-
-const navigateCarousel = direction => {
-  if (!currentProject.value) return
-  const newIndex = carouselIndex.value + direction
-  if (newIndex >= 0 && newIndex < currentProject.value.images.length) {
-    carouselIndex.value = newIndex
-    scrollThumbnailIntoView(newIndex)
-  }
-}
-
-const handleImageError = e => {
-  e.target.src =
-    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"%3E%3Crect fill="%231e293b" width="800" height="500"/%3E%3Ctext fill="%2364748b" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage Coming Soon%3C/text%3E%3C/svg%3E'
-}
-
-const handleKeydown = e => {
-  if (!lightboxOpen.value) return
-  if (e.key === 'ArrowLeft') navigateCarousel(-1)
-  if (e.key === 'ArrowRight') navigateCarousel(1)
-  if (e.key === 'Escape') closeLightbox()
-}
-
-onMounted(() => {
-  window.addEventListener('keydown', handleKeydown)
-})
-
-watch(carouselIndex, () => {
-  scrollThumbnailIntoView(carouselIndex.value)
-})
-
-onUnmounted(() => {
-  window.removeEventListener('keydown', handleKeydown)
-  document.body.style.overflow = ''
-})
+const {
+  lightboxOpen,
+  lightboxRef,
+  currentProject,
+  carouselIndex,
+  thumbnailStripRef,
+  thumbnailRefs,
+  setThumbnailRef,
+  selectThumbnail,
+  openLightbox,
+  closeLightbox,
+  navigateCarousel,
+  handleImageError
+} = useLightbox(featuredProjects)
 </script>
 
 <style scoped>
@@ -702,7 +642,7 @@ onUnmounted(() => {
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   .thumbnail {
     width: 65px;
-    height: 42px;
+    height: 44px;
   }
 
   .thumbnail-strip {
@@ -741,7 +681,7 @@ onUnmounted(() => {
 
   .thumbnail {
     width: 60px;
-    height: 40px;
+    height: 44px;
   }
 
   .thumbnail-strip {
@@ -822,7 +762,7 @@ onUnmounted(() => {
 
   .thumbnail {
     width: 50px;
-    height: 32px;
+    height: 44px;
     flex-shrink: 0;
   }
 
@@ -850,8 +790,8 @@ onUnmounted(() => {
   }
 
   .thumbnail {
-    width: 40px;
-    height: 26px;
+    width: 44px;
+    height: 44px;
     flex-shrink: 0;
   }
 

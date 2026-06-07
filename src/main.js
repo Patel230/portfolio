@@ -11,14 +11,16 @@ if (import.meta.env.PROD) {
 
 import { APP_VERSION } from './version.js'
 
-console.log(
-  `%c👋 Hey there, curious developer! v${APP_VERSION}
+if (import.meta.env.DEV) {
+  console.log(
+    `%c👋 Hey there, curious developer! v${APP_VERSION}
 %cCheck out my code at: https://github.com/Patel230
-%cHappy coding! 🚀`,
-  'color: #fbbf24; font-size: 18px; font-weight: bold; padding: 8px;',
-  'color: #a3a3a3; font-size: 14px; padding: 4px;',
-  'color: #22c55e; font-size: 14px; font-style: italic; padding: 4px;'
-)
+%cHappy coding!`,
+    'color: #fbbf24; font-size: 18px; font-weight: bold; padding: 8px;',
+    'color: #a3a3a3; font-size: 14px; padding: 4px;',
+    'color: #22c55e; font-size: 14px; font-style: italic; padding: 4px;'
+  )
+}
 
 /**
  * Hide the initial loading screen

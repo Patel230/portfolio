@@ -81,8 +81,8 @@ const contactItems = [
   },
   {
     label: 'Location',
-    value: 'Gurgaon, India',
-    href: 'https://maps.google.com/?q=Gurgaon,India',
+    value: 'Bengaluru, India',
+    href: 'https://maps.google.com/?q=Bengaluru,India',
     external: true,
     paths: ['M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z', 'M12 10a3 3 0 110-6 3 3 0 010 6z'],
     stroke: 'currentColor'

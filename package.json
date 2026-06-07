@@ -19,9 +19,10 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "dompurify": "^3.4.8",
+    "lucide-vue-next": "^0.330.0",
     "vue": "^3.4.0",
-    "vue-router": "^4.2.0",
-    "lucide-vue-next": "^0.330.0"
+    "vue-router": "^4.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.0",
