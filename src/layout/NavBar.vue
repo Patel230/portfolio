@@ -130,21 +130,21 @@ const SECTIONS = [
   'about',
   'contact'
 ]
-let sectionObserver = null
+
+const updateActiveSection = () => {
+  if (!isHomePage.value) return
+  const navHeight = 70
+  const scrollY = window.scrollY + navHeight + 10
+  let current = ''
+  for (const id of SECTIONS) {
+    const el = document.getElementById(id)
+    if (el && el.offsetTop <= scrollY) current = id
+  }
+  activeSection.value = current
+}
 
 const setupSectionObserver = () => {
-  if (sectionObserver) sectionObserver.disconnect()
-  const els = SECTIONS.map(id => document.getElementById(id)).filter(Boolean)
-  if (!els.length) return
-  sectionObserver = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) activeSection.value = entry.target.id
-      })
-    },
-    { threshold: 0.3 }
-  )
-  els.forEach(el => sectionObserver.observe(el))
+  updateActiveSection()
 }
 
 const toggleMenu = () => {
@@ -202,6 +202,7 @@ const preventBodyScroll = prevent => {
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
+  updateActiveSection()
 }
 
 onMounted(() => {
@@ -216,15 +217,11 @@ onUnmounted(() => {
   document.removeEventListener('keydown', handleEscape)
   window.removeEventListener('scroll', handleScroll)
   preventBodyScroll(false)
-  if (sectionObserver) sectionObserver.disconnect()
 })
 
 watch(isHomePage, val => {
   if (val) setTimeout(setupSectionObserver, 100)
-  else {
-    activeSection.value = ''
-    if (sectionObserver) sectionObserver.disconnect()
-  }
+  else activeSection.value = ''
 })
 
 // Watch menu state to toggle body scroll
