@@ -5,7 +5,7 @@
         <div class="footer-brand">
           <span class="footer-logo" aria-hidden="true">{LP}</span>
           <div class="footer-legal">
-            <p class="footer-copyright">© 2026 Lakshman Patel. All rights reserved.</p>
+            <p class="footer-copyright">© {{ currentYear }} Lakshman Patel. All rights reserved.</p>
             <p class="footer-built">
               Built with
               <span class="heart-icon" aria-hidden="true">

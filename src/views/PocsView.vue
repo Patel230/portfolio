@@ -223,22 +223,36 @@ const filteredPocs = computed(() => {
 
 .poc-card {
   padding: 24px;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--poc-color) 8%, transparent),
-    color-mix(in srgb, var(--poc-color) 3%, var(--bg-card))
-  );
-  border: 1px solid color-mix(in srgb, var(--poc-color) 40%, transparent);
-  border-radius: 12px;
-  transition: all 0.2s ease;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all 0.25s var(--ease-spring);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.poc-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--poc-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .poc-card:hover {
-  border-color: var(--poc-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 24px color-mix(in srgb, var(--poc-color) 25%, transparent);
+  border-color: color-mix(in srgb, var(--poc-color) 40%, transparent);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.poc-card:hover::after {
+  transform: scaleX(1);
 }
 
 .poc-card:focus-within {
@@ -261,11 +275,11 @@ const filteredPocs = computed(() => {
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .poc-card:hover .poc-icon {
-  transform: scale(1.1);
+  transform: scale(1.08) rotate(4deg);
 }
 
 .poc-card {
