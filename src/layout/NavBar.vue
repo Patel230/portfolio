@@ -137,14 +137,15 @@ const menuButtonRef = ref(null)
 const isScrolled = ref(false)
 
 const isHomePage = computed(() => route.path === '/')
-const sectionLink = id => computed(() => (isHomePage.value ? `#${id}` : `/#${id}`))
-const skillsLink = sectionLink('skills')
-const projectsLink = sectionLink('projects')
-const opensourceLink = sectionLink('opensource')
-const githubLink = sectionLink('github')
-const stackLink = sectionLink('portfolio-stack')
-const aboutLink = sectionLink('about')
-const contactLink = sectionLink('contact')
+
+const sectionHref = id => (isHomePage.value ? `#${id}` : `/#${id}`)
+const skillsLink = computed(() => sectionHref('skills'))
+const projectsLink = computed(() => sectionHref('projects'))
+const opensourceLink = computed(() => sectionHref('opensource'))
+const githubLink = computed(() => sectionHref('github'))
+const stackLink = computed(() => sectionHref('portfolio-stack'))
+const aboutLink = computed(() => sectionHref('about'))
+const contactLink = computed(() => sectionHref('contact'))
 
 const activeSection = ref('')
 const SECTIONS = [
@@ -157,20 +158,25 @@ const SECTIONS = [
   'contact'
 ]
 
+const getOffsetTop = el => {
+  let top = 0
+  while (el) {
+    top += el.offsetTop
+    el = el.offsetParent
+  }
+  return top
+}
+
 const updateActiveSection = () => {
   if (!isHomePage.value) return
   const navHeight = 70
-  const scrollY = window.scrollY + navHeight + 10
+  const scrollY = window.scrollY + navHeight + 80
   let current = ''
   for (const id of SECTIONS) {
     const el = document.getElementById(id)
-    if (el && el.offsetTop <= scrollY) current = id
+    if (el && getOffsetTop(el) <= scrollY) current = id
   }
   activeSection.value = current
-}
-
-const setupSectionObserver = () => {
-  updateActiveSection()
 }
 
 const toggleMenu = () => {
@@ -235,7 +241,7 @@ onMounted(() => {
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
-  if (isHomePage.value) setupSectionObserver()
+  if (isHomePage.value) updateActiveSection()
 })
 
 onUnmounted(() => {
@@ -246,7 +252,7 @@ onUnmounted(() => {
 })
 
 watch(isHomePage, val => {
-  if (val) setTimeout(setupSectionObserver, 100)
+  if (val) setTimeout(updateActiveSection, 100)
   else activeSection.value = ''
 })
 
