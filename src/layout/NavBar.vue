@@ -158,23 +158,18 @@ const SECTIONS = [
   'contact'
 ]
 
-const getOffsetTop = el => {
-  let top = 0
-  while (el) {
-    top += el.offsetTop
-    el = el.offsetParent
-  }
-  return top
-}
+let scrollLocked = false
 
 const updateActiveSection = () => {
-  if (!isHomePage.value) return
-  const navHeight = 70
-  const scrollY = window.scrollY + navHeight + 80
+  if (!isHomePage.value || scrollLocked) return
+  const navHeight = 80
+  const mid = window.scrollY + navHeight + window.innerHeight * 0.3
   let current = ''
   for (const id of SECTIONS) {
     const el = document.getElementById(id)
-    if (el && getOffsetTop(el) <= scrollY) current = id
+    if (!el) continue
+    const top = el.getBoundingClientRect().top + window.scrollY
+    if (top <= mid) current = id
   }
   activeSection.value = current
 }
@@ -197,12 +192,16 @@ const scrollToSection = section => {
 const handleNavClick = async section => {
   closeMenu()
   activeSection.value = section
+  scrollLocked = true
   if (isHomePage.value) {
     scrollToSection(section)
   } else {
     await router.push({ path: '/', hash: `#${section}` })
     setTimeout(() => scrollToSection(section), 100)
   }
+  setTimeout(() => {
+    scrollLocked = false
+  }, 1000)
 }
 
 // Close menu when clicking outside
