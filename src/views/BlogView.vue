@@ -13,7 +13,7 @@
     <section class="blog-content section">
       <div class="container">
         <div class="posts-list">
-          <article v-for="post in posts" :key="post.id" class="post-card">
+          <article v-for="post in [...posts].reverse()" :key="post.id" class="post-card">
             <div class="post-meta">
               <span class="post-tag" :style="{ '--tag-color': post.color }">{{ post.tag }}</span>
               <span class="post-date">{{ post.date }}</span>
