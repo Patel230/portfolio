@@ -72,43 +72,43 @@ const posts = [
   },
   {
     id: 4,
-    tag: 'GrayCodeAI',
-    date: 'November 2025',
+    tag: 'Herm + GrayCodeAI',
+    date: 'November 2025 — Present',
     color: '#e11d48',
-    title: 'GrayCodeAI — A Place for Humans and AI Agents to Build Together',
+    title: 'Building GrayCodeAI Inside the Herm Ecosystem',
     body: `
-      <p>The first thing I built after the layoff was <strong>GrayCodeAI</strong>.</p>
-      <p>Not because I had a roadmap. Because I had a conviction: the future of software development isn't AI replacing engineers — it's AI agents and humans working in shared context, sharing a codebase, coordinating on tasks the way a great team does.</p>
-      <p>GrayCodeAI is that bet made concrete. A platform where humans and AI agents build together — not autocomplete, not chat, but agents that understand your project, maintain state across sessions, and actually contribute. Built on TypeScript and Next.js with agent orchestration as a first-class primitive.</p>
-      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. Minimal change, maximum precision. That's the kind of AI collaboration worth building: not chaos, not takeover — just intelligent, precise steps forward.</p>
-      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a>. Still evolving every day.</p>
+      <p>After the layoff, I didn't start from scratch. I found the <strong>Herm ecosystem</strong> — and decided to build inside it and contribute to it at the same time.</p>
+      <p>Herm is a developer tooling platform. I'm building <strong>GrayCodeAI</strong> as part of that ecosystem — a place where humans and AI agents build together. Not autocomplete, not a chat window bolted onto a repo. Real agents that understand your project, maintain state, and contribute the way a teammate does.</p>
+      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. Minimal change, maximum precision. That's the philosophy: AI that moves with intention, not noise.</p>
+      <p>Building inside an existing ecosystem means I'm not just shipping a product — I'm also contributing back to the infrastructure around it. Every gap I find in Herm's tooling is a contribution opportunity. Every feature I build in GrayCodeAI feeds back into what Herm needs to support.</p>
+      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a> and actively in development.</p>
     `
   },
   {
     id: 5,
-    tag: 'Open Source',
-    date: 'December 2025',
+    tag: 'Contributing',
+    date: 'December 2025 — Present',
     color: '#0891b2',
-    title: 'Herm & LangDAG — Going Deeper Into the Ecosystem',
+    title: 'Open Source Contributions — Herm, LangDAG, and the Ecosystem',
     body: `
-      <p>With more time and more focus, I started contributing more seriously to open source.</p>
-      <p><strong>Herm</strong> is a terminal-based Heroku CLI wrapper. I contributed improvements to the CLI UX — better error messages, cleaner command flow, things that matter when you live in the terminal. Small surface area, real impact. Someone opened an issue thanking me within a week.</p>
-      <p><strong>LangDAG</strong> was the more interesting contribution. It's a DAG-based workflow engine for language model pipelines — exactly the kind of infrastructure GrayCodeAI sits on top of. I contributed graph optimization logic that eliminated redundant LLM calls in multi-step pipelines. The intersection of my graph obsession and my AI work, in one PR.</p>
-      <p>Open source is accountability in public. Your code is read by strangers, debated by maintainers, and merged (or not) on its merits alone. There's no politics, no hierarchy — just the code. I find that clarifying.</p>
+      <p>Building inside Herm means understanding it deeply — which means contributing to it.</p>
+      <p>I've been contributing to <strong>Herm</strong> directly: CLI UX improvements, cleaner command flows, better error surfaces. The kind of work that doesn't ship features but makes every developer who uses the tool move faster. That matters.</p>
+      <p><strong>LangDAG</strong> connects to GrayCodeAI at the infrastructure level — it's a DAG-based workflow engine for language model pipelines. I contributed graph optimization logic that cuts redundant LLM calls in multi-step pipelines. Less waste, faster execution, lower cost. Exactly the kind of improvement that compounds as agent workflows get more complex.</p>
+      <p>Contributing to an ecosystem you're also building in is a different experience than standalone open source. You feel every rough edge. You fix the ones that slow you down, and in doing so, you fix them for everyone.</p>
     `
   },
   {
     id: 6,
-    tag: 'Building Now',
+    tag: 'Now',
     date: '2026 — Present',
     color: '#10b981',
-    title: "What I'm Building Right Now",
+    title: 'Still Building — Every Day',
     body: `
-      <p>Seven months after the layoff, I'm still building — and the output has been the highest of my career.</p>
-      <p>GrayCodeAI continues to evolve. The agent coordination layer is getting more capable. The gap between "AI writes code" and "AI collaborates on a codebase" is real, and closing it is the work.</p>
-      <p>The Done universe keeps growing. New apps in progress: <strong>Iterate</strong> — a self-evolving coding agent that reads, improves, tests, and commits autonomously (built in Go, open source). <strong>Growth</strong> — a personal tracker for habits, journaling, and progress analytics. <strong>MindShift</strong> — book summaries with audio and key takeaways.</p>
-      <p>I'm also pursuing my <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong>, which has given me a new lens on AI: not just what it can build, but what it can break — and how to design systems that are resilient to both.</p>
-      <p>Based in <strong>Gurgaon</strong>. Available for roles where the work is hard, the team is serious, and AI is a genuine primitive — not a marketing slide. If that's you, let's talk.</p>
+      <p>Seven months post-layoff. Still going. Output higher than any point in my career.</p>
+      <p>GrayCodeAI is the main focus — building it out within the Herm ecosystem, tightening the agent collaboration layer, closing the gap between "AI writes code" and "AI works on a codebase with you."</p>
+      <p>The Done universe keeps growing alongside it: <strong>Iterate</strong> — a self-evolving coding agent in Go, open source. <strong>Growth</strong> — habit tracking and journaling with analytics. <strong>MindShift</strong> — book summaries with audio and key takeaways. Each one a real product, deployed, used.</p>
+      <p>Pursuing <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong> in parallel — studying how AI systems can be broken, and how to build ones that hold.</p>
+      <p>Based in <strong>Gurgaon</strong>. Available for serious work with serious people. If you're building something real with AI, let's talk.</p>
     `
   }
 ]
