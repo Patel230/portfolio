@@ -234,12 +234,6 @@ const githubOrgs = [
     description: 'AI-powered graph intelligence'
   },
   {
-    login: 'GATEOverflow',
-    url: 'https://github.com/GATEOverflow',
-    avatar: 'https://avatars.githubusercontent.com/u/47265850?v=4',
-    description: 'Q&A site for GATE exam preparation'
-  },
-  {
     login: 'Growth-Club',
     url: 'https://github.com/Growth-Club',
     avatar: 'https://avatars.githubusercontent.com/u/254279022?v=4',
@@ -305,10 +299,10 @@ const githubLinks = [
   grid-column: span 1;
 }
 .orgs-card {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 .links-card {
-  grid-column: span 1;
+  grid-column: span 2;
 }
 .langs-card {
   grid-column: span 2;
@@ -433,8 +427,8 @@ const githubLinks = [
 
 /* ── Quick links ── */
 .quick-links {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
@@ -483,8 +477,8 @@ const githubLinks = [
 
 /* ── Org card styles ── */
 .orgs-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
@@ -547,23 +541,6 @@ const githubLinks = [
 }
 
 /* ── Responsive ── */
-@media (max-width: 1023px) and (min-width: 768px) {
-  .github-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .langs-card {
-    grid-column: span 2;
-  }
-  .orgs-card {
-    grid-column: span 1;
-  }
-  .links-card {
-    grid-column: span 1;
-  }
-}
-
 @media (max-width: 767px) {
   .github-grid {
     grid-template-columns: 1fr;
@@ -576,6 +553,11 @@ const githubLinks = [
   .orgs-card,
   .links-card {
     grid-column: span 1;
+  }
+
+  .orgs-list,
+  .quick-links {
+    grid-template-columns: 1fr;
   }
 
   .gh-card {
