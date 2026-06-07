@@ -5,7 +5,7 @@
         <router-link to="/" class="back-link"> ← Back </router-link>
         <h1 class="blog-title">Journey</h1>
         <p class="blog-subtitle">
-          From Monarch Tractor to a layoff, and everything I've built since. More coming soon.
+          From a village farm to Bengaluru, India's Silicon Valley — and everything in between.
         </p>
       </div>
     </section>
@@ -31,83 +31,150 @@
 const posts = [
   {
     id: 1,
-    tag: 'First Job',
-    date: 'June 2022',
-    color: '#db2777',
-    title: 'Monarch Tractor — My First Real Engineering Job',
+    tag: 'Roots',
+    date: '2010 – 2011',
+    color: '#84cc16',
+    title: 'The Village, the Farm, and a Dream of Singing',
     body: `
-      <p>Fresh out of college, I joined <strong>Monarch Tractor</strong> — a Silicon Valley company building electric autonomous tractors. My first task was to not break production. My actual job was building APIs and cloud infrastructure for systems that talked to real machines on real farms in California.</p>
-      <p>The stack hit me all at once: Python, Flask, FastAPI, AWS, InfluxDB for time-series sensor data, MQTT for IoT, ROS for the robot operating layer. Every service I touched was connected to hardware in the field. A bad deploy could affect a tractor mid-row.</p>
-      <p>That weight was a good teacher. I learned what uptime actually means when it's not just a metric but a physical thing in a field. I learned to write code that survives hardware failures, flaky networks, and 3am on-call pages. I learned to review code without ego and receive feedback without defensiveness.</p>
-      <p>Three years of that discipline became my foundation. Everything I've built since carries its DNA.</p>
+      <p>I grew up in a village. In high school, mornings meant farming and evenings meant studying. My family grew vegetables and sold them at the local market — that was life, and I didn't think much about changing it.</p>
+      <p>Back then, if you'd asked me what I wanted to be, I'd have told you: a folk singer. I loved music. I dreamed of performing at local programs at night and farming by day. Engineering wasn't even on the horizon.</p>
+      <p>Then the grades came back. They were good — good enough that people around me started saying: go to the city, study further. So I did. I packed up and left the village. That decision changed everything.</p>
     `
   },
   {
     id: 2,
-    tag: 'Side Projects',
-    date: '2022–2024',
-    color: '#7c3aed',
-    title: 'The Done Universe — Building in the Margins',
+    tag: 'Class 11 & 12',
+    date: '2011 – 2013',
+    color: '#f59e0b',
+    title: 'Moving to the City — Mathematics and a New Direction',
     body: `
-      <p>While working full-time, I was building on the side. Not tutorials. Not clones. Real products with real deployments.</p>
-      <p>The "Done" series started from a simple frustration: I had too many unfinished side projects. So I made a rule — everything ships. If it doesn't run in production, it doesn't count.</p>
-      <p><strong>GraphDone</strong> was the most ambitious: a graph-native project management platform where tasks and dependencies live as first-class graph nodes in Neo4j. Built with React, GraphQL, TypeScript. It got users. It got real feedback. But running Neo4j at scale alone, without funding, eventually became untenable. It's paused — the idea isn't.</p>
-      <p><strong>TaskDone</strong> followed — modern task management with multiple views, graph-based relationships, and analytics. Still live at <a href="https://taskdone.gateandtech.in" target="_blank" rel="noopener noreferrer">taskdone.gateandtech.in</a>.</p>
-      <p>Then came SyncDone, DrawDone, ContactDone, DocDone, EnergyDone, MeshDone, FileDone... each one a real attempt at a real problem. Over 30 apps across three years. Some live. Some paused. All mine.</p>
+      <p>In the city, I chose Mathematics as my core subject for Class 11 and 12. It was a serious shift from the life I'd known — no more early mornings in the field, just textbooks, problems, and figuring out how to keep up with classmates who'd been in cities their whole lives.</p>
+      <p>I studied properly and completed my K-12. The discipline from those farming years helped more than I expected — I knew how to work hard without needing someone to watch over me.</p>
     `
   },
   {
     id: 3,
-    tag: 'Layoff',
-    date: '12 November 2025',
+    tag: 'Kota',
+    date: '2013 – 2014',
     color: '#f97316',
-    title: 'The Day Everything Changed — And I Chose to Build',
+    title: 'Kota — Chasing IIT, Landing Somewhere Real',
     body: `
-      <p>On November 12, 2025, I was laid off.</p>
-      <p>No drama. The company had its reasons. These things happen. But it was still a jolt — three years of identity, routine, and purpose, suddenly gone in a morning.</p>
-      <p>I spent exactly one day feeling sorry for myself. Then I opened my laptop.</p>
-      <p>I'd been watching AI eat software for two years while working inside a company moving at company speed. Now I had no speed limit. No sprint planning. No stakeholder sign-off. Just time, curiosity, and a clear question: <em>what can I build if I go all-in on AI as the actual primitive, not the feature?</em></p>
-      <p>That question became the next chapter. And I've been running on it ever since.</p>
+      <p>After Class 12, I went to Kota — the place every Indian student goes when they want to crack IIT-JEE. The coaching culture there is intense. Everyone around you is grinding for the same seats at the same institutions.</p>
+      <p>I gave it my best shot. I didn't make IIT. But I qualified well enough to get into a government engineering college under the Border Security Force (BSF). Not what I'd dreamed of, but a real engineering seat — and I decided to make the most of it.</p>
     `
   },
   {
     id: 4,
-    tag: 'GrayCodeAI',
-    date: 'November 2025 — Present',
-    color: '#e11d48',
-    title: 'GrayCodeAI — My Own Open Source AI Project',
+    tag: 'BE Computer Science',
+    date: '2014 – 2018',
+    color: '#3b82f6',
+    title: 'First Code, First Projects — Learning to Build',
     body: `
-      <p>The day after the layoff, I started building <strong>GrayCodeAI</strong>. My project. Open source. No roadmap handed to me — just a clear conviction about where software development is heading.</p>
-      <p>The idea: a place where humans and AI agents build together. Not a chat interface bolted onto a repo. Real agents that understand your codebase, maintain context across sessions, and contribute the way a teammate does — with intention and precision.</p>
-      <p>The name comes from Gray code — a binary numeral system where adjacent values differ by exactly one bit. That's the philosophy baked into it: minimal change, maximum signal. AI that moves with precision, not noise.</p>
-      <p>It's open source and live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a>. Actively being built every day.</p>
+      <p>I started my Bachelor of Engineering in Computer Science almost knowing nothing about programming. The first few months were humbling — syntax errors, logic errors, errors I didn't even know were possible.</p>
+      <p>But something clicked early. Writing code felt like solving puzzles, and I was hooked. I built my first real projects during these years: a library management system, an attendance tracker, small tools that actually worked and that people around me used.</p>
+      <p>By the final year I knew this was what I wanted to do — not just as a job, but as a craft. I wanted to keep getting better at it.</p>
     `
   },
   {
     id: 5,
-    tag: 'Open Source',
-    date: 'November 2025 — Present',
-    color: '#0891b2',
-    title: 'Contributing to Herm & LangDAG',
+    tag: 'GATE & GATEOverflow',
+    date: '2018 – 2020',
+    color: '#8b5cf6',
+    title: 'GATE Prep, Part-Time Work, and Becoming Independent',
     body: `
-      <p>Alongside building GrayCodeAI, I've been contributing to other open source projects I use and believe in.</p>
-      <p><strong>Herm</strong> is an open source developer tooling project — separate from GrayCodeAI, not mine. I contribute to it: CLI UX improvements, cleaner command flows, better error handling. The kind of work that makes every developer who uses the tool move faster. You use something enough, you start fixing what's rough.</p>
-      <p><strong>LangDAG</strong> is an open source DAG-based workflow engine for language model pipelines. I contributed graph optimization logic that eliminates redundant LLM calls in multi-step pipelines — less waste, faster execution, lower cost. Right at the intersection of my graph background and AI work.</p>
-      <p>Contributing to projects you don't own is a different discipline. The code gets read by maintainers who don't know you, merged on its merits alone. That keeps you sharp.</p>
+      <p>In my final semester, while preparing for the GATE exam, I started a part-time job at <strong>GATEOverflow</strong> — an online community for GATE aspirants. I contributed to GO Books, wrote aptitude answers, created TikZ images, worked with LaTeX, and helped build content that thousands of students used to prepare.</p>
+      <p>It wasn't glamorous work, but it paid enough to keep me independent. And learning LaTeX and TikZ — technical typesetting tools most people never touch — quietly sharpened my attention to detail in ways I still feel today.</p>
+      <p>My first GATE attempt: qualified, but not strongly enough. I took a second shot the following year, scored 43 marks, and earned a seat at <strong>Atal Bihari Vajpayee IIITM Gwalior</strong> for my Master's in Information Security. That felt like a real win.</p>
     `
   },
   {
     id: 6,
+    tag: 'M.Tech',
+    date: '2020 – 2022',
+    color: '#06b6d4',
+    title: "Master's at IIITM Gwalior — Security, Systems, and Staying Curious",
+    body: `
+      <p>IIITM Gwalior was a proper academic environment — cryptography, network security, secure systems design. I dug into it seriously. But I also kept working part-time at GATEOverflow, now contributing to their test series. Later I moved to <strong>GOClasses</strong> and helped build and manage their test series from the ground up.</p>
+      <p>It was a strange combination: studying information security by day, writing test questions and grading papers by night, and building side projects whenever I had a spare hour. But it worked. It kept me sharp and self-sufficient through the whole degree.</p>
+      <p>By 2022, I had my M.Tech, a solid foundation in security and systems, years of real content work behind me — and I was ready for something bigger.</p>
+    `
+  },
+  {
+    id: 7,
+    tag: 'Monarch Tractor',
+    date: '2022 – 2025',
+    color: '#db2777',
+    title: 'First Full-Time Job — Python Developer at Monarch Tractor',
+    body: `
+      <p>My first full-time role was at <strong>Monarch Tractor</strong>, an electric autonomous tractor company. I joined as a Python backend developer — and nothing I'd done before had quite prepared me for the scale and responsibility of production engineering.</p>
+      <p>I worked two full years on the US night shift from India. That meant being online and available when California was working — late nights, early mornings, a complete inversion of the normal schedule. It was demanding, but it put me directly in the room (virtually) where real engineering decisions were being made.</p>
+      <p>The stack was deep: Python, Flask, FastAPI, AWS, MySQL, Git. I worked on features from scratch and picked up existing ones mid-flight. I got the chance to work alongside the <strong>Foxconn team</strong> on a major integration — that was a different level of coordination and engineering rigour entirely.</p>
+      <p>I also led the support team for a period — which taught me that good engineering isn't just writing code, it's communicating clearly under pressure, triaging fast, and keeping people calm when things break in production.</p>
+      <p>Three years. Real-world scale. A foundation I'll carry for the rest of my career.</p>
+    `
+  },
+  {
+    id: 8,
+    tag: 'Layoff',
+    date: '12 November 2025',
+    color: '#f97316',
+    title: 'The Shutdown — And the Decision to Build',
+    body: `
+      <p>On November 12, 2025, the company made a hard call: funding had dried up over two consecutive quarters, and the entire tech team was let go as operations shut down.</p>
+      <p>It wasn't personal. The economics just didn't work. But knowing that doesn't make the morning you get the news any easier — three years of work, late nights, and real care for what you were building, suddenly over.</p>
+      <p>I gave myself a short time to sit with it. Then my friend and colleague <strong>Matthew Valancy</strong> and I started talking. We'd both just lost our jobs on the same day. We both had ideas. We decided: let's build our own things.</p>
+      <p>That conversation was the start of everything that came next.</p>
+    `
+  },
+  {
+    id: 9,
+    tag: 'GraphDone',
+    date: 'Late 2025',
+    color: '#7c3aed',
+    title: 'GraphDone — A Decentralised Jira We Built Together',
+    body: `
+      <p>The first thing Matthew and I built together was <strong>GraphDone</strong> — a decentralised Jira-style ticket system. The idea was to take project management and remove the central server, moving everything onto a graph-based, peer-to-peer architecture.</p>
+      <p>We built it, shipped it, and put it in front of people. The feedback was real but the traction wasn't there yet. Rather than force it, we made a conscious choice: step back, build something else for now, and return to GraphDone when the timing is right.</p>
+      <p>That decision taught me something important — knowing when to pause a project is as valuable as knowing how to build one. GraphDone isn't dead. It's waiting.</p>
+    `
+  },
+  {
+    id: 10,
+    tag: 'Open Source',
+    date: 'Late 2025 – Present',
+    color: '#0891b2',
+    title: 'Finding the Open Source Community — Sim AI, Kilocode, Herm',
+    body: `
+      <p>During this period I started going deeper into open source — not just using projects, but contributing to them.</p>
+      <p>I contributed to <strong>Sim AI</strong> and <strong>Kilocode AI</strong>, which sharpened my understanding of how AI tooling gets built at the community level. Different maintainers, different codebases, different cultures — all of it broadening my perspective on what good software collaboration looks like.</p>
+      <p>More recently I've been contributing to <strong>Herm</strong> — an open source coding agents project. That one has pulled me in deeply. The problems being solved there — how agents reason, act, and collaborate in a codebase — are exactly the problems I care most about right now.</p>
+      <p>Contributing to projects you didn't start is a different kind of discipline. You have to understand before you change anything. You have to be legible to strangers. That pressure makes you a better engineer.</p>
+    `
+  },
+  {
+    id: 11,
+    tag: 'GrayCodeAI',
+    date: '2025 – Present',
+    color: '#e11d48',
+    title: 'GrayCodeAI — Building My Own AI Platform',
+    body: `
+      <p>Alongside the open source work, I started building <strong>GrayCodeAI</strong> — my own project, open source, built from conviction rather than a brief.</p>
+      <p>The core idea: a platform where humans and AI agents build together. Not AI as a feature bolted on the side — AI as a genuine collaborator in the development process. Inside GrayCodeAI there are three pieces I'm building out: <strong>Hawk</strong> — a coding agent CLI, <strong>Gitant</strong> — a decentralised GitHub alternative, and <strong>Lark</strong> — a messaging application built for developers and agents, like Slack but designed from the start for human-agent teams.</p>
+      <p>The name comes from Gray code — a binary system where adjacent values differ by exactly one bit. Precise, minimal, intentional change. That's the ethos.</p>
+      <p>It's live at <a href="https://graycodeai.gateandtech.in" target="_blank" rel="noopener noreferrer">graycodeai.gateandtech.in</a> and I push to it every single day.</p>
+    `
+  },
+  {
+    id: 12,
     tag: 'Now',
     date: '2026 — Present',
     color: '#10b981',
-    title: 'Still Building — Every Day',
+    title: 'Graphlings, Every Side Project, and Keeping the Momentum',
     body: `
-      <p>Seven months post-layoff. Still going. Output higher than any point in my career.</p>
-      <p><strong>GrayCodeAI</strong> is the main thing — open source, actively developed, getting more capable every week.</p>
-      <p>The rest of the portfolio keeps growing too: <strong>Iterate</strong> — a self-evolving coding agent in Go, open source. <strong>Growth</strong> — habit tracking and journaling with analytics. <strong>MindShift</strong> — book summaries with audio. <strong>TaskDone</strong> — still live, still used. 30+ projects total, all real, all deployed.</p>
-      <p>Pursuing <strong>M.Tech in Information Security at ABV-IIITM Gwalior</strong> in parallel — studying how AI systems can be broken, and how to design ones that hold.</p>
-      <p>Based in <strong>Gurgaon</strong>. Available for serious work with serious people. If you're building something real with AI, let's talk.</p>
+      <p>Matthew has been building <strong>Graphlings</strong> — a Digital Life game. I've recently started contributing to that too. One of the things I value most about this period is the genuine collaboration: two people who lost their jobs on the same day, now building different things and helping each other along the way.</p>
+      <p>Beyond that: the side projects kept coming. <strong>TaskDone</strong>, <strong>Growth</strong>, <strong>MindShift</strong>, <strong>Iterate</strong> (a self-evolving coding agent in Go) — over 30 applications built and deployed across the years. All real. All shipped. All mine.</p>
+      <p>I'm currently based in <strong>Bengaluru</strong> — India's Silicon Valley — and I keep pushing every single day. That's not a slogan. It's genuinely how I operate. Every day something moves forward, something improves, something ships.</p>
+      <p>If you've read this far, you know where I came from — a village farm, a folk singing dream, a long road through Kota and Gwalior and late-night US shifts — and where I'm going. Let's build something together.</p>
     `
   }
 ]
