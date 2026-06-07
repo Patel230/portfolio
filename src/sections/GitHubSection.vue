@@ -104,8 +104,44 @@
           </a>
         </div>
 
+        <!-- Organizations Card -->
+        <div class="gh-card orgs-card fade-in-up stagger-4" data-reveal>
+          <div class="card-header">
+            <span class="card-icon" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6">
+              <LucideBuilding2 :size="18" />
+            </span>
+            <span class="card-title">Organizations</span>
+            <a
+              href="https://github.com/Patel230?tab=overview"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card-action"
+              aria-label="View all organizations"
+            >
+              <LucideExternalLink :size="14" />
+            </a>
+          </div>
+          <div class="orgs-list">
+            <a
+              v-for="org in githubOrgs"
+              :key="org.login"
+              :href="org.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="org-item"
+            >
+              <img :src="org.avatar" :alt="org.login" class="org-avatar" />
+              <div class="org-info">
+                <span class="org-name">{{ org.login }}</span>
+                <span class="org-desc">{{ org.description }}</span>
+              </div>
+              <LucideArrowUpRight :size="14" class="org-arrow" />
+            </a>
+          </div>
+        </div>
+
         <!-- Quick Links Card -->
-        <div class="gh-card links-card fade-in-up stagger-4" data-reveal>
+        <div class="gh-card links-card fade-in-up stagger-5" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(34, 197, 94, 0.12); color: #22c55e">
               <LucideLink :size="18" />
@@ -148,7 +184,8 @@ import {
   User as LucideUser,
   FolderOpen as LucideFolderOpen,
   GitPullRequest as LucideGitPullRequest,
-  Star as LucideStar
+  Star as LucideStar,
+  Building2 as LucideBuilding2
 } from 'lucide-vue-next'
 
 const statsLoaded = ref(false)
@@ -164,6 +201,15 @@ const handleStatsLoad = () => {
 const handleStatsError = () => {
   statsError.value = true
 }
+
+const githubOrgs = [
+  {
+    login: 'GraphDone',
+    url: 'https://github.com/GraphDone',
+    avatar: 'https://avatars.githubusercontent.com/u/226919970?v=4',
+    description: 'Graph-native project management platform with AI'
+  }
+]
 
 const githubLinks = [
   { label: 'Profile', href: 'https://github.com/Patel230', icon: LucideUser, color: '#ffd700' },
@@ -206,10 +252,15 @@ const githubLinks = [
 /* ── Grid layout ── */
 .github-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
 }
+
+.stats-card { grid-column: span 1; }
+.streak-card { grid-column: span 1; }
+.langs-card { grid-column: span 1; }
+.orgs-card { grid-column: span 1; }
+.links-card { grid-column: span 2; }
 
 /* ── Shared card base ── */
 .gh-card {
@@ -378,18 +429,97 @@ const githubLinks = [
   color: var(--link-color);
 }
 
+/* ── Org card styles ── */
+.orgs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.org-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: var(--text-primary);
+}
+
+.org-item:hover {
+  background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.35);
+  transform: translateX(4px);
+}
+
+.org-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.org-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.org-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.org-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.org-arrow {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.org-item:hover .org-arrow {
+  color: #3b82f6;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1023px) and (min-width: 768px) {
   .github-grid {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
+
+  .stats-card { grid-column: span 1; }
+  .streak-card { grid-column: span 1; }
+  .langs-card { grid-column: span 1; }
+  .orgs-card { grid-column: span 1; }
+  .links-card { grid-column: span 2; }
 }
 
 @media (max-width: 767px) {
   .github-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .stats-card,
+  .streak-card,
+  .langs-card,
+  .orgs-card,
+  .links-card {
+    grid-column: span 1;
   }
 
   .gh-card {
