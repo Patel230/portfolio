@@ -259,6 +259,10 @@ const handleMenuClick = event => {
   cursor: pointer;
   padding: 8px;
   z-index: 1001;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-menu-btn:focus-visible {

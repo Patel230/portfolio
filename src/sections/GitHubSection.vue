@@ -17,11 +17,14 @@
             class="stats-link"
           >
             <img
+              v-if="!statsError"
               src="https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=0d0d0d&title_color=fbbf24&text_color=ffffff&icon_color=fbbf24"
-              alt="GitHub Stats"
+              alt="GitHub Stats for Patel230"
               class="stats-image"
               loading="lazy"
+              @error="handleStatsError"
             />
+            <p v-else class="stats-fallback">View GitHub profile for full stats</p>
           </a>
         </div>
 
@@ -48,8 +51,12 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import { Icon } from '@/components'
 import { Github as LucideGithub } from 'lucide-vue-next'
+
+const statsError = ref(false)
+const handleStatsError = () => { statsError.value = true }
 
 const githubLinks = [
   {
@@ -109,6 +116,14 @@ const githubLinks = [
   height: auto;
   display: block;
   border-radius: 8px;
+}
+
+.stats-fallback {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
 }
 
 .github-links {
