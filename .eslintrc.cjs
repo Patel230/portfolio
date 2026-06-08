@@ -5,7 +5,9 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended'],
+  // 'prettier' must come last: it turns off ESLint formatting rules that conflict
+  // with Prettier (e.g. vue/max-attributes-per-line), so the two don't fight.
+  extends: ['eslint:recommended', 'plugin:vue/vue3-recommended', 'prettier'],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'

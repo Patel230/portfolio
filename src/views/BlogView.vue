@@ -19,7 +19,10 @@
               <span class="post-tag" :style="{ '--tag-color': post.color }">{{ post.tag }}</span>
               <time :datetime="post.dateISO" class="post-date">{{ post.date }}</time>
             </div>
-            <h2 class="post-title">{{ post.title }}</h2>
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            <!-- eslint-disable-next-line vue/no-v-html -- safeBody is sanitized with DOMPurify below -->
             <div class="post-body" v-html="post.safeBody" />
           </article>
         </div>

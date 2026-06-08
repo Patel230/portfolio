@@ -121,7 +121,7 @@
               </p>
             </div>
 
-            <div class="thumbnail-strip" ref="thumbnailStripRef">
+            <div ref="thumbnailStripRef" class="thumbnail-strip">
               <button
                 v-for="(img, index) in currentProject.images"
                 :key="index"
@@ -160,7 +160,6 @@ const {
   currentProject,
   carouselIndex,
   thumbnailStripRef,
-  thumbnailRefs,
   setThumbnailRef,
   selectThumbnail,
   openLightbox,
