@@ -365,6 +365,7 @@ watch(() => route.path, () => {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   will-change: transform;
+  padding: 0 14px;
 }
 
 .nav-links::-webkit-scrollbar {
@@ -398,10 +399,10 @@ watch(() => route.path, () => {
   top: 50%;
   left: 0;
   z-index: 0;
-  height: 100%;
+  height: calc(100% + 20px);
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
   border: 1px solid rgba(255, 215, 0, 0.35);
-  border-radius: 12px;
+  border-radius: 6px;
   box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
   transition:
     transform 0.4s var(--ease-spring),
