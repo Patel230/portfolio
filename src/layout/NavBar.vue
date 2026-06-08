@@ -119,6 +119,7 @@
           @click.prevent="handleNavClick('contact')"
           >Contact</a
         >
+        <div class="nav-indicator" ref="indicatorRef" />
       </div>
     </div>
   </nav>
@@ -146,6 +147,7 @@ const stackLink = computed(() => sectionHref('portfolio-stack'))
 const aboutLink = computed(() => sectionHref('about'))
 const contactLink = computed(() => sectionHref('contact'))
 
+const indicatorRef = ref(null)
 const activeSection = ref('')
 const SECTIONS = [
   'skills',
@@ -184,6 +186,22 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false
+}
+
+const updateIndicator = () => {
+  if (!indicatorRef.value) return
+  const navLinks = indicatorRef.value.parentElement
+  if (!navLinks) return
+  const activeEl = navLinks.querySelector('.nav-link.active')
+  if (activeEl) {
+    const navRect = navLinks.getBoundingClientRect()
+    const linkRect = activeEl.getBoundingClientRect()
+    indicatorRef.value.style.width = `${linkRect.width}px`
+    indicatorRef.value.style.transform = `translateX(${linkRect.left - navRect.left}px)`
+    indicatorRef.value.style.opacity = '1'
+  } else {
+    indicatorRef.value.style.opacity = '0'
+  }
 }
 
 const scrollToSection = section => {
@@ -246,6 +264,7 @@ onMounted(() => {
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
   if (isHomePage.value) updateActiveSection()
+  setTimeout(updateIndicator, 50)
 })
 
 onUnmounted(() => {
@@ -258,11 +277,20 @@ onUnmounted(() => {
 watch(isHomePage, val => {
   if (val) setTimeout(updateActiveSection, 100)
   else activeSection.value = ''
+  setTimeout(updateIndicator, 150)
 })
 
 // Watch menu state to toggle body scroll
 watch(isMenuOpen, newValue => {
   preventBodyScroll(newValue)
+})
+
+watch(activeSection, () => {
+  setTimeout(updateIndicator, 50)
+})
+
+watch(() => route.path, () => {
+  setTimeout(updateIndicator, 100)
 })
 
 </script>
@@ -358,26 +386,25 @@ watch(isMenuOpen, newValue => {
 .nav-link.router-link-active,
 .nav-link.active {
   color: var(--accent);
-  transform: translateY(-1px);
 }
 
-.nav-link::after {
-  content: '';
+.nav-links {
+  position: relative;
+}
+
+.nav-indicator {
   position: absolute;
   bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
+  left: 0;
   height: 2px;
   background: var(--accent);
   border-radius: 2px;
-  transition: width 0.25s var(--ease-spring);
-}
-
-.nav-link:hover::after,
-.nav-link.router-link-active::after,
-.nav-link.active::after {
-  width: 100%;
+  transition:
+    transform 0.3s var(--ease-spring),
+    width 0.3s var(--ease-spring),
+    opacity 0.2s ease;
+  pointer-events: none;
+  will-change: transform, width;
 }
 
 /* Mobile Menu Button */
@@ -476,10 +503,8 @@ watch(isMenuOpen, newValue => {
     font-weight: 600;
   }
 
-  .nav-link::after {
-    bottom: -4px;
-    left: 0;
-    transform: none;
+  .nav-indicator {
+    display: none;
   }
 }
 
@@ -514,10 +539,6 @@ watch(isMenuOpen, newValue => {
   .menu-icon span {
     height: 1.5px;
   }
-
-  .nav-link::after {
-    bottom: -4px;
-  }
 }
 
 /* Focus visible styles for accessibility */
@@ -531,6 +552,10 @@ watch(isMenuOpen, newValue => {
   }
 
   .nav-link {
+    transition: none;
+  }
+
+  .nav-indicator {
     transition: none;
   }
 }
