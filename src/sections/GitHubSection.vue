@@ -35,7 +35,7 @@
             <img
               v-if="!statsError"
               v-show="statsLoaded"
-              src="https://github-readme-stats-sigma-five.vercel.app/api?username=Patel230&show_icons=true&theme=dark&hide_border=true&bg_color=00000000&title_color=ffd700&text_color=e5e5e5&icon_color=ffd700&count_private=true"
+              src="/github/stats.svg"
               alt="GitHub stats for Patel230"
               class="stats-img"
               loading="lazy"
@@ -64,7 +64,7 @@
             <img
               v-if="!streakError"
               v-show="streakLoaded"
-              src="https://streak-stats.demolab.com/?user=Patel230&theme=dark&hide_border=true&background=00000000&ring=ffd700&fire=f97316&currStreakLabel=ffd700&sideLabels=b3b3b3"
+              src="/github/streak.svg"
               alt="GitHub streak for Patel230"
               class="stats-img"
               loading="lazy"
@@ -156,7 +156,7 @@
             <img
               v-if="!langsError"
               v-show="langsLoaded"
-              src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=Patel230&layout=compact&theme=dark&hide_border=true&bg_color=00000000&title_color=8b5cf6&text_color=e5e5e5&langs_count=6"
+              src="/github/top-langs.svg"
               alt="Top languages for Patel230"
               class="stats-img"
               loading="lazy"
