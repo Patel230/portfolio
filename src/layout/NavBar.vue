@@ -59,8 +59,9 @@
           exact-active-class=""
           :class="{ active: $route.path === '/creations' }"
           @click="closeMenu"
-          >Creations</router-link
         >
+          Creations
+        </router-link>
         <router-link
           to="/gallery"
           class="nav-link"
@@ -68,8 +69,9 @@
           exact-active-class=""
           :class="{ active: $route.path === '/gallery' }"
           @click="closeMenu"
-          >Gallery</router-link
         >
+          Gallery
+        </router-link>
         <a
           :href="opensourceLink"
           class="nav-link"
@@ -98,8 +100,9 @@
           exact-active-class=""
           :class="{ active: $route.path === '/blog' }"
           @click="closeMenu"
-          >Journey</router-link
         >
+          Journey
+        </router-link>
         <a
           :href="aboutLink"
           class="nav-link"
@@ -114,7 +117,7 @@
           @click.prevent="handleNavClick('contact')"
           >Contact</a
         >
-        <div class="nav-indicator" ref="indicatorRef" />
+        <div ref="indicatorRef" class="nav-indicator" />
       </div>
     </div>
   </nav>
