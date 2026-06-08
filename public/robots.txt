@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lakshman-portfolio-beta.vercel.app/sitemap.xml
+Sitemap: https://lakshman.gateandtech.in/sitemap.xml

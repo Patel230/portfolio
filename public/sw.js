@@ -1,9 +1,9 @@
-const CACHE_NAME = 'portfolio-v1'
+const CACHE_NAME = 'portfolio-v2'
 const STATIC_ASSETS = [
   '/',
   '/index.html',
-  '/lakshman.jpg',
-  '/favicon.ico'
+  '/icons/favicon.svg',
+  '/lakshman.jpg'
 ]
 
 // Install event - cache static assets
@@ -39,41 +39,36 @@ self.addEventListener('message', (event) => {
 })
 
 self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
   if (event.request.method !== 'GET') return
-  
-  // Skip cross-origin requests
   if (!event.request.url.startsWith(self.location.origin)) return
 
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        if (response) {
+  // HTML navigations: network-first with offline fallback
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const cache = response.clone()
+          caches.open(CACHE_NAME).then((c) => c.put(event.request, cache))
           return response
-        }
+        })
+        .catch(() => caches.match('/index.html'))
+    )
+    return
+  }
 
-        return fetch(event.request)
-          .then((networkResponse) => {
-            // Don't cache if not a valid response
-            if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-              return networkResponse
-            }
-
-            // Cache the new response
-            const responseToCache = networkResponse.clone()
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseToCache)
-            })
-
-            return networkResponse
-          })
-      })
-      .catch(() => {
-        // Return offline fallback for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/index.html')
-        }
-      })
+  // Static assets: stale-while-revalidate
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      const fetchPromise = fetch(event.request)
+        .then((response) => {
+          if (response && response.status === 200) {
+            const cache = response.clone()
+            caches.open(CACHE_NAME).then((c) => c.put(event.request, cache))
+          }
+          return response
+        })
+        .catch(() => cached)
+      return cached || fetchPromise
+    })
   )
 })

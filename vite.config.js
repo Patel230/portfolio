@@ -35,6 +35,11 @@ export default defineConfig({
   build: {
     target: 'esnext',
     minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true
+      }
+    },
     cssMinify: true,
     rollupOptions: {
       output: {

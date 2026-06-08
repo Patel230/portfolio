@@ -57,7 +57,7 @@ const clearError = () => {
 
 const resetError = () => {
   clearError()
-  window.location.reload()
+  router.push('/')
 }
 </script>
 
