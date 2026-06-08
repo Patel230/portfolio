@@ -27,12 +27,7 @@
       </button>
 
       <!-- Navigation Links -->
-      <div
-        id="nav-menu"
-        ref="menuRef"
-        class="nav-links"
-        :class="{ 'is-open': isMenuOpen }"
-      >
+      <div id="nav-menu" ref="menuRef" class="nav-links" :class="{ 'is-open': isMenuOpen }">
         <router-link
           to="/"
           class="nav-link"
@@ -290,10 +285,12 @@ watch(activeSection, () => {
   setTimeout(updateIndicator, 50)
 })
 
-watch(() => route.path, () => {
-  setTimeout(updateIndicator, 100)
-})
-
+watch(
+  () => route.path,
+  () => {
+    setTimeout(updateIndicator, 100)
+  }
+)
 </script>
 
 <style scoped>
