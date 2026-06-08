@@ -11,8 +11,8 @@
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <!-- Preload critical above-fold image -->
     <link rel="preload" as="image" href="/lakshman.jpg" fetchpriority="high" />
-    <!-- Non-blocking font loading -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <!-- Non-blocking font loading (no inline JS — CSP compliant) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" id="font-preload" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" /></noscript>
     
     <!-- Primary Meta Tags -->
@@ -150,6 +150,7 @@
     </div>
     
     <div id="app"></div>
+    <script src="/font-loader.js" defer></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
