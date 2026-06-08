@@ -198,8 +198,7 @@ const updateIndicator = () => {
     const linkRect = activeEl.getBoundingClientRect()
     const gap = 12
     indicatorRef.value.style.width = `${linkRect.width + gap * 2}px`
-    indicatorRef.value.style.left = `${linkRect.left - navRect.left - gap}px`
-    indicatorRef.value.style.transform = `translateY(-50%)`
+    indicatorRef.value.style.transform = `translateY(-50%) translateX(${linkRect.left - navRect.left - gap}px)`
     indicatorRef.value.style.opacity = '1'
   } else {
     indicatorRef.value.style.opacity = '0'
@@ -397,19 +396,19 @@ watch(() => route.path, () => {
 .nav-indicator {
   position: absolute;
   top: 50%;
+  left: 0;
   z-index: 0;
   height: 100%;
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
   border: 1px solid rgba(255, 215, 0, 0.35);
   border-radius: 12px;
   box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
-  transform: translateY(-50%);
   transition:
-    left 0.4s var(--ease-spring),
+    transform 0.4s var(--ease-spring),
     width 0.4s var(--ease-spring),
     opacity 0.25s ease;
   pointer-events: none;
-  will-change: left, width;
+  will-change: transform, width;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
