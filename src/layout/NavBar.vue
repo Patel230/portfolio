@@ -396,18 +396,27 @@ watch(() => route.path, () => {
   position: absolute;
   top: 50%;
   left: 0;
-  height: 70%;
-  min-height: 32px;
-  background: rgba(255, 215, 0, 0.12);
-  border: 1px solid rgba(255, 215, 0, 0.25);
-  border-radius: 8px;
+  z-index: 0;
+  height: 100%;
+  padding: 0 4px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
   transform: translateY(-50%) translateX(0);
   transition:
-    transform 0.35s var(--ease-spring),
-    width 0.35s var(--ease-spring),
-    opacity 0.2s ease;
+    transform 0.4s var(--ease-spring),
+    width 0.4s var(--ease-spring),
+    opacity 0.25s ease;
   pointer-events: none;
   will-change: transform, width;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.nav-link {
+  position: relative;
+  z-index: 1;
 }
 
 /* Mobile Menu Button */
