@@ -390,6 +390,11 @@ watch(() => route.path, () => {
   color: var(--accent);
 }
 
+.nav-link.active,
+.nav-link.router-link-active {
+  color: #fff;
+}
+
 .nav-links {
   position: relative;
 }
@@ -400,18 +405,20 @@ watch(() => route.path, () => {
   left: 0;
   z-index: 0;
   height: calc(100% + 20px);
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
-  border: 1px solid rgba(255, 215, 0, 0.35);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.18), rgba(255, 215, 0, 0.08));
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
   border-radius: 999px;
-  box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
+  box-shadow:
+    0 0 30px rgba(255, 215, 0, 0.15),
+    inset 0 0 20px rgba(255, 215, 0, 0.04);
   transition:
     transform 0.4s var(--ease-spring),
     width 0.4s var(--ease-spring),
     opacity 0.25s ease;
   pointer-events: none;
   will-change: transform, width;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .nav-link {
