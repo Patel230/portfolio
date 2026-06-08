@@ -196,8 +196,10 @@ const updateIndicator = () => {
   if (activeEl) {
     const navRect = navLinks.getBoundingClientRect()
     const linkRect = activeEl.getBoundingClientRect()
-    indicatorRef.value.style.width = `${linkRect.width}px`
-    indicatorRef.value.style.transform = `translateY(-50%) translateX(${linkRect.left - navRect.left}px)`
+    const gap = 12
+    indicatorRef.value.style.width = `${linkRect.width + gap * 2}px`
+    indicatorRef.value.style.left = `${linkRect.left - navRect.left - gap}px`
+    indicatorRef.value.style.transform = `translateY(-50%)`
     indicatorRef.value.style.opacity = '1'
   } else {
     indicatorRef.value.style.opacity = '0'
@@ -395,21 +397,19 @@ watch(() => route.path, () => {
 .nav-indicator {
   position: absolute;
   top: 50%;
-  left: 0;
   z-index: 0;
   height: 100%;
-  padding: 0 14px;
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
   border: 1px solid rgba(255, 215, 0, 0.35);
   border-radius: 12px;
   box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
-  transform: translateY(-50%) translateX(0);
+  transform: translateY(-50%);
   transition:
-    transform 0.4s var(--ease-spring),
+    left 0.4s var(--ease-spring),
     width 0.4s var(--ease-spring),
     opacity 0.25s ease;
   pointer-events: none;
-  will-change: transform, width;
+  will-change: left, width;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
