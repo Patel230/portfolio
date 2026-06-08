@@ -397,12 +397,12 @@ watch(() => route.path, () => {
   top: 50%;
   left: 0;
   z-index: 0;
-  height: 100%;
-  padding: 0 4px;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
-  border: 1px solid rgba(255, 215, 0, 0.3);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.08);
+  height: calc(100% + 10px);
+  padding: 0 12px;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
   transform: translateY(-50%) translateX(0);
   transition:
     transform 0.4s var(--ease-spring),
