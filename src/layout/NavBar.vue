@@ -402,7 +402,7 @@ watch(() => route.path, () => {
   height: calc(100% + 20px);
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.12), rgba(255, 215, 0, 0.06));
   border: 1px solid rgba(255, 215, 0, 0.35);
-  border-radius: 14px;
+  border-radius: 999px;
   box-shadow: 0 0 24px rgba(255, 215, 0, 0.1);
   transition:
     transform 0.4s var(--ease-spring),
