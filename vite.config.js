@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
-import fs from 'fs'
 
-const version = JSON.parse(fs.readFileSync('./package.json', 'utf-8')).version
+const now = new Date()
+const pad = (n) => String(n).padStart(2, '0')
+const version = `${now.getFullYear()}.${pad(now.getMonth() + 1)}.${pad(now.getDate())}.${pad(now.getHours())}${pad(now.getMinutes())}`
+const buildDate = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 
 export default defineConfig({
   plugins: [
@@ -17,7 +19,8 @@ export default defineConfig({
     }
   ],
   define: {
-    __APP_VERSION__: JSON.stringify(version)
+    __APP_VERSION__: JSON.stringify(version),
+    __BUILD_DATE__: JSON.stringify(buildDate)
   },
   resolve: {
     alias: {
