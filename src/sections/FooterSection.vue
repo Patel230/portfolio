@@ -56,7 +56,7 @@ const visitorCount = ref(null)
 
 onMounted(async () => {
   try {
-    const res = await fetch('https://portfolio-visitor-counter.lakshmanp230.workers.dev/visit')
+    const res = await fetch('/api/visit')
     visitorCount.value = await res.text()
   } catch {
     visitorCount.value = null
