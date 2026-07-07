@@ -1,11 +1,27 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { execSync } from 'child_process'
 
 const now = new Date()
-const pad = (n) => String(n).padStart(2, '0')
-const version = `${now.getFullYear()}.${pad(now.getMonth() + 1)}.${pad(now.getDate())}.${pad(now.getHours())}${pad(now.getMinutes())}`
-const buildDate = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+const [y, m, d, hh, mm] = [
+  now.getFullYear(),
+  now.getMonth(),
+  now.getDate(),
+  now.getHours(),
+  now.getMinutes(),
+]
+
+// Auto-version: major.minor from package.json, patch = git commit count
+const gitCount = execSync('git rev-list --count HEAD', { encoding: 'utf-8' }).trim()
+const pkgVersion = JSON.parse(execSync('git show HEAD:package.json', { encoding: 'utf-8' })).version
+const [major, minor] = pkgVersion.split('.').slice(0, 2)
+const appVersion = `${major}.${minor}.${gitCount}`
+
+// Human date/time
+const timeFmt = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
+const dateFmt = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+const buildLabel = `${dateFmt} ${timeFmt}`
 
 export default defineConfig({
   plugins: [
@@ -14,13 +30,13 @@ export default defineConfig({
       name: 'manifest-version-injector',
       enforce: 'pre',
       transformIndexHtml(html) {
-        return html.replace(/__APP_VERSION__/g, version)
+        return html.replace(/__APP_VERSION__/g, appVersion)
       }
     }
   ],
   define: {
-    __APP_VERSION__: JSON.stringify(version),
-    __BUILD_DATE__: JSON.stringify(buildDate)
+    __APP_VERSION__: JSON.stringify(appVersion),
+    __BUILD_DATE__: JSON.stringify(buildLabel)
   },
   resolve: {
     alias: {

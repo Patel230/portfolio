@@ -1,0 +1,8 @@
+name = "portfolio-visitor-counter"
+main = "src/index.js"
+compatibility_date = "2026-07-07"
+account_id = "da34740bf966abf292989efebee12261"
+
+kv_namespaces = [
+  { binding = "VISITOR_COUNTER", id = "8b6b771d998d45c0bd6ec6176569dbc6" }
+]

@@ -32,6 +32,15 @@
                 >Opencode</a
               >
             </p>
+            <p class="footer-visitors" v-if="visitorCount !== null">
+              <span class="eye-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </span>
+              {{ visitorCount }} visitors
+            </p>
           </div>
         </div>
       </div>
@@ -40,7 +49,19 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+
 const currentYear = new Date().getFullYear()
+const visitorCount = ref(null)
+
+onMounted(async () => {
+  try {
+    const res = await fetch('https://portfolio-visitor-counter.lakshmanp230.workers.dev/visit')
+    visitorCount.value = await res.text()
+  } catch {
+    visitorCount.value = null
+  }
+})
 </script>
 
 <style scoped>
@@ -202,6 +223,22 @@ const currentYear = new Date().getFullYear()
     width: 12px;
     height: 12px;
   }
+}
+
+.footer-visitors {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.eye-icon {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.6;
 }
 
 @media (prefers-reduced-motion: reduce) {
