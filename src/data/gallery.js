@@ -1189,15 +1189,27 @@ export const galleryProjects = [
     images: [
       {
         src: '/images/gallery/postly/01.png',
-        caption: 'Landing Page - One Post, Every Platform'
+        caption: 'Hero Overview - One Post, Every Platform'
       },
       {
         src: '/images/gallery/postly/02.png',
-        caption: 'Multi-Channel Publishing & Scheduling Dashboard'
+        caption: 'Features & Core Capabilities'
       },
       {
         src: '/images/gallery/postly/03.png',
-        caption: 'AI Content Generation & Automation Workflows'
+        caption: 'Multi-Channel Publishing & Platform Connections'
+      },
+      {
+        src: '/images/gallery/postly/04.png',
+        caption: 'Content Scheduling & Analytics Workflows'
+      },
+      {
+        src: '/images/gallery/postly/05.png',
+        caption: 'AI Post Generator & Custom Automation'
+      },
+      {
+        src: '/images/gallery/postly/06.png',
+        caption: 'Dashboard Overview & Getting Started'
       }
     ]
   },
@@ -1212,15 +1224,27 @@ export const galleryProjects = [
     images: [
       {
         src: '/images/gallery/gate2027/01.png',
-        caption: 'GATE 2027 Dashboard - Daily Aptitude & Math Practice'
+        caption: 'Hero Dashboard - Daily Aptitude & Math Practice'
       },
       {
         src: '/images/gallery/gate2027/02.png',
-        caption: '54 Full Mock Tests & Instant Analytics'
+        caption: 'Practice Modules & Topic Categorization'
       },
       {
         src: '/images/gallery/gate2027/03.png',
-        caption: 'Leaderboard, Streaks & Performance Breakdown'
+        caption: '54 Full Mock Tests & Instant Evaluation'
+      },
+      {
+        src: '/images/gallery/gate2027/04.png',
+        caption: 'Analytics & Percentile Score Breakdown'
+      },
+      {
+        src: '/images/gallery/gate2027/05.png',
+        caption: 'Leaderboard, Daily Streaks & Leaderboards'
+      },
+      {
+        src: '/images/gallery/gate2027/06.png',
+        caption: 'Course Plans & Preparation Resources'
       }
     ]
   },
@@ -1234,15 +1258,27 @@ export const galleryProjects = [
     images: [
       {
         src: '/images/gallery/tracker/01.png',
-        caption: 'Job Tracker - Manage Applications & Pipeline'
+        caption: 'Job Tracker Dashboard - Application Pipeline'
       },
       {
         src: '/images/gallery/tracker/02.png',
-        caption: 'Status Boards, Notes, and Reminders'
+        caption: 'Status Kanban Board & Job Listings'
       },
       {
         src: '/images/gallery/tracker/03.png',
-        caption: 'Analytics - Application Response Rates & Metrics'
+        caption: 'Application Details, Notes & Reminders'
+      },
+      {
+        src: '/images/gallery/tracker/04.png',
+        caption: 'Recruiter Contacts & Interview Schedules'
+      },
+      {
+        src: '/images/gallery/tracker/05.png',
+        caption: 'Application Response Rates & Funnel Metrics'
+      },
+      {
+        src: '/images/gallery/tracker/06.png',
+        caption: 'Settings & Data Export Tools'
       }
     ]
   }
