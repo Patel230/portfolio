@@ -1,5 +1,33 @@
 export const pocs = [
   {
+    name: 'Postly',
+    description: 'One post, every platform — multi-channel publishing, scheduling, and automation.',
+    tech: ['React', 'Node.js', 'MongoDB', 'AI Agents'],
+    link: 'https://postlysocial.net/',
+    icon: 'send',
+    color: '#0ea5e9',
+    status: 'Live'
+  },
+  {
+    name: 'GATE 2027',
+    description:
+      'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
+    tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
+    link: 'https://gate2027.gateandtech.in/',
+    icon: 'graduation-cap',
+    color: '#2563eb',
+    status: 'Live'
+  },
+  {
+    name: 'Tracker',
+    description: 'Track and manage job applications with statuses, notes, and reminders.',
+    tech: ['TypeScript', 'Next.js', 'CRUD', 'Analytics'],
+    link: 'https://tracker.lakshmanp.com/',
+    icon: 'briefcase',
+    color: '#eab308',
+    status: 'Live'
+  },
+  {
     name: 'GrayCodeAI',
     description: 'A place for humans and AI agents to build together.',
     tech: ['TypeScript', 'Next.js', 'AI Agents'],

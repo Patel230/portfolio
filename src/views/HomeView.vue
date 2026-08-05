@@ -1,10 +1,5 @@
 <template>
   <div class="home">
-    <!-- Version Update Badge -->
-    <div class="version-update">
-      <Icon name="calendar" size="14" />
-      <span>Updated: v{{ APP_VERSION }} ({{ BUILD_DATE }})</span>
-    </div>
     <HeroSection />
     <GallerySection />
     <AboutSection />
@@ -20,8 +15,6 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import Icon from '@/components/Icon.vue'
-import { APP_VERSION, BUILD_DATE } from '@/version.js'
 import {
   HeroSection,
   AboutSection,
@@ -58,50 +51,5 @@ onMounted(() => {
 .home {
   min-height: 100vh;
   position: relative;
-}
-
-/* Version Update Badge - Top Right Corner */
-.version-update {
-  position: absolute;
-  top: 75px;
-  right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  background-color: var(--bg-card);
-  padding: 10px 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  z-index: 9999;
-  transition: border-color 0.2s ease;
-  font-weight: 500;
-}
-
-.version-update:hover {
-  border-color: var(--accent);
-}
-
-.version-update :deep(svg) {
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-@media (max-width: 767px) {
-  .version-update {
-    top: 70px;
-    right: 10px;
-    font-size: 0.7rem;
-    padding: 6px 10px;
-    gap: 4px;
-    border-radius: 8px;
-  }
-
-  .version-update :deep(svg) {
-    width: 12px;
-    height: 12px;
-  }
 }
 </style>

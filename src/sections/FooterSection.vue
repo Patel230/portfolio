@@ -32,11 +32,18 @@
                 >Opencode</a
               >
             </p>
-            <p class="footer-visitors" v-if="visitorCount !== null">
+            <p v-if="visitorCount !== null" class="footer-visitors">
               <span class="eye-icon" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                  <circle cx="12" cy="12" r="3"/>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
                 </svg>
               </span>
               {{ visitorCount }} visitors
@@ -57,7 +64,11 @@ const visitorCount = ref(null)
 onMounted(async () => {
   try {
     const res = await fetch('/api/visit')
-    visitorCount.value = await res.text()
+    if (!res.ok) return
+    const text = (await res.text()).trim()
+    if (/^\d+$/.test(text)) {
+      visitorCount.value = Number(text).toLocaleString()
+    }
   } catch {
     visitorCount.value = null
   }

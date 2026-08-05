@@ -25,6 +25,7 @@ module.exports = {
     defineEmits: 'readonly',
     defineExpose: 'readonly',
     withDefaults: 'readonly',
-    __APP_VERSION__: 'readonly'
+    __APP_VERSION__: 'readonly',
+    __BUILD_DATE__: 'readonly'
   }
 }

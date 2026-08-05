@@ -90,7 +90,8 @@ export const projects = [
   },
   {
     title: 'GATE 2027',
-    description: 'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
+    description:
+      'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
     tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
     link: 'https://gate2027.gateandtech.in/',
     icon: 'graduation-cap',

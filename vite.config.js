@@ -4,13 +4,6 @@ import { resolve } from 'path'
 import { execSync } from 'child_process'
 
 const now = new Date()
-const [y, m, d, hh, mm] = [
-  now.getFullYear(),
-  now.getMonth(),
-  now.getDate(),
-  now.getHours(),
-  now.getMinutes(),
-]
 
 // Auto-version: major.minor from package.json, patch = git commit count
 const gitCount = execSync('git rev-list --count HEAD', { encoding: 'utf-8' }).trim()

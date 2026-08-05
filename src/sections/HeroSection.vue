@@ -1,5 +1,10 @@
 <template>
   <section class="hero" aria-labelledby="hero-title">
+    <!-- Version Update Badge - Top Right Side -->
+    <div class="version-badge">
+      <Icon name="calendar" size="14" />
+      <span>Updated: v{{ APP_VERSION }} ({{ BUILD_DATE }})</span>
+    </div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-image" :class="{ fallback: imageError }">
@@ -42,6 +47,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import Icon from '@/components/Icon.vue'
+import { APP_VERSION, BUILD_DATE } from '@/version.js'
 import { useTypingEffect } from '@/composables/useTypingEffect.js'
 
 const imageError = ref(false)
@@ -56,11 +63,12 @@ const { displayText, showCursor } = useTypingEffect(roles)
 
 <style scoped>
 .hero {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 20px 0 60px;
+  justify-content: flex-start;
+  padding: 30px 0 40px;
   position: relative;
 }
 
@@ -72,10 +80,52 @@ const { displayText, showCursor } = useTypingEffect(roles)
   z-index: 1;
 }
 
+.version-badge {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-card);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  z-index: 10;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.version-badge:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.version-badge :deep(svg) {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .version-badge {
+    top: 15px;
+    right: 16px;
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+}
+
 .hero-image {
-  width: 160px;
-  height: 160px;
-  margin: 0 auto 40px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
   border-radius: 50%;
   overflow: hidden;
   position: relative;

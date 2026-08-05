@@ -81,7 +81,7 @@ import { projects } from '@/data/projects.js'
 import { Icon } from '@/components'
 import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
 
-const featuredProjects = projects.slice(0, 6)
+const featuredProjects = projects.slice(0, 12)
 </script>
 
 <style scoped>
