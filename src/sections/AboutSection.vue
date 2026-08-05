@@ -21,12 +21,19 @@
             <a href="https://gateandtech.in" target="_blank" rel="noopener noreferrer"
               ><strong>GATEAndTech</strong></a
             >
-            — EdTech platform for engineering students.
+            — EdTech platform for engineering students, building
+            <a href="https://gate2027.gateandtech.in/" target="_blank" rel="noopener noreferrer"
+              ><strong>GATE 2027</strong></a
+            >
+            daily practice platform.
           </p>
           <p>
             Building
             <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"
               ><strong>TaskDone</strong></a
+            >,
+            <a href="https://postlysocial.net/" target="_blank" rel="noopener noreferrer"
+              ><strong>Postly</strong></a
             >,
             <a href="https://graphlings.net/" target="_blank" rel="noopener noreferrer"
               ><strong>Graphlings</strong></a
