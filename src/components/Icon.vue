@@ -408,6 +408,13 @@ const icons = {
     viewBox: '0 0 24 24',
     fill: 'currentColor',
     paths: ['M4,4h16v16H4V4zM6,6v12h12V6H6z']
+  },
+  send: {
+    viewBox: '0 0 24 24',
+    paths: [
+      'M22 2L11 13',
+      'M22 2l-7 20-4-9-9-4 20-7z'
+    ]
   }
 }
 

@@ -62,7 +62,7 @@ onMounted(() => {
 
 /* Version Update Badge - Top Right Corner */
 .version-update {
-  position: fixed;
+  position: absolute;
   top: 75px;
   right: 20px;
   display: flex;

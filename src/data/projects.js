@@ -79,5 +79,29 @@ export const projects = [
     link: 'https://graycodeai.github.io/iterate/',
     icon: 'cpu',
     color: '#06b6d4'
+  },
+  {
+    title: 'Postly',
+    description: 'One post, every platform — multi-channel publishing, scheduling, and automation.',
+    tech: ['React', 'Node.js', 'MongoDB', 'AI Agents'],
+    link: 'https://postlysocial.net/',
+    icon: 'send',
+    color: '#0ea5e9'
+  },
+  {
+    title: 'GATE 2027',
+    description: 'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
+    tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
+    link: 'https://gate2027.gateandtech.in/',
+    icon: 'graduation-cap',
+    color: '#2563eb'
+  },
+  {
+    title: 'Tracker',
+    description: 'Track and manage job applications with statuses, notes, and reminders.',
+    tech: ['TypeScript', 'Next.js', 'CRUD', 'Analytics'],
+    link: 'https://tracker.lakshmanp.com/',
+    icon: 'briefcase',
+    color: '#eab308'
   }
 ]
