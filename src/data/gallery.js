@@ -1178,5 +1178,72 @@ export const galleryProjects = [
         caption: 'Pricing - Free, Pro, Mentorship Plans'
       }
     ]
+  },
+  {
+    id: 'postly',
+    name: 'Postly',
+    description: 'One post, every platform — multi-channel publishing, scheduling, and automation',
+    tech: ['React', 'Node.js', 'MongoDB', 'AI Agents'],
+    color: '#0ea5e9',
+    thumbnail: '/images/gallery/postly/01.png',
+    images: [
+      {
+        src: '/images/gallery/postly/01.png',
+        caption: 'Landing Page - One Post, Every Platform'
+      },
+      {
+        src: '/images/gallery/postly/02.png',
+        caption: 'Multi-Channel Publishing & Scheduling Dashboard'
+      },
+      {
+        src: '/images/gallery/postly/03.png',
+        caption: 'AI Content Generation & Automation Workflows'
+      }
+    ]
+  },
+  {
+    id: 'gate2027',
+    name: 'GATE 2027',
+    description:
+      'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027',
+    tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
+    color: '#2563eb',
+    thumbnail: '/images/gallery/gate2027/01.png',
+    images: [
+      {
+        src: '/images/gallery/gate2027/01.png',
+        caption: 'GATE 2027 Dashboard - Daily Aptitude & Math Practice'
+      },
+      {
+        src: '/images/gallery/gate2027/02.png',
+        caption: '54 Full Mock Tests & Instant Analytics'
+      },
+      {
+        src: '/images/gallery/gate2027/03.png',
+        caption: 'Leaderboard, Streaks & Performance Breakdown'
+      }
+    ]
+  },
+  {
+    id: 'tracker',
+    name: 'Tracker',
+    description: 'Track and manage job applications with statuses, notes, and reminders',
+    tech: ['TypeScript', 'Next.js', 'CRUD', 'Analytics'],
+    color: '#eab308',
+    thumbnail: '/images/gallery/tracker/01.png',
+    images: [
+      {
+        src: '/images/gallery/tracker/01.png',
+        caption: 'Job Tracker - Manage Applications & Pipeline'
+      },
+      {
+        src: '/images/gallery/tracker/02.png',
+        caption: 'Status Boards, Notes, and Reminders'
+      },
+      {
+        src: '/images/gallery/tracker/03.png',
+        caption: 'Analytics - Application Response Rates & Metrics'
+      }
+    ]
   }
 ]
