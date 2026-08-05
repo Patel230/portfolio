@@ -7,6 +7,11 @@
     </div>
     <div class="container">
       <div class="hero-content">
+        <!-- Status Pill Badge -->
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>Available for Full-Stack & AI Engineering</span>
+        </div>
         <div class="hero-image" :class="{ fallback: imageError }">
           <img
             v-if="!imageError"
@@ -32,6 +37,23 @@
           TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script,
           Git/GitHub, and creating production-ready systems.
         </p>
+        <!-- Hero Quick Stats Bar -->
+        <div class="hero-stats">
+          <div class="stat-box">
+            <span class="stat-val">3+</span>
+            <span class="stat-lbl">Years Exp.</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-box">
+            <span class="stat-val">30+</span>
+            <span class="stat-lbl">Projects</span>
+          </div>
+          <div class="stat-sep"></div>
+          <div class="stat-box">
+            <span class="stat-val">100%</span>
+            <span class="stat-lbl">Open Source</span>
+          </div>
+        </div>
         <div class="hero-links">
           <a href="#projects" class="btn btn-primary">
             <span>View Projects</span>
@@ -78,6 +100,82 @@ const { displayText, showCursor } = useTypingEffect(roles)
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+}
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px auto 32px;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+  max-width: 520px;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-val {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.stat-lbl {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stat-sep {
+  width: 1px;
+  height: 28px;
+  background: var(--border);
 }
 
 .version-badge {

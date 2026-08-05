@@ -128,9 +128,11 @@ const featuredProjects = projects.slice(0, 12)
 }
 
 .project-card:hover {
-  border-color: color-mix(in srgb, var(--project-color, var(--accent)) 40%, transparent);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  border-color: color-mix(in srgb, var(--project-color, var(--accent)) 60%, transparent);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow:
+    0 16px 36px -10px color-mix(in srgb, var(--project-color, var(--accent)) 25%, transparent),
+    0 0 20px color-mix(in srgb, var(--project-color, var(--accent)) 15%, transparent);
 }
 
 .project-card:hover::after {
