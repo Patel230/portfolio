@@ -34,8 +34,16 @@ export function useScrollReveal(selector = '[data-reveal]') {
 
     scanAndObserve()
 
-    mo = new MutationObserver(() => {
-      scanAndObserve()
+    // Only scan nodes actually added by each mutation — a full-document
+    // querySelectorAll on every DOM change is O(page) for the app's lifetime
+    mo = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        for (const node of mutation.addedNodes) {
+          if (node.nodeType !== Node.ELEMENT_NODE) continue
+          if (node.matches?.(selector)) observe(node)
+          node.querySelectorAll?.(selector).forEach(observe)
+        }
+      }
     })
     mo.observe(document.body, { childList: true, subtree: true })
   })

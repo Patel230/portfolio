@@ -1,5 +1,11 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useFocusTrap } from './useFocusTrap.js'
+import { scrollBehavior } from '@/utils/motion.js'
+
+export function handleImageError(e) {
+  e.target.src =
+    'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"%3E%3Crect fill="%231e293b" width="800" height="500"/%3E%3Ctext fill="%2364748b" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage Coming Soon%3C/text%3E%3C/svg%3E'
+}
 
 export function useLightbox(projectList) {
   const lightboxOpen = ref(false)
@@ -11,7 +17,7 @@ export function useLightbox(projectList) {
 
   const { activate: trapFocus, deactivate: releaseFocus } = useFocusTrap()
 
-  // Resolve list — accept ref or plain array
+  // Resolve list — accept ref, getter function, or plain array
   const resolveList = () =>
     typeof projectList === 'function' ? projectList() : (projectList?.value ?? projectList)
 
@@ -28,16 +34,19 @@ export function useLightbox(projectList) {
       const thumbRect = thumbnail.getBoundingClientRect()
       const thumbCenter = thumbRect.left + thumbRect.width / 2
       const stripCenter = stripRect.left + stripRect.width / 2
-      thumbnailStripRef.value.scrollBy({ left: thumbCenter - stripCenter, behavior: 'smooth' })
+      thumbnailStripRef.value.scrollBy({
+        left: thumbCenter - stripCenter,
+        behavior: scrollBehavior()
+      })
     }
   }
 
   const selectThumbnail = index => {
     carouselIndex.value = index
-    scrollThumbnailIntoView(index)
   }
 
   let _triggerEl = null
+  let _trapTimer = null
 
   const openLightbox = (project, triggerEl) => {
     const list = resolveList()
@@ -47,13 +56,16 @@ export function useLightbox(projectList) {
     thumbnailRefs.value = []
     document.body.style.overflow = 'hidden'
     _triggerEl = triggerEl || null
-    // Focus trap activated after DOM updates (next tick via setTimeout)
-    setTimeout(() => {
+    // Focus trap activated after DOM updates; the timer must be cancellable so
+    // a fast close doesn't arm the trap after release (leaking the listener)
+    clearTimeout(_trapTimer)
+    _trapTimer = setTimeout(() => {
       if (lightboxRef.value) trapFocus(lightboxRef.value, _triggerEl)
     }, 60)
   }
 
   const closeLightbox = () => {
+    clearTimeout(_trapTimer)
     lightboxOpen.value = false
     document.body.style.overflow = ''
     releaseFocus()
@@ -64,13 +76,7 @@ export function useLightbox(projectList) {
     const newIndex = carouselIndex.value + direction
     if (newIndex >= 0 && newIndex < currentProject.value.images.length) {
       carouselIndex.value = newIndex
-      scrollThumbnailIntoView(newIndex)
     }
-  }
-
-  const handleImageError = e => {
-    e.target.src =
-      'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500"%3E%3Crect fill="%231e293b" width="800" height="500"/%3E%3Ctext fill="%2364748b" font-family="sans-serif" font-size="24" x="50%25" y="50%25" text-anchor="middle" dominant-baseline="middle"%3EImage Coming Soon%3C/text%3E%3C/svg%3E'
   }
 
   const handleKeydown = e => {
@@ -85,7 +91,9 @@ export function useLightbox(projectList) {
   onMounted(() => window.addEventListener('keydown', handleKeydown))
   onUnmounted(() => {
     window.removeEventListener('keydown', handleKeydown)
+    clearTimeout(_trapTimer)
     document.body.style.overflow = ''
+    releaseFocus()
   })
 
   return {

@@ -1,4 +1,5 @@
 import { ref, onMounted, onUnmounted } from 'vue'
+import { prefersReducedMotion } from '@/utils/motion.js'
 
 export function useTypingEffect(
   roles,
@@ -17,6 +18,7 @@ export function useTypingEffect(
   let charIndex = 0
   let isDeleting = false
   let typeTimeout = null
+  let cursorTimeout = null
 
   const typeEffect = () => {
     const currentRole = roles[roleIndex]
@@ -35,7 +37,7 @@ export function useTypingEffect(
       delay = pauseDuration
       isDeleting = true
       showCursor.value = false
-      setTimeout(() => {
+      cursorTimeout = setTimeout(() => {
         showCursor.value = true
       }, 100)
     } else if (isDeleting && charIndex === 0) {
@@ -48,11 +50,17 @@ export function useTypingEffect(
   }
 
   onMounted(() => {
+    // CSS can't stop a setTimeout loop — honor reduced motion in JS too
+    if (prefersReducedMotion()) {
+      displayText.value = roles[0]
+      return
+    }
     typeTimeout = setTimeout(typeEffect, startDelay)
   })
 
   onUnmounted(() => {
     if (typeTimeout) clearTimeout(typeTimeout)
+    if (cursorTimeout) clearTimeout(cursorTimeout)
   })
 
   return { displayText, showCursor }

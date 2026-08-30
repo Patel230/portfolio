@@ -37,6 +37,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { scrollBehavior } from '@/utils/motion.js'
 
 const isVisible = ref(false)
 const scrollProgress = ref(0)
@@ -57,7 +58,7 @@ const checkScroll = () => {
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: scrollBehavior()
   })
 }
 

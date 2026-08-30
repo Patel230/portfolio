@@ -9,16 +9,17 @@
       <p class="section-subtitle">Visual showcase of my work - click to explore</p>
 
       <TransitionGroup name="gallery-grid" tag="div" class="gallery-grid">
-        <div
+        <button
           v-for="project in featuredProjects"
           :key="project.id"
           class="gallery-item"
-          @click="openLightbox(project)"
+          :aria-label="`Open ${project.name} gallery (${project.images.length} images)`"
+          @click="lightbox?.open(project, $event.currentTarget)"
         >
           <div class="image-wrapper">
             <img
-              :src="project.thumbnail"
-              :alt="project.name"
+              :src="thumbSrc(project.thumbnail)"
+              :alt="`${project.name} project screenshot`"
               loading="lazy"
               class="gallery-image"
               @error="handleImageError"
@@ -44,7 +45,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </button>
       </TransitionGroup>
 
       <div class="view-all-link">
@@ -54,121 +55,22 @@
         </router-link>
       </div>
 
-      <Teleport to="body">
-        <Transition name="lightbox">
-          <div
-            v-if="lightboxOpen"
-            ref="lightboxRef"
-            class="lightbox"
-            tabindex="-1"
-            @click.self="closeLightbox"
-            @keydown.escape="closeLightbox"
-          >
-            <button class="lightbox-close" aria-label="Close" @click="closeLightbox">
-              <LucideX />
-            </button>
-
-            <div v-if="currentProject" class="lightbox-content">
-              <div class="lightbox-header">
-                <h3 class="lightbox-title">
-                  {{ currentProject.name }}
-                </h3>
-                <p class="lightbox-description">
-                  {{ currentProject.description }}
-                </p>
-                <div class="lightbox-tech">
-                  <span v-for="tech in currentProject.tech" :key="tech" class="tech-tag">
-                    {{ tech }}
-                  </span>
-                </div>
-              </div>
-
-              <div class="image-carousel">
-                <button
-                  class="carousel-nav carousel-prev"
-                  :disabled="carouselIndex === 0"
-                  @click="navigateCarousel(-1)"
-                >
-                  <LucideChevronLeft />
-                </button>
-
-                <div class="carousel-viewport">
-                  <Transition name="carousel" mode="out-in">
-                    <img
-                      :key="carouselIndex"
-                      :src="currentProject.images[carouselIndex].src"
-                      :alt="currentProject.images[carouselIndex].caption"
-                      class="carousel-image"
-                      @error="handleImageError"
-                    />
-                  </Transition>
-                </div>
-
-                <button
-                  class="carousel-nav carousel-next"
-                  :disabled="carouselIndex === currentProject.images.length - 1"
-                  @click="navigateCarousel(1)"
-                >
-                  <LucideChevronRight />
-                </button>
-              </div>
-
-              <div class="carousel-footer">
-                <span class="image-counter">
-                  {{ carouselIndex + 1 }} / {{ currentProject.images.length }}
-                </span>
-                <p class="image-caption">
-                  {{ currentProject.images[carouselIndex].caption }}
-                </p>
-              </div>
-
-              <div ref="thumbnailStripRef" class="thumbnail-strip">
-                <button
-                  v-for="(img, index) in currentProject.images"
-                  :key="index"
-                  :ref="el => setThumbnailRef(el, index)"
-                  :class="['thumbnail', { active: carouselIndex === index }]"
-                  :aria-label="`View image ${index + 1}: ${img.caption}`"
-                  @click="selectThumbnail(index)"
-                >
-                  <img :src="img.src" :alt="img.caption" @error="handleImageError" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </Transition>
-      </Teleport>
+      <ProjectLightbox ref="lightbox" :projects="featuredProjects" />
     </div>
   </section>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { galleryProjects } from '@/data/gallery'
-import { useLightbox } from '@/composables/useLightbox.js'
-import {
-  Images as LucideImages,
-  X as LucideX,
-  ChevronLeft as LucideChevronLeft,
-  ChevronRight as LucideChevronRight,
-  LayoutGrid as LucideGrid
-} from 'lucide-vue-next'
+import { handleImageError } from '@/composables/useLightbox.js'
+import { thumbSrc } from '@/utils/galleryImages.js'
+import ProjectLightbox from '@/components/gallery/ProjectLightbox.vue'
+import { Images as LucideImages, LayoutGrid as LucideGrid } from 'lucide-vue-next'
 
 const featuredProjects = computed(() => galleryProjects.slice(0, 9))
 
-const {
-  lightboxOpen,
-  lightboxRef,
-  currentProject,
-  carouselIndex,
-  thumbnailStripRef,
-  setThumbnailRef,
-  selectThumbnail,
-  openLightbox,
-  closeLightbox,
-  navigateCarousel,
-  handleImageError
-} = useLightbox(featuredProjects)
+const lightbox = ref(null)
 </script>
 
 <style scoped>
@@ -242,6 +144,12 @@ const {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  width: 100%;
+  padding: 0;
+  text-align: inherit;
+  font: inherit;
+  color: inherit;
 }
 
 .gallery-item:hover {
@@ -250,6 +158,15 @@ const {
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.3),
     0 0 30px rgba(255, 215, 0, 0.1);
+}
+
+.gallery-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.gallery-item:focus-visible .overlay {
+  opacity: 1;
 }
 
 .image-wrapper {
@@ -359,10 +276,6 @@ const {
   gap: 4px;
 }
 
-.view-full:hover {
-  color: var(--accent-hover);
-}
-
 .view-all-link {
   display: flex;
   justify-content: center;
@@ -398,181 +311,6 @@ const {
   height: 1.25rem;
 }
 
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  backdrop-filter: blur(20px);
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  padding: 0.875rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: #f8fafc;
-  cursor: pointer;
-  transition: all 0.2s;
-  z-index: 10;
-}
-
-.lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: rotate(90deg);
-}
-
-.lightbox-content {
-  width: 100%;
-  max-width: 900px;
-  padding: 0 1rem;
-}
-
-.lightbox-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.lightbox-title {
-  font-family: var(--font-display);
-  font-size: 1.875rem;
-  font-weight: 700;
-  color: #f8fafc;
-  margin: 0 0 0.5rem;
-}
-
-.lightbox-description {
-  color: #94a3b8;
-  margin: 0 0 1rem;
-  line-height: 1.6;
-}
-
-.lightbox-tech {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.image-carousel {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.carousel-nav {
-  padding: 0.875rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  color: #f8fafc;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.carousel-nav:hover:not(:disabled) {
-  background: rgba(255, 215, 0, 0.2);
-  border-color: rgba(255, 215, 0, 0.4);
-}
-
-.carousel-nav:disabled {
-  opacity: 0.3;
-  cursor: not-allowed;
-}
-
-.carousel-viewport {
-  flex: 1;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #1e293b;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.carousel-enter-active,
-.carousel-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.carousel-enter-from,
-.carousel-leave-to {
-  opacity: 0;
-}
-
-.carousel-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.image-counter {
-  font-size: 0.875rem;
-  color: #64748b;
-  margin-bottom: 0.25rem;
-  font-weight: 500;
-}
-
-.image-caption {
-  font-size: 1rem;
-  color: #f8fafc;
-  margin: 0;
-}
-
-.thumbnail-strip {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-  padding: 0 1rem;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scroll-padding: 0 1rem;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 50px;
-  padding: 0;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.2s;
-  background: none;
-  scroll-snap-align: center;
-  flex-shrink: 0;
-}
-
-.thumbnail:hover {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.thumbnail.active {
-  border-color: var(--accent);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .gallery-grid-move,
 .gallery-grid-enter-active,
 .gallery-grid-leave-active {
@@ -589,16 +327,6 @@ const {
   position: absolute;
 }
 
-.lightbox-enter-active,
-.lightbox-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.lightbox-enter-from,
-.lightbox-leave-to {
-  opacity: 0;
-}
-
 /* Tablet (768px - 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .gallery-section {
@@ -608,45 +336,6 @@ const {
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-  }
-
-  .lightbox-content {
-    max-width: 95%;
-  }
-
-  .thumbnail {
-    width: 70px;
-    height: 45px;
-  }
-
-  .thumbnail-strip {
-    gap: 0.5rem;
-    padding: 0 1rem;
-  }
-}
-
-/* iPad Pro (1024px - 1366px) */
-@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-  .thumbnail {
-    width: 75px;
-    height: 48px;
-  }
-
-  .thumbnail-strip {
-    gap: 0.5rem;
-  }
-}
-
-/* iPad (768px - 1024px) in portrait */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  .thumbnail {
-    width: 65px;
-    height: 44px;
-  }
-
-  .thumbnail-strip {
-    gap: 0.45rem;
-    padding: 0 0.75rem;
   }
 }
 
@@ -663,29 +352,6 @@ const {
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-  }
-
-  .lightbox-content {
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-
-  .lightbox-title {
-    font-size: 1.5rem;
-  }
-
-  .image-carousel {
-    padding: 0 0.5rem;
-  }
-
-  .thumbnail {
-    width: 60px;
-    height: 44px;
-  }
-
-  .thumbnail-strip {
-    gap: 0.4rem;
-    padding: 0 0.75rem;
   }
 }
 
@@ -736,40 +402,6 @@ const {
     font-size: 0.65rem;
   }
 
-  .lightbox-close {
-    top: 1rem;
-    right: 1rem;
-    padding: 0.5rem;
-  }
-
-  .lightbox-content {
-    max-width: 100%;
-    padding: 0 0.5rem;
-  }
-
-  .lightbox-title {
-    font-size: 1.25rem;
-  }
-
-  .lightbox-description {
-    font-size: 0.875rem;
-  }
-
-  .carousel-nav {
-    padding: 0.5rem;
-  }
-
-  .thumbnail {
-    width: 50px;
-    height: 44px;
-    flex-shrink: 0;
-  }
-
-  .thumbnail-strip {
-    gap: 0.35rem;
-    padding: 0 0.5rem;
-  }
-
   .view-all-btn {
     padding: 0.875rem 1.5rem;
     font-size: 0.875rem;
@@ -787,40 +419,15 @@ const {
   .section-title {
     font-size: 1.25rem;
   }
-
-  .thumbnail {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-  }
-
-  .thumbnail-strip {
-    gap: 0.25rem;
-    padding: 0 0.25rem;
-  }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .gallery-item,
-  .gallery-image,
-  .overlay,
-  .overlay-content,
-  .lightbox,
-  .carousel-nav,
-  .thumbnail {
-    transition: none;
-  }
-
   .gallery-item:hover {
     transform: none;
   }
 
   .gallery-item:hover .gallery-image {
-    transform: none;
-  }
-
-  .lightbox-close:hover {
     transform: none;
   }
 }

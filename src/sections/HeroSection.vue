@@ -27,9 +27,12 @@
         </div>
         <h1 id="hero-title" class="hero-title">Lakshman Patel</h1>
         <p class="hero-subtitle">
-          <span class="typing-wrapper" aria-live="polite" aria-atomic="true">
+          <!-- Animated text is hidden from AT (it would re-announce on every
+               keystroke); screen readers get the full role list instead -->
+          <span class="sr-only">{{ roles.join(', ') }}</span>
+          <span class="typing-wrapper" aria-hidden="true">
             <span class="typing-text">{{ displayText }}</span>
-            <span class="cursor" :class="{ blink: showCursor }" aria-hidden="true">|</span>
+            <span class="cursor" :class="{ blink: showCursor }">|</span>
           </span>
         </p>
         <p class="hero-description">
@@ -278,10 +281,6 @@ const { displayText, showCursor } = useTypingEffect(roles)
   letter-spacing: -0.03em;
   line-height: 1.1;
   animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-.hero-title .accent {
-  color: var(--accent);
 }
 
 .hero-subtitle {

@@ -124,8 +124,10 @@
 </template>
 
 <script setup>
-import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
+import { useFocusTrap } from '@/composables/useFocusTrap.js'
+import { scrollBehavior } from '@/utils/motion.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -133,6 +135,8 @@ const isMenuOpen = ref(false)
 const menuRef = ref(null)
 const menuButtonRef = ref(null)
 const isScrolled = ref(false)
+
+const { activate: trapMenuFocus, deactivate: releaseMenuFocus } = useFocusTrap()
 
 const isHomePage = computed(() => route.path === '/')
 
@@ -158,24 +162,44 @@ const SECTIONS = [
 ]
 
 let scrollLocked = false
+let scrollLockTimer = null
 
-const updateActiveSection = () => {
+// Scroll-spy via IntersectionObserver: no per-scroll-event layout reads.
+// A section is "active" while it intersects the band just below the navbar.
+let sectionObserver = null
+const visibleSections = new Set()
+
+const refreshActiveSection = () => {
   if (!isHomePage.value || scrollLocked) return
-  const navHeight = 80
-  const threshold = window.scrollY + navHeight + 20
-  const positions = SECTIONS.map(id => {
-    const el = document.getElementById(id)
-    if (!el) return null
-    return { id, top: el.getBoundingClientRect().top + window.scrollY }
-  })
-    .filter(Boolean)
-    .sort((a, b) => a.top - b.top)
-
   let current = ''
-  for (const { id, top } of positions) {
-    if (top <= threshold) current = id
+  for (const id of SECTIONS) {
+    if (visibleSections.has(id)) {
+      current = id
+      break
+    }
   }
   activeSection.value = current
+}
+
+const setupSectionObserver = () => {
+  sectionObserver?.disconnect()
+  visibleSections.clear()
+  if (!isHomePage.value) return
+  sectionObserver = new IntersectionObserver(
+    entries => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visibleSections.add(entry.target.id)
+        else visibleSections.delete(entry.target.id)
+      }
+      refreshActiveSection()
+    },
+    // Band: below the fixed navbar, top 40% of the viewport
+    { rootMargin: '-80px 0px -60% 0px' }
+  )
+  for (const id of SECTIONS) {
+    const el = document.getElementById(id)
+    if (el) sectionObserver.observe(el)
+  }
 }
 
 const toggleMenu = () => {
@@ -203,10 +227,19 @@ const updateIndicator = () => {
   }
 }
 
+// Recompute after Vue has applied the .active class, coalescing bursts
+let indicatorFrame = null
+const scheduleIndicatorUpdate = () => {
+  nextTick(() => {
+    if (indicatorFrame) cancelAnimationFrame(indicatorFrame)
+    indicatorFrame = requestAnimationFrame(updateIndicator)
+  })
+}
+
 const scrollToSection = section => {
   const el = document.getElementById(section)
   if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
+    el.scrollIntoView({ behavior: scrollBehavior() })
   }
 }
 
@@ -219,9 +252,10 @@ const handleNavClick = async section => {
   } else {
     await router.push({ path: '/', hash: `#${section}` })
   }
-  setTimeout(() => {
+  clearTimeout(scrollLockTimer)
+  scrollLockTimer = setTimeout(() => {
     scrollLocked = false
-    updateActiveSection()
+    refreshActiveSection()
   }, 1500)
 }
 
@@ -255,45 +289,59 @@ const preventBodyScroll = prevent => {
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
-  updateActiveSection()
 }
+
+const handleResize = () => {
+  scheduleIndicatorUpdate()
+}
+
+let observerSetupTimer = null
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
-  if (isHomePage.value) updateActiveSection()
-  setTimeout(updateIndicator, 50)
+  window.addEventListener('resize', handleResize, { passive: true })
+  // Home sections render after the async route view resolves
+  observerSetupTimer = setTimeout(setupSectionObserver, 100)
+  scheduleIndicatorUpdate()
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
   document.removeEventListener('keydown', handleEscape)
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
+  sectionObserver?.disconnect()
+  clearTimeout(observerSetupTimer)
+  clearTimeout(scrollLockTimer)
+  if (indicatorFrame) cancelAnimationFrame(indicatorFrame)
+  releaseMenuFocus()
   preventBodyScroll(false)
 })
 
 watch(isHomePage, val => {
-  if (val) setTimeout(updateActiveSection, 100)
-  else activeSection.value = ''
-  setTimeout(updateIndicator, 150)
+  if (!val) activeSection.value = ''
+  clearTimeout(observerSetupTimer)
+  observerSetupTimer = setTimeout(setupSectionObserver, 100)
+  scheduleIndicatorUpdate()
 })
 
-// Watch menu state to toggle body scroll
-watch(isMenuOpen, newValue => {
-  preventBodyScroll(newValue)
-})
-
-watch(activeSection, () => {
-  setTimeout(updateIndicator, 50)
-})
-
-watch(
-  () => route.path,
-  () => {
-    setTimeout(updateIndicator, 100)
+// Toggle body scroll and trap focus while the full-screen menu is open
+watch(isMenuOpen, open => {
+  preventBodyScroll(open)
+  if (open) {
+    nextTick(() => {
+      if (menuRef.value) trapMenuFocus(menuRef.value, menuButtonRef.value)
+    })
+  } else {
+    releaseMenuFocus()
   }
-)
+})
+
+watch(activeSection, scheduleIndicatorUpdate)
+
+watch(() => route.path, scheduleIndicatorUpdate)
 </script>
 
 <style scoped>

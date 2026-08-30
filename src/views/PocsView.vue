@@ -9,26 +9,24 @@
     </section>
     <section class="section pocs-grid-section">
       <div class="container">
-        <div class="filter-tabs" role="tablist" aria-label="Filter projects by status">
+        <!-- Toggle-button group, not ARIA tabs: no tabpanel/arrow-key semantics needed -->
+        <div class="filter-tabs" role="group" aria-label="Filter projects by status">
           <button
-            role="tab"
-            :aria-selected="activeFilter === 'all'"
+            :aria-pressed="activeFilter === 'all'"
             :class="['filter-btn', { active: activeFilter === 'all' }]"
             @click="activeFilter = 'all'"
           >
             All <span class="filter-count">{{ pocs.length }}</span>
           </button>
           <button
-            role="tab"
-            :aria-selected="activeFilter === 'live'"
+            :aria-pressed="activeFilter === 'live'"
             :class="['filter-btn', { active: activeFilter === 'live' }]"
             @click="activeFilter = 'live'"
           >
             Live <span class="filter-count">{{ liveCount }}</span>
           </button>
           <button
-            role="tab"
-            :aria-selected="activeFilter === 'dev'"
+            :aria-pressed="activeFilter === 'dev'"
             :class="['filter-btn', { active: activeFilter === 'dev' }]"
             @click="activeFilter = 'dev'"
           >
