@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lakshman.gateandtech.in/sitemap.xml
+Sitemap: https://lakshmanp.com/sitemap.xml

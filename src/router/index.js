@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAnalytics } from '@/composables/useAnalytics.js'
+import { scrollBehavior as motionScrollBehavior } from '@/utils/motion.js'
 
 // Prevent browser from interfering with Vue Router's scroll management
 if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
@@ -70,7 +70,7 @@ const router = createRouter({
     } else if (to.hash) {
       return {
         el: to.hash,
-        behavior: 'smooth'
+        behavior: motionScrollBehavior()
       }
     } else {
       return { top: 0 }
@@ -78,7 +78,7 @@ const router = createRouter({
   }
 })
 
-// Track page views and manage focus
+// Keep per-route meta tags in sync and manage focus
 router.afterEach(to => {
   // Update title
   if (to.meta.title) {
@@ -93,9 +93,20 @@ router.afterEach(to => {
     }
   }
 
-  // Track page view
-  const { trackPageView } = useAnalytics()
-  trackPageView(to.fullPath, to.meta.title || document.title)
+  // Canonical and social URLs must reflect the current route, not the homepage
+  const pageUrl = window.location.origin + to.path
+  const canonical = document.querySelector('link[rel="canonical"]')
+  if (canonical) {
+    canonical.setAttribute('href', pageUrl)
+  }
+  const ogUrl = document.querySelector('meta[property="og:url"]')
+  if (ogUrl) {
+    ogUrl.setAttribute('content', pageUrl)
+  }
+  const twitterUrl = document.querySelector('meta[name="twitter:url"]')
+  if (twitterUrl) {
+    twitterUrl.setAttribute('content', pageUrl)
+  }
 
   // Move focus to main content for keyboard/AT users after page transition
   setTimeout(() => {
