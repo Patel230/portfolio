@@ -170,7 +170,7 @@ export const posts = [
     id: 11,
     tag: "Now — What I'm Building",
     date: '2025 – Present',
-    dateISO: '2026',
+    dateISO: '2025',
     color: '#e11d48',
     title: 'Three Things. All of Them Serious.',
     body: `

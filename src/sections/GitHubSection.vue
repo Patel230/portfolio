@@ -101,7 +101,14 @@
               rel="noopener noreferrer"
               class="org-item"
             >
-              <img :src="org.avatar" :alt="org.login" class="org-avatar" />
+              <img
+                :src="org.avatar"
+                :alt="org.login"
+                class="org-avatar"
+                width="36"
+                height="36"
+                loading="lazy"
+              />
               <div class="org-info">
                 <span class="org-name">{{ org.login }}</span>
                 <span class="org-desc">{{ org.description }}</span>
@@ -130,7 +137,7 @@
               :style="{ '--link-color': link.color }"
             >
               <span class="ql-icon" :style="{ background: `${link.color}18`, color: link.color }">
-                <component :is="link.icon" :size="16" />
+                <component :is="linkIcons[link.icon]" :size="16" />
               </span>
               <span class="ql-text">{{ link.label }}</span>
               <LucideArrowUpRight :size="14" class="ql-arrow" />
@@ -187,6 +194,7 @@ import {
   Star as LucideStar,
   Building2 as LucideBuilding2
 } from 'lucide-vue-next'
+import { githubOrgs, githubLinks } from '@/data/github.js'
 
 const statsLoaded = ref(false)
 const statsError = ref(false)
@@ -202,72 +210,12 @@ const handleStatsError = () => {
   statsError.value = true
 }
 
-const githubOrgs = [
-  {
-    login: 'GraphDone',
-    url: 'https://github.com/GraphDone',
-    avatar: 'https://avatars.githubusercontent.com/u/226919970?v=4',
-    description: 'Graph-based collaboration where ideas rise on merit'
-  },
-  {
-    login: 'GrayCodeAI',
-    url: 'https://github.com/GrayCodeAI',
-    avatar: 'https://avatars.githubusercontent.com/u/260990539?v=4',
-    description: 'Intelligent developer tooling platform'
-  },
-  {
-    login: 'GATE-And-Tech',
-    url: 'https://github.com/GATE-And-Tech',
-    avatar: 'https://avatars.githubusercontent.com/u/155520857?v=4',
-    description: 'All resources at one place'
-  },
-  {
-    login: 'Valpatel',
-    url: 'https://github.com/Valpatel',
-    avatar: 'https://avatars.githubusercontent.com/u/246368536?v=4',
-    description: 'Gamify the development of independent thinking machines'
-  },
-  {
-    login: 'Graphly-AI',
-    url: 'https://github.com/Graphly-AI',
-    avatar: 'https://avatars.githubusercontent.com/u/252286066?v=4',
-    description: 'AI-powered graph intelligence'
-  },
-  {
-    login: 'Growth-Club',
-    url: 'https://github.com/Growth-Club',
-    avatar: 'https://avatars.githubusercontent.com/u/254279022?v=4',
-    description: 'Growth community and resources'
-  },
-  {
-    login: 'Awesome-Nexus',
-    url: 'https://github.com/Awesome-Nexus',
-    avatar: 'https://avatars.githubusercontent.com/u/257250016?v=4',
-    description: 'Curated awesome lists and resources'
-  }
-]
-
-const githubLinks = [
-  { label: 'Profile', href: 'https://github.com/Patel230', icon: LucideUser, color: '#ffd700' },
-  {
-    label: 'Repositories',
-    href: 'https://github.com/Patel230?tab=repositories',
-    icon: LucideFolderOpen,
-    color: '#22c55e'
-  },
-  {
-    label: 'Pull Requests',
-    href: 'https://github.com/Patel230?tab=overview',
-    icon: LucideGitPullRequest,
-    color: '#8b5cf6'
-  },
-  {
-    label: 'Stars Given',
-    href: 'https://github.com/Patel230?tab=stars',
-    icon: LucideStar,
-    color: '#f97316'
-  }
-]
+const linkIcons = {
+  user: LucideUser,
+  'folder-open': LucideFolderOpen,
+  'git-pull-request': LucideGitPullRequest,
+  star: LucideStar
+}
 </script>
 
 <style scoped>
@@ -396,7 +344,8 @@ const githubLinks = [
 
 .img-shimmer {
   width: 100%;
-  height: 160px;
+  /* Match the stat SVGs' ~495x195 intrinsic ratio so the swap doesn't jump */
+  aspect-ratio: 495 / 195;
   border-radius: 6px;
   background: linear-gradient(
     90deg,

@@ -1,3 +1,7 @@
+// Requires puppeteer, which is intentionally NOT a devDependency (it downloads
+// a full Chromium). Install it ad hoc when capturing: npm i -D puppeteer
+// Afterwards run scripts/optimize-gallery-images.mjs to produce the WebP
+// derivatives the site actually serves.
 import puppeteer from 'puppeteer';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -24,6 +28,21 @@ const websites = [
     name: 'gateandtech',
     url: 'https://gateandtech.in/',
     outputDir: 'public/images/gallery/gateandtech'
+  },
+  {
+    name: 'postly',
+    url: 'https://postlysocial.net/',
+    outputDir: 'public/images/gallery/postly'
+  },
+  {
+    name: 'gate2027',
+    url: 'https://gate2027.gateandtech.in/',
+    outputDir: 'public/images/gallery/gate2027'
+  },
+  {
+    name: 'tracker',
+    url: 'https://tracker.lakshmanp.com/',
+    outputDir: 'public/images/gallery/tracker'
   }
 ];
 

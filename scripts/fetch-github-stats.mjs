@@ -1,9 +1,8 @@
 // Snapshot the GitHub stat SVGs into public/github/ at build time.
 //
-// Why: the live third-party services (github-readme-stats, streak-stats) send no
-// Cross-Origin-Resource-Policy header, so the site's COEP:require-corp blocks them
-// in the browser; they're also rate-limited. Serving same-origin snapshots fixes
-// both — the cards render instantly and never depend on a live request.
+// Why: the live third-party services (github-readme-stats, streak-stats) are
+// rate-limited and occasionally down. Serving same-origin snapshots means the
+// cards render instantly and never depend on a live request.
 //
 // Resilient by design: if a service is down/rate-limited at build time, we keep the
 // previously committed snapshot (or skip) instead of failing the build or writing

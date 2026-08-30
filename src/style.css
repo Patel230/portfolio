@@ -34,7 +34,6 @@
   --transition-slow: 0.35s ease;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
-  --gradient-hero: linear-gradient(135deg, #ffffff 30%, #ffd700 100%);
 }
 
 html {

@@ -38,14 +38,6 @@ onErrorCaptured((err, instance, info) => {
   console.error('Component:', instance)
   console.error('Info:', info)
 
-  // In production, you could send to error tracking service
-  if (!isDevelopment && window.gtag) {
-    window.gtag('event', 'exception', {
-      description: err.message,
-      fatal: true
-    })
-  }
-
   // Prevent error from propagating
   return false
 })
@@ -126,7 +118,7 @@ const resetError = () => {
   flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .error-actions {
     flex-direction: column;
   }

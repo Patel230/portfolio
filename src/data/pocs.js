@@ -66,7 +66,7 @@ export const pocs = [
   },
   {
     name: 'Awesome Horizon',
-    description: 'A curated collection of best practices and tools for developers.',
+    description: 'Curated collection of 140,000+ STEAM educational resources.',
     tech: ['Vue.js', 'Vite', 'Open Source'],
     link: 'https://awesome-horizon.vercel.app/',
     icon: 'compass',
@@ -120,7 +120,7 @@ export const pocs = [
   },
   {
     name: 'CryptoDone',
-    description: 'Cryptocurrency platform with animated UI and wallet integration.',
+    description: 'Earn crypto by completing tasks, playing games, and achieving goals.',
     tech: ['TypeScript', 'Next.js', 'Fastify', 'Ethereum'],
     link: null,
     icon: 'bitcoin',
@@ -179,7 +179,7 @@ export const pocs = [
     link: null,
     icon: 'git-branch',
     color: '#d946ef',
-    status: 'Live'
+    status: 'In Development'
   },
   {
     name: 'JobDone',
@@ -283,7 +283,7 @@ export const pocs = [
   {
     name: 'TaskDone',
     description: 'Modern task management with relationships, multiple views, and analytics.',
-    tech: ['TypeScript', 'Next.js', 'Neo4j', 'Prisma'],
+    tech: ['TypeScript', 'Next.js', 'SQLite', 'Drizzle', 'Cloudflare'],
     link: 'https://taskdone.gateandtech.in/',
     icon: 'check-square',
     color: '#4f46e5',
