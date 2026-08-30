@@ -104,5 +104,14 @@ export const projects = [
     link: 'https://tracker.lakshmanp.com/',
     icon: 'briefcase',
     color: '#eab308'
+  },
+  {
+    title: 'Lean Prover',
+    description:
+      'Open-source theorem prover and functional programming language for formal mathematics.',
+    tech: ['Lean 4', 'Formal Verification', 'Mathematics'],
+    link: 'https://lean-prover.org/',
+    icon: 'sigma',
+    color: '#0d9488'
   }
 ]

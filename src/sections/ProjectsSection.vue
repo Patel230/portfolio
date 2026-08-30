@@ -50,19 +50,10 @@
             rel="noopener noreferrer"
             class="project-link"
             :style="{ color: project.color }"
+            :aria-label="`View ${project.title}`"
           >
             View
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              aria-hidden="true"
-            >
-              <path d="M7 17L17 7M17 7H7M17 7V17" />
-            </svg>
+            <Icon name="external" :size="16" />
           </a>
         </article>
       </div>
@@ -81,7 +72,7 @@ import { projects } from '@/data/projects.js'
 import { Icon } from '@/components'
 import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
 
-const featuredProjects = projects.slice(0, 12)
+const featuredProjects = projects
 </script>
 
 <style scoped>

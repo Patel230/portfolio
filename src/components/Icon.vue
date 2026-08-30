@@ -412,6 +412,10 @@ const icons = {
   send: {
     viewBox: '0 0 24 24',
     paths: ['M22 2L11 13', 'M22 2l-7 20-4-9-9-4 20-7z']
+  },
+  sigma: {
+    viewBox: '0 0 24 24',
+    paths: ['M18 7V5H6l6 7-6 7h12v-2']
   }
 }
 
@@ -432,7 +436,9 @@ const iconComponent = computed(() => {
         return h('path', {
           d: path,
           fill: hasFill ? icon.fill || props.fill : 'none',
-          stroke: !hasFill ? props.stroke : undefined
+          // Filled glyphs must not inherit the svg's stroke, or they render
+          // with a 2px outline that distorts the shape
+          stroke: hasFill ? 'none' : props.stroke
         })
       })
     }
