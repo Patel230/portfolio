@@ -1,9 +1,12 @@
-FROM node:18-alpine
+FROM node:22-alpine
+
+# vite.config.js derives the app version from git when .git is present
+RUN apk add --no-cache git
 
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 COPY . .
 RUN npm run build

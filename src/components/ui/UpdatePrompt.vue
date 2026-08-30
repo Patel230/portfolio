@@ -34,13 +34,17 @@ onUnmounted(() => {
 })
 
 const updateApp = () => {
-  if (newWorker) {
-    // Send skip waiting message to service worker
-    newWorker.postMessage({ type: 'SKIP_WAITING' })
+  if (!newWorker) {
+    window.location.reload()
+    return
   }
 
-  // Reload the page to activate new service worker
-  window.location.reload()
+  // Reload only once the new worker has actually taken control; reloading
+  // immediately would still be served by the old worker's cache.
+  navigator.serviceWorker.addEventListener('controllerchange', () => window.location.reload(), {
+    once: true
+  })
+  newWorker.postMessage({ type: 'SKIP_WAITING' })
 }
 
 const dismissPrompt = () => {
@@ -143,7 +147,7 @@ const dismissPrompt = () => {
   transform: translateX(-50%) translateY(20px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .update-prompt {
     bottom: 16px;
     left: 16px;

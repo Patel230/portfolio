@@ -1,4 +1,5 @@
-const CACHE_NAME = 'portfolio-v2'
+// __APP_VERSION__ is replaced at build time so each deploy gets a fresh cache
+const CACHE_NAME = 'portfolio-__APP_VERSION__'
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -6,14 +7,14 @@ const STATIC_ASSETS = [
   '/lakshman.jpg'
 ]
 
-// Install event - cache static assets
+// Install event - cache static assets. Do NOT skipWaiting here: the new worker
+// must stay in "waiting" so UpdatePrompt can offer the update to the user.
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
         return cache.addAll(STATIC_ASSETS)
       })
-      .then(() => self.skipWaiting())
   )
 })
 
@@ -30,7 +31,6 @@ self.addEventListener('activate', (event) => {
   )
 })
 
-// Fetch event - serve from cache or network
 // Handle messages from clients
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
@@ -41,6 +41,14 @@ self.addEventListener('message', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return
   if (!event.request.url.startsWith(self.location.origin)) return
+
+  const url = new URL(event.request.url)
+
+  // API responses must never be cached (the visit counter would go stale and
+  // double-count), and full-size gallery images would bloat Cache Storage.
+  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/images/gallery/')) {
+    return
+  }
 
   // HTML navigations: network-first with offline fallback
   if (event.request.mode === 'navigate') {
