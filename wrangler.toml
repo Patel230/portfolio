@@ -1,0 +1,16 @@
+# Cloudflare Pages bindings for the portfolio's Functions (see functions/api/*).
+# Deployed with: npx wrangler pages deploy dist --project-name lakshman-portfolio
+name = "lakshman-portfolio"
+pages_build_output_dir = "dist"
+
+[vars]
+CONTACT_TO = "lp141015@gmail.com"
+CONTACT_FROM = "hello@lakshmanp.com"
+
+# Contact form email delivery uses the Email Sending REST API from the Pages
+# Function (functions/api/contact.js). Set these as secrets in the dashboard:
+#   EMAIL_API_TOKEN      - API token with "Email Sending: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID - account id (da34740bf966abf292989efebee12261)
+#   CONTACT_WEBHOOK_URL   - optional HTTP/email relay fallback
+# Also onboard the CONTACT_FROM domain to Email Sending (SPF/DKIM DNS records):
+#   npx wrangler email sending enable lakshmanp.com
