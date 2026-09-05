@@ -1,3 +1,6 @@
+export const resumeUrl =
+  'https://drive.google.com/uc?export=download&id=1KqvKej7c1hR5d5pe91wQ6AAyOviW6PxC'
+
 export const contactItems = [
   {
     label: 'Email',

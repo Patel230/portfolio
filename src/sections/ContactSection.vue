@@ -35,14 +35,25 @@
           </span>
         </a>
       </div>
+      <a
+        v-if="resumeUrl"
+        :href="resumeUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="resume-link fade-in-up"
+        data-reveal
+      >
+        <LucideFileText class="resume-icon" aria-hidden="true" />
+        Download Résumé
+      </a>
     </div>
   </section>
 </template>
 
 <script setup>
 import { Icon } from '@/components'
-import { contactItems } from '@/data/contact.js'
-import { Mail as LucideMail } from 'lucide-vue-next'
+import { contactItems, resumeUrl } from '@/data/contact.js'
+import { Mail as LucideMail, FileText as LucideFileText } from 'lucide-vue-next'
 </script>
 
 <style scoped>
@@ -134,6 +145,38 @@ import { Mail as LucideMail } from 'lucide-vue-next'
   font-size: 0.9rem;
   color: var(--text-primary);
   word-break: break-all;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 14px 28px;
+  background: rgba(236, 72, 153, 0.08);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  border-radius: var(--radius-sm);
+  color: #ec4899;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-spring);
+}
+
+.resume-link:hover {
+  background: rgba(236, 72, 153, 0.16);
+  border-color: rgba(236, 72, 153, 0.6);
+  transform: translateY(-2px);
+}
+
+.resume-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.resume-icon {
+  width: 18px;
+  height: 18px;
 }
 
 /* Tablet (768px - 1023px) */

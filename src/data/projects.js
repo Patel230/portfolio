@@ -35,6 +35,7 @@ export const projects = [
     title: 'Awesome Horizon',
     description: 'Curated collection of 140,000+ STEAM educational resources.',
     tech: ['Vue.js', 'Vercel', 'Open Source'],
+    metric: { value: '140K+', label: 'Resources' },
     link: 'https://awesome-horizon.vercel.app/',
     icon: 'book-open',
     color: '#059669'
@@ -51,6 +52,7 @@ export const projects = [
     title: 'Awesome Skills',
     description: '5,100+ AI development resources for Systems, Kits, Intelligence.',
     tech: ['TypeScript', 'Next.js', 'Vercel'],
+    metric: { value: '5.1K+', label: 'Resources' },
     link: 'https://awesome-skills-eight.vercel.app/',
     icon: 'award',
     color: '#0891b2'
@@ -93,6 +95,7 @@ export const projects = [
     description:
       'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
     tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
+    metric: { value: '54', label: 'Full tests' },
     link: 'https://gate2027.gateandtech.in/',
     icon: 'graduation-cap',
     color: '#2563eb'

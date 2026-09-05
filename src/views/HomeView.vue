@@ -3,11 +3,13 @@
     <HeroSection />
     <GallerySection />
     <AboutSection />
+    <ExperienceSection />
     <SkillsSection />
     <ProjectsSection />
     <OpenSourceSection />
     <GitHubSection />
     <PortfolioStackSection />
+    <ArticlesSection />
     <ContactSection />
   </div>
 </template>
@@ -19,12 +21,14 @@ import { scrollBehavior } from '@/utils/motion.js'
 import {
   HeroSection,
   AboutSection,
+  ExperienceSection,
   SkillsSection,
   ProjectsSection,
   GallerySection,
   OpenSourceSection,
   GitHubSection,
   PortfolioStackSection,
+  ArticlesSection,
   ContactSection
 } from '@/sections'
 
