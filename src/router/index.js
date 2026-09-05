@@ -23,7 +23,8 @@ const routes = [
     component: () => import('@/views/GalleryView.vue'),
     meta: {
       title: 'Project Gallery | Lakshman Patel',
-      description: 'Explore all 30+ projects with detailed image galleries and screenshots.'
+      description: 'Explore all 30+ projects with detailed image galleries and screenshots.',
+      ogImage: '/og-gallery.png'
     }
   },
   {
@@ -33,7 +34,8 @@ const routes = [
     meta: {
       title: 'Projects & Creations | Lakshman Patel',
       description:
-        'Explore 30+ open source projects and proof-of-concept implementations by Lakshman Patel.'
+        'Explore 30+ open source projects and proof-of-concept implementations by Lakshman Patel.',
+      ogImage: '/og-creations.png'
     }
   },
   {
@@ -43,7 +45,8 @@ const routes = [
     meta: {
       title: 'Journey | Lakshman Patel',
       description:
-        'From Monarch Tractor to a layoff on Nov 12, 2025 — and the AI-powered building sprint that followed. The real story.'
+        'From Monarch Tractor to a layoff on Nov 12, 2025 — and the AI-powered building sprint that followed. The real story.',
+      ogImage: '/og-blog.png'
     }
   },
   {
@@ -116,6 +119,13 @@ router.afterEach(to => {
   if (description) {
     setMeta('meta[property="og:description"]', 'content', description)
     setMeta('meta[name="twitter:description"]', 'content', description)
+  }
+
+  // Per-route social share image (falls back to the homepage og-image in HTML)
+  if (to.meta.ogImage) {
+    const ogImageUrl = window.location.origin + to.meta.ogImage
+    setMeta('meta[property="og:image"]', 'content', ogImageUrl)
+    setMeta('meta[name="twitter:image"]', 'content', ogImageUrl)
   }
 
   // Move focus to main content for keyboard/AT users after page transition

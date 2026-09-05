@@ -98,14 +98,15 @@
 
 <script setup>
 import { useLightbox } from '@/composables/useLightbox.js'
-import { thumbSrc } from '@/utils/galleryImages.js'
+import { thumbSrc, mediumSrc } from '@/utils/galleryImages.js'
 import {
   X as LucideX,
   ChevronLeft as LucideChevronLeft,
   ChevronRight as LucideChevronRight
 } from 'lucide-vue-next'
 
-const carouselSrcset = src => `${src} 1600w`
+// Serve the ~900px derivative for narrower viewports, the 1600px full image otherwise.
+const carouselSrcset = src => `${mediumSrc(src)} 900w, ${src} 1600w`
 
 const props = defineProps({
   projects: {

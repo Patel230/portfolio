@@ -6,3 +6,11 @@
 export function thumbSrc(src) {
   return src.replace(/\.webp$/, '-thumb.webp')
 }
+
+/**
+ * Resolve the 900px "medium" derivative (scripts/generate-gallery-medium.mjs)
+ * used as the srcset candidate for the lightbox carousel on smaller screens.
+ */
+export function mediumSrc(src) {
+  return src.replace(/\.webp$/, '-900.webp')
+}

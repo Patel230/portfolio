@@ -169,12 +169,12 @@ export const posts = [
   {
     id: 11,
     tag: "Now — What I'm Building",
-    date: '2025 – Present',
+    date: '2025 – Early 2026',
     dateISO: '2025',
     color: '#e11d48',
     title: 'Three Things. All of Them Serious.',
     body: `
-      <p>This is where I am today.</p>
+      <p>This is where I stood in early 2026 — the sprint that followed the layoff.</p>
       <p>Not "exploring opportunities." Not "in between things." Building — deliberately, every day, in Bengaluru, India's Silicon Valley — with the same stubbornness that got a farming village kid to a national institute and then to a California-funded startup.</p>
       <p><strong>1. GrayCodeAI</strong> — this is the main one. My own open source project. A platform for humans and AI agents to build software together — not AI as a feature you bolt onto a product, but AI as a genuine peer in the development process. Inside GrayCodeAI, I'm building three tools: <strong>Hawk</strong>, a coding agent CLI that actually thinks before it acts; <strong>Gitant</strong>, a decentralised alternative to GitHub where your code lives with you, not on someone else's server; and <strong>Lark</strong>, a messaging app designed from the ground up for teams where some members are human and some are agents. The name comes from Gray code — a binary numbering system where adjacent values differ by exactly one bit. Minimal change. Maximum precision. That's the philosophy. Live at <a href="https://github.com/GrayCodeAI" target="_blank" rel="noopener noreferrer">GrayCodeAI on GitHub</a>.</p>
       <p><strong>2. Contributing to Herm</strong> — the open source coding agents platform at <a href="https://hermagent.com" target="_blank" rel="noopener noreferrer">hermagent.com</a>. I push to this codebase regularly — improving agent tooling, fixing rough edges, helping move the project forward. The overlap with GrayCodeAI is real: both are trying to figure out what it means for AI to be a genuine collaborator, not just a tool. Contributing to Herm keeps me honest about how others are solving the same problems.</p>
@@ -182,6 +182,7 @@ export const posts = [
       <p>If you've read this far, you know where I started. Mud on my hands, folk songs in my head, a village that had never heard of Silicon Valley.</p>
       <p>I'm still that kid. I just know how to build software now.</p>
       <p><em>Let's build something together.</em></p>
+      <p><em>Update: since writing this, I've joined OmniNode full-time — the next chapter is below.</em></p>
     `
   },
   {
