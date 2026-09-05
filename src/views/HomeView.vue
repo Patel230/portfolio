@@ -9,7 +9,6 @@
     <OpenSourceSection />
     <GitHubSection />
     <PortfolioStackSection />
-    <TestimonialSection />
     <ContactSection />
   </div>
 </template>
@@ -28,7 +27,6 @@ import {
   OpenSourceSection,
   GitHubSection,
   PortfolioStackSection,
-  TestimonialSection,
   ContactSection
 } from '@/sections'
 
