@@ -44,6 +44,19 @@ function isValidSvg(text) {
   return !errorMarkers.some(m => lower.includes(m))
 }
 
+// The stats services animate text in with `opacity: 0` + CSS @keyframes, which
+// does NOT run when the SVG is shown via <img> in some browsers (notably Safari),
+// leaving the cards blank. Strip animations, force the hidden text visible, and
+// drop the stray literal "undefined" text nodes so the cards render statically.
+function sanitizeSvg(text) {
+  return text
+    .replace(/@keyframes\s+[\w-]+\s*\{[^}]*\}/gs, '')
+    .replace(/^\s*undefined\s*$/gm, '')
+    .replace(/animation:\s*[^;"']+;?\s*/gi, '')
+    .replace(/opacity:\s*0(?!\.)/g, 'opacity: 1')
+    .replace(/style=(["']) ?\1/g, '')
+}
+
 async function exists(path) {
   try {
     await access(path)
@@ -74,7 +87,7 @@ async function main() {
       const res = await fetchWithTimeout(url)
       const text = res.ok ? await res.text() : ''
       if (res.ok && isValidSvg(text)) {
-        await writeFile(dest, text, 'utf8')
+        await writeFile(dest, sanitizeSvg(text), 'utf8')
         ok++
         console.log(`  ✓ ${file} (${text.length} bytes)`)
       } else if (await exists(dest)) {

@@ -10,16 +10,13 @@
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
             fill: #8b5cf6;
-            animation: fadeInAnimation 0.8s ease-in-out forwards;
-          }
+            }
           
     .lang-name { font: 400 11px 'Segoe UI', Ubuntu, Sans-Serif; fill: #e5e5e5 }
   
 
           
         </style>
-
-        undefined
 
         <rect
           data-testid="card-bg"
