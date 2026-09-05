@@ -1,3 +1,6 @@
+# ─────────────────────────────────────────────────────────────
+# 1. SECURITY — applied to every response, site-wide
+# ─────────────────────────────────────────────────────────────
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self'; frame-ancestors 'none'
   X-Frame-Options: DENY
@@ -7,15 +10,15 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Cross-Origin-Opener-Policy: same-origin
 
+# ─────────────────────────────────────────────────────────────
+# 2. VERSIONED BUILD ASSETS — hashed filenames, safe to cache forever
+# ─────────────────────────────────────────────────────────────
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/sw.js
-  Cache-Control: no-cache
-
-/manifest.json
-  Cache-Control: no-cache
-
+# ─────────────────────────────────────────────────────────────
+# 3. STATIC IMAGES — content rarely changes, long-lived
+# ─────────────────────────────────────────────────────────────
 /images/*
   Cache-Control: public, max-age=31536000, immutable
 
@@ -25,5 +28,35 @@
 /og-image.png
   Cache-Control: public, max-age=31536000, immutable
 
+/og-gallery.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/og-creations.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/og-blog.png
+  Cache-Control: public, max-age=31536000, immutable
+
+# ─────────────────────────────────────────────────────────────
+# 4. GITHUB STAT SNAPSHOTS — regenerated at build, refresh daily
+# ─────────────────────────────────────────────────────────────
 /github/*
   Cache-Control: public, max-age=86400
+
+# ─────────────────────────────────────────────────────────────
+# 5. STATIC SEO FILES — small, change rarely, cache for a day
+# ─────────────────────────────────────────────────────────────
+/robots.txt
+  Cache-Control: public, max-age=86400
+
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+
+# ─────────────────────────────────────────────────────────────
+# 6. APP SHELL & DYNAMIC — never cached (service worker / manifest)
+# ─────────────────────────────────────────────────────────────
+/sw.js
+  Cache-Control: no-cache
+
+/manifest.json
+  Cache-Control: no-cache
