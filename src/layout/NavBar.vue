@@ -414,8 +414,8 @@ watch(isMenuOpen, open => {
   font-weight: 500;
   color: var(--text-secondary);
   transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
+    color 0.25s ease,
+    background-color 0.25s ease;
   position: relative;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -427,14 +427,33 @@ watch(isMenuOpen, open => {
   border-radius: 8px;
 }
 
+/* Animated gradient underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), #ff8c00);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-spring);
+}
+
 .nav-link:hover {
   color: var(--accent);
-  background: rgba(255, 215, 0, 0.06);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
 }
 
 .nav-link.active {
   color: #fff;
-  background: rgba(255, 215, 0, 0.1);
 }
 
 /* Push Contact + Résumé to the right as an action group */
@@ -446,15 +465,24 @@ watch(isMenuOpen, open => {
 .resume-nav-link {
   margin-left: 10px;
   color: #000;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #ffb300);
   font-weight: 600;
-  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.35);
+  box-shadow: 0 2px 14px rgba(255, 215, 0, 0.4);
+}
+
+.resume-nav-link::after {
+  display: none;
 }
 
 .resume-nav-link:hover {
   color: #000;
-  background: var(--accent-hover);
-  filter: brightness(1.05);
+  background: linear-gradient(135deg, var(--accent-hover), #ffc81f);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
+}
+
+.resume-nav-link:hover::after {
+  transform: scaleX(0);
 }
 
 /* ── Dropdown groups ── */
@@ -482,27 +510,59 @@ watch(isMenuOpen, open => {
   position: absolute;
   top: calc(100% + 12px);
   left: 50%;
-  transform: translateX(-50%) translateY(-6px);
-  min-width: 180px;
+  transform: translateX(-50%) translateY(-8px) scale(0.96);
+  transform-origin: top center;
+  min-width: 190px;
   padding: 8px;
-  background: rgba(20, 20, 20, 0.98);
+  background: rgba(20, 20, 20, 0.97);
   backdrop-filter: blur(20px);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.55);
   opacity: 0;
   visibility: hidden;
   transition:
-    opacity 0.2s ease,
-    transform 0.2s var(--ease-spring),
-    visibility 0.2s;
+    opacity 0.22s ease,
+    transform 0.25s var(--ease-spring),
+    visibility 0.22s;
   z-index: 20;
 }
 
 .dropdown.open {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.dropdown.open .dropdown-link {
+  animation: itemIn 0.3s var(--ease-spring) backwards;
+}
+
+.dropdown.open .dropdown-link:nth-child(1) {
+  animation-delay: 0.02s;
+}
+.dropdown.open .dropdown-link:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.dropdown.open .dropdown-link:nth-child(3) {
+  animation-delay: 0.08s;
+}
+.dropdown.open .dropdown-link:nth-child(4) {
+  animation-delay: 0.11s;
+}
+.dropdown.open .dropdown-link:nth-child(5) {
+  animation-delay: 0.14s;
+}
+
+@keyframes itemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .dropdown-link {
@@ -514,12 +574,14 @@ watch(isMenuOpen, open => {
   text-decoration: none;
   transition:
     background-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    padding-left 0.2s var(--ease-spring);
 }
 
 .dropdown-link:hover {
   background: rgba(255, 215, 0, 0.08);
   color: var(--accent);
+  padding-left: 18px;
 }
 
 .dropdown-link.active {
@@ -714,6 +776,14 @@ watch(isMenuOpen, open => {
   .dropdown,
   .dropdown-link {
     transition: none;
+  }
+
+  .dropdown.open .dropdown-link {
+    animation: none;
+  }
+
+  .dropdown-link:hover {
+    padding-left: 14px;
   }
 }
 </style>
