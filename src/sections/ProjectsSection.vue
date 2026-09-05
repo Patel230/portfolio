@@ -46,12 +46,6 @@
               {{ tech }}
             </span>
           </div>
-          <div v-if="project.metric" class="project-metric">
-            <span class="metric-value" :style="{ color: project.color }">{{
-              project.metric.value
-            }}</span>
-            <span class="metric-label">{{ project.metric.label }}</span>
-          </div>
           <a
             v-if="project.link"
             :href="project.link"
@@ -197,30 +191,6 @@ const featuredProjects = [...projects].sort((a, b) => Number(b.featured) - Numbe
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
-}
-
-.project-metric {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 16px;
-  padding: 6px 12px;
-  background-color: var(--bg-tertiary);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.metric-value {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.metric-label {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 500;
 }
 
 .tag {
