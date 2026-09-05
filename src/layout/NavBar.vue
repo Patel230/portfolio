@@ -74,7 +74,7 @@
 
         <a
           :href="contactLink"
-          class="nav-link"
+          class="nav-link contact-nav-link"
           :class="{ active: activeSection === 'contact' }"
           :aria-current="activeSection === 'contact' ? 'true' : undefined"
           @click.prevent="handleNavClick('contact')"
@@ -404,7 +404,7 @@ watch(isMenuOpen, open => {
 
 .nav-links {
   display: flex;
-  gap: 18px;
+  gap: 2px;
   align-items: center;
   padding: 0 14px;
 }
@@ -415,7 +415,7 @@ watch(isMenuOpen, open => {
   color: var(--text-secondary);
   transition:
     color 0.2s ease,
-    transform 0.2s ease;
+    background-color 0.2s ease;
   position: relative;
   letter-spacing: 0.01em;
   white-space: nowrap;
@@ -423,16 +423,38 @@ watch(isMenuOpen, open => {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  padding: 0;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
   color: var(--accent);
+  background: rgba(255, 215, 0, 0.06);
 }
 
 .nav-link.active {
   color: #fff;
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Push Contact + Résumé to the right as an action group */
+.contact-nav-link {
+  margin-left: auto;
+}
+
+/* Résumé as a distinct action pill */
+.resume-nav-link {
+  margin-left: 10px;
+  color: #000;
+  background: var(--accent);
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(255, 215, 0, 0.35);
+}
+
+.resume-nav-link:hover {
+  color: #000;
+  background: var(--accent-hover);
+  filter: brightness(1.05);
 }
 
 /* ── Dropdown groups ── */
@@ -605,6 +627,17 @@ watch(isMenuOpen, open => {
     padding: 10px 4px;
   }
 
+  .contact-nav-link {
+    margin-left: 0;
+  }
+
+  .resume-nav-link {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+    padding: 12px 4px;
+  }
+
   .nav-group {
     width: 100%;
   }
@@ -639,10 +672,6 @@ watch(isMenuOpen, open => {
   .dropdown-link {
     font-size: 1rem;
     padding: 9px 10px;
-  }
-
-  .resume-nav-link {
-    margin-top: 8px;
   }
 }
 
