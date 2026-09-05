@@ -122,15 +122,6 @@
           Journey
         </router-link>
         <a
-          v-if="articles.length"
-          :href="writingLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'writing' }"
-          :aria-current="activeSection === 'writing' ? 'true' : undefined"
-          @click.prevent="handleNavClick('writing')"
-          >Writing</a
-        >
-        <a
           :href="aboutLink"
           class="nav-link"
           :class="{ active: activeSection === 'about' }"
@@ -167,7 +158,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { useFocusTrap } from '@/composables/useFocusTrap.js'
 import { scrollBehavior } from '@/utils/motion.js'
 import { resumeUrl } from '@/data/contact.js'
-import { articles } from '@/data/articles.js'
 
 const route = useRoute()
 const router = useRouter()
@@ -188,7 +178,6 @@ const projectsLink = computed(() => sectionHref('projects'))
 const opensourceLink = computed(() => sectionHref('opensource'))
 const githubLink = computed(() => sectionHref('github'))
 const stackLink = computed(() => sectionHref('portfolio-stack'))
-const writingLink = computed(() => sectionHref('writing'))
 const aboutLink = computed(() => sectionHref('about'))
 const contactLink = computed(() => sectionHref('contact'))
 
@@ -201,7 +190,6 @@ const SECTIONS = [
   'opensource',
   'github',
   'portfolio-stack',
-  'writing',
   'about',
   'contact'
 ]

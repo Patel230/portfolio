@@ -62,21 +62,13 @@
           </a>
         </div>
       </div>
-      <a href="#skills" class="scroll-cue" aria-label="Scroll down to view skills">
-        <span class="scroll-cue-text">Scroll</span>
-        <LucideChevronDown class="scroll-cue-icon" aria-hidden="true" />
-      </a>
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import {
-  ArrowDown as LucideArrowDown,
-  ArrowRight as LucideArrowRight,
-  ChevronDown as LucideChevronDown
-} from 'lucide-vue-next'
+import { ArrowDown as LucideArrowDown, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
 import { useTypingEffect } from '@/composables/useTypingEffect.js'
 
 const imageError = ref(false)
@@ -371,49 +363,6 @@ const { displayText, showCursor } = useTypingEffect(roles)
   transform: translateY(-3px);
 }
 
-/* Scroll-down cue */
-.scroll-cue {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.2s ease;
-  z-index: 1;
-}
-
-.scroll-cue:hover {
-  color: var(--accent);
-}
-
-.scroll-cue-text {
-  font-size: 0.7rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-}
-
-.scroll-cue-icon {
-  width: 22px;
-  height: 22px;
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-
-@keyframes scrollBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-}
-
 /* Tablet (768px - 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .hero {
@@ -526,10 +475,6 @@ const { displayText, showCursor } = useTypingEffect(roles)
   .hero-links .btn {
     padding: 14px 24px;
   }
-
-  .scroll-cue {
-    display: none;
-  }
 }
 
 /* Extra Small (< 320px) */
@@ -584,10 +529,6 @@ const { displayText, showCursor } = useTypingEffect(roles)
   }
 
   .cursor.blink {
-    animation: none;
-  }
-
-  .scroll-cue-icon {
     animation: none;
   }
 
