@@ -183,5 +183,21 @@ export const posts = [
       <p>I'm still that kid. I just know how to build software now.</p>
       <p><em>Let's build something together.</em></p>
     `
+  },
+  {
+    id: 12,
+    tag: 'OmniNode',
+    date: 'September 2026 – Present',
+    dateISO: '2026-09',
+    color: '#6366f1',
+    title: 'Into the Beta Fire — Building the Infrastructure Agents Run On',
+    body: `
+      <p>I joined <strong>OmniNode</strong> — <a href="https://omninode.ai/" target="_blank" rel="noopener noreferrer">omninode.ai</a> — full-time as an AI/ML Infrastructure & Agent Systems engineer.</p>
+      <p>The pitch is deceptively simple to state and genuinely hard to build: production infrastructure for AI agents — reliable, observable, contract-driven workflows, not another wrapper around an LLM API. Anyone can call a model. Making the systems around that call trustworthy at scale is the actual problem, and it's the problem I'd been circling since Monarch.</p>
+      <p>There was no slow onboarding. I joined in the middle of an intense push toward beta, and within days I was tracing failures across multiple repositories, validating runtime behaviour, and fixing authentication paths that beta-critical systems depended on. No ramp-up lap — straight into the infrastructure, straight into the fire.</p>
+      <p>The surface area is wide: multi-repository systems, agent delegation, identity and auth flows through <strong>Keycloak/OIDC</strong>, runtime reliability, CI/CD pipelines in <strong>GitHub Actions</strong>, YAML-based contract validation, and debugging distributed services running on <strong>Kafka</strong> and <strong>PostgreSQL</strong> — all on <strong>Python</strong>, <strong>Linux</strong>, and <strong>Docker</strong>.</p>
+      <p>What pulled me in was the chance to go deeper than building APIs or calling models — to understand how agent systems are actually designed, governed, tested, deployed, and operated once real users depend on them behaving correctly, every time, not just in a demo.</p>
+      <p>It reads, in hindsight, like a straight line: production cloud systems at Monarch, my own AI products at GrayCodeAI, and now the infrastructure that has to hold up underneath autonomous agents in production. Same instinct as always — go find where the real weight is, and stand under it.</p>
+    `
   }
 ]
