@@ -5,7 +5,7 @@
         <!-- Status Pill Badge -->
         <div class="status-pill">
           <span class="status-dot"></span>
-          <span>Available for Full-Stack & AI Engineering</span>
+          <span>Currently @ OmniNode · AI Infrastructure</span>
         </div>
         <div class="hero-image" :class="{ fallback: imageError }">
           <img
@@ -126,9 +126,9 @@ const { displayText, showCursor } = useTypingEffect(roles)
   gap: 8px;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #10b981;
-  background: rgba(16, 185, 129, 0.08);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: var(--accent);
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.25);
   padding: 6px 14px;
   border-radius: 20px;
   margin-bottom: 18px;
@@ -139,8 +139,8 @@ const { displayText, showCursor } = useTypingEffect(roles)
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #10b981;
-  box-shadow: 0 0 10px #10b981;
+  background-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
   animation: pulseDot 2s infinite ease-in-out;
 }
 

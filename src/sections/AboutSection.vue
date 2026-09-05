@@ -57,7 +57,7 @@
             <span class="info-label">Status</span>
             <span class="info-value">
               <span class="status-indicator" aria-hidden="true" />
-              Available for work
+              Working at OmniNode
             </span>
           </div>
         </aside>
@@ -189,9 +189,9 @@ import { User as LucideUser } from 'lucide-vue-next'
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #22c55e;
+  background-color: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
   animation: pulse 2s infinite;
 }
 
