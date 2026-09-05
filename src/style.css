@@ -36,28 +36,6 @@
   --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Light theme — same variable names, light values (toggle sets data-theme) */
-:root[data-theme='light'] {
-  --bg-primary: #f7f7f7;
-  --bg-secondary: #eeeeee;
-  --bg-tertiary: #e5e5e5;
-  --bg-card: rgba(0, 0, 0, 0.035);
-  --bg-card-hover: rgba(0, 0, 0, 0.06);
-  --text-primary: #171717;
-  --text-secondary: #4b4b4b;
-  --text-muted: #737373;
-  --accent: #a16207;
-  --accent-hover: #854d0e;
-  --accent-glow: rgba(161, 98, 7, 0.3);
-  --border: rgba(0, 0, 0, 0.1);
-  --border-hover: rgba(0, 0, 0, 0.18);
-  --glass-bg: rgba(0, 0, 0, 0.03);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
-}
-
 html {
   scroll-behavior: smooth;
 }

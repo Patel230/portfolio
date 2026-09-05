@@ -11,16 +11,6 @@
         <span class="logo-brackets" aria-hidden="true">{LP}</span>
       </router-link>
 
-      <!-- Theme Toggle -->
-      <button
-        class="theme-toggle"
-        :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-        @click="toggleTheme"
-      >
-        <Sun v-if="isDark" class="theme-icon" aria-hidden="true" />
-        <Moon v-else class="theme-icon" aria-hidden="true" />
-      </button>
-
       <!-- Mobile Menu Button -->
       <button
         ref="menuButtonRef"
@@ -174,7 +164,6 @@
 <script setup>
 import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { Sun, Moon } from 'lucide-vue-next'
 import { useFocusTrap } from '@/composables/useFocusTrap.js'
 import { scrollBehavior } from '@/utils/motion.js'
 import { resumeUrl } from '@/data/contact.js'
@@ -187,24 +176,6 @@ const menuRef = ref(null)
 const menuButtonRef = ref(null)
 const isScrolled = ref(false)
 const scrollProgress = ref(0)
-
-// Theme
-const isDark = ref(true)
-const applyTheme = () => {
-  document.documentElement.dataset.theme = isDark.value ? 'dark' : 'light'
-  try {
-    localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
-  } catch {
-    /* private mode */
-  }
-}
-const initTheme = () => {
-  isDark.value = (document.documentElement.dataset.theme || 'dark') !== 'light'
-}
-const toggleTheme = () => {
-  isDark.value = !isDark.value
-  applyTheme()
-}
 
 const { activate: trapMenuFocus, deactivate: releaseMenuFocus } = useFocusTrap()
 
@@ -374,7 +345,6 @@ const handleResize = () => {
 let observerSetupTimer = null
 
 onMounted(() => {
-  initTheme()
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
@@ -494,40 +464,6 @@ watch(() => route.path, scheduleIndicatorUpdate)
   filter: brightness(1.2);
 }
 
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  margin-right: 4px;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition:
-    color 0.2s ease,
-    border-color 0.2s ease,
-    transform 0.2s var(--ease-spring);
-}
-
-.theme-toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.theme-toggle:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.theme-icon {
-  width: 18px;
-  height: 18px;
-}
-
 .nav-links {
   display: flex;
   gap: 32px;
@@ -563,7 +499,7 @@ watch(() => route.path, scheduleIndicatorUpdate)
 
 .nav-link.active,
 .nav-link.router-link-active {
-  color: var(--text-primary);
+  color: #fff;
 }
 
 .nav-links {
