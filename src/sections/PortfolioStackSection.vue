@@ -5,7 +5,9 @@
     aria-labelledby="portfolio-stack-heading"
   >
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Built With</span>
+      <span class="section-label fade-in-up" data-reveal
+        ><span class="num">08</span> Built With</span
+      >
       <h2 id="portfolio-stack-heading" class="section-title fade-in-up" data-reveal>
         <LucideLayers class="title-icon" aria-hidden="true" />
         Portfolio Tech Stack

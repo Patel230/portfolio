@@ -1,7 +1,9 @@
 <template>
   <section id="opensource" class="section opensource" aria-labelledby="opensource-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Open Source</span>
+      <span class="section-label fade-in-up" data-reveal
+        ><span class="num">06</span> Open Source</span
+      >
       <h2 id="opensource-heading" class="section-title fade-in-up" data-reveal>
         <LucideHeart class="title-icon" aria-hidden="true" />
         Contributions

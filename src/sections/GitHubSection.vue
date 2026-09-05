@@ -1,7 +1,7 @@
 <template>
   <section id="github" class="section github" aria-labelledby="github-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>GitHub</span>
+      <span class="section-label fade-in-up" data-reveal><span class="num">07</span> GitHub</span>
       <h2 id="github-heading" class="section-title fade-in-up" data-reveal>
         <LucideGithub class="title-icon" aria-hidden="true" />
         Stats &amp; Activity

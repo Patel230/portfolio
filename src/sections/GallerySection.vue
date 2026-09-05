@@ -1,7 +1,7 @@
 <template>
   <section id="gallery" class="gallery-section" aria-labelledby="gallery-heading">
     <div class="container">
-      <span class="section-label">Gallery</span>
+      <span class="section-label"><span class="num">01</span> Gallery</span>
       <h2 id="gallery-heading" class="section-title">
         <LucideImages class="title-icon" aria-hidden="true" />
         Project Gallery

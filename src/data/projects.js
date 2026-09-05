@@ -36,6 +36,7 @@ export const projects = [
     description: 'Curated collection of 140,000+ STEAM educational resources.',
     tech: ['Vue.js', 'Vercel', 'Open Source'],
     metric: { value: '140K+', label: 'Resources' },
+    featured: true,
     link: 'https://awesome-horizon.vercel.app/',
     icon: 'book-open',
     color: '#059669'
@@ -86,6 +87,7 @@ export const projects = [
     title: 'Postly',
     description: 'One post, every platform — multi-channel publishing, scheduling, and automation.',
     tech: ['React', 'Node.js', 'MongoDB', 'AI Agents'],
+    featured: true,
     link: 'https://postlysocial.net/',
     icon: 'send',
     color: '#0ea5e9'
@@ -96,6 +98,7 @@ export const projects = [
       'Daily General Aptitude and Engineering Mathematics practice with 54 full tests for GATE 2027.',
     tech: ['Next.js', 'TypeScript', 'Analytics', 'Gamification'],
     metric: { value: '54', label: 'Full tests' },
+    featured: true,
     link: 'https://gate2027.gateandtech.in/',
     icon: 'graduation-cap',
     color: '#2563eb'

@@ -1,7 +1,7 @@
 <template>
   <section id="skills" class="section skills" aria-labelledby="skills-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Skills</span>
+      <span class="section-label fade-in-up" data-reveal><span class="num">04</span> Skills</span>
       <h2 id="skills-heading" class="section-title fade-in-up" data-reveal>
         <LucideCode2 class="title-icon" aria-hidden="true" />
         Technologies

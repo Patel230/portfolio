@@ -1,7 +1,9 @@
 <template>
   <section id="experience" class="section experience" aria-labelledby="experience-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Experience</span>
+      <span class="section-label fade-in-up" data-reveal
+        ><span class="num">03</span> Experience</span
+      >
       <h2 id="experience-heading" class="section-title fade-in-up" data-reveal>
         <LucideBriefcase class="title-icon" aria-hidden="true" />
         Where I've Worked

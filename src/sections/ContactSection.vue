@@ -1,7 +1,7 @@
 <template>
   <section id="contact" class="section contact" aria-labelledby="contact-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Contact</span>
+      <span class="section-label fade-in-up" data-reveal><span class="num">09</span> Contact</span>
       <h2 id="contact-heading" class="section-title fade-in-up" data-reveal>
         <LucideMail class="title-icon" aria-hidden="true" />
         Get in Touch

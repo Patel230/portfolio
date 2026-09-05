@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="section about" aria-labelledby="about-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>About</span>
+      <span class="section-label fade-in-up" data-reveal><span class="num">02</span> About</span>
       <h2 id="about-heading" class="section-title fade-in-up" data-reveal>
         <LucideUser class="title-icon" aria-hidden="true" />
         About Me

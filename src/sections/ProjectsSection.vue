@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="section projects" aria-labelledby="projects-heading">
     <div class="container">
-      <span class="section-label fade-in-up" data-reveal>Projects</span>
+      <span class="section-label fade-in-up" data-reveal><span class="num">05</span> Projects</span>
       <h2 id="projects-heading" class="section-title fade-in-up" data-reveal>
         <LucideBriefcase class="title-icon" aria-hidden="true" />
         Featured Work
@@ -27,6 +27,9 @@
           >
             <Icon :name="project.icon" :size="24" />
           </div>
+          <span v-if="project.featured" class="featured-badge" :style="{ color: project.color }">
+            ★ Featured
+          </span>
           <h3 class="project-title">
             {{ project.title }}
           </h3>
@@ -78,7 +81,7 @@ import { projects } from '@/data/projects.js'
 import { Icon } from '@/components'
 import { Briefcase as LucideBriefcase, ArrowRight as LucideArrowRight } from 'lucide-vue-next'
 
-const featuredProjects = projects
+const featuredProjects = [...projects].sort((a, b) => Number(b.featured) - Number(a.featured))
 </script>
 
 <style scoped>
@@ -151,6 +154,23 @@ const featuredProjects = projects
   border-radius: 10px;
   margin-bottom: 16px;
   transition: transform 0.25s var(--ease-spring);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid currentColor;
+}
+
+.project-card.featured {
+  border-color: color-mix(in srgb, var(--project-color, var(--accent)) 45%, transparent);
 }
 
 .project-card:hover .project-icon {
