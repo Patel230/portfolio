@@ -1,10 +1,5 @@
 <template>
   <section class="hero" aria-labelledby="hero-title">
-    <!-- Version Update Badge - Top Right Side -->
-    <div class="version-badge">
-      <Icon name="calendar" size="14" />
-      <span>Updated: v{{ APP_VERSION }} ({{ BUILD_DATE }})</span>
-    </div>
     <div class="container">
       <div class="hero-content">
         <!-- Status Pill Badge -->
@@ -36,9 +31,8 @@
           </span>
         </p>
         <p class="hero-description">
-          Building intelligent full-stack applications using AI. 3+ years experience in Python,
-          TypeScript, Vue, React, Rust, Go, Flask, FastAPI, MySQL, AWS, Docker, Linux, Shell Script,
-          Git/GitHub, and creating production-ready systems.
+          I build production-ready full-stack applications with AI at their core — Python,
+          TypeScript, Vue &amp; React, running on cloud infrastructure.
         </p>
         <!-- Hero Quick Stats Bar -->
         <div class="hero-stats">
@@ -53,27 +47,36 @@
           </div>
           <div class="stat-sep"></div>
           <div class="stat-box">
-            <span class="stat-val">100%</span>
-            <span class="stat-lbl">Open Source</span>
+            <span class="stat-val">13K+</span>
+            <span class="stat-lbl">Contributions</span>
           </div>
         </div>
         <div class="hero-links">
           <a href="#projects" class="btn btn-primary">
             <span>View Projects</span>
+            <LucideArrowDown class="btn-arrow" aria-hidden="true" />
           </a>
           <a href="#contact" class="btn btn-outline">
             <span>Contact</span>
+            <LucideArrowRight class="btn-arrow" aria-hidden="true" />
           </a>
         </div>
       </div>
+      <a href="#skills" class="scroll-cue" aria-label="Scroll down to view skills">
+        <span class="scroll-cue-text">Scroll</span>
+        <LucideChevronDown class="scroll-cue-icon" aria-hidden="true" />
+      </a>
     </div>
   </section>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import Icon from '@/components/Icon.vue'
-import { APP_VERSION, BUILD_DATE } from '@/version.js'
+import {
+  ArrowDown as LucideArrowDown,
+  ArrowRight as LucideArrowRight,
+  ChevronDown as LucideChevronDown
+} from 'lucide-vue-next'
 import { useTypingEffect } from '@/composables/useTypingEffect.js'
 
 const imageError = ref(false)
@@ -103,6 +106,26 @@ const { displayText, showCursor } = useTypingEffect(roles)
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+/* Soft ambient glow behind the hero for depth */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 720px;
+  max-width: 100vw;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.07) 0%,
+    rgba(255, 215, 0, 0.03) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .status-pill {
@@ -179,48 +202,6 @@ const { displayText, showCursor } = useTypingEffect(roles)
   width: 1px;
   height: 28px;
   background: var(--border);
-}
-
-.version-badge {
-  position: absolute;
-  top: 20px;
-  right: 32px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  background-color: var(--bg-card);
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  font-weight: 500;
-  z-index: 10;
-  transition:
-    border-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.version-badge:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.version-badge :deep(svg) {
-  color: var(--accent);
-  flex-shrink: 0;
-}
-
-@media (max-width: 767px) {
-  .version-badge {
-    top: 15px;
-    right: 16px;
-    font-size: 0.7rem;
-    padding: 5px 10px;
-    gap: 4px;
-    border-radius: 12px;
-  }
 }
 
 .hero-image {
@@ -345,6 +326,24 @@ const { displayText, showCursor } = useTypingEffect(roles)
   font-size: 0.95rem;
   font-weight: 600;
   border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s var(--ease-spring);
+}
+
+.hero-links .btn-primary:hover .btn-arrow {
+  transform: translateY(2px);
+}
+
+.hero-links .btn-outline:hover .btn-arrow {
+  transform: translateX(3px);
 }
 
 .hero-links .btn-primary {
@@ -370,6 +369,49 @@ const { displayText, showCursor } = useTypingEffect(roles)
   border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-3px);
+}
+
+/* Scroll-down cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  z-index: 1;
+}
+
+.scroll-cue:hover {
+  color: var(--accent);
+}
+
+.scroll-cue-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.scroll-cue-icon {
+  width: 22px;
+  height: 22px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 /* Tablet (768px - 1023px) */
@@ -484,6 +526,10 @@ const { displayText, showCursor } = useTypingEffect(roles)
   .hero-links .btn {
     padding: 14px 24px;
   }
+
+  .scroll-cue {
+    display: none;
+  }
 }
 
 /* Extra Small (< 320px) */
@@ -538,6 +584,10 @@ const { displayText, showCursor } = useTypingEffect(roles)
   }
 
   .cursor.blink {
+    animation: none;
+  }
+
+  .scroll-cue-icon {
     animation: none;
   }
 

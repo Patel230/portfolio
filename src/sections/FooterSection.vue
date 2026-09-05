@@ -48,6 +48,7 @@
               </span>
               {{ visitorCount }} visitors
             </p>
+            <p class="footer-version">v{{ APP_VERSION }} · built {{ BUILD_DATE }}</p>
           </div>
         </div>
       </div>
@@ -57,6 +58,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { APP_VERSION, BUILD_DATE } from '@/version.js'
 
 const currentYear = new Date().getFullYear()
 const visitorCount = ref(null)
@@ -250,6 +252,13 @@ onMounted(async () => {
   display: inline-flex;
   align-items: center;
   opacity: 0.6;
+}
+
+.footer-version {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin: 6px 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

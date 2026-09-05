@@ -5,6 +5,7 @@
     role="navigation"
     aria-label="Main navigation"
   >
+    <div class="scroll-progress" aria-hidden="true" :style="{ width: scrollProgress + '%' }" />
     <div class="container navbar-content">
       <router-link to="/" class="logo" aria-label="Go to homepage">
         <span class="logo-brackets" aria-hidden="true">{LP}</span>
@@ -146,6 +147,7 @@ const isMenuOpen = ref(false)
 const menuRef = ref(null)
 const menuButtonRef = ref(null)
 const isScrolled = ref(false)
+const scrollProgress = ref(0)
 
 const { activate: trapMenuFocus, deactivate: releaseMenuFocus } = useFocusTrap()
 
@@ -300,6 +302,8 @@ const preventBodyScroll = prevent => {
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
+  const max = document.documentElement.scrollHeight - window.innerHeight
+  scrollProgress.value = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0
 }
 
 const handleResize = () => {
@@ -375,6 +379,18 @@ watch(() => route.path, scheduleIndicatorUpdate)
 .navbar.scrolled {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
   background-color: rgba(13, 13, 13, 0.95);
+}
+
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), #ffb300);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+  transition: width 0.1s linear;
+  z-index: 3;
 }
 
 .navbar::before {
