@@ -65,38 +65,30 @@ const jobs = [
     ]
   },
   {
-    role: 'Python Backend Developer',
-    company: 'Monarch Tractor',
+    role: 'Backend Engineer',
+    company: 'Monarch Tractor / EnLime Inc',
     url: 'https://www.monarchone.ai/',
-    dates: '2022 – 2025',
+    dates: 'Aug 2022 – Nov 2025',
     color: '#db2777',
-    tech: ['Python', 'Flask', 'FastAPI', 'AWS', 'MySQL', 'Git'],
+    tech: [
+      'Python',
+      'Flask',
+      'FastAPI',
+      'AWS',
+      'MySQL',
+      'Redis',
+      'InfluxDB',
+      'Docker',
+      'MQTT',
+      'ROS'
+    ],
     points: [
-      'Built and shipped APIs and cloud infrastructure for autonomous farming systems in production.',
-      'Led the Foxconn integration across time zones — production-critical, contract-accurate APIs.',
-      'Led the customer support engineering team; triaged and resolved production issues under pressure.'
-    ]
-  },
-  {
-    role: 'GATE Content & Test Series',
-    company: 'GOClasses',
-    dates: '2020 – 2022',
-    color: '#06b6d4',
-    tech: ['Content Design', 'Curriculum', 'LaTeX'],
-    points: [
-      'Designed and managed a full GATE test series from scratch.',
-      'Authored questions and reviewed solutions for thousands of engineering aspirants.'
-    ]
-  },
-  {
-    role: 'Content Contributor',
-    company: 'GATEOverflow',
-    dates: '2018 – 2020',
-    color: '#8b5cf6',
-    tech: ['LaTeX', 'TikZ', 'Aptitude'],
-    points: [
-      'Wrote aptitude answers and built technical diagrams for an exam-prep platform serving thousands of students.',
-      'Earned my own way while preparing for GATE — content work that paid my expenses.'
+      'Built and owned 10+ production REST APIs supporting autonomous tractor operations, fleet tracking, migration workflows, field surveys, and configuration.',
+      'Designed AWS-based backend infrastructure (EC2, S3, Lambda, SQS, SNS, ECS, API Gateway, MQTT, CloudFormation) for scalable tractor-to-cloud communication.',
+      'Supported 100+ autonomous tractors across commercial farms in the US with 99.5%+ uptime through monitoring, debugging, and incident response.',
+      'Built real-time observability pipelines (Telegraf, InfluxDB, Grafana, CloudWatch), cutting production incident response time by 40%.',
+      'Optimized MySQL and Redis data layers for telemetry ingestion and reliability at production scale; implemented retry queues, failure handling, and alerting.',
+      'Shipped 15+ backend features by collaborating with PMs, farmers, firmware, QA, and robotics engineers; authored runbooks and mentored juniors.'
     ]
   }
 ]
