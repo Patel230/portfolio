@@ -32,7 +32,7 @@
                 >Opencode</a
               >
             </p>
-            <p v-if="visitorCount !== null" class="footer-visitors">
+            <p v-if="visitorCount !== null" class="footer-visitors" aria-live="polite">
               <span class="eye-icon" aria-hidden="true">
                 <svg
                   width="14"

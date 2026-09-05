@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>Skills</span>
       <h2 id="skills-heading" class="section-title fade-in-up" data-reveal>
-        <LucideCode2 class="title-icon" />
+        <LucideCode2 class="title-icon" aria-hidden="true" />
         Technologies
       </h2>
       <div

@@ -142,10 +142,6 @@ a:hover {
 }
 
 /* Focus visible styles for keyboard navigation */
-:focus {
-  outline: none;
-}
-
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -467,6 +463,11 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .page-enter-active,
   .page-leave-active {
     transition: none;

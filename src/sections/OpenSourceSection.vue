@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>Open Source</span>
       <h2 id="opensource-heading" class="section-title fade-in-up" data-reveal>
-        <LucideHeart class="title-icon" />
+        <LucideHeart class="title-icon" aria-hidden="true" />
         Contributions
       </h2>
       <div

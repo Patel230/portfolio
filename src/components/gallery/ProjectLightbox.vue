@@ -45,6 +45,8 @@
                 <img
                   :key="carouselIndex"
                   :src="currentProject.images[carouselIndex].src"
+                  :srcset="carouselSrcset(currentProject.images[carouselIndex].src)"
+                  sizes="(min-width: 900px) 900px, 100vw"
                   :alt="currentProject.images[carouselIndex].caption"
                   class="carousel-image"
                   @error="handleImageError"
@@ -62,7 +64,7 @@
             </button>
           </div>
 
-          <div class="carousel-footer">
+          <div class="carousel-footer" role="status" aria-live="polite" aria-atomic="true">
             <span class="image-counter">
               {{ carouselIndex + 1 }} / {{ currentProject.images.length }}
             </span>
@@ -102,6 +104,8 @@ import {
   ChevronLeft as LucideChevronLeft,
   ChevronRight as LucideChevronRight
 } from 'lucide-vue-next'
+
+const carouselSrcset = src => `${src} 1600w`
 
 const props = defineProps({
   projects: {

@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>GitHub</span>
       <h2 id="github-heading" class="section-title fade-in-up" data-reveal>
-        <LucideGithub class="title-icon" />
+        <LucideGithub class="title-icon" aria-hidden="true" />
         Stats &amp; Activity
       </h2>
 
@@ -12,7 +12,7 @@
         <div class="gh-card stats-card fade-in-up stagger-1" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(255, 215, 0, 0.12); color: #ffd700">
-              <LucideBarChart2 :size="18" />
+              <LucideBarChart2 :size="18" aria-hidden="true" />
             </span>
             <span class="card-title">GitHub Stats</span>
             <a
@@ -22,7 +22,7 @@
               class="card-action"
               aria-label="View GitHub profile"
             >
-              <LucideExternalLink :size="14" />
+              <LucideExternalLink :size="14" aria-hidden="true" />
             </a>
           </div>
           <a
@@ -50,7 +50,7 @@
         <div class="gh-card streak-card fade-in-up stagger-2" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(249, 115, 22, 0.12); color: #f97316">
-              <LucideFlame :size="18" />
+              <LucideFlame :size="18" aria-hidden="true" />
             </span>
             <span class="card-title">Contribution Streak</span>
           </div>
@@ -79,7 +79,7 @@
         <div class="gh-card orgs-card fade-in-up stagger-4" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(59, 130, 246, 0.12); color: #3b82f6">
-              <LucideBuilding2 :size="18" />
+              <LucideBuilding2 :size="18" aria-hidden="true" />
             </span>
             <span class="card-title">Organizations</span>
             <a
@@ -89,7 +89,7 @@
               class="card-action"
               aria-label="View all organizations"
             >
-              <LucideExternalLink :size="14" />
+              <LucideExternalLink :size="14" aria-hidden="true" />
             </a>
           </div>
           <div class="orgs-list">
@@ -113,7 +113,7 @@
                 <span class="org-name">{{ org.login }}</span>
                 <span class="org-desc">{{ org.description }}</span>
               </div>
-              <LucideArrowUpRight :size="14" class="org-arrow" />
+              <LucideArrowUpRight :size="14" class="org-arrow" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -122,7 +122,7 @@
         <div class="gh-card links-card fade-in-up stagger-5" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(34, 197, 94, 0.12); color: #22c55e">
-              <LucideLink :size="18" />
+              <LucideLink :size="18" aria-hidden="true" />
             </span>
             <span class="card-title">Quick Links</span>
           </div>
@@ -137,10 +137,10 @@
               :style="{ '--link-color': link.color }"
             >
               <span class="ql-icon" :style="{ background: `${link.color}18`, color: link.color }">
-                <component :is="linkIcons[link.icon]" :size="16" />
+                <component :is="linkIcons[link.icon]" :size="16" aria-hidden="true" />
               </span>
               <span class="ql-text">{{ link.label }}</span>
-              <LucideArrowUpRight :size="14" class="ql-arrow" />
+              <LucideArrowUpRight :size="14" class="ql-arrow" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -149,7 +149,7 @@
         <div class="gh-card langs-card fade-in-up stagger-3" data-reveal>
           <div class="card-header">
             <span class="card-icon" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6">
-              <LucideCode2 :size="18" />
+              <LucideCode2 :size="18" aria-hidden="true" />
             </span>
             <span class="card-title">Top Languages</span>
           </div>

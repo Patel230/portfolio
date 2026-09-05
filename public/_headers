@@ -15,3 +15,15 @@
 
 /manifest.json
   Cache-Control: no-cache
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/lakshman.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/og-image.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/github/*
+  Cache-Control: public, max-age=86400

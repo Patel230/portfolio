@@ -31,7 +31,7 @@ export const pocs = [
     name: 'GrayCodeAI',
     description: 'A place for humans and AI agents to build together.',
     tech: ['TypeScript', 'Next.js', 'AI Agents'],
-    link: 'https://graycodeai.gateandtech.in/',
+    link: 'https://github.com/GrayCodeAI',
     icon: 'bot',
     color: '#e11d48',
     status: 'Live'
@@ -67,7 +67,7 @@ export const pocs = [
   {
     name: 'Awesome Horizon',
     description: 'Curated collection of 140,000+ STEAM educational resources.',
-    tech: ['Vue.js', 'Vite', 'Open Source'],
+    tech: ['Vue.js', 'Vercel', 'Open Source'],
     link: 'https://awesome-horizon.vercel.app/',
     icon: 'compass',
     color: '#f59e0b',
@@ -76,7 +76,7 @@ export const pocs = [
   {
     name: 'Awesome Skills',
     description: 'A curated list of technical skills and learning resources.',
-    tech: ['Vue.js', 'Vite', 'Open Source'],
+    tech: ['TypeScript', 'Next.js', 'Vercel'],
     link: 'https://awesome-skills-eight.vercel.app/',
     icon: 'book-open',
     color: '#eab308',
@@ -284,7 +284,7 @@ export const pocs = [
     name: 'TaskDone',
     description: 'Modern task management with relationships, multiple views, and analytics.',
     tech: ['TypeScript', 'Next.js', 'SQLite', 'Drizzle', 'Cloudflare'],
-    link: 'https://taskdone.gateandtech.in/',
+    link: null,
     icon: 'check-square',
     color: '#4f46e5',
     status: 'Live'

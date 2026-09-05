@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>Contact</span>
       <h2 id="contact-heading" class="section-title fade-in-up" data-reveal>
-        <LucideMail class="title-icon" />
+        <LucideMail class="title-icon" aria-hidden="true" />
         Get in Touch
       </h2>
       <div class="contact-grid" role="list" :aria-label="`${contactItems.length} contact methods`">

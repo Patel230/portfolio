@@ -12,14 +12,12 @@
     <!-- Preload critical above-fold image -->
     <link rel="preload" as="image" href="/lakshman.jpg" fetchpriority="high" />
     <!-- Non-blocking font loading (no inline JS — CSP compliant) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" id="font-preload" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" /></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" as="style" id="font-preload" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" /></noscript>
     
     <!-- Primary Meta Tags -->
-    <title>Lakshman Patel | Portfolio</title>
-    <meta name="title" content="Lakshman Patel | Portfolio" />
+    <title>Lakshman Patel | Full Stack Developer</title>
     <meta name="description" content="Lakshman Patel - Full Stack Developer & AI Engineer building intelligent applications with Vue.js, TypeScript, Python, FastAPI, Neo4j. Creator of GraphDone & TaskDone. Open source contributor @Kilo @SimStudio. #VueJS #TypeScript #AI #FullStack" />
-    <meta name="keywords" content="Lakshman Patel, Full Stack Developer, AI Engineer, Software Engineer, Vue.js, TypeScript, Python, FastAPI, Flask, Neo4j, GraphQL, React, Node.js, AI, Machine Learning, LLM, OpenAI, LangChain, AWS, Cloud, Portfolio, GraphDone, TaskDone, Kilo, Sim Studio, Web Developer, Frontend, Backend, JavaScript, Next.js, PostgreSQL, MySQL, Docker, Git, Open Source, Coding, Programming, Tech, Developer Portfolio" />
     <meta name="author" content="Lakshman Patel" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="English" />
@@ -36,6 +34,7 @@
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lakshman Patel — Full Stack Developer & AI Engineer" />
     <meta property="og:site_name" content="Lakshman Patel Portfolio" />
     <meta property="og:locale" content="en_US" />
     
@@ -45,7 +44,9 @@
     <meta name="twitter:title" content="Lakshman Patel | Full Stack Developer" />
     <meta name="twitter:description" content="Full Stack Developer & AI Engineer building intelligent applications. Creator of GraphDone & TaskDone. Open source contributor @Kilo @SimStudio 🚀" />
     <meta name="twitter:image" content="https://lakshmanp.com/og-image.png" />
+    <meta name="twitter:image:alt" content="Lakshman Patel — Full Stack Developer & AI Engineer" />
     <meta name="twitter:creator" content="@Lakshman2302" />
+    <meta name="twitter:site" content="@Lakshman2302" />
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
@@ -68,21 +69,39 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://lakshmanp.com/#person",
       "name": "Lakshman Patel",
       "jobTitle": "Full Stack Developer",
       "description": "Full Stack Developer building intelligent applications with AI",
       "url": "https://lakshmanp.com",
       "image": "https://lakshmanp.com/lakshman.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "OmniNode",
+        "url": "https://omninode.ai/"
+      },
       "sameAs": [
         "https://github.com/Patel230",
         "https://linkedin.com/in/lakshman-patel",
-        "https://x.com/Lakshman2302"
+        "https://x.com/Lakshman2302",
+        "https://www.youtube.com/@gateandtechofficial"
       ],
       "knowsAbout": ["Python", "TypeScript", "AI/ML", "Vue.js", "React", "Node.js", "GraphQL", "Neo4j"],
       "alumniOf": {
         "@type": "EducationalOrganization",
         "name": "ABV-IIITM Gwalior"
       }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Lakshman Patel | Portfolio",
+      "url": "https://lakshmanp.com/",
+      "description": "Full Stack Developer & AI Engineer building intelligent applications with AI.",
+      "author": { "@id": "https://lakshmanp.com/#person" },
+      "publisher": { "@id": "https://lakshmanp.com/#person" }
     }
     </script>
     

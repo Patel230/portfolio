@@ -80,32 +80,42 @@ const router = createRouter({
 
 // Keep per-route meta tags in sync and manage focus
 router.afterEach(to => {
+  const title = to.meta.title
+  const description = to.meta.description
+
   // Update title
-  if (to.meta.title) {
-    document.title = to.meta.title
+  if (title) {
+    document.title = title
   }
 
   // Update meta description
-  if (to.meta.description) {
+  if (description) {
     const metaDescription = document.querySelector('meta[name="description"]')
     if (metaDescription) {
-      metaDescription.setAttribute('content', to.meta.description)
+      metaDescription.setAttribute('content', description)
     }
   }
 
   // Canonical and social URLs must reflect the current route, not the homepage
   const pageUrl = window.location.origin + to.path
-  const canonical = document.querySelector('link[rel="canonical"]')
-  if (canonical) {
-    canonical.setAttribute('href', pageUrl)
+  const setMeta = (selector, attr, value) => {
+    const el = document.querySelector(selector)
+    if (el) el.setAttribute(attr, value)
   }
-  const ogUrl = document.querySelector('meta[property="og:url"]')
-  if (ogUrl) {
-    ogUrl.setAttribute('content', pageUrl)
+
+  setMeta('link[rel="canonical"]', 'href', pageUrl)
+  setMeta('meta[property="og:url"]', 'content', pageUrl)
+  setMeta('meta[name="twitter:url"]', 'content', pageUrl)
+
+  // Social crawlers do not run JS, but keeping these in sync ensures any
+  // client-side scraper and the static HTML share consistent values.
+  if (title) {
+    setMeta('meta[property="og:title"]', 'content', title)
+    setMeta('meta[name="twitter:title"]', 'content', title)
   }
-  const twitterUrl = document.querySelector('meta[name="twitter:url"]')
-  if (twitterUrl) {
-    twitterUrl.setAttribute('content', pageUrl)
+  if (description) {
+    setMeta('meta[property="og:description"]', 'content', description)
+    setMeta('meta[name="twitter:description"]', 'content', description)
   }
 
   // Move focus to main content for keyboard/AT users after page transition

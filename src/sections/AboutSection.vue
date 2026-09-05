@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>About</span>
       <h2 id="about-heading" class="section-title fade-in-up" data-reveal>
-        <LucideUser class="title-icon" />
+        <LucideUser class="title-icon" aria-hidden="true" />
         About Me
       </h2>
       <div class="about-content">
@@ -14,7 +14,7 @@
           </p>
           <p>
             Building
-            <a href="https://graycodeai.gateandtech.in/" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/GrayCodeAI" target="_blank" rel="noopener noreferrer"
               ><strong>GrayCode AI</strong></a
             >
             — an intelligent developer tooling platform. Founder of
@@ -29,9 +29,7 @@
           </p>
           <p>
             Building
-            <a href="https://taskdone.gateandtech.in/" target="_blank" rel="noopener noreferrer"
-              ><strong>TaskDone</strong></a
-            >,
+            <strong>TaskDone</strong>,
             <a href="https://postlysocial.net/" target="_blank" rel="noopener noreferrer"
               ><strong>Postly</strong></a
             >,

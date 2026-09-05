@@ -7,7 +7,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>Built With</span>
       <h2 id="portfolio-stack-heading" class="section-title fade-in-up" data-reveal>
-        <LucideLayers class="title-icon" />
+        <LucideLayers class="title-icon" aria-hidden="true" />
         Portfolio Tech Stack
       </h2>
 

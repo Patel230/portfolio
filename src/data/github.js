@@ -53,12 +53,6 @@ export const githubLinks = [
     color: '#22c55e'
   },
   {
-    label: 'Pull Requests',
-    href: 'https://github.com/Patel230?tab=overview',
-    icon: 'git-pull-request',
-    color: '#8b5cf6'
-  },
-  {
     label: 'Stars Given',
     href: 'https://github.com/Patel230?tab=stars',
     icon: 'star',

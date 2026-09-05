@@ -3,7 +3,7 @@ export const projects = [
     title: 'Monarch Tractor',
     description: 'APIs and cloud infrastructure for autonomous farming systems.',
     tech: ['Python', 'AWS', 'ROS', 'IoT', 'MySQL', 'Flask', 'InfluxDB'],
-    link: 'https://www.monarchtractor.com/',
+    link: 'https://www.monarchone.ai/',
     icon: 'tractor',
     color: '#db2777'
   },
@@ -11,7 +11,7 @@ export const projects = [
     title: 'GrayCodeAI',
     description: 'A place for humans and AI agents to build together.',
     tech: ['TypeScript', 'Next.js', 'AI Agents'],
-    link: 'https://graycodeai.gateandtech.in/',
+    link: 'https://github.com/GrayCodeAI',
     icon: 'bot',
     color: '#e11d48'
   },
@@ -27,7 +27,7 @@ export const projects = [
     title: 'Smart Power Grid',
     description: 'IoT-based monitoring system for real-time energy management.',
     tech: ['Python', 'Flask', 'FastAPI', 'InfluxDB', 'MQTT'],
-    link: 'https://www.monarchone.ai/',
+    link: null,
     icon: 'zap',
     color: '#ea580c'
   },
@@ -43,7 +43,7 @@ export const projects = [
     title: 'TaskDone',
     description: 'Modern task management with analytics and AI features.',
     tech: ['TypeScript', 'Next.js', 'SQLite', 'Drizzle', 'Cloudflare'],
-    link: 'https://taskdone.gateandtech.in/',
+    link: null,
     icon: 'check-square',
     color: '#4f46e5'
   },
@@ -59,7 +59,7 @@ export const projects = [
     title: 'Growth',
     description: 'Personal growth tracker with habit building, journaling, and progress analytics.',
     tech: ['TypeScript', 'Next.js', 'Analytics'],
-    link: 'https://growth.gateandtech.in/',
+    link: null,
     icon: 'sprout',
     color: '#10b981'
   },
@@ -67,7 +67,7 @@ export const projects = [
     title: 'MindShift',
     description: 'Book summary platform with 1000+ titles, audio summaries, and key takeaways.',
     tech: ['TypeScript', 'Next.js', 'Audio'],
-    link: 'https://mindshift.gateandtech.in/',
+    link: null,
     icon: 'book',
     color: '#8b5cf6'
   },
@@ -76,7 +76,7 @@ export const projects = [
     description:
       'Self-evolving coding agent that reads, improves, tests, and commits autonomously.',
     tech: ['Go', 'AI', 'Open Source'],
-    link: 'https://graycodeai.github.io/iterate/',
+    link: 'https://github.com/GrayCodeAI',
     icon: 'cpu',
     color: '#06b6d4'
   },

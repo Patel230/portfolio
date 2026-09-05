@@ -15,6 +15,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { scrollBehavior } from '@/utils/motion.js'
 import {
   HeroSection,
   AboutSection,
@@ -37,7 +38,7 @@ onMounted(() => {
     if (!route.hash) return
     const el = document.getElementById(route.hash.replace('#', ''))
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' })
+      el.scrollIntoView({ behavior: scrollBehavior() })
     } else if (attempts < 10) {
       attempts++
       setTimeout(tryScroll, 100)

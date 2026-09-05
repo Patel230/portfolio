@@ -27,14 +27,14 @@
                 @error="handleImageError"
               />
               <div class="image-count-badge">
-                <LucideImages class="badge-icon" />
+                <LucideImages class="badge-icon" aria-hidden="true" />
                 {{ project.images.length }}
               </div>
               <div class="overlay">
                 <div class="overlay-content">
-                  <h3 class="overlay-title">
+                  <span class="overlay-title">
                     {{ project.name }}
-                  </h3>
+                  </span>
                   <p class="overlay-description">
                     {{ project.description }}
                   </p>

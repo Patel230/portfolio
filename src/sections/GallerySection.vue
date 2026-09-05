@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label">Gallery</span>
       <h2 id="gallery-heading" class="section-title">
-        <LucideImages class="title-icon" />
+        <LucideImages class="title-icon" aria-hidden="true" />
         Project Gallery
       </h2>
       <p class="section-subtitle">Visual showcase of my work - click to explore</p>
@@ -25,14 +25,14 @@
               @error="handleImageError"
             />
             <div class="image-count-badge">
-              <LucideImages class="badge-icon" />
+              <LucideImages class="badge-icon" aria-hidden="true" />
               {{ project.images.length }}
             </div>
             <div class="overlay">
               <div class="overlay-content">
-                <h3 class="overlay-title">
+                <span class="overlay-title">
                   {{ project.name }}
-                </h3>
+                </span>
                 <p class="overlay-description">
                   {{ project.description }}
                 </p>
@@ -50,7 +50,7 @@
 
       <div class="view-all-link">
         <router-link to="/gallery" class="view-all-btn">
-          <LucideGrid class="view-all-icon" />
+          <LucideGrid class="view-all-icon" aria-hidden="true" />
           View All 30+ in Gallery
         </router-link>
       </div>

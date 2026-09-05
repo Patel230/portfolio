@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-up">
-    <div v-if="showPrompt" class="update-prompt" role="alert" aria-live="polite">
+    <div v-if="showPrompt" class="update-prompt" role="status" aria-live="polite">
       <div class="update-content">
         <span class="update-message">A new version is available!</span>
         <div class="update-actions">

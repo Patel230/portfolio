@@ -34,6 +34,7 @@
           active-class=""
           exact-active-class=""
           :class="{ active: $route.path === '/' && activeSection === '' }"
+          :aria-current="$route.path === '/' && activeSection === '' ? 'page' : undefined"
           @click="closeMenu"
         >
           Home
@@ -42,6 +43,7 @@
           :href="skillsLink"
           class="nav-link"
           :class="{ active: activeSection === 'skills' }"
+          :aria-current="activeSection === 'skills' ? 'true' : undefined"
           @click.prevent="handleNavClick('skills')"
           >Skills</a
         >
@@ -49,6 +51,7 @@
           :href="projectsLink"
           class="nav-link"
           :class="{ active: activeSection === 'projects' }"
+          :aria-current="activeSection === 'projects' ? 'true' : undefined"
           @click.prevent="handleNavClick('projects')"
           >Projects</a
         >
@@ -58,6 +61,7 @@
           active-class=""
           exact-active-class=""
           :class="{ active: $route.path === '/creations' }"
+          :aria-current="$route.path === '/creations' ? 'page' : undefined"
           @click="closeMenu"
         >
           Creations
@@ -68,6 +72,7 @@
           active-class=""
           exact-active-class=""
           :class="{ active: $route.path === '/gallery' }"
+          :aria-current="$route.path === '/gallery' ? 'page' : undefined"
           @click="closeMenu"
         >
           Gallery
@@ -76,6 +81,7 @@
           :href="opensourceLink"
           class="nav-link"
           :class="{ active: activeSection === 'opensource' }"
+          :aria-current="activeSection === 'opensource' ? 'true' : undefined"
           @click.prevent="handleNavClick('opensource')"
           >Open Source</a
         >
@@ -83,6 +89,7 @@
           :href="githubLink"
           class="nav-link"
           :class="{ active: activeSection === 'github' }"
+          :aria-current="activeSection === 'github' ? 'true' : undefined"
           @click.prevent="handleNavClick('github')"
           >GitHub</a
         >
@@ -90,6 +97,7 @@
           :href="stackLink"
           class="nav-link"
           :class="{ active: activeSection === 'portfolio-stack' }"
+          :aria-current="activeSection === 'portfolio-stack' ? 'true' : undefined"
           @click.prevent="handleNavClick('portfolio-stack')"
           >Stack</a
         >
@@ -99,6 +107,7 @@
           active-class=""
           exact-active-class=""
           :class="{ active: $route.path === '/blog' }"
+          :aria-current="$route.path === '/blog' ? 'page' : undefined"
           @click="closeMenu"
         >
           Journey
@@ -107,6 +116,7 @@
           :href="aboutLink"
           class="nav-link"
           :class="{ active: activeSection === 'about' }"
+          :aria-current="activeSection === 'about' ? 'true' : undefined"
           @click.prevent="handleNavClick('about')"
           >About</a
         >
@@ -114,6 +124,7 @@
           :href="contactLink"
           class="nav-link"
           :class="{ active: activeSection === 'contact' }"
+          :aria-current="activeSection === 'contact' ? 'true' : undefined"
           @click.prevent="handleNavClick('contact')"
           >Contact</a
         >
@@ -553,6 +564,7 @@ watch(() => route.path, scheduleIndicatorUpdate)
     justify-content: flex-start;
     gap: 16px;
     transform: translateX(100%);
+    visibility: hidden;
     transition: transform 0.3s ease;
     z-index: 999;
     padding-top: 30px;
@@ -563,6 +575,7 @@ watch(() => route.path, scheduleIndicatorUpdate)
 
   .nav-links.is-open {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .nav-link {

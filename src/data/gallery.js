@@ -619,7 +619,7 @@ export const galleryProjects = [
     name: 'Awesome Horizon',
     description:
       'Community-curated STEAM educational resources platform with 140,000+ verified resources',
-    tech: ['Vue.js', 'Vite', 'Open Source'],
+    tech: ['Vue.js', 'Vercel', 'Open Source'],
     color: '#a855f7',
     thumbnail: '/images/gallery/horizon/01.webp',
     images: [
@@ -645,7 +645,7 @@ export const galleryProjects = [
     id: 'awesomeskills',
     name: 'Awesome Skills',
     description: 'A curated collection of awesome skills and resources for developers',
-    tech: ['TypeScript', 'Next.js', 'Open Source'],
+    tech: ['TypeScript', 'Next.js', 'Vercel'],
     color: '#f97316',
     thumbnail: '/images/gallery/awesomeskills/01.webp',
     images: [
@@ -794,7 +794,7 @@ export const galleryProjects = [
     name: 'GraphDone',
     description:
       'Open source project management for cognitive diversity - where humans and AI collaborate as equals',
-    tech: ['TypeScript', 'Next.js', 'Neo4j', 'Open Source'],
+    tech: ['TypeScript', 'Neo4j', 'React', 'GraphQL'],
     color: '#10b981',
     thumbnail: '/images/gallery/graphdone/01.webp',
     images: [

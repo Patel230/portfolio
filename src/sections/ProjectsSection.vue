@@ -3,7 +3,7 @@
     <div class="container">
       <span class="section-label fade-in-up" data-reveal>Projects</span>
       <h2 id="projects-heading" class="section-title fade-in-up" data-reveal>
-        <LucideBriefcase class="title-icon" />
+        <LucideBriefcase class="title-icon" aria-hidden="true" />
         Featured Work
       </h2>
       <div
@@ -59,7 +59,7 @@
       </div>
       <div class="view-all-link">
         <router-link to="/creations" class="view-all-btn">
-          <LucideArrowRight class="view-all-icon" />
+          <LucideArrowRight class="view-all-icon" aria-hidden="true" />
           View All 30+ Creations
         </router-link>
       </div>

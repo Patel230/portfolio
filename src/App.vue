@@ -2,7 +2,7 @@
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div id="app">
     <NavBar />
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <ErrorBoundary>
         <router-view v-slot="{ Component }">
           <template v-if="Component">
