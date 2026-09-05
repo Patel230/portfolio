@@ -27,7 +27,7 @@
         </span>
       </button>
 
-      <!-- Navigation Links -->
+      <!-- Navigation Links (desktop bar + mobile full-screen) -->
       <div id="nav-menu" ref="menuRef" class="nav-links" :class="{ 'is-open': isMenuOpen }">
         <router-link
           to="/"
@@ -40,95 +40,38 @@
         >
           Home
         </router-link>
-        <a
-          :href="experienceLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'experience' }"
-          :aria-current="activeSection === 'experience' ? 'true' : undefined"
-          @click.prevent="handleNavClick('experience')"
-          >Experience</a
-        >
-        <a
-          :href="skillsLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'skills' }"
-          :aria-current="activeSection === 'skills' ? 'true' : undefined"
-          @click.prevent="handleNavClick('skills')"
-          >Skills</a
-        >
-        <a
-          :href="projectsLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'projects' }"
-          :aria-current="activeSection === 'projects' ? 'true' : undefined"
-          @click.prevent="handleNavClick('projects')"
-          >Projects</a
-        >
-        <router-link
-          to="/creations"
-          class="nav-link"
-          active-class=""
-          exact-active-class=""
-          :class="{ active: $route.path === '/creations' }"
-          :aria-current="$route.path === '/creations' ? 'page' : undefined"
-          @click="closeMenu"
-        >
-          Creations
-        </router-link>
-        <router-link
-          to="/gallery"
-          class="nav-link"
-          active-class=""
-          exact-active-class=""
-          :class="{ active: $route.path === '/gallery' }"
-          :aria-current="$route.path === '/gallery' ? 'page' : undefined"
-          @click="closeMenu"
-        >
-          Gallery
-        </router-link>
-        <a
-          :href="opensourceLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'opensource' }"
-          :aria-current="activeSection === 'opensource' ? 'true' : undefined"
-          @click.prevent="handleNavClick('opensource')"
-          >Open Source</a
-        >
-        <a
-          :href="githubLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'github' }"
-          :aria-current="activeSection === 'github' ? 'true' : undefined"
-          @click.prevent="handleNavClick('github')"
-          >GitHub</a
-        >
-        <a
-          :href="stackLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'portfolio-stack' }"
-          :aria-current="activeSection === 'portfolio-stack' ? 'true' : undefined"
-          @click.prevent="handleNavClick('portfolio-stack')"
-          >Stack</a
-        >
-        <router-link
-          to="/blog"
-          class="nav-link"
-          active-class=""
-          exact-active-class=""
-          :class="{ active: $route.path === '/blog' }"
-          :aria-current="$route.path === '/blog' ? 'page' : undefined"
-          @click="closeMenu"
-        >
-          Journey
-        </router-link>
-        <a
-          :href="aboutLink"
-          class="nav-link"
-          :class="{ active: activeSection === 'about' }"
-          :aria-current="activeSection === 'about' ? 'true' : undefined"
-          @click.prevent="handleNavClick('about')"
-          >About</a
-        >
+
+        <div v-for="group in navGroups" :key="group.label" class="nav-group">
+          <button
+            class="nav-link nav-group-trigger"
+            :class="{ active: groupActive(group.label), 'is-open': openGroups[group.label] }"
+            :aria-expanded="openGroups[group.label]"
+            :aria-haspopup="true"
+            @click="toggleGroup(group.label)"
+          >
+            {{ group.label }}
+            <ChevronDown class="group-chevron" aria-hidden="true" />
+          </button>
+          <div class="dropdown" :class="{ open: openGroups[group.label] }" role="menu">
+            <component
+              :is="item.type === 'route' ? RouterLink : 'a'"
+              v-for="item in group.items"
+              :key="item.label"
+              :to="item.type === 'route' ? item.to : undefined"
+              :href="item.type === 'section' ? sectionHref(item.id) : undefined"
+              class="dropdown-link"
+              :class="{ active: itemActive(item) }"
+              :aria-current="
+                itemActive(item) ? (item.type === 'route' ? 'page' : 'true') : undefined
+              "
+              role="menuitem"
+              @click="handleItemClick(item, $event)"
+            >
+              {{ item.label }}
+            </component>
+          </div>
+        </div>
+
         <a
           :href="contactLink"
           class="nav-link"
@@ -146,15 +89,15 @@
         >
           Résumé
         </a>
-        <div ref="indicatorRef" class="nav-indicator" />
       </div>
     </div>
   </nav>
 </template>
 
 <script setup>
-import { ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { ref, reactive, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
+import { useRoute, useRouter, RouterLink } from 'vue-router'
+import { ChevronDown } from 'lucide-vue-next'
 import { useFocusTrap } from '@/composables/useFocusTrap.js'
 import { scrollBehavior } from '@/utils/motion.js'
 import { resumeUrl } from '@/data/contact.js'
@@ -166,22 +109,43 @@ const menuRef = ref(null)
 const menuButtonRef = ref(null)
 const isScrolled = ref(false)
 const scrollProgress = ref(0)
+const openGroups = reactive({})
 
 const { activate: trapMenuFocus, deactivate: releaseMenuFocus } = useFocusTrap()
 
 const isHomePage = computed(() => route.path === '/')
 
+const navGroups = [
+  {
+    label: 'About',
+    items: [
+      { type: 'section', id: 'about', label: 'About' },
+      { type: 'section', id: 'experience', label: 'Experience' },
+      { type: 'section', id: 'skills', label: 'Skills' },
+      { type: 'section', id: 'portfolio-stack', label: 'Stack' },
+      { type: 'route', to: '/blog', label: 'Journey' }
+    ]
+  },
+  {
+    label: 'Projects',
+    items: [
+      { type: 'section', id: 'projects', label: 'Projects' },
+      { type: 'route', to: '/creations', label: 'Creations' },
+      { type: 'route', to: '/gallery', label: 'Gallery' }
+    ]
+  },
+  {
+    label: 'Community',
+    items: [
+      { type: 'section', id: 'opensource', label: 'Open Source' },
+      { type: 'section', id: 'github', label: 'GitHub' }
+    ]
+  }
+]
+
 const sectionHref = id => (isHomePage.value ? `#${id}` : `/#${id}`)
-const experienceLink = computed(() => sectionHref('experience'))
-const skillsLink = computed(() => sectionHref('skills'))
-const projectsLink = computed(() => sectionHref('projects'))
-const opensourceLink = computed(() => sectionHref('opensource'))
-const githubLink = computed(() => sectionHref('github'))
-const stackLink = computed(() => sectionHref('portfolio-stack'))
-const aboutLink = computed(() => sectionHref('about'))
 const contactLink = computed(() => sectionHref('contact'))
 
-const indicatorRef = ref(null)
 const activeSection = ref('')
 const SECTIONS = [
   'experience',
@@ -194,11 +158,38 @@ const SECTIONS = [
   'contact'
 ]
 
+const itemActive = item => {
+  if (item.type === 'route') return route.path === item.to
+  return activeSection.value === item.id
+}
+
+const groupActive = label => {
+  const group = navGroups.find(g => g.label === label)
+  return group ? group.items.some(itemActive) : false
+}
+
+const closeAllGroups = () => {
+  for (const key of Object.keys(openGroups)) openGroups[key] = false
+}
+
+const toggleGroup = label => {
+  openGroups[label] = !openGroups[label]
+}
+
+const handleItemClick = (item, event) => {
+  if (item.type === 'section') {
+    event.preventDefault()
+    handleNavClick(item.id)
+  } else {
+    activeSection.value = ''
+  }
+  closeMenu()
+  closeAllGroups()
+}
+
 let scrollLocked = false
 let scrollLockTimer = null
 
-// Scroll-spy via IntersectionObserver: no per-scroll-event layout reads.
-// A section is "active" while it intersects the band just below the navbar.
 let sectionObserver = null
 const visibleSections = new Set()
 
@@ -243,32 +234,6 @@ const closeMenu = () => {
   isMenuOpen.value = false
 }
 
-const updateIndicator = () => {
-  if (!indicatorRef.value) return
-  const navLinks = indicatorRef.value.parentElement
-  if (!navLinks) return
-  const activeEl = navLinks.querySelector('.nav-link.active')
-  if (activeEl) {
-    const navRect = navLinks.getBoundingClientRect()
-    const linkRect = activeEl.getBoundingClientRect()
-    const gap = 12
-    indicatorRef.value.style.width = `${linkRect.width + gap * 2}px`
-    indicatorRef.value.style.transform = `translateY(-50%) translateX(${linkRect.left - navRect.left - gap}px)`
-    indicatorRef.value.style.opacity = '1'
-  } else {
-    indicatorRef.value.style.opacity = '0'
-  }
-}
-
-// Recompute after Vue has applied the .active class, coalescing bursts
-let indicatorFrame = null
-const scheduleIndicatorUpdate = () => {
-  nextTick(() => {
-    if (indicatorFrame) cancelAnimationFrame(indicatorFrame)
-    indicatorFrame = requestAnimationFrame(updateIndicator)
-  })
-}
-
 const scrollToSection = section => {
   const el = document.getElementById(section)
   if (el) {
@@ -278,6 +243,7 @@ const scrollToSection = section => {
 
 const handleNavClick = async section => {
   closeMenu()
+  closeAllGroups()
   activeSection.value = section
   scrollLocked = true
   if (isHomePage.value) {
@@ -292,28 +258,26 @@ const handleNavClick = async section => {
   }, 1500)
 }
 
-// Close menu when clicking outside
+// Close menus/dropdowns when clicking outside
 const handleClickOutside = event => {
-  if (
-    isMenuOpen.value &&
-    menuRef.value &&
-    !menuRef.value.contains(event.target) &&
-    menuButtonRef.value &&
-    !menuButtonRef.value.contains(event.target)
-  ) {
+  if (menuRef.value && !menuRef.value.contains(event.target)) {
     closeMenu()
+    closeAllGroups()
   }
 }
 
-// Close menu on escape key
+// Close on escape
 const handleEscape = event => {
-  if (event.key === 'Escape' && isMenuOpen.value) {
+  if (event.key !== 'Escape') return
+  if (isMenuOpen.value) {
     closeMenu()
     menuButtonRef.value?.focus()
+  } else {
+    closeAllGroups()
   }
 }
 
-// Prevent body scroll when menu is open
+// Prevent body scroll when mobile menu is open
 const preventBodyScroll = prevent => {
   if (typeof document !== 'undefined') {
     document.body.style.overflow = prevent ? 'hidden' : ''
@@ -326,31 +290,22 @@ const handleScroll = () => {
   scrollProgress.value = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0
 }
 
-const handleResize = () => {
-  scheduleIndicatorUpdate()
-}
-
 let observerSetupTimer = null
 
 onMounted(() => {
   document.addEventListener('click', handleClickOutside)
   document.addEventListener('keydown', handleEscape)
   window.addEventListener('scroll', handleScroll, { passive: true })
-  window.addEventListener('resize', handleResize, { passive: true })
-  // Home sections render after the async route view resolves
   observerSetupTimer = setTimeout(setupSectionObserver, 100)
-  scheduleIndicatorUpdate()
 })
 
 onUnmounted(() => {
   document.removeEventListener('click', handleClickOutside)
   document.removeEventListener('keydown', handleEscape)
   window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('resize', handleResize)
   sectionObserver?.disconnect()
   clearTimeout(observerSetupTimer)
   clearTimeout(scrollLockTimer)
-  if (indicatorFrame) cancelAnimationFrame(indicatorFrame)
   releaseMenuFocus()
   preventBodyScroll(false)
 })
@@ -359,7 +314,6 @@ watch(isHomePage, val => {
   if (!val) activeSection.value = ''
   clearTimeout(observerSetupTimer)
   observerSetupTimer = setTimeout(setupSectionObserver, 100)
-  scheduleIndicatorUpdate()
 })
 
 // Toggle body scroll and trap focus while the full-screen menu is open
@@ -373,10 +327,6 @@ watch(isMenuOpen, open => {
     releaseMenuFocus()
   }
 })
-
-watch(activeSection, scheduleIndicatorUpdate)
-
-watch(() => route.path, scheduleIndicatorUpdate)
 </script>
 
 <style scoped>
@@ -454,17 +404,9 @@ watch(() => route.path, scheduleIndicatorUpdate)
 
 .nav-links {
   display: flex;
-  gap: 32px;
+  gap: 18px;
   align-items: center;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  will-change: transform;
   padding: 0 14px;
-}
-
-.nav-links::-webkit-scrollbar {
-  display: none;
 }
 
 .nav-link {
@@ -477,48 +419,89 @@ watch(() => route.path, scheduleIndicatorUpdate)
   position: relative;
   letter-spacing: 0.01em;
   white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
 }
 
 .nav-link:hover,
-.nav-link.router-link-active,
 .nav-link.active {
   color: var(--accent);
 }
 
-.nav-link.active,
-.nav-link.router-link-active {
+.nav-link.active {
   color: #fff;
 }
 
-.nav-links {
+/* ── Dropdown groups ── */
+.nav-group {
   position: relative;
 }
 
-.nav-indicator {
+.nav-group-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.group-chevron {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.nav-group-trigger.is-open .group-chevron {
+  transform: rotate(180deg);
+}
+
+.dropdown {
   position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 0;
-  height: calc(100% + 20px);
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.18), rgba(255, 215, 0, 0.08));
-  border: 1.5px solid rgba(255, 215, 0, 0.45);
-  border-radius: 999px;
-  box-shadow:
-    0 0 30px rgba(255, 215, 0, 0.15),
-    inset 0 0 20px rgba(255, 215, 0, 0.04);
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 180px;
+  padding: 8px;
+  background: rgba(20, 20, 20, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
   transition:
-    transform 0.4s var(--ease-spring),
-    width 0.4s var(--ease-spring),
-    opacity 0.25s ease;
-  pointer-events: none;
-  will-change: transform, width;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+    opacity 0.2s ease,
+    transform 0.2s var(--ease-spring),
+    visibility 0.2s;
+  z-index: 20;
 }
 
-.nav-link {
-  position: relative;
-  z-index: 1;
+.dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.dropdown-link:hover {
+  background: rgba(255, 215, 0, 0.08);
+  color: var(--accent);
+}
+
+.dropdown-link.active {
+  color: var(--accent);
 }
 
 /* Mobile Menu Button */
@@ -574,7 +557,7 @@ watch(() => route.path, scheduleIndicatorUpdate)
 /* Tablet (768px - 1023px) */
 @media (max-width: 1023px) and (min-width: 768px) {
   .nav-links {
-    gap: 20px;
+    gap: 14px;
   }
 
   .nav-link {
@@ -598,15 +581,17 @@ watch(() => route.path, scheduleIndicatorUpdate)
     backdrop-filter: blur(20px);
     flex-direction: column;
     justify-content: flex-start;
-    gap: 16px;
+    align-items: stretch;
+    gap: 6px;
     transform: translateX(100%);
     visibility: hidden;
-    transition: transform 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      visibility 0.3s;
     z-index: 999;
-    padding-top: 30px;
+    padding: 24px 24px 30px;
     overflow-y: auto;
     height: calc(100vh - 57px);
-    padding-bottom: 30px;
   }
 
   .nav-links.is-open {
@@ -615,12 +600,49 @@ watch(() => route.path, scheduleIndicatorUpdate)
   }
 
   .nav-link {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 600;
+    padding: 10px 4px;
   }
 
-  .nav-indicator {
-    display: none;
+  .nav-group {
+    width: 100%;
+  }
+
+  .nav-group-trigger {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .dropdown {
+    position: static;
+    transform: none;
+    min-width: 0;
+    padding: 4px 4px 4px 16px;
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-left: 2px solid var(--border);
+    margin-left: 8px;
+    opacity: 1;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s ease;
+  }
+
+  .dropdown.open {
+    visibility: visible;
+    height: auto;
+  }
+
+  .dropdown-link {
+    font-size: 1rem;
+    padding: 9px 10px;
+  }
+
+  .resume-nav-link {
+    margin-top: 8px;
   }
 }
 
@@ -638,40 +660,30 @@ watch(() => route.path, scheduleIndicatorUpdate)
   .nav-links {
     top: 49px;
     height: calc(100vh - 49px);
-    gap: 12px;
-    padding-top: 20px;
+    padding: 20px 20px 30px;
   }
 
   .nav-link {
-    font-size: 1.1rem;
-    padding: 8px 0;
-  }
-
-  .menu-icon {
-    width: 20px;
-    gap: 4px;
-  }
-
-  .menu-icon span {
-    height: 1.5px;
+    font-size: 1rem;
+    padding: 8px 2px;
   }
 }
 
 /* Focus visible styles for accessibility */
+.nav-link:focus-visible,
+.dropdown-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .nav-links {
-    transition: none;
-  }
-
-  .menu-icon span {
-    transition: none;
-  }
-
-  .nav-link {
-    transition: none;
-  }
-
-  .nav-indicator {
+  .nav-links,
+  .menu-icon span,
+  .nav-link,
+  .group-chevron,
+  .dropdown,
+  .dropdown-link {
     transition: none;
   }
 }
